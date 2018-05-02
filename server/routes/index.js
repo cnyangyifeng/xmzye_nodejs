@@ -15,8 +15,4 @@ router.get('/purchase/place_order', validationMiddleware, controllers.purchase.p
 router.get('/quiz_user', validationMiddleware, controllers.quizUsers.getQuizUser)
 router.get('/quizzes/:quiz_id', validationMiddleware, controllers.quizzes.getQuiz)
 
-router.get('/quiz_records', validationMiddleware, controllers.quizRecords.getQuizRecords)
-router.get('/quiz_records/:quiz_id', validationMiddleware, controllers.quizRecords.getQuizRecordByQuizId)
-router.post('/quiz_records', validationMiddleware, controllers.quizRecords.postQuizRecord)
-
 module.exports = router
