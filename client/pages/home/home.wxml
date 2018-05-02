@@ -1,0 +1,56 @@
+<block wx:if="{{homeState===0}}">
+  <view class="home">
+    <view class="spinner"></view>
+  </view>
+</block>
+<block wx:elif="{{homeState===1}}">
+  <view class="home-control">
+    <view class="quiz-user-hd">
+      <image class="quiz-user-avatar" src="{{quizUser.quizUserInfo.avatarUrl}}" bindtap="userAvatarTap"></image>
+      <view class="quiz-user-info">
+        <block wx:if="{{quizUser.vip}}">
+          <image class="quiz-user-vip" src="/assets/images/vip.svg"></image>
+        </block>
+        <view class="quiz-user-nick-name">{{quizUser.quizUserInfo.nickName}}探长</view>
+        <view hidden="{{quizUser.vip===1}}" class="quiz-user-asset" hover-class="quiz-user-asset-hover" bindtap="addKeyButtonTap">
+          <image class="quiz-user-asset-icon left" src="/assets/images/key.svg"></image>
+          <view class="quiz-user-asset-value">{{quizUser.totalKeyCount}}</view>
+          <image class="quiz-user-asset-icon right" src="/assets/images/add_fill.svg"></image>
+        </view>
+      </view>
+    </view>
+    <scroll-view scroll-x scroll-with-animation class="quiz-tabs" scroll-into-view="Q{{quizUser.currentQuizTabName}}">
+      <view class="quiz-tabs-innner">
+        <block wx:for="{{quizGrid}}" wx:key="quizTabName">
+          <view class="quiz-tab {{index===quizUser.currentQuizTabIndex?'active':''}}" hover-class="quiz-tab-hover" id="Q{{item.quizTabName}}" data-quiz-tab-index="{{index}}" bindtap="quizTabTap">{{item.quizTabName}}</view>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+  <swiper class="home" current="{{quizUser.currentQuizTabIndex}}" bindchange="quizGridSwiperChange">
+    <swiper-item wx:for="{{quizGrid}}" wx:key="quizTabName">
+      <scroll-view scroll-y class="quiz-grid">
+        <view class="quiz-grid-inner">
+          <block wx:for="{{item.quizCards}}" wx:key="quizId">
+            <view class="quiz-card" data-quiz-id="{{item.quizId}}" data-quiz-card-index="{{index}}" bindtap="quizCardTap">
+              <block wx:if="{{item.quizUnlocked===1}}">
+                <view class="quiz-card-title">{{item.quizId}}</view>
+                <image wx:if="{{item.quizPlayed===1}}" class="quiz-card-image" src="{{item.quizQuestionImageUrl}}" mode="aspectFill"></image>
+                <image wx:if="{{item.quizSolved===1}}" class="quiz-card-ok" src="/assets/images/ok.svg"></image>
+              </block>
+              <block wx:else>
+                <view class="quiz-card-title">{{item.quizId}}</view>
+                <image class="quiz-card-lock" src="/assets/images/lock.svg"></image>
+              </block>
+            </view>
+          </block>
+        </view>
+        <view class="home-foot"></view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+  <view hidden="{{quizUser.vip===1}}" class="actionbar">
+    <view class="primary-btn" hover-class="primary-btn-hover" bindtap="vipButtonTap">￥
+      <text class="price">9.9</text>解锁全部题目</view>
+  </view>
+</block>

@@ -1,0 +1,8 @@
+page {
+  margin: 0;
+  background-color: #202c3a;
+  /* font-family: -apple-system-font, Helvetica, sans-serif; */
+  font-family: 'Arial Narrow', Arial, -apple-system-font, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: normal;
+}

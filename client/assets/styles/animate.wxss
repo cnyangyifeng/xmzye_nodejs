@@ -1,0 +1,86 @@
+/****************************************************************************************************/
+
+/*= .spinner =*/
+
+.spinner {
+  flex: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 120px;
+  box-sizing: border-box;
+  border: 10rpx solid #ccc;
+  background-color: #fff;
+  animation-name: rotatePlane;
+  animation-duration: 1.2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+
+/****************************************************************************************************/
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform-origin: center;
+    transform: rotateZ(0);
+  }
+
+  100% {
+    transform-origin: center;
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes rotatePlane {
+  0% {
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+  }
+
+  50% {
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+  }
+
+  100% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  to {
+    opacity: 1;
+  }
+}
