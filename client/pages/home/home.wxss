@@ -85,6 +85,10 @@
   font-weight: 600;
 }
 
+.quiz-user-asset-value.infinite {
+  margin-right: 40rpx;
+}
+
 .quiz-tabs {
   flex: none;
   display: flex;

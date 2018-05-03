@@ -165,10 +165,6 @@ Page({
       })
       // 初始化 quizGrid
       this.initQuizGrid().then(() => {
-        // 更新页面数据 quizGrid
-        this.setData({
-          quizGrid: QuizGrid.get()
-        })
         // 如果是 “分享页面” 操作以后的页面重新显示
         if (this.data.redisplayFromSharing) {
           this.setData({
@@ -177,27 +173,36 @@ Page({
           // 不执行后续操作
           return
         }
-        // 更新页面数据 quizPlayed, timeElapsed, quizSolved
         const quizCardIndex = this.getQuizCardIndexByQuizId(this.data.reqQuizId)
-        const quizTabIndex = this.data.quizUser.currentQuizTabIndex
-        const quizGrid = this.data.quizGrid
-        const quizCard = quizGrid[quizTabIndex].quizCards[quizCardIndex]
-        this.setData({
-          quizPlayed: quizCard.quizPlayed,
-          timeElapsed: quizCard.timeElapsed,
-          quizSolved: quizCard.quizSolved
-        })
-        // 获取 quiz
-        this.requestQuiz().then(() => {
-          // 初始化 bgm 音效
-          this.initBgmAudioContext(this.data.quiz.bgmUrl)
-          // 更新页面数据 quizState
+        // 解锁当前 quiz
+        const unlocked = this.unlockQuiz(quizCardIndex)
+        if (unlocked) {
+          // 更新页面数据 quizPlayed, timeElapsed, quizSolved
+          const quizTabIndex = this.data.quizUser.currentQuizTabIndex
+          const quizGrid = this.data.quizGrid
+          const quizCard = quizGrid[quizTabIndex].quizCards[quizCardIndex]
           this.setData({
-            quizState: QUIZ_STATE_MAIN
+            quizPlayed: quizCard.quizPlayed,
+            timeElapsed: quizCard.timeElapsed,
+            quizSolved: quizCard.quizSolved
           })
-          // 播放 quiz
-          this.playQuiz()
-        })
+          // 获取 quiz
+          this.requestQuiz().then(() => {
+            // 初始化 bgm 音效
+            this.initBgmAudioContext(this.data.quiz.bgmUrl)
+            // 更新页面数据 quizState
+            this.setData({
+              quizState: QUIZ_STATE_MAIN
+            })
+            // 播放 quiz
+            this.playQuiz()
+          })
+        } else {
+          // 跳转至 home 页面
+          wx.navigateBack({
+            delta: 1
+          })
+        }
       })
     })
   },
@@ -270,8 +275,9 @@ Page({
     // 已经开始计时，则停止计时
     this.clearCountingDown()
     return {
-      title: `原来你也是侦探？！快来帮我破案~`,
+      title: this.data.quiz.title,
       path: `/pages/home/home?quiz_id=${this.data.reqQuizId}&referrer_id=${this.data.quizUser.quizUserId}`,
+      imageUrl: this.data.quiz.question.questionImage.url,
       success: res => {
         console.debug(`转发成功`)
         // 如果未破案
@@ -415,16 +421,14 @@ Page({
     this.stopPlayingSolutions()
     // 解锁 quiz
     const quizId = this.data.reqQuizId
-    const nextQuizId = (quizId === 1000) ? 1 : quizId + 1
-    // 获取 quizCard
+    const nextQuizId = (quizId === 500) ? 1 : quizId + 1
     const nextQuizCardIndex = this.getQuizCardIndexByQuizId(nextQuizId)
-    this.unlockQuiz(nextQuizCardIndex).then(() => {
-      // 跳转页面
+    const unlocked = this.unlockQuiz(nextQuizCardIndex)
+    if (unlocked) {
       wx.redirectTo({
         url: `/pages/quiz01/quiz01?quiz_id=${nextQuizId}`
       })
-    }, () => {
-      // 显示弹窗
+    } else {
       wx.showModal({
         title: msgs.insufficient_keys_title,
         content: msgs.insufficient_keys_content,
@@ -435,7 +439,7 @@ Page({
           }
         }
       })
-    })
+    }
   },
 
   /* ================================================================================ */
@@ -447,7 +451,11 @@ Page({
   initQuizGrid: function () {
     return new Promise((resolve, reject) => {
       // 如果缓存数据 QuizGrid 存在
-      if (QuizGrid.get()) {
+      const cachedQuizGrid = QuizGrid.get()
+      if (cachedQuizGrid) {
+        this.setData({
+          quizGrid: cachedQuizGrid
+        })
         // 直接返回操作成功
         resolve()
       } else { // 否则，初始化 quizGrid
@@ -472,6 +480,11 @@ Page({
           quizGrid.push(quizTab)
         }
         QuizGrid.set(quizGrid)
+        this.setData({
+          quizGrid: quizGrid
+        })
+        // 操作成功
+        resolve()
       }
     })
   },
@@ -674,14 +687,25 @@ Page({
           } else { // 如果已超时
             // 停止计时
             this.clearCountingDown()
-            // 更新页面数据 quizState
-            this.setData({
-              quizState: QUIZ_STATE_SOLUTIONS
-            })
-            // 播放 solutions
-            this.playSolutions()
             // 缓存 quizSolved
             this.saveQuizAsSolved()
+            // 显示弹窗，提示用户是否查看答案
+            wx.showModal({
+              title: msgs.view_solutions_title,
+              content: msgs.view_solutions_content,
+              cancelText: msgs.wait_a_second_title,
+              confirmText: msgs.view_immediately_title,
+              success: res => {
+                if (res.confirm) {
+                  // 更新页面数据 quizState
+                  this.setData({
+                    quizState: QUIZ_STATE_SOLUTIONS
+                  })
+                  // 播放 solutions
+                  this.playSolutions()
+                }
+              }
+            })
           }
         }, 1000)
       }
@@ -757,39 +781,36 @@ Page({
    */
 
   unlockQuiz: function (quizCardIndex) {
-    return new Promise((resolve, reject) => {
-      const quizGrid = this.data.quizGrid
-      const quizTabIndex = this.data.quizUser.currentQuizTabIndex
-      const quizCard = quizGrid[quizTabIndex].quizCards[quizCardIndex]
-      // 如果当前 quizCard 未解锁
-      if (quizCard.quizUnlocked === 0) {
-        // 如果当前用户的钥匙数量足够
-        if (this.data.quizUser.totalKeyCount > 0) {
-          // 解锁 quiz
-          console.debug(`解锁 quiz: `, quizCard.quizId)
-          quizCard.quizUnlocked = 1
-          this.setData({
-            quizGrid: quizGrid
-          })
-          QuizGrid.set(quizGrid)
-          // 消耗 1 把钥匙
-          const quizUser = this.data.quizUser
-          quizUser.totalKeyCount--
-          this.setData({
-            quizUser: quizUser
-          })
-          QuizUser.set(quizUser)
-          // 操作成功
-          resolve()
-        } else { // 如果当前用户的钥匙数量不足
-          // 操作失败
-          reject()
-        }
-      } else { // 如果当前 quizCard 已解锁
-        // 直接返回操作成功
-        resolve()
+    let unlocked = false
+    const quizGrid = this.data.quizGrid
+    const quizTabIndex = this.data.quizUser.currentQuizTabIndex
+    const quizCard = quizGrid[quizTabIndex].quizCards[quizCardIndex]
+    // 如果当前 quizCard 未解锁
+    if (quizCard.quizUnlocked === 0) {
+      // 如果当前用户的钥匙数量足够
+      if (this.data.quizUser.totalKeyCount > 0) {
+        // 解锁 quiz
+        console.debug(`解锁 quiz: `, quizCard.quizId)
+        quizCard.quizUnlocked = 1
+        this.setData({
+          quizGrid: quizGrid
+        })
+        QuizGrid.set(quizGrid)
+        // 消耗 1 把钥匙
+        const quizUser = this.data.quizUser
+        quizUser.totalKeyCount--
+        this.setData({
+          quizUser: quizUser
+        })
+        QuizUser.set(quizUser)
+        unlocked = true
+      } else { // 如果当前用户的钥匙数量不足
+        unlocked = false
       }
-    })
+    } else { // 如果当前 quizCard 已解锁
+      unlocked = true
+    }
+    return unlocked
   },
 
   /**

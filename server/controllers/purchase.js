@@ -10,7 +10,7 @@ async function placeOrder(ctx, next) {
   if (ctx.state.$wxInfo.loginState === 1) {
     // 准备参数
     const appid = configs.appId
-    const body = '看图推理VIP'
+    const body = '一分钟理VIP'
     const mch_id = '1494554932'
     const nonce_str = Math.random().toString(36).substr(2)
     const notify_url = 'https://xmzye.xiongmaozuoye.club/api/wxpay'

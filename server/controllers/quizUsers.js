@@ -39,6 +39,8 @@ async function createDefaultQuizUser(quizUserInfo) {
       vip: 0,
       totalKeyCount: 10,
       muted: 0,
+      currentQuizTabIndex: 0,
+      currentQuizTabName: '1-100',
       createTime: createTime,
       lastVisitTime: lastVisitTime
     })

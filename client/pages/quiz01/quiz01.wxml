@@ -4,11 +4,19 @@
   </view>
 </block>
 <block wx:else>
-  <view hidden="{{quizUser.vip===1}}" class="quiz-user-asset" hover-class="quiz-user-asset-hover" bindtap="addKeyButtonTap">
-    <image class="quiz-user-asset-icon left" src="/assets/images/key.svg"></image>
-    <view class="quiz-user-asset-value">{{quizUser.totalKeyCount}}</view>
-    <image class="quiz-user-asset-icon right" src="/assets/images/add_fill.svg"></image>
-  </view>
+  <block wx:if="{{quizUser.vip===1}}">
+    <view class="quiz-user-asset" hover-class="quiz-user-asset-hover">
+      <image class="quiz-user-asset-icon left" src="/assets/images/key.svg"></image>
+      <view class="quiz-user-asset-value infinite">9999</view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="quiz-user-asset" hover-class="quiz-user-asset-hover" bindtap="addKeyButtonTap">
+      <image class="quiz-user-asset-icon left" src="/assets/images/key.svg"></image>
+      <view class="quiz-user-asset-value">{{quizUser.totalKeyCount}}</view>
+      <image class="quiz-user-asset-icon right" src="/assets/images/add_fill.svg"></image>
+    </view>
+  </block>
   <view hidden="{{percent<=0}}" class="quiz01-control bgm {{quizUser.muted===0?'playing':''}}" hover-class="quiz01-control-hover" bindtap="bgmControlTap">
     <image class="quiz01-control-icon" src="/assets/images/{{quizUser.muted===0?'music-note.svg':'music-note-off.svg'}}"></image>
   </view>

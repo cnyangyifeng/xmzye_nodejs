@@ -21,7 +21,13 @@ const msgs = {
   save_fail_title: `保存失败`,
   save_fail_content: `请在 “设置” 中，允许保存到相册，然后重新操作。`,
 
-  unlock_all_title: `全部解锁`
+  unlock_all_title: `全部解锁`,
+
+  view_solutions_title: `时间到！`,
+  view_solutions_content: `是否立即揭晓答案？`,
+  view_immediately_title: `好的`,
+
+  wait_a_second_title: `再想想`
 
 }
 

@@ -6,7 +6,7 @@
   "window": {
     "navigationBarBackgroundColor": "#202c3a",
     "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "看图推理",
+    "navigationBarTitleText": "一分钟推理",
     "backgroundColor": "#202c3a",
     "backgroundTextStyle": "light",
     "enablePullDownRefresh": false,

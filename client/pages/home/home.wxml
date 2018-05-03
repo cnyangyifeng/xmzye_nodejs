@@ -8,15 +8,22 @@
     <view class="quiz-user-hd">
       <image class="quiz-user-avatar" src="{{quizUser.quizUserInfo.avatarUrl}}" bindtap="userAvatarTap"></image>
       <view class="quiz-user-info">
-        <block wx:if="{{quizUser.vip}}">
+        <block wx:if="{{quizUser.vip===1}}">
           <image class="quiz-user-vip" src="/assets/images/vip.svg"></image>
+          <view class="quiz-user-nick-name">{{quizUser.quizUserInfo.nickName}}探长</view>
+          <view class="quiz-user-asset" hover-class="quiz-user-asset-hover">
+            <image class="quiz-user-asset-icon left" src="/assets/images/key.svg"></image>
+            <view class="quiz-user-asset-value infinite">9999</view>
+          </view>
         </block>
-        <view class="quiz-user-nick-name">{{quizUser.quizUserInfo.nickName}}探长</view>
-        <view hidden="{{quizUser.vip===1}}" class="quiz-user-asset" hover-class="quiz-user-asset-hover" bindtap="addKeyButtonTap">
-          <image class="quiz-user-asset-icon left" src="/assets/images/key.svg"></image>
-          <view class="quiz-user-asset-value">{{quizUser.totalKeyCount}}</view>
-          <image class="quiz-user-asset-icon right" src="/assets/images/add_fill.svg"></image>
-        </view>
+        <block wx:else>
+          <view class="quiz-user-nick-name">{{quizUser.quizUserInfo.nickName}}探长</view>
+          <view class="quiz-user-asset" hover-class="quiz-user-asset-hover" bindtap="addKeyButtonTap">
+            <image class="quiz-user-asset-icon left" src="/assets/images/key.svg"></image>
+            <view class="quiz-user-asset-value">{{quizUser.totalKeyCount}}</view>
+            <image class="quiz-user-asset-icon right" src="/assets/images/add_fill.svg"></image>
+          </view>
+        </block>
       </view>
     </view>
     <scroll-view scroll-x scroll-with-animation class="quiz-tabs" scroll-into-view="Q{{quizUser.currentQuizTabName}}">
