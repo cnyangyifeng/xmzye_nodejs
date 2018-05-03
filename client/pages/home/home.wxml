@@ -11,10 +11,6 @@
         <block wx:if="{{quizUser.vip===1}}">
           <image class="quiz-user-vip" src="/assets/images/vip.svg"></image>
           <view class="quiz-user-nick-name">{{quizUser.quizUserInfo.nickName}}探长</view>
-          <view class="quiz-user-asset" hover-class="quiz-user-asset-hover">
-            <image class="quiz-user-asset-icon left" src="/assets/images/key.svg"></image>
-            <view class="quiz-user-asset-value infinite">9999</view>
-          </view>
         </block>
         <block wx:else>
           <view class="quiz-user-nick-name">{{quizUser.quizUserInfo.nickName}}探长</view>
@@ -56,6 +52,9 @@
       </scroll-view>
     </swiper-item>
   </swiper>
+  <button class="contact-btn {{quizUser.vip===1?'vip':''}}" hover-class="contact-btn-hover" open-type="contact">
+    <image class="contact-btn-image" src="/assets/images/contact_fill.svg"></image>
+  </button>
   <view hidden="{{quizUser.vip===1}}" class="actionbar">
     <view class="primary-btn" hover-class="primary-btn-hover" bindtap="vipButtonTap">￥
       <text class="price">9.9</text>解锁全部题目</view>

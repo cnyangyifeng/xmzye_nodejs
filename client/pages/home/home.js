@@ -229,6 +229,7 @@ Page({
         title: msgs.insufficient_keys_title,
         content: msgs.insufficient_keys_content,
         confirmText: msgs.unlock_all_title,
+        confirmColor: '#00ba80',
         success: res => {
           if (res.confirm) {
             this.purchase()
@@ -257,6 +258,7 @@ Page({
       title: msgs.insufficient_keys_title,
       content: msgs.insufficient_keys_content,
       confirmText: msgs.unlock_all_title,
+      confirmColor: '#00ba80',
       success: res => {
         if (res.confirm) {
           this.purchase()
@@ -274,7 +276,7 @@ Page({
     wx.showModal({
       title: msgs.clear_cache_title,
       content: msgs.clear_cache_content,
-      showCancel: true,
+      confirmColor: '#00ba80',
       success: function (res) {
         if (res.confirm) {
           // 清空全部缓存数据

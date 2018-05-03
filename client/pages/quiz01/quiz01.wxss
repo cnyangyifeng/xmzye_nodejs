@@ -102,10 +102,14 @@
 }
 
 .quiz-user-asset-value {
+  max-width: 260rpx;
   margin: 0 20rpx;
   color: #fff;
   font-size: 16px;
   font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .quiz-user-asset-value.infinite {
@@ -307,6 +311,10 @@
   font-size: 18px;
   font-weight: 600;
   line-height: normal;
+}
+
+.secondary-btn.vip {
+  color: #00ba80;
 }
 
 .secondary-btn-hover {

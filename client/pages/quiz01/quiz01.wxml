@@ -6,8 +6,8 @@
 <block wx:else>
   <block wx:if="{{quizUser.vip===1}}">
     <view class="quiz-user-asset" hover-class="quiz-user-asset-hover">
-      <image class="quiz-user-asset-icon left" src="/assets/images/key.svg"></image>
-      <view class="quiz-user-asset-value infinite">9999</view>
+      <image class="quiz-user-asset-icon left" src="/assets/images/vip.svg"></image>
+      <view class="quiz-user-asset-value infinite">{{quizUser.quizUserInfo.nickName}}探长</view>
     </view>
   </block>
   <block wx:else>
@@ -36,8 +36,13 @@
       <view class="quiz01-foot"></view>
     </scroll-view>
     <view class="actionbar" hidden="{{!actionbarVisible}}">
-      <block wx:if="{{quizSolved===0}}">
-        <button class="secondary-btn" hover-class="secondary-btn-hover" open-type="share">分享立即看答案</button>
+      <block wx:if="{{timeElapsed<quiz.timeLimit}}">
+        <block wx:if="{{quizUser.vip===1}}">
+          <view class="secondary-btn vip" hover-class="secondary-btn-hover" bindtap="vipViewSolutionsButtonTap">VIP 随时看答案</view>
+        </block>
+        <block wx:else>
+          <button class="secondary-btn" hover-class="secondary-btn-hover" open-type="share">分享立即看答案</button>
+        </block>
         <view class="primary-btn" hover-class="primary-btn-hover">
           <text class="time-remaining-text">{{timeRemainingInSeconds}}</text>秒后出答案</view>
       </block>

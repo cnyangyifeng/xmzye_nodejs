@@ -5,8 +5,8 @@ const msgs = {
   clear_cache_title: `数据恢复`,
   clear_cache_content: `点击确定，清空全部缓存数据。`,
 
-  insufficient_keys_title: `没有钥匙了`,
-  insufficient_keys_content: `只需9.9元，即可解锁全部题目。`,
+  insufficient_keys_title: `购买 VIP`,
+  insufficient_keys_content: `只需 9.9 元，即可解锁全部题目。`,
 
   loading_title: `准备支付`,
 
@@ -23,8 +23,8 @@ const msgs = {
 
   unlock_all_title: `全部解锁`,
 
-  view_solutions_title: `时间到！`,
-  view_solutions_content: `是否立即揭晓答案？`,
+  view_solutions_title: `真相时刻`,
+  view_solutions_content: `时间到！现在揭晓答案？`,
   view_immediately_title: `好的`,
 
   wait_a_second_title: `再想想`

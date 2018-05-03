@@ -397,6 +397,50 @@ Page({
     this.setData({
       quizState: QUIZ_STATE_SOLUTIONS
     })
+    // 缓存 quizSolved
+    this.saveQuizAsSolved()
+  },
+
+  /**
+   * 绑定事件：点击 vipViewSolutionsButtonTap
+   */
+
+  vipViewSolutionsButtonTap: function () {
+    console.debug(`点击 viewSolutionsButton`)
+    // 尚未开始动画，则禁用动画
+    this.disableAnimating()
+    // 已经开始播放动画，则停止播放动画
+    this.stopAnimating()
+    // 尚未开始计时，则禁用计时
+    this.disableCountingDown()
+    // 已经开始计时，则停止计时
+    this.clearCountingDown()
+    // 如果未破案
+    if (!this.data.quizSolved) {
+      // 更新页面数据 quizState
+      this.setData({
+        quizState: QUIZ_STATE_SOLUTIONS
+      })
+      // 播放 solutions
+      this.playSolutions()
+    }
+    // 显示动画结果
+    this.setData({
+      typingQuestionText: this.data.quiz.question.questionText,
+      questionImageVisible: true,
+      actionbarVisible: true
+    })
+    // 缓存 quizPlayed
+    this.saveQuizAsPlayed()
+    // 缓存 timeElapsed
+    this.setData({
+      timeElapsed: this.data.quiz.timeLimit,
+      timeRemainingInSeconds: 0,
+      percent: 0
+    })
+    this.saveTimeElapsed()
+    // 缓存 quizSolved
+    this.saveQuizAsSolved()
   },
 
   /**
@@ -433,6 +477,7 @@ Page({
         title: msgs.insufficient_keys_title,
         content: msgs.insufficient_keys_content,
         confirmText: msgs.unlock_all_title,
+        confirmColor: '#00ba80',
         success: res => {
           if (res.confirm) {
             this.purchase()
@@ -548,6 +593,8 @@ Page({
         questionImageVisible: true,
         actionbarVisible: true
       })
+      // 缓存 quizPlayed
+      this.saveQuizAsPlayed()
       // 开始计时
       this.countingDown()
     }
@@ -687,14 +734,13 @@ Page({
           } else { // 如果已超时
             // 停止计时
             this.clearCountingDown()
-            // 缓存 quizSolved
-            this.saveQuizAsSolved()
             // 显示弹窗，提示用户是否查看答案
             wx.showModal({
               title: msgs.view_solutions_title,
               content: msgs.view_solutions_content,
               cancelText: msgs.wait_a_second_title,
               confirmText: msgs.view_immediately_title,
+              confirmColor: '#00ba80',
               success: res => {
                 if (res.confirm) {
                   // 更新页面数据 quizState
@@ -703,6 +749,8 @@ Page({
                   })
                   // 播放 solutions
                   this.playSolutions()
+                  // 缓存 quizSolved
+                  this.saveQuizAsSolved()
                 }
               }
             })

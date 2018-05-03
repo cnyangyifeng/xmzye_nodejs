@@ -1,5 +1,3 @@
-@import '../../assets/styles/animate.wxss';
-
 /****************************************************************************************************/
 
 .home-control {
@@ -79,14 +77,14 @@
 }
 
 .quiz-user-asset-value {
+  max-width: 260rpx;
   margin: 0 20rpx;
   color: #fff;
   font-size: 16px;
   font-weight: 600;
-}
-
-.quiz-user-asset-value.infinite {
-  margin-right: 40rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .quiz-tabs {
@@ -221,6 +219,44 @@
 }
 
 /****************************************************************************************************/
+
+/* .contact-btn */
+
+.contact-btn {
+  position: absolute;
+  z-index: 1000;
+  right: 20px;
+  bottom: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background-color: rgba(0, 186, 128, 1.0);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.contact-btn.vip {
+  bottom: 20px;
+}
+
+.contact-btn-hover {
+  background-color: #0c9;
+}
+
+.contact-btn-image {
+  width: 32px;
+  height: 32px;
+}
 
 /* .actionbar */
 
