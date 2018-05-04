@@ -2,8 +2,8 @@ const msgs = {
 
   auth_user_info_fail_content: `请在 “设置” 中，允许使用你的 “用户信息”，然后重新登录。`,
 
-  clear_cache_title: `数据恢复`,
-  clear_cache_content: `点击确定，清空全部缓存数据。`,
+  clear_cache_title: `危险操作`,
+  clear_cache_content: `是否清空全部缓存数据？`,
 
   insufficient_keys_title: `购买 VIP`,
   insufficient_keys_content: `只需 9.9 元，即可解锁全部题目。`,
@@ -23,11 +23,11 @@ const msgs = {
 
   unlock_all_title: `全部解锁`,
 
-  view_solutions_title: `真相时刻`,
-  view_solutions_content: `时间到！现在揭晓答案？`,
+  view_solutions_title: `真相时间到了`,
+  view_solutions_content: `你心里肯定已经有答案了...\n现在揭晓谜底吗？`,
   view_immediately_title: `好的`,
 
-  wait_a_second_title: `再想想`
+  wait_a_second_title: `再等等`
 
 }
 

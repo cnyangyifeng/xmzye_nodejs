@@ -212,7 +212,7 @@
   flex: none;
   display: flex;
   justify-content: center;
-  padding: 80rpx 0 240rpx 0;
+  padding: 80rpx 0 320rpx 0;
   color: #666;
   font-size: 16px;
   font-weight: 600;

@@ -21,12 +21,13 @@ Page({
     /**
      * quizUser = {
      *   quizUserId: 'o-MYb5D7zZU-YQx09XDeFp3AAsUg',
+     *   referrerId: 'o-MYb5Bl8ACVPSATTQqRwlJCUsXk',
      *   quizUserInfo: Object,
      *   vip: 0,
      *   totalKeyCount: 10,
      *   muted: 0,
      *   currentQuizTabIndex: 0,
-     *   currentQuizTabName: 'Q1-100',
+     *   currentQuizTabName: '1-100',
      *   createTime: '2018-04-23T05:51:53.000Z'
      *   lastVisitTime: '2018-04-23T05:51:53.000Z'
      * }
@@ -68,19 +69,24 @@ Page({
    */
 
   onLoad: function (options) {
+    // 如果指定了页面参数 referrer_id
+    const referrerId = options.referrer_id
+    if (referrerId) {
+      // 更新页面数据 reqReferrerId
+      this.setData({
+        reqReferrerId: referrerId
+      })
+    }
+    // 如果指定了页面参数 quiz_id
     let quizId = options.quiz_id
     if (quizId) {
+      // 如果是每日一题，获取今天真正的 quizId
       if (quizId === 'qotd') {
         quizId = Math.ceil((new Date() - ONLINE_TIME) / (1000 * 60 * 60 * 24))
       }
+      // 更新页面数据 reqQuizId
       this.setData({
         reqQuizId: quizId
-      })
-    }
-    const referrerId = options.referrer_id
-    if (referrerId) {
-      this.setData({
-        reqReferrerId: referrerId
       })
     }
   },
@@ -100,17 +106,24 @@ Page({
   onShow: function () {
     // 确保用户已登录
     loginService.ensureLoggedIn().then(() => {
-      // 更新页面数据 quizUser
+      // 双向更新页面和缓存数据 quizUser
+      const quizUser = QuizUser.get()
+      const referrerId = this.data.reqReferrerId
+      if (referrerId) {
+        quizUser.referrerId = referrerId
+      }
       this.setData({
-        quizUser: QuizUser.get()
+        quizUser: quizUser
       })
+      QuizUser.set(quizUser)
+      // 判断是否跳转页面
       const quizId = this.data.reqQuizId
       if (quizId && this.data.quizUser.totalKeyCount > 0) {
         // 清空 reqQuizId，防止 quiz01 页面 navigateBack 造成循环跳转
         this.setData({
           reqQuizId: null
         })
-        // 跳转至 home 页面
+        // 跳转至 quiz01 页面
         console.debug(`跳转至 quiz01 页面`)
         wx.navigateTo({
           url: `/pages/quiz01/quiz01?quiz_id=${quizId}`
@@ -277,7 +290,7 @@ Page({
       title: msgs.clear_cache_title,
       content: msgs.clear_cache_content,
       confirmColor: '#00ba80',
-      success: function (res) {
+      success: res => {
         if (res.confirm) {
           // 清空全部缓存数据
           console.debug(`清空全部缓存数据`)

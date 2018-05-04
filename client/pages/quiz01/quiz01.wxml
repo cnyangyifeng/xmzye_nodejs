@@ -17,7 +17,7 @@
       <image class="quiz-user-asset-icon right" src="/assets/images/add_fill.svg"></image>
     </view>
   </block>
-  <view hidden="{{percent<=0}}" class="quiz01-control bgm {{quizUser.muted===0?'playing':''}}" hover-class="quiz01-control-hover" bindtap="bgmControlTap">
+  <view hidden="{{timeElapsed>=quiz.timeLimit}}" class="quiz01-control bgm {{quizUser.muted===0?'playing':''}}" hover-class="quiz01-control-hover" bindtap="bgmControlTap">
     <image class="quiz01-control-icon" src="/assets/images/{{quizUser.muted===0?'music-note.svg':'music-note-off.svg'}}"></image>
   </view>
   <button class="quiz01-control share" hover-class="quiz01-control-hover" open-type="share">
@@ -36,19 +36,13 @@
       <view class="quiz01-foot"></view>
     </scroll-view>
     <view class="actionbar" hidden="{{!actionbarVisible}}">
-      <block wx:if="{{timeElapsed<quiz.timeLimit}}">
-        <block wx:if="{{quizUser.vip===1}}">
-          <view class="secondary-btn vip" hover-class="secondary-btn-hover" bindtap="vipViewSolutionsButtonTap">VIP 随时看答案</view>
-        </block>
-        <block wx:else>
-          <button class="secondary-btn" hover-class="secondary-btn-hover" open-type="share">分享立即看答案</button>
-        </block>
-        <view class="primary-btn" hover-class="primary-btn-hover">
-          <text class="time-remaining-text">{{timeRemainingInSeconds}}</text>秒后出答案</view>
+      <view class="secondary-btn" hover-class="secondary-btn-hover" bindtap="viewSolutionsButtonTap">戳我看答案</view>
+      <block wx:if="{{timeElapsed>=quiz.timeLimit}}">
+        <view class="primary-btn" hover-class="primary-btn-hover" bindtap="nextButtonTap">继续下一题</view>
       </block>
       <block wx:else>
-        <view class="secondary-btn" hover-class="secondary-btn-hover" bindtap="viewSolutionsButtonTap">戳我看答案</view>
-        <view class="primary-btn" hover-class="primary-btn-hover" bindtap="nextButtonTap">继续下一题</view>
+        <view class="primary-btn" hover-class="primary-btn-hover">
+          <text class="time-remaining-text">{{timeRemainingInSeconds}}</text>秒后下一题</view>
       </block>
     </view>
   </block>

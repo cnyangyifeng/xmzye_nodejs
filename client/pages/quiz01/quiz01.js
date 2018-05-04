@@ -30,6 +30,7 @@ Page({
     /**
      * quizUser = {
      *   quizUserId: 'o-MYb5D7zZU-YQx09XDeFp3AAsUg',
+     *   referrerId: 'o-MYb5Bl8ACVPSATTQqRwlJCUsXk',
      *   quizUserInfo: Object,
      *   vip: 0,
      *   totalKeyCount: 10,
@@ -52,7 +53,7 @@ Page({
      *     questionText: '',
      *     questionImage: {
      *       url: '',
-     *       height: 546
+     *       height: 630
      *     }
      *   solutions: [
      *     {
@@ -82,8 +83,8 @@ Page({
     quiz: null, // 当前 quiz
     reqQuizId: 0, // 当前请求的 quizId
 
-    quizPlayed: 0,
-    quizSolved: 0,
+    quizPlayed: 0, // 当前 quiz 是否播放完毕
+    quizSolved: 0, // 当前 quiz 是否解答完毕
 
     /**
      * quizGrid = [
@@ -103,20 +104,20 @@ Page({
 
     quizGrid: null, // quizGrid
 
-    quizState: QUIZ_STATE_LOADING, // 当前页面状态
+    quizState: QUIZ_STATE_LOADING, // 当前 quiz 状态
 
-    animatingEnabled: true, // 是否启用动画
+    animatingEnabled: true, // 是否立刻禁用动画
     typingQuestionText: '',
     questionImageVisible: false,
     actionbarVisible: false,
 
-    countingDownEnabled: true, // 是否启用计时
+    countingDownEnabled: true, // 是否立刻禁用计时
     timeElapsed: 0,
     timeRemainingInSeconds: 0, // 剩余时间
     percent: 0, // 进度百分比
 
-    redisplayFromHiding: false, // 是 “隐藏页面” 操作以后的页面重新显示
-    redisplayFromSharing: false // 是 “分享页面” 操作以后的页面重新显示
+    redisplayFromSharing: false, // 是否 “分享页面” 操作以后的页面重新显示
+    redisplayFromHiding: false, // 是否 “隐藏页面” 操作以后的页面重新显示
   },
 
   /* ================================================================================ */
@@ -128,7 +129,7 @@ Page({
   onLoad: function (options) {
     const quizId = parseInt(options.quiz_id)
     console.debug(`当前 quizId: `, quizId)
-    // 如果 quizId 不存在
+    // 如果 quizId 不存在，则跳转至 home 页面
     if (!quizId) {
       console.debug(`跳转至 home 页面`)
       wx.redirectTo({
@@ -165,14 +166,6 @@ Page({
       })
       // 初始化 quizGrid
       this.initQuizGrid().then(() => {
-        // 如果是 “分享页面” 操作以后的页面重新显示
-        if (this.data.redisplayFromSharing) {
-          this.setData({
-            redisplayFromSharing: false
-          })
-          // 不执行后续操作
-          return
-        }
         const quizCardIndex = this.getQuizCardIndexByQuizId(this.data.reqQuizId)
         // 解锁当前 quiz
         const unlocked = this.unlockQuiz(quizCardIndex)
@@ -190,10 +183,17 @@ Page({
           this.requestQuiz().then(() => {
             // 初始化 bgm 音效
             this.initBgmAudioContext(this.data.quiz.bgmUrl)
-            // 更新页面数据 quizState
-            this.setData({
-              quizState: QUIZ_STATE_MAIN
-            })
+            // 如果不是 “分享页面” 操作以后的页面重新显示
+            if (!this.data.redisplayFromSharing) {
+              // 更新页面数据 quizState
+              this.setData({
+                quizState: QUIZ_STATE_MAIN
+              })
+            } else {
+              this.setData({
+                redisplayFromSharing: false
+              })
+            }
             // 播放 quiz
             this.playQuiz()
           })
@@ -266,46 +266,12 @@ Page({
    */
 
   onShareAppMessage: function () {
-    // 尚未开始动画，则禁用动画
-    this.disableAnimating()
-    // 已经开始播放动画，则停止播放动画
-    this.stopAnimating()
-    // 尚未开始计时，则禁用计时
-    this.disableCountingDown()
-    // 已经开始计时，则停止计时
-    this.clearCountingDown()
     return {
       title: this.data.quiz.title,
       path: `/pages/home/home?quiz_id=${this.data.reqQuizId}&referrer_id=${this.data.quizUser.quizUserId}`,
       imageUrl: this.data.quiz.question.questionImage.url,
       success: res => {
         console.debug(`转发成功`)
-        // 如果未破案
-        if (!this.data.quizSolved) {
-          // 更新页面数据 quizState
-          this.setData({
-            quizState: QUIZ_STATE_SOLUTIONS
-          })
-          // 播放 solutions
-          this.playSolutions()
-        }
-        // 显示动画结果
-        this.setData({
-          typingQuestionText: this.data.quiz.question.questionText,
-          questionImageVisible: true,
-          actionbarVisible: true
-        })
-        // 缓存 quizPlayed
-        this.saveQuizAsPlayed()
-        // 缓存 timeElapsed
-        this.setData({
-          timeElapsed: this.data.quiz.timeLimit,
-          timeRemainingInSeconds: 0,
-          percent: 0
-        })
-        this.saveTimeElapsed()
-        // 缓存 quizSolved
-        this.saveQuizAsSolved()
         // 更新页面数据 redisplayFromSharing
         this.setData({
           redisplayFromSharing: true
@@ -346,10 +312,6 @@ Page({
 
   bgmControlTap: function () {
     console.debug(`点击 bgmControl`)
-    if (this.data.percent <= 0) {
-      console.debug(`进度百分比 <=0 时，不允许操作 bgmControl`)
-      return
-    }
     const muted = this.data.quizUser.muted
     // 如果已开启静音模式
     if (muted === MUTED_STATE_ON) {
@@ -393,52 +355,25 @@ Page({
 
   viewSolutionsButtonTap: function () {
     console.debug(`点击 viewSolutionsButton`)
+    if (this.data.timeElapsed < this.data.quiz.timeLimit) {
+      // 停止计时
+      this.clearCountingDown()
+      // 缓存 timeElapsed
+      this.setData({
+        timeElapsed: this.data.quiz.timeLimit,
+        timeRemainingInSeconds: 0,
+        percent: 0
+      })
+      this.saveTimeElapsed()
+    }
+    // 播放 solutions
+    if (!this.data.quizSolved) {
+      this.playSolutions()
+    }
     // 更新页面数据 quizState
     this.setData({
       quizState: QUIZ_STATE_SOLUTIONS
     })
-    // 缓存 quizSolved
-    this.saveQuizAsSolved()
-  },
-
-  /**
-   * 绑定事件：点击 vipViewSolutionsButtonTap
-   */
-
-  vipViewSolutionsButtonTap: function () {
-    console.debug(`点击 viewSolutionsButton`)
-    // 尚未开始动画，则禁用动画
-    this.disableAnimating()
-    // 已经开始播放动画，则停止播放动画
-    this.stopAnimating()
-    // 尚未开始计时，则禁用计时
-    this.disableCountingDown()
-    // 已经开始计时，则停止计时
-    this.clearCountingDown()
-    // 如果未破案
-    if (!this.data.quizSolved) {
-      // 更新页面数据 quizState
-      this.setData({
-        quizState: QUIZ_STATE_SOLUTIONS
-      })
-      // 播放 solutions
-      this.playSolutions()
-    }
-    // 显示动画结果
-    this.setData({
-      typingQuestionText: this.data.quiz.question.questionText,
-      questionImageVisible: true,
-      actionbarVisible: true
-    })
-    // 缓存 quizPlayed
-    this.saveQuizAsPlayed()
-    // 缓存 timeElapsed
-    this.setData({
-      timeElapsed: this.data.quiz.timeLimit,
-      timeRemainingInSeconds: 0,
-      percent: 0
-    })
-    this.saveTimeElapsed()
     // 缓存 quizSolved
     this.saveQuizAsSolved()
   },
@@ -463,7 +398,7 @@ Page({
     console.debug(`点击 nextButton`)
     // 停止播放 solutions
     this.stopPlayingSolutions()
-    // 解锁 quiz
+    // 解锁下一个 quiz
     const quizId = this.data.reqQuizId
     const nextQuizId = (quizId === 500) ? 1 : quizId + 1
     const nextQuizCardIndex = this.getQuizCardIndexByQuizId(nextQuizId)
@@ -657,12 +592,12 @@ Page({
   },
 
   /**
-   * 禁用计时
+   * 禁用动画
    */
 
   disableAnimating() {
-    if (this.data.countingDownEnabled) {
-      console.debug(`禁用计时`)
+    if (this.data.animatingEnabled) {
+      console.debug(`禁用动画`)
       this.setData({
         animatingEnabled: false
       })
@@ -743,12 +678,12 @@ Page({
               confirmColor: '#00ba80',
               success: res => {
                 if (res.confirm) {
+                  // 播放 solutions
+                  this.playSolutions()
                   // 更新页面数据 quizState
                   this.setData({
                     quizState: QUIZ_STATE_SOLUTIONS
                   })
-                  // 播放 solutions
-                  this.playSolutions()
                   // 缓存 quizSolved
                   this.saveQuizAsSolved()
                 }

@@ -34,11 +34,6 @@
   right: 20rpx;
 }
 
-.quiz01-control.picture {
-  top: 40rpx;
-  right: 124rpx;
-}
-
 .quiz01-control.share {
   top: 40rpx;
   right: 124rpx;
@@ -46,10 +41,6 @@
   margin-right: 0 !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
-}
-
-.quiz01-control.share::after {
-  display: none;
 }
 
 .quiz01-control.bgm {
@@ -113,7 +104,7 @@
 }
 
 .quiz-user-asset-value.infinite {
-  margin-right: 40rpx;
+  margin-right: 36rpx;
 }
 
 /****************************************************************************************************/
@@ -313,14 +304,6 @@
   line-height: normal;
 }
 
-.secondary-btn.vip {
-  color: #00ba80;
-}
-
 .secondary-btn-hover {
   background-color: #fff;
-}
-
-button::after {
-  display: none;
 }
