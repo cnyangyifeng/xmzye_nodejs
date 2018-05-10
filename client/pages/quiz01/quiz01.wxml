@@ -9,7 +9,7 @@
       <block wx:if="{{quizUser.vip===1}}">
         <view class="quiz-user-asset" hover-class="quiz-user-asset-hover">
           <image class="quiz-user-asset-icon left" src="/assets/images/vip.svg"></image>
-          <view class="quiz-user-asset-value infinite">{{quizUser.quizUserInfo.nickName}}探长</view>
+          <view class="quiz-user-asset-value infinite">{{quizUser.quizUserInfo.nickName}}</view>
         </view>
       </block>
       <block wx:else>

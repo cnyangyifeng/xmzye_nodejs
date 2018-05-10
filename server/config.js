@@ -20,14 +20,6 @@ const configs = {
     pass: '2018^xmzy',
     char: 'utf8mb4'
   },
-  coredb: {
-    host: '10.104.197.123', // qcloud intranet ip
-    port: 3306,
-    user: 'root',
-    db: 'xmzye_core_db',
-    pass: '2018^xmzy',
-    char: 'utf8mb4'
-  },
   mongodb: {
     url: 'mongodb://mongouser:2018%5Exmzy@10.66.246.29:27017/admin'
   },

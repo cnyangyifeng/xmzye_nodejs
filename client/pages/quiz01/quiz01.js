@@ -229,7 +229,7 @@ Page({
                 redisplayFromSharing: false
               })
             }
-            if (this.data.myAnswer !== 'N') {
+            if (this.data.quizSolved === 1 || this.data.myAnswer !== 'N') {
               // 播放 actionBar 动画 fadeInUp
               this.actionBarAnimation.opacity(1).translate3d(0, 0, 0).step({
                 duration: 200,
@@ -904,7 +904,7 @@ Page({
             // 标记 quizUser 为 vip
             const quizUser = this.data.quizUser
             quizUser.vip = 1
-            quizUser.totalKeyCount = 9999
+            quizUser.totalKeyCount = 999999
             this.setData({
               quizUser: quizUser
             })

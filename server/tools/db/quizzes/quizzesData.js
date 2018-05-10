@@ -82,7 +82,7 @@ const QuizzesData = [
           {
             blockId: '1',
             blockType: 'normal-text',
-            text: '只有 2 号的危险没有被其他人的目光观察到'
+            text: '只有 2 号的危险没有被其他人发现'
           }
         ]
       }
@@ -347,6 +347,7 @@ const QuizzesData = [
         }
       ]
     },
+    answerKey: 'C',
     solutions: [
       {
         solutionTag: '答案',
@@ -387,7 +388,7 @@ const QuizzesData = [
       }
     },
     options: {
-      layout: 'grid',
+      layout: 'row',
       optionsData:
       [
         {
@@ -425,6 +426,7 @@ const QuizzesData = [
         }
       ]
     },
+    answerKey: 'A',
     solutions: [
       {
         solutionTag: '答案',
@@ -519,7 +521,7 @@ const QuizzesData = [
       }
     },
     options: {
-      layout: 'grid',
+      layout: 'row',
       optionsData:
       [
         {
@@ -554,6 +556,7 @@ const QuizzesData = [
         }
       ]
     },
+    answerKey: 'B',
     solutions: [
       {
         solutionTag: '答案',
@@ -619,6 +622,7 @@ const QuizzesData = [
         }
       ]
     },
+    answerKey: 'B',
     solutions: [
       {
         solutionTag: '答案',
@@ -684,6 +688,7 @@ const QuizzesData = [
         }
       ]
     },
+    answerKey: 'B',
     solutions: [
       {
         solutionTag: '答案',
@@ -735,6 +740,33 @@ const QuizzesData = [
         height: 420
       }
     },
+    options: {
+      layout: 'row',
+      optionsData:
+      [
+        {
+          optionKey: 'A',
+          optionData: [
+            {
+              blockId: '1',
+              blockType: 'normal-text',
+              text: '自杀'
+            }
+          ]
+        },
+        {
+          optionKey: 'B',
+          optionData: [
+            {
+              blockId: '1',
+              blockType: 'normal-text',
+              text: '谋杀'
+            }
+          ]
+        }
+      ]
+    },
+    answerKey: 'B',
     solutions: [
       {
         solutionTag: '答案',
@@ -801,6 +833,33 @@ const QuizzesData = [
         height: 546
       }
     },
+    options: {
+      layout: 'row',
+      optionsData:
+      [
+        {
+          optionKey: 'A',
+          optionData: [
+            {
+              blockId: '1',
+              blockType: 'normal-text',
+              text: '左'
+            }
+          ]
+        },
+        {
+          optionKey: 'B',
+          optionData: [
+            {
+              blockId: '1',
+              blockType: 'normal-text',
+              text: '右'
+            }
+          ]
+        }
+      ]
+    },
+    answerKey: 'B',
     solutions: [
       {
         solutionTag: '答案',
@@ -815,7 +874,7 @@ const QuizzesData = [
       },
       {
         solutionTag: '解析',
-        align: 'left',
+        align: 'center',
         solutionData: [
           {
             blockId: '1',
@@ -840,6 +899,53 @@ const QuizzesData = [
         height: 590
       }
     },
+    options: {
+      layout: 'row',
+      optionsData:
+      [
+        {
+          optionKey: 'A',
+          optionData: [
+            {
+              blockId: '1',
+              blockType: 'normal-text',
+              text: '小丽'
+            }
+          ]
+        },
+        {
+          optionKey: 'B',
+          optionData: [
+            {
+              blockId: '1',
+              blockType: 'normal-text',
+              text: '小园'
+            }
+          ]
+        },
+        {
+          optionKey: 'C',
+          optionData: [
+            {
+              blockId: '1',
+              blockType: 'normal-text',
+              text: '小英'
+            }
+          ]
+        },
+        {
+          optionKey: 'D',
+          optionData: [
+            {
+              blockId: '1',
+              blockType: 'normal-text',
+              text: '小娜'
+            }
+          ]
+        }
+      ]
+    },
+    answerKey: 'B',
     solutions: [
       {
         solutionTag: '答案',

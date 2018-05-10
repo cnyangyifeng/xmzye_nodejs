@@ -433,7 +433,7 @@ Page({
             // 标记 quizUser 为 vip
             const quizUser = this.data.quizUser
             quizUser.vip = 1
-            quizUser.totalKeyCount = 9999
+            quizUser.totalKeyCount = 999999
             this.setData({
               quizUser: quizUser
             })

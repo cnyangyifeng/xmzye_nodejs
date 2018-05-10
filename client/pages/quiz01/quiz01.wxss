@@ -57,7 +57,7 @@
 
 .quiz-user-asset-value {
   max-width: 260rpx;
-  margin: 0 20rpx;
+  margin: 0 10rpx;
   color: #fff;
   font-size: 16px;
   font-weight: 600;
@@ -67,7 +67,7 @@
 }
 
 .quiz-user-asset-value.infinite {
-  margin-right: 36rpx;
+  margin-right: 26rpx;
 }
 
 .quiz-controls {

@@ -10,10 +10,10 @@
       <view class="quiz-user-info">
         <block wx:if="{{quizUser.vip===1}}">
           <image class="quiz-user-vip" src="/assets/images/vip.svg"></image>
-          <view class="quiz-user-nick-name">{{quizUser.quizUserInfo.nickName}}探长</view>
+          <view class="quiz-user-nick-name">{{quizUser.quizUserInfo.nickName}}</view>
         </block>
         <block wx:else>
-          <view class="quiz-user-nick-name">{{quizUser.quizUserInfo.nickName}}探长</view>
+          <view class="quiz-user-nick-name">{{quizUser.quizUserInfo.nickName}}</view>
           <view class="quiz-user-asset" hover-class="quiz-user-asset-hover" bindtap="addKeyButtonTap">
             <image class="quiz-user-asset-icon left" src="/assets/images/key.svg"></image>
             <view class="quiz-user-asset-value">{{quizUser.totalKeyCount}}</view>
