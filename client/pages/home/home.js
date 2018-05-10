@@ -5,7 +5,7 @@ const qcloud = require('../../vendor/wafer2-client-sdk/index')
 const QuizGrid = require('../../services/quizGrid')
 const QuizUser = require('../../services/quizUser')
 
-const ONLINE_TIME = 1525104000000 // 2018年5月1日00:00:00
+const ONLINE_TIME = 1525881600000 // 2018年5月10日00:00:00
 
 const HOME_STATE_LOADING = 0
 const HOME_STATE_MAIN = 1
@@ -28,8 +28,8 @@ Page({
      *   muted: 0,
      *   currentQuizTabIndex: 0,
      *   currentQuizTabName: '1-100',
-     *   createTime: '2018-04-23T05:51:53.000Z'
-     *   lastVisitTime: '2018-04-23T05:51:53.000Z'
+     *   createTime: '2018-04-23 05:51:53'
+     *   lastVisitTime: '2018-04-23 05:51:53'
      * }
      */
 

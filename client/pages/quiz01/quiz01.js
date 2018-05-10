@@ -41,8 +41,8 @@ Page({
      *   vip: 0,
      *   totalKeyCount: 10,
      *   muted: 0,
-     *   createTime: '2018-04-23T05:51:53.000Z'
-     *   lastVisitTime: '2018-04-23T05:51:53.000Z'
+     *   createTime: '2018-04-23 05:51:53'
+     *   lastVisitTime: '2018-04-23 05:51:53'
      * }
      */
 
@@ -53,7 +53,7 @@ Page({
      *   {
      *     quizUserId: 'o-MYb5D7zZU-YQx09XDeFp3AAsUg',
      *     formId: '',
-     *     submitTime: '2018-04-23T05:51:53.000Z'
+     *     submitTime: '1525881600000'
      *   }
      * ]
      */
@@ -442,7 +442,7 @@ Page({
     const quizUserForm = {
       quizUserId: this.data.quizUser.quizUserId,
       formId: formId,
-      submitTime: new Date()
+      submitTime: new Date().getTime()
     }
     this.setData({
       quizUserForm: quizUserForm
