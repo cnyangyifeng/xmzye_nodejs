@@ -1,6 +1,5 @@
 const configs = require('../../../config')
 const MongoClient = require('mongodb').MongoClient
-const quizzesData = require('./quizzesData')
 
 /* ================================================================================ */
 

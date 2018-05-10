@@ -2,7 +2,7 @@
 
 /****************************************************************************************************/
 
-.quiz01-progress {
+.quiz-progress {
   position: absolute;
   display: block;
   z-index: 1000;
@@ -11,64 +11,27 @@
   height: 4px;
 }
 
-.quiz01-control {
+.nav-bar {
   position: absolute;
   z-index: 1000;
+  top: 0;
   display: flex;
-  justify-content: center;
+  width: 100vw;
+  background: linear-gradient(rgba(32, 44, 58, 1.0), rgba(32, 44, 58, 0.8));
+}
+
+.quiz-user-hd {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  width: 80rpx;
-  height: 80rpx;
-  box-sizing: border-box;
-  border: 1px solid #666;
-  border-radius: 100%;
-  background-color: #282828;
-}
-
-.quiz01-control-hover {
-  background-color: #666;
-}
-
-.quiz01-control.home {
-  top: 40rpx;
-  right: 20rpx;
-}
-
-.quiz01-control.share {
-  top: 40rpx;
-  right: 124rpx;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-
-.quiz01-control.bgm {
-  top: 40rpx;
-  right: 228rpx;
-}
-
-.quiz01-control.bgm.playing {
-  animation-name: rotate;
-  animation-duration: 2.4s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-fill-mode: both;
-}
-
-.quiz01-control-icon {
-  width: 40rpx;
-  height: 40rpx;
+  padding: 40rpx 20rpx;
 }
 
 .quiz-user-asset {
-  position: absolute;
-  z-index: 1000;
   flex: none;
   display: flex;
   align-items: center;
-  top: 50rpx;
-  left: 20rpx;
   padding: 10rpx 0;
   border-radius: 40rpx;
   border: 1px solid #666;
@@ -107,11 +70,51 @@
   margin-right: 36rpx;
 }
 
+.quiz-controls {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.quiz-control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80rpx;
+  height: 80rpx;
+  margin-left: 20rpx !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  box-sizing: border-box;
+  border: 1px solid #666;
+  border-radius: 100%;
+  background-color: #282828;
+}
+
+.quiz-control-hover {
+  background-color: #666;
+}
+
+.quiz-control.playing {
+  animation-name: rotate;
+  animation-duration: 2.4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+
+.quiz-control-icon {
+  width: 40rpx;
+  height: 40rpx;
+}
+
 /****************************************************************************************************/
 
-/* .quiz01 */
+/* .quiz */
 
-.quiz01 {
+.quiz {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -120,7 +123,6 @@
   height: 100vh;
   margin: 0;
   background-color: #202c3a;
-  line-height: normal;
 }
 
 /*= .question =*/
@@ -129,7 +131,7 @@
   flex: none;
   display: flex;
   flex-direction: column;
-  margin: 180rpx 60rpx 0 60rpx;
+  padding: 180rpx 60rpx 0 60rpx;
 }
 
 .question-text {
@@ -138,7 +140,6 @@
   font-size: 18px;
   font-weight: 600;
   line-height: 36px;
-  /* text-shadow: 10rpx 10rpx 10rpx #000; */
 }
 
 .question-image {
@@ -148,11 +149,148 @@
   background-color: #fff;
   box-sizing: border-box;
   border: 10rpx solid #ccc;
-  /* box-shadow: 20rpx 20rpx 0 #000; */
-  animation-name: zoomIn;
-  animation-duration: 0.8s;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: both;
+}
+
+/*= .options =*/
+
+.options-hd {
+  flex: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 160rpx;
+  color: #999;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  text-indent: 20rpx;
+  letter-spacing: 20rpx;
+}
+
+.options {
+  flex: none;
+  display: flex;
+  flex-wrap: wrap;
+  width: 750rpx;
+}
+
+.options.row {
+  flex-direction: column;
+}
+
+.options.grid {
+  flex-direction: row;
+  justify-content: center;
+}
+
+.option {
+  position: relative;
+  flex: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20rpx 20rpx 20rpx;
+  box-sizing: border-box;
+  border: 10rpx solid #ccc;
+  background-color: #fff;
+}
+
+.option.row {
+  width: 710rpx;
+  margin: 0 20rpx 20rpx 20rpx;
+}
+
+.option.grid {
+  width: 320rpx;
+  margin: 10rpx;
+}
+
+.option.right {
+  border: 10rpx solid #00ba80;
+}
+
+.option.wrong {
+  border: 10rpx solid #e91e63;
+}
+
+.option-key {
+  flex: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 64rpx;
+  height: 64rpx;
+  margin: 0 20rpx;
+  border-radius: 50%;
+  color: #202c3a;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 64rpx;
+}
+
+.option-key.check {
+  background-color: #202c3a;
+  color: #fff;
+}
+
+.option-key.right {
+  background-color: #00ba80;
+  color: #fff;
+}
+
+.option-key.wrong {
+  background-color: #e91e63;
+  color: #fff;
+}
+
+.option-data {
+  flex: 1;
+  width: 600rpx;
+  margin: 40rpx 20rpx;
+  color: #202c3a;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 36px;
+}
+
+.option-data .normal-text {
+  display: inline;
+}
+
+.option-data .space {
+  display: inline;
+  padding: 5rpx;
+}
+
+.option-data .tab {
+  display: inline;
+  padding: 20rpx;
+}
+
+.option-data .return {
+  display: block;
+}
+
+.option-data .image {
+  display: block;
+  text-align: center;
+}
+
+.agree-count {
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.agree-count.right {
+  background: rgba(0, 186, 128, 0.8); /* #00ba80 */
+}
+
+.agree-count.wrong {
+  background: rgba(233, 30, 99, 0.8); /* #e91e63 */
 }
 
 /*= .solutions =*/
@@ -170,16 +308,11 @@
   display: flex;
   flex-direction: column;
   width: 670rpx;
-  margin: 0 40rpx;
+  margin: 0 40rpx 0;
   padding: 40rpx;
   background-color: #fff;
   box-sizing: border-box;
   border: 10rpx solid #ccc;
-  /* box-shadow: 20rpx 20rpx 0 #000; */
-  animation-name: zoomIn;
-  animation-duration: 0.8s;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: both;
 }
 
 .solution {
@@ -196,6 +329,8 @@
   font-size: 16px;
   font-weight: 600;
   text-align: center;
+  text-indent: 20rpx;
+  letter-spacing: 20rpx;
 }
 
 .solution-data {
@@ -236,9 +371,9 @@
   text-align: center;
 }
 
-/*= .quiz01-foot =*/
+/*= .quiz-foot =*/
 
-.quiz01-foot {
+.quiz-foot {
   flex: none;
   display: flex;
   justify-content: center;
@@ -250,19 +385,17 @@
 
 /****************************************************************************************************/
 
-/* .actionbar */
+/* .action-bar */
 
-.actionbar {
+.action-bar {
   position: absolute;
   z-index: 1000;
   bottom: 0;
   display: flex;
   width: 100vw;
   height: 60px;
-  animation-name: fadeInUp;
-  animation-duration: 0.4s;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: both;
+  opacity: 0;
+  transform: translate3d(0, 100%, 0);
 }
 
 .primary-btn {
@@ -291,19 +424,75 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  padding-left: 10rpx !important;
-  padding-right: 10rpx !important;
-  box-sizing: border-box;
-  border-radius: 0;
-  background-color: #fff;
+  padding: 0 10rpx;
+  background-color: #f2f2f2;
   color: #202c3a;
   font-size: 18px;
   font-weight: 600;
-  line-height: normal;
 }
 
 .secondary-btn-hover {
   background-color: #fff;
+}
+
+/****************************************************************************************************/
+
+.feedback-modal {
+  position: absolute;
+  z-index: 1001;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(32, 44, 58, 0.9);
+}
+
+.feedback-panel {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 120rpx;
+  opacity: 0;
+  transform: scale3d(0.3, 0.3, 0.3);
+}
+
+.feedback-title {
+  color: #fff;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.feedback-description {
+  flex: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40rpx;
+  color: #ccc;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.feedback-value {
+  margin: 0 20rpx;
+  color: #ffa000;
+  font-size: 24px;
+}
+
+.feedback-asset-icon {
+  width: 24px;
+  height: 24px;
+  margin: 0 20rpx;
+}
+
+.feedback-close-btn {
+  margin-top: 160rpx;
+  width: 64px;
+  height: 64px;
 }

@@ -7,11 +7,9 @@ async function getQuiz(ctx, next) {
   if (ctx.state.$wxInfo.loginState === 1) {
     const quizId = parseInt(ctx.params.quiz_id)
     const cli = await MongoClient.connect(configs.mongodb.url)
-    const db = cli.db('xmzye')
-    const collection = db.collection('quizzes')
-    const result = await collection.find({ 'quizId': quizId }).toArray()
+    const result = await cli.db('xmzye').collection('quizzes').find({ 'quizId': quizId }).toArray()
     cli.close()
-    let quiz
+    let quiz = null
     if (result && result.length > 0) {
       quiz = result[0]
     }

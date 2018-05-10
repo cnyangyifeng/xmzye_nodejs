@@ -14,9 +14,9 @@ MongoClient.connect(configs.mongodb.url, (err, cli) => {
 /* ================================================================================ */
 
 const clearQuizzes = (db, callback) => {
-  const collection = db.collection('quizzes')
+  const collection = db.collection('quizUserForms')
   collection.deleteMany({}, (err, res) => {
-    console.debug('quizzes is clear')
+    console.debug('quizUserForms is clear')
     callback(res)
   })
 }

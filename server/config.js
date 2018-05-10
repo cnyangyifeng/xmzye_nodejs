@@ -29,7 +29,7 @@ const configs = {
     char: 'utf8mb4'
   },
   mongodb: {
-    url: 'mongodb://mongouser:2018%5Exmzy@10.66.106.98:27017/admin'
+    url: 'mongodb://mongouser:2018%5Exmzy@10.66.246.29:27017/admin'
   },
   redis: {
     host: '10.66.161.154', // qcloud intranet ip

@@ -2,7 +2,7 @@ const QuizzesData = [
   {
     quizId: 1,
     title: '谁最有可能遇到危险？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -13,6 +13,56 @@ const QuizzesData = [
         height: 420
       }
     },
+    options: {
+      layout: 'grid',
+      optionsData: [
+        {
+          optionKey: 'A',
+          agreeCount: 1000,
+          optionData: [
+            {
+              blockId: '1',
+              blockType: 'normal-text',
+              text: '1 号'
+            }
+          ]
+        },
+        {
+          optionKey: 'B',
+          agreeCount: 1000,
+          optionData: [
+            {
+              blockId: '1',
+              blockType: 'normal-text',
+              text: '2 号'
+            }
+          ]
+        },
+        {
+          optionKey: 'C',
+          agreeCount: 1000,
+          optionData: [
+            {
+              blockId: '1',
+              blockType: 'normal-text',
+              text: '3 号'
+            }
+          ]
+        },
+        {
+          optionKey: 'D',
+          agreeCount: 1000,
+          optionData: [
+            {
+              blockId: '1',
+              blockType: 'normal-text',
+              text: '4 号'
+            }
+          ]
+        }
+      ]
+    },
+    answerKey: 'B',
     solutions: [
       {
         solutionTag: '答案',
@@ -26,13 +76,13 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
             blockId: '1',
             blockType: 'normal-text',
-            text: '2 号的危险没有被其他人的目光观察到'
+            text: '只有 2 号的危险没有被其他人的目光观察到'
           }
         ]
       }
@@ -41,7 +91,7 @@ const QuizzesData = [
   {
     quizId: 2,
     title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -52,6 +102,34 @@ const QuizzesData = [
         height: 540
       }
     },
+    options: {
+      layout: 'row',
+      optionsData: [
+        {
+          optionKey: 'A',
+          agreeCount: 1000,
+          optionData: [
+            {
+              blockId: '1',
+              blockType: 'normal-text',
+              text: '左侧'
+            }
+          ]
+        },
+        {
+          optionKey: 'B',
+          agreeCount: 1000,
+          optionData: [
+            {
+              blockId: '1',
+              blockType: 'normal-text',
+              text: '右侧'
+            }
+          ]
+        }
+      ]
+    },
+    answerKey: 'B',
     solutions: [
       {
         solutionTag: '答案',
@@ -65,7 +143,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -80,7 +158,7 @@ const QuizzesData = [
   {
     quizId: 3,
     title: '今晚几楼的女士出轨了？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -91,6 +169,45 @@ const QuizzesData = [
         height: 900
       }
     },
+    options: {
+      layout: 'row',
+      optionsData: [
+        {
+          optionKey: 'A',
+          agreeCount: 1000,
+          optionData: [
+            {
+              blockId: '1',
+              blockType: 'normal-text',
+              text: '一楼'
+            }
+          ]
+        },
+        {
+          optionKey: 'B',
+          agreeCount: 1000,
+          optionData: [
+            {
+              blockId: '1',
+              blockType: 'normal-text',
+              text: '二楼'
+            }
+          ]
+        },
+        {
+          optionKey: 'C',
+          agreeCount: 1000,
+          optionData: [
+            {
+              blockId: '1',
+              blockType: 'normal-text',
+              text: '三楼'
+            }
+          ]
+        }
+      ]
+    },
+    answerKey: 'C',
     solutions: [
       {
         solutionTag: '答案',
@@ -104,7 +221,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -119,7 +236,7 @@ const QuizzesData = [
   {
     quizId: 4,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -143,7 +260,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -170,7 +287,7 @@ const QuizzesData = [
   {
     quizId: 5,
     title: '谁更有可能是凶手？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -180,6 +297,55 @@ const QuizzesData = [
         url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/quizzes/sno6yltt.jpg',
         height: 450
       }
+    },
+    options: {
+      layout: 'grid',
+      optionsData: [
+        {
+          optionKey: 'A',
+          agreeCount: 1000,
+          optionData: [
+            {
+              blockId: '1',
+              blockType: 'normal-text',
+              text: '1 号'
+            }
+          ]
+        },
+        {
+          optionKey: 'B',
+          agreeCount: 1000,
+          optionData: [
+            {
+              blockId: '1',
+              blockType: 'normal-text',
+              text: '2 号'
+            }
+          ]
+        },
+        {
+          optionKey: 'C',
+          agreeCount: 1000,
+          optionData: [
+            {
+              blockId: '1',
+              blockType: 'normal-text',
+              text: '3 号'
+            }
+          ]
+        },
+        {
+          optionKey: 'D',
+          agreeCount: 1000,
+          optionData: [
+            {
+              blockId: '1',
+              blockType: 'normal-text',
+              text: '4 号'
+            }
+          ]
+        }
+      ]
     },
     solutions: [
       {
@@ -194,7 +360,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -209,7 +375,7 @@ const QuizzesData = [
   {
     quizId: 6,
     title: '谁是走私集团幕后老板？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
     question: {
@@ -219,6 +385,45 @@ const QuizzesData = [
         url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/quizzes/rftzhfxr.jpg',
         height: 315
       }
+    },
+    options: {
+      layout: 'grid',
+      optionsData:
+      [
+        {
+          optionKey: 'A',
+          agreeCount: 1000,
+          optionData: [
+            {
+              blockId: '1',
+              blockType: 'normal-text',
+              text: 'Bill'
+            }
+          ]
+        },
+        {
+          optionKey: 'B',
+          agreeCount: 1000,
+          optionData: [
+            {
+              blockId: '1',
+              blockType: 'normal-text',
+              text: 'John'
+            }
+          ]
+        },
+        {
+          optionKey: 'C',
+          agreeCount: 1000,
+          optionData: [
+            {
+              blockId: '1',
+              blockType: 'normal-text',
+              text: 'Todd'
+            }
+          ]
+        }
+      ]
     },
     solutions: [
       {
@@ -233,7 +438,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -260,7 +465,7 @@ const QuizzesData = [
   {
     quizId: 7,
     title: '犯罪嫌疑人到达现场的先后顺序是什么？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -302,7 +507,7 @@ const QuizzesData = [
   {
     quizId: 8,
     title: '哪一发子弹最先击中墙体？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -312,6 +517,42 @@ const QuizzesData = [
         url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/quizzes/4p712s5w.jpg',
         height: 630
       }
+    },
+    options: {
+      layout: 'grid',
+      optionsData:
+      [
+        {
+          optionKey: 'A',
+          optionData: [
+            {
+              blockId: '1',
+              blockType: 'normal-text',
+              text: '1 号'
+            }
+          ]
+        },
+        {
+          optionKey: 'B',
+          optionData: [
+            {
+              blockId: '1',
+              blockType: 'normal-text',
+              text: '2 号'
+            }
+          ]
+        },
+        {
+          optionKey: 'C',
+          optionData: [
+            {
+              blockId: '1',
+              blockType: 'normal-text',
+              text: '3 号'
+            }
+          ]
+        }
+      ]
     },
     solutions: [
       {
@@ -341,7 +582,7 @@ const QuizzesData = [
   {
     quizId: 9,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -351,6 +592,32 @@ const QuizzesData = [
         url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/quizzes/b8p0a3be.jpg',
         height: 630
       }
+    },
+    options: {
+      layout: 'grid',
+      optionsData:
+      [
+        {
+          optionKey: 'A',
+          optionData: [
+            {
+              blockId: '1',
+              blockType: 'normal-text',
+              text: '自杀'
+            }
+          ]
+        },
+        {
+          optionKey: 'B',
+          optionData: [
+            {
+              blockId: '1',
+              blockType: 'normal-text',
+              text: '谋杀'
+            }
+          ]
+        }
+      ]
     },
     solutions: [
       {
@@ -380,7 +647,7 @@ const QuizzesData = [
   {
     quizId: 10,
     title: '汽车停在几号车位？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -390,6 +657,32 @@ const QuizzesData = [
         url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/quizzes/ymkidwpn.jpg',
         height: 378
       }
+    },
+    options: {
+      layout: 'grid',
+      optionsData:
+      [
+        {
+          optionKey: 'A',
+          optionData: [
+            {
+              blockId: '1',
+              blockType: 'normal-text',
+              text: '86 号'
+            }
+          ]
+        },
+        {
+          optionKey: 'B',
+          optionData: [
+            {
+              blockId: '1',
+              blockType: 'normal-text',
+              text: '87 号'
+            }
+          ]
+        }
+      ]
     },
     solutions: [
       {
@@ -431,7 +724,7 @@ const QuizzesData = [
   {
     quizId: 11,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -455,7 +748,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -497,7 +790,7 @@ const QuizzesData = [
   {
     quizId: 12,
     title: '谁先成功潜入的？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -521,7 +814,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -536,7 +829,7 @@ const QuizzesData = [
   {
     quizId: 13,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -560,7 +853,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -575,7 +868,7 @@ const QuizzesData = [
   {
     quizId: 14,
     title: '谁最有可能遇到危险？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -599,7 +892,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -614,7 +907,7 @@ const QuizzesData = [
   {
     quizId: 15,
     title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -638,7 +931,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -653,7 +946,7 @@ const QuizzesData = [
   {
     quizId: 16,
     title: '今晚几楼的女士出轨了？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -677,7 +970,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -692,7 +985,7 @@ const QuizzesData = [
   {
     quizId: 17,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -716,7 +1009,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -743,7 +1036,7 @@ const QuizzesData = [
   {
     quizId: 18,
     title: '谁更有可能是凶手？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -767,7 +1060,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -782,7 +1075,7 @@ const QuizzesData = [
   {
     quizId: 19,
     title: '谁是走私集团幕后老板？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
     question: {
@@ -806,7 +1099,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -833,7 +1126,7 @@ const QuizzesData = [
   {
     quizId: 20,
     title: '犯罪嫌疑人到达现场的先后顺序是什么？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -875,7 +1168,7 @@ const QuizzesData = [
   {
     quizId: 21,
     title: '哪一发子弹最先击中墙体？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -914,7 +1207,7 @@ const QuizzesData = [
   {
     quizId: 22,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -953,7 +1246,7 @@ const QuizzesData = [
   {
     quizId: 23,
     title: '汽车停在几号车位？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -1004,7 +1297,7 @@ const QuizzesData = [
   {
     quizId: 24,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -1028,7 +1321,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -1070,7 +1363,7 @@ const QuizzesData = [
   {
     quizId: 25,
     title: '谁先成功潜入的？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -1094,7 +1387,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -1109,7 +1402,7 @@ const QuizzesData = [
   {
     quizId: 26,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -1133,7 +1426,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -1148,7 +1441,7 @@ const QuizzesData = [
   {
     quizId: 27,
     title: '谁最有可能遇到危险？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -1172,7 +1465,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -1187,7 +1480,7 @@ const QuizzesData = [
   {
     quizId: 28,
     title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -1211,7 +1504,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -1226,7 +1519,7 @@ const QuizzesData = [
   {
     quizId: 29,
     title: '今晚几楼的女士出轨了？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -1250,7 +1543,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -1265,7 +1558,7 @@ const QuizzesData = [
   {
     quizId: 30,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -1289,7 +1582,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -1316,7 +1609,7 @@ const QuizzesData = [
   {
     quizId: 31,
     title: '谁更有可能是凶手？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -1340,7 +1633,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -1355,7 +1648,7 @@ const QuizzesData = [
   {
     quizId: 32,
     title: '谁是走私集团幕后老板？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
     question: {
@@ -1379,7 +1672,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -1406,7 +1699,7 @@ const QuizzesData = [
   {
     quizId: 33,
     title: '犯罪嫌疑人到达现场的先后顺序是什么？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -1448,7 +1741,7 @@ const QuizzesData = [
   {
     quizId: 34,
     title: '哪一发子弹最先击中墙体？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -1487,7 +1780,7 @@ const QuizzesData = [
   {
     quizId: 35,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -1526,7 +1819,7 @@ const QuizzesData = [
   {
     quizId: 36,
     title: '汽车停在几号车位？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -1577,7 +1870,7 @@ const QuizzesData = [
   {
     quizId: 37,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -1601,7 +1894,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -1643,7 +1936,7 @@ const QuizzesData = [
   {
     quizId: 38,
     title: '谁先成功潜入的？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -1667,7 +1960,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -1682,7 +1975,7 @@ const QuizzesData = [
   {
     quizId: 39,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -1706,7 +1999,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -1721,7 +2014,7 @@ const QuizzesData = [
   {
     quizId: 40,
     title: '谁最有可能遇到危险？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -1745,7 +2038,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -1760,7 +2053,7 @@ const QuizzesData = [
   {
     quizId: 41,
     title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -1784,7 +2077,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -1799,7 +2092,7 @@ const QuizzesData = [
   {
     quizId: 42,
     title: '今晚几楼的女士出轨了？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -1823,7 +2116,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -1838,7 +2131,7 @@ const QuizzesData = [
   {
     quizId: 43,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -1862,7 +2155,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -1889,7 +2182,7 @@ const QuizzesData = [
   {
     quizId: 44,
     title: '谁更有可能是凶手？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -1913,7 +2206,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -1928,7 +2221,7 @@ const QuizzesData = [
   {
     quizId: 45,
     title: '谁是走私集团幕后老板？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
     question: {
@@ -1952,7 +2245,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -1979,7 +2272,7 @@ const QuizzesData = [
   {
     quizId: 46,
     title: '犯罪嫌疑人到达现场的先后顺序是什么？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -2021,7 +2314,7 @@ const QuizzesData = [
   {
     quizId: 47,
     title: '哪一发子弹最先击中墙体？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -2060,7 +2353,7 @@ const QuizzesData = [
   {
     quizId: 48,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -2099,7 +2392,7 @@ const QuizzesData = [
   {
     quizId: 49,
     title: '汽车停在几号车位？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -2150,7 +2443,7 @@ const QuizzesData = [
   {
     quizId: 50,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -2174,7 +2467,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -2216,7 +2509,7 @@ const QuizzesData = [
   {
     quizId: 51,
     title: '谁先成功潜入的？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -2240,7 +2533,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -2255,7 +2548,7 @@ const QuizzesData = [
   {
     quizId: 52,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -2279,7 +2572,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -2294,7 +2587,7 @@ const QuizzesData = [
   {
     quizId: 53,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -2318,7 +2611,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -2333,7 +2626,7 @@ const QuizzesData = [
   {
     quizId: 54,
     title: '谁最有可能遇到危险？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -2357,7 +2650,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -2372,7 +2665,7 @@ const QuizzesData = [
   {
     quizId: 55,
     title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -2396,7 +2689,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -2411,7 +2704,7 @@ const QuizzesData = [
   {
     quizId: 56,
     title: '今晚几楼的女士出轨了？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -2435,7 +2728,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -2450,7 +2743,7 @@ const QuizzesData = [
   {
     quizId: 57,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -2474,7 +2767,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -2501,7 +2794,7 @@ const QuizzesData = [
   {
     quizId: 58,
     title: '谁更有可能是凶手？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -2525,7 +2818,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -2540,7 +2833,7 @@ const QuizzesData = [
   {
     quizId: 59,
     title: '谁是走私集团幕后老板？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
     question: {
@@ -2564,7 +2857,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -2591,7 +2884,7 @@ const QuizzesData = [
   {
     quizId: 60,
     title: '犯罪嫌疑人到达现场的先后顺序是什么？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -2633,7 +2926,7 @@ const QuizzesData = [
   {
     quizId: 61,
     title: '哪一发子弹最先击中墙体？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -2672,7 +2965,7 @@ const QuizzesData = [
   {
     quizId: 62,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -2711,7 +3004,7 @@ const QuizzesData = [
   {
     quizId: 63,
     title: '汽车停在几号车位？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -2762,7 +3055,7 @@ const QuizzesData = [
   {
     quizId: 64,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -2786,7 +3079,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -2828,7 +3121,7 @@ const QuizzesData = [
   {
     quizId: 65,
     title: '谁先成功潜入的？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -2852,7 +3145,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -2867,7 +3160,7 @@ const QuizzesData = [
   {
     quizId: 66,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -2891,7 +3184,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -2906,7 +3199,7 @@ const QuizzesData = [
   {
     quizId: 67,
     title: '谁最有可能遇到危险？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -2930,7 +3223,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -2945,7 +3238,7 @@ const QuizzesData = [
   {
     quizId: 68,
     title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -2969,7 +3262,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -2984,7 +3277,7 @@ const QuizzesData = [
   {
     quizId: 69,
     title: '今晚几楼的女士出轨了？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -3008,7 +3301,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -3023,7 +3316,7 @@ const QuizzesData = [
   {
     quizId: 70,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -3047,7 +3340,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -3074,7 +3367,7 @@ const QuizzesData = [
   {
     quizId: 71,
     title: '谁更有可能是凶手？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -3098,7 +3391,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -3113,7 +3406,7 @@ const QuizzesData = [
   {
     quizId: 72,
     title: '谁是走私集团幕后老板？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
     question: {
@@ -3137,7 +3430,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -3164,7 +3457,7 @@ const QuizzesData = [
   {
     quizId: 73,
     title: '犯罪嫌疑人到达现场的先后顺序是什么？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -3206,7 +3499,7 @@ const QuizzesData = [
   {
     quizId: 74,
     title: '哪一发子弹最先击中墙体？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -3245,7 +3538,7 @@ const QuizzesData = [
   {
     quizId: 75,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -3284,7 +3577,7 @@ const QuizzesData = [
   {
     quizId: 76,
     title: '汽车停在几号车位？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -3335,7 +3628,7 @@ const QuizzesData = [
   {
     quizId: 77,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -3359,7 +3652,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -3401,7 +3694,7 @@ const QuizzesData = [
   {
     quizId: 78,
     title: '谁先成功潜入的？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -3425,7 +3718,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -3440,7 +3733,7 @@ const QuizzesData = [
   {
     quizId: 79,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -3464,7 +3757,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -3479,7 +3772,7 @@ const QuizzesData = [
   {
     quizId: 80,
     title: '谁最有可能遇到危险？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -3503,7 +3796,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -3518,7 +3811,7 @@ const QuizzesData = [
   {
     quizId: 81,
     title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -3542,7 +3835,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -3557,7 +3850,7 @@ const QuizzesData = [
   {
     quizId: 82,
     title: '今晚几楼的女士出轨了？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -3581,7 +3874,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -3596,7 +3889,7 @@ const QuizzesData = [
   {
     quizId: 83,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -3620,7 +3913,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -3647,7 +3940,7 @@ const QuizzesData = [
   {
     quizId: 84,
     title: '谁更有可能是凶手？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -3671,7 +3964,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -3686,7 +3979,7 @@ const QuizzesData = [
   {
     quizId: 85,
     title: '谁是走私集团幕后老板？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
     question: {
@@ -3710,7 +4003,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -3737,7 +4030,7 @@ const QuizzesData = [
   {
     quizId: 86,
     title: '犯罪嫌疑人到达现场的先后顺序是什么？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -3779,7 +4072,7 @@ const QuizzesData = [
   {
     quizId: 87,
     title: '哪一发子弹最先击中墙体？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -3818,7 +4111,7 @@ const QuizzesData = [
   {
     quizId: 88,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -3857,7 +4150,7 @@ const QuizzesData = [
   {
     quizId: 89,
     title: '汽车停在几号车位？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -3908,7 +4201,7 @@ const QuizzesData = [
   {
     quizId: 90,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -3932,7 +4225,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -3974,7 +4267,7 @@ const QuizzesData = [
   {
     quizId: 91,
     title: '谁先成功潜入的？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -3998,7 +4291,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -4013,7 +4306,7 @@ const QuizzesData = [
   {
     quizId: 92,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -4037,7 +4330,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -4052,7 +4345,7 @@ const QuizzesData = [
   {
     quizId: 93,
     title: '谁最有可能遇到危险？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -4076,7 +4369,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -4091,7 +4384,7 @@ const QuizzesData = [
   {
     quizId: 94,
     title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -4115,7 +4408,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -4130,7 +4423,7 @@ const QuizzesData = [
   {
     quizId: 95,
     title: '今晚几楼的女士出轨了？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -4154,7 +4447,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -4169,7 +4462,7 @@ const QuizzesData = [
   {
     quizId: 96,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -4193,7 +4486,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -4220,7 +4513,7 @@ const QuizzesData = [
   {
     quizId: 97,
     title: '谁更有可能是凶手？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -4244,7 +4537,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -4259,7 +4552,7 @@ const QuizzesData = [
   {
     quizId: 98,
     title: '谁是走私集团幕后老板？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
     question: {
@@ -4283,7 +4576,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -4310,7 +4603,7 @@ const QuizzesData = [
   {
     quizId: 99,
     title: '犯罪嫌疑人到达现场的先后顺序是什么？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -4352,7 +4645,7 @@ const QuizzesData = [
   {
     quizId: 100,
     title: '哪一发子弹最先击中墙体？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -4391,7 +4684,7 @@ const QuizzesData = [
   {
     quizId: 101,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -4430,7 +4723,7 @@ const QuizzesData = [
   {
     quizId: 102,
     title: '汽车停在几号车位？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -4481,7 +4774,7 @@ const QuizzesData = [
   {
     quizId: 103,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -4505,7 +4798,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -4547,7 +4840,7 @@ const QuizzesData = [
   {
     quizId: 104,
     title: '谁先成功潜入的？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -4571,7 +4864,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -4586,7 +4879,7 @@ const QuizzesData = [
   {
     quizId: 105,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -4610,7 +4903,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -4625,7 +4918,7 @@ const QuizzesData = [
   {
     quizId: 106,
     title: '谁最有可能遇到危险？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -4649,7 +4942,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -4664,7 +4957,7 @@ const QuizzesData = [
   {
     quizId: 107,
     title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -4688,7 +4981,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -4703,7 +4996,7 @@ const QuizzesData = [
   {
     quizId: 108,
     title: '今晚几楼的女士出轨了？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -4727,7 +5020,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -4742,7 +5035,7 @@ const QuizzesData = [
   {
     quizId: 109,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -4766,7 +5059,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -4793,7 +5086,7 @@ const QuizzesData = [
   {
     quizId: 110,
     title: '谁更有可能是凶手？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -4817,7 +5110,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -4832,7 +5125,7 @@ const QuizzesData = [
   {
     quizId: 111,
     title: '谁是走私集团幕后老板？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
     question: {
@@ -4856,7 +5149,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -4883,7 +5176,7 @@ const QuizzesData = [
   {
     quizId: 112,
     title: '犯罪嫌疑人到达现场的先后顺序是什么？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -4925,7 +5218,7 @@ const QuizzesData = [
   {
     quizId: 113,
     title: '哪一发子弹最先击中墙体？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -4964,7 +5257,7 @@ const QuizzesData = [
   {
     quizId: 114,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -5003,7 +5296,7 @@ const QuizzesData = [
   {
     quizId: 115,
     title: '汽车停在几号车位？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -5054,7 +5347,7 @@ const QuizzesData = [
   {
     quizId: 116,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -5078,7 +5371,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -5120,7 +5413,7 @@ const QuizzesData = [
   {
     quizId: 117,
     title: '谁先成功潜入的？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -5144,7 +5437,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -5159,7 +5452,7 @@ const QuizzesData = [
   {
     quizId: 118,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -5183,7 +5476,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -5198,7 +5491,7 @@ const QuizzesData = [
   {
     quizId: 119,
     title: '谁最有可能遇到危险？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -5222,7 +5515,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -5237,7 +5530,7 @@ const QuizzesData = [
   {
     quizId: 120,
     title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -5261,7 +5554,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -5276,7 +5569,7 @@ const QuizzesData = [
   {
     quizId: 121,
     title: '今晚几楼的女士出轨了？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -5300,7 +5593,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -5315,7 +5608,7 @@ const QuizzesData = [
   {
     quizId: 122,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -5339,7 +5632,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -5366,7 +5659,7 @@ const QuizzesData = [
   {
     quizId: 123,
     title: '谁更有可能是凶手？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -5390,7 +5683,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -5405,7 +5698,7 @@ const QuizzesData = [
   {
     quizId: 124,
     title: '谁是走私集团幕后老板？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
     question: {
@@ -5429,7 +5722,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -5456,7 +5749,7 @@ const QuizzesData = [
   {
     quizId: 125,
     title: '犯罪嫌疑人到达现场的先后顺序是什么？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -5498,7 +5791,7 @@ const QuizzesData = [
   {
     quizId: 126,
     title: '哪一发子弹最先击中墙体？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -5537,7 +5830,7 @@ const QuizzesData = [
   {
     quizId: 127,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -5576,7 +5869,7 @@ const QuizzesData = [
   {
     quizId: 128,
     title: '汽车停在几号车位？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -5627,7 +5920,7 @@ const QuizzesData = [
   {
     quizId: 129,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -5651,7 +5944,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -5693,7 +5986,7 @@ const QuizzesData = [
   {
     quizId: 130,
     title: '谁先成功潜入的？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -5717,7 +6010,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -5732,7 +6025,7 @@ const QuizzesData = [
   {
     quizId: 131,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -5756,7 +6049,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -5771,7 +6064,7 @@ const QuizzesData = [
   {
     quizId: 132,
     title: '谁最有可能遇到危险？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -5795,7 +6088,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -5810,7 +6103,7 @@ const QuizzesData = [
   {
     quizId: 133,
     title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -5834,7 +6127,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -5849,7 +6142,7 @@ const QuizzesData = [
   {
     quizId: 134,
     title: '今晚几楼的女士出轨了？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -5873,7 +6166,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -5888,7 +6181,7 @@ const QuizzesData = [
   {
     quizId: 135,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -5912,7 +6205,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -5939,7 +6232,7 @@ const QuizzesData = [
   {
     quizId: 136,
     title: '谁更有可能是凶手？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -5963,7 +6256,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -5978,7 +6271,7 @@ const QuizzesData = [
   {
     quizId: 137,
     title: '谁是走私集团幕后老板？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
     question: {
@@ -6002,7 +6295,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -6029,7 +6322,7 @@ const QuizzesData = [
   {
     quizId: 138,
     title: '犯罪嫌疑人到达现场的先后顺序是什么？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -6071,7 +6364,7 @@ const QuizzesData = [
   {
     quizId: 139,
     title: '哪一发子弹最先击中墙体？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -6110,7 +6403,7 @@ const QuizzesData = [
   {
     quizId: 140,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -6149,7 +6442,7 @@ const QuizzesData = [
   {
     quizId: 141,
     title: '汽车停在几号车位？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -6200,7 +6493,7 @@ const QuizzesData = [
   {
     quizId: 142,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -6224,7 +6517,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -6266,7 +6559,7 @@ const QuizzesData = [
   {
     quizId: 143,
     title: '谁先成功潜入的？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -6290,7 +6583,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -6305,7 +6598,7 @@ const QuizzesData = [
   {
     quizId: 144,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -6329,7 +6622,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -6344,7 +6637,7 @@ const QuizzesData = [
   {
     quizId: 145,
     title: '谁最有可能遇到危险？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -6368,7 +6661,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -6383,7 +6676,7 @@ const QuizzesData = [
   {
     quizId: 146,
     title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -6407,7 +6700,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -6422,7 +6715,7 @@ const QuizzesData = [
   {
     quizId: 147,
     title: '今晚几楼的女士出轨了？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -6446,7 +6739,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -6461,7 +6754,7 @@ const QuizzesData = [
   {
     quizId: 148,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -6485,7 +6778,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -6512,7 +6805,7 @@ const QuizzesData = [
   {
     quizId: 149,
     title: '谁更有可能是凶手？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -6536,7 +6829,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -6551,7 +6844,7 @@ const QuizzesData = [
   {
     quizId: 150,
     title: '谁是走私集团幕后老板？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
     question: {
@@ -6575,7 +6868,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -6602,7 +6895,7 @@ const QuizzesData = [
   {
     quizId: 151,
     title: '犯罪嫌疑人到达现场的先后顺序是什么？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -6644,7 +6937,7 @@ const QuizzesData = [
   {
     quizId: 152,
     title: '哪一发子弹最先击中墙体？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -6683,7 +6976,7 @@ const QuizzesData = [
   {
     quizId: 153,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -6722,7 +7015,7 @@ const QuizzesData = [
   {
     quizId: 154,
     title: '汽车停在几号车位？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -6773,7 +7066,7 @@ const QuizzesData = [
   {
     quizId: 155,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -6797,7 +7090,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -6839,7 +7132,7 @@ const QuizzesData = [
   {
     quizId: 156,
     title: '谁先成功潜入的？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -6863,7 +7156,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -6878,7 +7171,7 @@ const QuizzesData = [
   {
     quizId: 157,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -6902,7 +7195,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -6917,7 +7210,7 @@ const QuizzesData = [
   {
     quizId: 158,
     title: '谁最有可能遇到危险？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -6941,7 +7234,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -6956,7 +7249,7 @@ const QuizzesData = [
   {
     quizId: 159,
     title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -6980,7 +7273,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -6995,7 +7288,7 @@ const QuizzesData = [
   {
     quizId: 160,
     title: '今晚几楼的女士出轨了？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -7019,7 +7312,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -7034,7 +7327,7 @@ const QuizzesData = [
   {
     quizId: 161,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -7058,7 +7351,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -7085,7 +7378,7 @@ const QuizzesData = [
   {
     quizId: 162,
     title: '谁更有可能是凶手？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -7109,7 +7402,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -7124,7 +7417,7 @@ const QuizzesData = [
   {
     quizId: 163,
     title: '谁是走私集团幕后老板？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
     question: {
@@ -7148,7 +7441,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -7175,7 +7468,7 @@ const QuizzesData = [
   {
     quizId: 164,
     title: '犯罪嫌疑人到达现场的先后顺序是什么？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -7217,7 +7510,7 @@ const QuizzesData = [
   {
     quizId: 165,
     title: '哪一发子弹最先击中墙体？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -7256,7 +7549,7 @@ const QuizzesData = [
   {
     quizId: 166,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -7295,7 +7588,7 @@ const QuizzesData = [
   {
     quizId: 167,
     title: '汽车停在几号车位？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -7346,7 +7639,7 @@ const QuizzesData = [
   {
     quizId: 168,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -7370,7 +7663,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -7412,7 +7705,7 @@ const QuizzesData = [
   {
     quizId: 169,
     title: '谁先成功潜入的？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -7436,7 +7729,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -7451,7 +7744,7 @@ const QuizzesData = [
   {
     quizId: 170,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -7475,7 +7768,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -7490,7 +7783,7 @@ const QuizzesData = [
   {
     quizId: 171,
     title: '谁最有可能遇到危险？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -7514,7 +7807,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -7529,7 +7822,7 @@ const QuizzesData = [
   {
     quizId: 172,
     title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -7553,7 +7846,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -7568,7 +7861,7 @@ const QuizzesData = [
   {
     quizId: 173,
     title: '今晚几楼的女士出轨了？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -7592,7 +7885,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -7607,7 +7900,7 @@ const QuizzesData = [
   {
     quizId: 174,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -7631,7 +7924,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -7658,7 +7951,7 @@ const QuizzesData = [
   {
     quizId: 175,
     title: '谁更有可能是凶手？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -7682,7 +7975,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -7697,7 +7990,7 @@ const QuizzesData = [
   {
     quizId: 176,
     title: '谁是走私集团幕后老板？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
     question: {
@@ -7721,7 +8014,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -7748,7 +8041,7 @@ const QuizzesData = [
   {
     quizId: 177,
     title: '犯罪嫌疑人到达现场的先后顺序是什么？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -7790,7 +8083,7 @@ const QuizzesData = [
   {
     quizId: 178,
     title: '哪一发子弹最先击中墙体？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -7829,7 +8122,7 @@ const QuizzesData = [
   {
     quizId: 179,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -7868,7 +8161,7 @@ const QuizzesData = [
   {
     quizId: 180,
     title: '汽车停在几号车位？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -7919,7 +8212,7 @@ const QuizzesData = [
   {
     quizId: 181,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -7943,7 +8236,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -7985,7 +8278,7 @@ const QuizzesData = [
   {
     quizId: 182,
     title: '谁先成功潜入的？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -8009,7 +8302,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -8024,7 +8317,7 @@ const QuizzesData = [
   {
     quizId: 183,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -8048,7 +8341,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -8063,7 +8356,7 @@ const QuizzesData = [
   {
     quizId: 184,
     title: '谁最有可能遇到危险？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -8087,7 +8380,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -8102,7 +8395,7 @@ const QuizzesData = [
   {
     quizId: 185,
     title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -8126,7 +8419,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -8141,7 +8434,7 @@ const QuizzesData = [
   {
     quizId: 186,
     title: '今晚几楼的女士出轨了？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -8165,7 +8458,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -8180,7 +8473,7 @@ const QuizzesData = [
   {
     quizId: 187,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -8204,7 +8497,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -8231,7 +8524,7 @@ const QuizzesData = [
   {
     quizId: 188,
     title: '谁更有可能是凶手？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -8255,7 +8548,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -8270,7 +8563,7 @@ const QuizzesData = [
   {
     quizId: 189,
     title: '谁是走私集团幕后老板？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
     question: {
@@ -8294,7 +8587,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -8321,7 +8614,7 @@ const QuizzesData = [
   {
     quizId: 190,
     title: '犯罪嫌疑人到达现场的先后顺序是什么？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -8363,7 +8656,7 @@ const QuizzesData = [
   {
     quizId: 191,
     title: '哪一发子弹最先击中墙体？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -8402,7 +8695,7 @@ const QuizzesData = [
   {
     quizId: 192,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -8441,7 +8734,7 @@ const QuizzesData = [
   {
     quizId: 193,
     title: '汽车停在几号车位？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -8492,7 +8785,7 @@ const QuizzesData = [
   {
     quizId: 194,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -8516,7 +8809,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -8558,7 +8851,7 @@ const QuizzesData = [
   {
     quizId: 195,
     title: '谁先成功潜入的？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -8582,7 +8875,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -8597,7 +8890,7 @@ const QuizzesData = [
   {
     quizId: 196,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -8621,7 +8914,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -8636,7 +8929,7 @@ const QuizzesData = [
   {
     quizId: 197,
     title: '谁最有可能遇到危险？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -8660,7 +8953,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -8675,7 +8968,7 @@ const QuizzesData = [
   {
     quizId: 198,
     title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -8699,7 +8992,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -8714,7 +9007,7 @@ const QuizzesData = [
   {
     quizId: 199,
     title: '今晚几楼的女士出轨了？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -8738,7 +9031,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -8753,7 +9046,7 @@ const QuizzesData = [
   {
     quizId: 200,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -8777,7 +9070,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -8804,7 +9097,7 @@ const QuizzesData = [
   {
     quizId: 201,
     title: '谁更有可能是凶手？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -8828,7 +9121,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -8843,7 +9136,7 @@ const QuizzesData = [
   {
     quizId: 202,
     title: '谁是走私集团幕后老板？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
     question: {
@@ -8867,7 +9160,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -8894,7 +9187,7 @@ const QuizzesData = [
   {
     quizId: 203,
     title: '犯罪嫌疑人到达现场的先后顺序是什么？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -8936,7 +9229,7 @@ const QuizzesData = [
   {
     quizId: 204,
     title: '哪一发子弹最先击中墙体？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -8975,7 +9268,7 @@ const QuizzesData = [
   {
     quizId: 205,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -9014,7 +9307,7 @@ const QuizzesData = [
   {
     quizId: 206,
     title: '汽车停在几号车位？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -9065,7 +9358,7 @@ const QuizzesData = [
   {
     quizId: 207,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -9089,7 +9382,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -9131,7 +9424,7 @@ const QuizzesData = [
   {
     quizId: 208,
     title: '谁先成功潜入的？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -9155,7 +9448,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -9170,7 +9463,7 @@ const QuizzesData = [
   {
     quizId: 209,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -9194,7 +9487,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -9209,7 +9502,7 @@ const QuizzesData = [
   {
     quizId: 210,
     title: '谁最有可能遇到危险？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -9233,7 +9526,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -9248,7 +9541,7 @@ const QuizzesData = [
   {
     quizId: 211,
     title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -9272,7 +9565,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -9287,7 +9580,7 @@ const QuizzesData = [
   {
     quizId: 212,
     title: '今晚几楼的女士出轨了？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -9311,7 +9604,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -9326,7 +9619,7 @@ const QuizzesData = [
   {
     quizId: 213,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -9350,7 +9643,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -9377,7 +9670,7 @@ const QuizzesData = [
   {
     quizId: 214,
     title: '谁更有可能是凶手？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -9401,7 +9694,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -9416,7 +9709,7 @@ const QuizzesData = [
   {
     quizId: 215,
     title: '谁是走私集团幕后老板？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
     question: {
@@ -9440,7 +9733,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -9467,7 +9760,7 @@ const QuizzesData = [
   {
     quizId: 216,
     title: '犯罪嫌疑人到达现场的先后顺序是什么？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -9509,7 +9802,7 @@ const QuizzesData = [
   {
     quizId: 217,
     title: '哪一发子弹最先击中墙体？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -9548,7 +9841,7 @@ const QuizzesData = [
   {
     quizId: 218,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -9587,7 +9880,7 @@ const QuizzesData = [
   {
     quizId: 219,
     title: '汽车停在几号车位？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -9638,7 +9931,7 @@ const QuizzesData = [
   {
     quizId: 220,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -9662,7 +9955,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -9704,7 +9997,7 @@ const QuizzesData = [
   {
     quizId: 221,
     title: '谁先成功潜入的？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -9728,7 +10021,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -9743,7 +10036,7 @@ const QuizzesData = [
   {
     quizId: 222,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -9767,7 +10060,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -9782,7 +10075,7 @@ const QuizzesData = [
   {
     quizId: 223,
     title: '谁最有可能遇到危险？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -9806,7 +10099,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -9821,7 +10114,7 @@ const QuizzesData = [
   {
     quizId: 224,
     title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -9845,7 +10138,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -9860,7 +10153,7 @@ const QuizzesData = [
   {
     quizId: 225,
     title: '今晚几楼的女士出轨了？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -9884,7 +10177,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -9899,7 +10192,7 @@ const QuizzesData = [
   {
     quizId: 226,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -9923,7 +10216,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -9950,7 +10243,7 @@ const QuizzesData = [
   {
     quizId: 227,
     title: '谁更有可能是凶手？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -9974,7 +10267,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -9989,7 +10282,7 @@ const QuizzesData = [
   {
     quizId: 228,
     title: '谁是走私集团幕后老板？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
     question: {
@@ -10013,7 +10306,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -10040,7 +10333,7 @@ const QuizzesData = [
   {
     quizId: 229,
     title: '犯罪嫌疑人到达现场的先后顺序是什么？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -10082,7 +10375,7 @@ const QuizzesData = [
   {
     quizId: 230,
     title: '哪一发子弹最先击中墙体？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -10121,7 +10414,7 @@ const QuizzesData = [
   {
     quizId: 231,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -10160,7 +10453,7 @@ const QuizzesData = [
   {
     quizId: 232,
     title: '汽车停在几号车位？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -10211,7 +10504,7 @@ const QuizzesData = [
   {
     quizId: 233,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -10235,7 +10528,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -10277,7 +10570,7 @@ const QuizzesData = [
   {
     quizId: 234,
     title: '谁先成功潜入的？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -10301,7 +10594,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -10316,7 +10609,7 @@ const QuizzesData = [
   {
     quizId: 235,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -10340,7 +10633,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -10355,7 +10648,7 @@ const QuizzesData = [
   {
     quizId: 236,
     title: '谁最有可能遇到危险？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -10379,7 +10672,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -10394,7 +10687,7 @@ const QuizzesData = [
   {
     quizId: 237,
     title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -10418,7 +10711,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -10433,7 +10726,7 @@ const QuizzesData = [
   {
     quizId: 238,
     title: '今晚几楼的女士出轨了？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -10457,7 +10750,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -10472,7 +10765,7 @@ const QuizzesData = [
   {
     quizId: 239,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -10496,7 +10789,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -10523,7 +10816,7 @@ const QuizzesData = [
   {
     quizId: 240,
     title: '谁更有可能是凶手？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -10547,7 +10840,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -10562,7 +10855,7 @@ const QuizzesData = [
   {
     quizId: 241,
     title: '谁更有可能是凶手？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -10586,7 +10879,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -10601,7 +10894,7 @@ const QuizzesData = [
   {
     quizId: 242,
     title: '谁是走私集团幕后老板？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
     question: {
@@ -10625,7 +10918,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -10652,7 +10945,7 @@ const QuizzesData = [
   {
     quizId: 243,
     title: '犯罪嫌疑人到达现场的先后顺序是什么？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -10694,7 +10987,7 @@ const QuizzesData = [
   {
     quizId: 244,
     title: '哪一发子弹最先击中墙体？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -10733,7 +11026,7 @@ const QuizzesData = [
   {
     quizId: 245,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -10772,7 +11065,7 @@ const QuizzesData = [
   {
     quizId: 246,
     title: '汽车停在几号车位？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -10823,7 +11116,7 @@ const QuizzesData = [
   {
     quizId: 247,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -10847,7 +11140,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -10889,7 +11182,7 @@ const QuizzesData = [
   {
     quizId: 248,
     title: '谁先成功潜入的？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -10913,7 +11206,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -10928,7 +11221,7 @@ const QuizzesData = [
   {
     quizId: 249,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -10952,7 +11245,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -10967,7 +11260,7 @@ const QuizzesData = [
   {
     quizId: 250,
     title: '谁最有可能遇到危险？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -10991,7 +11284,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -11006,7 +11299,7 @@ const QuizzesData = [
   {
     quizId: 251,
     title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -11030,7 +11323,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -11045,7 +11338,7 @@ const QuizzesData = [
   {
     quizId: 252,
     title: '今晚几楼的女士出轨了？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -11069,7 +11362,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -11084,7 +11377,7 @@ const QuizzesData = [
   {
     quizId: 253,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -11108,7 +11401,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -11135,7 +11428,7 @@ const QuizzesData = [
   {
     quizId: 254,
     title: '谁更有可能是凶手？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -11159,7 +11452,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -11174,7 +11467,7 @@ const QuizzesData = [
   {
     quizId: 255,
     title: '谁是走私集团幕后老板？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
     question: {
@@ -11198,7 +11491,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -11225,7 +11518,7 @@ const QuizzesData = [
   {
     quizId: 256,
     title: '犯罪嫌疑人到达现场的先后顺序是什么？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -11267,7 +11560,7 @@ const QuizzesData = [
   {
     quizId: 257,
     title: '哪一发子弹最先击中墙体？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -11306,7 +11599,7 @@ const QuizzesData = [
   {
     quizId: 258,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -11345,7 +11638,7 @@ const QuizzesData = [
   {
     quizId: 259,
     title: '汽车停在几号车位？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -11396,7 +11689,7 @@ const QuizzesData = [
   {
     quizId: 260,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -11420,7 +11713,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -11462,7 +11755,7 @@ const QuizzesData = [
   {
     quizId: 261,
     title: '谁先成功潜入的？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -11486,7 +11779,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -11501,7 +11794,7 @@ const QuizzesData = [
   {
     quizId: 262,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -11525,7 +11818,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -11540,7 +11833,7 @@ const QuizzesData = [
   {
     quizId: 263,
     title: '谁最有可能遇到危险？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -11564,7 +11857,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -11579,7 +11872,7 @@ const QuizzesData = [
   {
     quizId: 264,
     title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -11603,7 +11896,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -11618,7 +11911,7 @@ const QuizzesData = [
   {
     quizId: 265,
     title: '今晚几楼的女士出轨了？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -11642,7 +11935,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -11657,7 +11950,7 @@ const QuizzesData = [
   {
     quizId: 266,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -11681,7 +11974,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -11708,7 +12001,7 @@ const QuizzesData = [
   {
     quizId: 267,
     title: '谁更有可能是凶手？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -11732,7 +12025,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -11747,7 +12040,7 @@ const QuizzesData = [
   {
     quizId: 268,
     title: '谁是走私集团幕后老板？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
     question: {
@@ -11771,7 +12064,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -11798,7 +12091,7 @@ const QuizzesData = [
   {
     quizId: 269,
     title: '犯罪嫌疑人到达现场的先后顺序是什么？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -11840,7 +12133,7 @@ const QuizzesData = [
   {
     quizId: 270,
     title: '哪一发子弹最先击中墙体？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -11879,7 +12172,7 @@ const QuizzesData = [
   {
     quizId: 271,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -11918,7 +12211,7 @@ const QuizzesData = [
   {
     quizId: 272,
     title: '汽车停在几号车位？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -11969,7 +12262,7 @@ const QuizzesData = [
   {
     quizId: 273,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -11993,7 +12286,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -12035,7 +12328,7 @@ const QuizzesData = [
   {
     quizId: 274,
     title: '谁先成功潜入的？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -12059,7 +12352,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -12074,7 +12367,7 @@ const QuizzesData = [
   {
     quizId: 275,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -12098,7 +12391,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -12113,7 +12406,7 @@ const QuizzesData = [
   {
     quizId: 276,
     title: '谁最有可能遇到危险？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -12137,7 +12430,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -12152,7 +12445,7 @@ const QuizzesData = [
   {
     quizId: 277,
     title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -12176,7 +12469,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -12191,7 +12484,7 @@ const QuizzesData = [
   {
     quizId: 278,
     title: '今晚几楼的女士出轨了？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -12215,7 +12508,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -12230,7 +12523,7 @@ const QuizzesData = [
   {
     quizId: 279,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -12254,7 +12547,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -12281,7 +12574,7 @@ const QuizzesData = [
   {
     quizId: 280,
     title: '谁更有可能是凶手？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -12305,7 +12598,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -12320,7 +12613,7 @@ const QuizzesData = [
   {
     quizId: 281,
     title: '谁先成功潜入的？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -12344,7 +12637,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -12359,7 +12652,7 @@ const QuizzesData = [
   {
     quizId: 282,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -12383,7 +12676,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -12398,7 +12691,7 @@ const QuizzesData = [
   {
     quizId: 283,
     title: '谁最有可能遇到危险？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -12422,7 +12715,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -12437,7 +12730,7 @@ const QuizzesData = [
   {
     quizId: 284,
     title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -12461,7 +12754,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -12476,7 +12769,7 @@ const QuizzesData = [
   {
     quizId: 285,
     title: '今晚几楼的女士出轨了？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -12500,7 +12793,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -12515,7 +12808,7 @@ const QuizzesData = [
   {
     quizId: 286,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -12539,7 +12832,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -12566,7 +12859,7 @@ const QuizzesData = [
   {
     quizId: 287,
     title: '谁更有可能是凶手？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -12590,7 +12883,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -12605,7 +12898,7 @@ const QuizzesData = [
   {
     quizId: 288,
     title: '谁是走私集团幕后老板？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
     question: {
@@ -12629,7 +12922,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -12656,7 +12949,7 @@ const QuizzesData = [
   {
     quizId: 289,
     title: '犯罪嫌疑人到达现场的先后顺序是什么？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -12698,7 +12991,7 @@ const QuizzesData = [
   {
     quizId: 290,
     title: '哪一发子弹最先击中墙体？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -12737,7 +13030,7 @@ const QuizzesData = [
   {
     quizId: 291,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -12776,7 +13069,7 @@ const QuizzesData = [
   {
     quizId: 292,
     title: '汽车停在几号车位？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -12827,7 +13120,7 @@ const QuizzesData = [
   {
     quizId: 293,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -12851,7 +13144,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -12893,7 +13186,7 @@ const QuizzesData = [
   {
     quizId: 294,
     title: '谁先成功潜入的？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -12917,7 +13210,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -12932,7 +13225,7 @@ const QuizzesData = [
   {
     quizId: 295,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -12956,7 +13249,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -12971,7 +13264,7 @@ const QuizzesData = [
   {
     quizId: 296,
     title: '谁最有可能遇到危险？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -12995,7 +13288,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -13010,7 +13303,7 @@ const QuizzesData = [
   {
     quizId: 297,
     title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -13034,7 +13327,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -13049,7 +13342,7 @@ const QuizzesData = [
   {
     quizId: 298,
     title: '今晚几楼的女士出轨了？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -13073,7 +13366,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -13088,7 +13381,7 @@ const QuizzesData = [
   {
     quizId: 299,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -13112,7 +13405,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -13139,7 +13432,7 @@ const QuizzesData = [
   {
     quizId: 300,
     title: '谁更有可能是凶手？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -13163,7 +13456,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -13178,7 +13471,7 @@ const QuizzesData = [
   {
     quizId: 301,
     title: '谁最有可能遇到危险？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -13202,7 +13495,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -13217,7 +13510,7 @@ const QuizzesData = [
   {
     quizId: 302,
     title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -13241,7 +13534,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -13256,7 +13549,7 @@ const QuizzesData = [
   {
     quizId: 303,
     title: '今晚几楼的女士出轨了？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -13280,7 +13573,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -13295,7 +13588,7 @@ const QuizzesData = [
   {
     quizId: 304,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -13319,7 +13612,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -13346,7 +13639,7 @@ const QuizzesData = [
   {
     quizId: 305,
     title: '谁更有可能是凶手？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -13370,7 +13663,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -13385,7 +13678,7 @@ const QuizzesData = [
   {
     quizId: 306,
     title: '谁是走私集团幕后老板？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
     question: {
@@ -13409,7 +13702,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -13436,7 +13729,7 @@ const QuizzesData = [
   {
     quizId: 307,
     title: '犯罪嫌疑人到达现场的先后顺序是什么？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -13478,7 +13771,7 @@ const QuizzesData = [
   {
     quizId: 308,
     title: '哪一发子弹最先击中墙体？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -13517,7 +13810,7 @@ const QuizzesData = [
   {
     quizId: 309,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -13556,7 +13849,7 @@ const QuizzesData = [
   {
     quizId: 310,
     title: '汽车停在几号车位？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -13607,7 +13900,7 @@ const QuizzesData = [
   {
     quizId: 311,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -13631,7 +13924,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -13673,7 +13966,7 @@ const QuizzesData = [
   {
     quizId: 312,
     title: '谁先成功潜入的？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -13697,7 +13990,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -13712,7 +14005,7 @@ const QuizzesData = [
   {
     quizId: 313,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -13736,7 +14029,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -13751,7 +14044,7 @@ const QuizzesData = [
   {
     quizId: 314,
     title: '谁最有可能遇到危险？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -13775,7 +14068,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -13790,7 +14083,7 @@ const QuizzesData = [
   {
     quizId: 315,
     title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -13814,7 +14107,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -13829,7 +14122,7 @@ const QuizzesData = [
   {
     quizId: 316,
     title: '今晚几楼的女士出轨了？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -13853,7 +14146,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -13868,7 +14161,7 @@ const QuizzesData = [
   {
     quizId: 317,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -13892,7 +14185,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -13919,7 +14212,7 @@ const QuizzesData = [
   {
     quizId: 318,
     title: '谁更有可能是凶手？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -13943,7 +14236,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -13958,7 +14251,7 @@ const QuizzesData = [
   {
     quizId: 319,
     title: '谁是走私集团幕后老板？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
     question: {
@@ -13982,7 +14275,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -14009,7 +14302,7 @@ const QuizzesData = [
   {
     quizId: 320,
     title: '犯罪嫌疑人到达现场的先后顺序是什么？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -14051,7 +14344,7 @@ const QuizzesData = [
   {
     quizId: 321,
     title: '哪一发子弹最先击中墙体？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -14090,7 +14383,7 @@ const QuizzesData = [
   {
     quizId: 322,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -14129,7 +14422,7 @@ const QuizzesData = [
   {
     quizId: 323,
     title: '汽车停在几号车位？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -14180,7 +14473,7 @@ const QuizzesData = [
   {
     quizId: 324,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -14204,7 +14497,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -14246,7 +14539,7 @@ const QuizzesData = [
   {
     quizId: 325,
     title: '谁先成功潜入的？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -14270,7 +14563,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -14285,7 +14578,7 @@ const QuizzesData = [
   {
     quizId: 326,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -14309,7 +14602,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -14324,7 +14617,7 @@ const QuizzesData = [
   {
     quizId: 327,
     title: '谁最有可能遇到危险？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -14348,7 +14641,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -14363,7 +14656,7 @@ const QuizzesData = [
   {
     quizId: 328,
     title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -14387,7 +14680,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -14402,7 +14695,7 @@ const QuizzesData = [
   {
     quizId: 329,
     title: '今晚几楼的女士出轨了？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -14426,7 +14719,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -14441,7 +14734,7 @@ const QuizzesData = [
   {
     quizId: 330,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -14465,7 +14758,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -14492,7 +14785,7 @@ const QuizzesData = [
   {
     quizId: 331,
     title: '谁更有可能是凶手？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -14516,7 +14809,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -14531,7 +14824,7 @@ const QuizzesData = [
   {
     quizId: 332,
     title: '谁是走私集团幕后老板？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
     question: {
@@ -14555,7 +14848,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -14582,7 +14875,7 @@ const QuizzesData = [
   {
     quizId: 333,
     title: '犯罪嫌疑人到达现场的先后顺序是什么？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -14624,7 +14917,7 @@ const QuizzesData = [
   {
     quizId: 334,
     title: '哪一发子弹最先击中墙体？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -14663,7 +14956,7 @@ const QuizzesData = [
   {
     quizId: 335,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -14702,7 +14995,7 @@ const QuizzesData = [
   {
     quizId: 336,
     title: '汽车停在几号车位？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -14753,7 +15046,7 @@ const QuizzesData = [
   {
     quizId: 337,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -14777,7 +15070,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -14819,7 +15112,7 @@ const QuizzesData = [
   {
     quizId: 338,
     title: '谁先成功潜入的？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -14843,7 +15136,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -14858,7 +15151,7 @@ const QuizzesData = [
   {
     quizId: 339,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -14882,7 +15175,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -14897,7 +15190,7 @@ const QuizzesData = [
   {
     quizId: 340,
     title: '谁最有可能遇到危险？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -14921,7 +15214,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -14936,7 +15229,7 @@ const QuizzesData = [
   {
     quizId: 341,
     title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -14960,7 +15253,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -14975,7 +15268,7 @@ const QuizzesData = [
   {
     quizId: 342,
     title: '今晚几楼的女士出轨了？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -14999,7 +15292,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -15014,7 +15307,7 @@ const QuizzesData = [
   {
     quizId: 343,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -15038,7 +15331,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -15065,7 +15358,7 @@ const QuizzesData = [
   {
     quizId: 344,
     title: '谁更有可能是凶手？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -15089,7 +15382,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -15104,7 +15397,7 @@ const QuizzesData = [
   {
     quizId: 345,
     title: '谁是走私集团幕后老板？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
     question: {
@@ -15128,7 +15421,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -15155,7 +15448,7 @@ const QuizzesData = [
   {
     quizId: 346,
     title: '犯罪嫌疑人到达现场的先后顺序是什么？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -15197,7 +15490,7 @@ const QuizzesData = [
   {
     quizId: 347,
     title: '哪一发子弹最先击中墙体？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -15236,7 +15529,7 @@ const QuizzesData = [
   {
     quizId: 348,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -15275,7 +15568,7 @@ const QuizzesData = [
   {
     quizId: 349,
     title: '汽车停在几号车位？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -15326,7 +15619,7 @@ const QuizzesData = [
   {
     quizId: 350,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -15350,7 +15643,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -15392,7 +15685,7 @@ const QuizzesData = [
   {
     quizId: 351,
     title: '谁先成功潜入的？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -15416,7 +15709,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -15431,7 +15724,7 @@ const QuizzesData = [
   {
     quizId: 352,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -15455,7 +15748,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -15470,7 +15763,7 @@ const QuizzesData = [
   {
     quizId: 353,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -15494,7 +15787,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -15509,7 +15802,7 @@ const QuizzesData = [
   {
     quizId: 354,
     title: '谁最有可能遇到危险？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -15533,7 +15826,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -15548,7 +15841,7 @@ const QuizzesData = [
   {
     quizId: 355,
     title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -15572,7 +15865,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -15587,7 +15880,7 @@ const QuizzesData = [
   {
     quizId: 356,
     title: '今晚几楼的女士出轨了？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -15611,7 +15904,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -15626,7 +15919,7 @@ const QuizzesData = [
   {
     quizId: 357,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -15650,7 +15943,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -15677,7 +15970,7 @@ const QuizzesData = [
   {
     quizId: 358,
     title: '谁更有可能是凶手？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -15701,7 +15994,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -15716,7 +16009,7 @@ const QuizzesData = [
   {
     quizId: 359,
     title: '谁是走私集团幕后老板？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
     question: {
@@ -15740,7 +16033,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -15767,7 +16060,7 @@ const QuizzesData = [
   {
     quizId: 360,
     title: '犯罪嫌疑人到达现场的先后顺序是什么？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -15809,7 +16102,7 @@ const QuizzesData = [
   {
     quizId: 361,
     title: '哪一发子弹最先击中墙体？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -15848,7 +16141,7 @@ const QuizzesData = [
   {
     quizId: 362,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -15887,7 +16180,7 @@ const QuizzesData = [
   {
     quizId: 363,
     title: '汽车停在几号车位？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -15938,7 +16231,7 @@ const QuizzesData = [
   {
     quizId: 364,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -15962,7 +16255,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -16004,7 +16297,7 @@ const QuizzesData = [
   {
     quizId: 365,
     title: '谁先成功潜入的？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -16028,7 +16321,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -16043,7 +16336,7 @@ const QuizzesData = [
   {
     quizId: 366,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -16067,7 +16360,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -16082,7 +16375,7 @@ const QuizzesData = [
   {
     quizId: 367,
     title: '谁最有可能遇到危险？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -16106,7 +16399,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -16121,7 +16414,7 @@ const QuizzesData = [
   {
     quizId: 368,
     title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -16145,7 +16438,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -16160,7 +16453,7 @@ const QuizzesData = [
   {
     quizId: 369,
     title: '今晚几楼的女士出轨了？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -16184,7 +16477,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -16199,7 +16492,7 @@ const QuizzesData = [
   {
     quizId: 370,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -16223,7 +16516,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -16250,7 +16543,7 @@ const QuizzesData = [
   {
     quizId: 371,
     title: '谁更有可能是凶手？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -16274,7 +16567,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -16289,7 +16582,7 @@ const QuizzesData = [
   {
     quizId: 372,
     title: '谁是走私集团幕后老板？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
     question: {
@@ -16313,7 +16606,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -16340,7 +16633,7 @@ const QuizzesData = [
   {
     quizId: 373,
     title: '犯罪嫌疑人到达现场的先后顺序是什么？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -16382,7 +16675,7 @@ const QuizzesData = [
   {
     quizId: 374,
     title: '哪一发子弹最先击中墙体？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -16421,7 +16714,7 @@ const QuizzesData = [
   {
     quizId: 375,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -16460,7 +16753,7 @@ const QuizzesData = [
   {
     quizId: 376,
     title: '汽车停在几号车位？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -16511,7 +16804,7 @@ const QuizzesData = [
   {
     quizId: 377,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -16535,7 +16828,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -16577,7 +16870,7 @@ const QuizzesData = [
   {
     quizId: 378,
     title: '谁先成功潜入的？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -16601,7 +16894,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -16616,7 +16909,7 @@ const QuizzesData = [
   {
     quizId: 379,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -16640,7 +16933,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -16655,7 +16948,7 @@ const QuizzesData = [
   {
     quizId: 380,
     title: '谁最有可能遇到危险？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -16679,7 +16972,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -16694,7 +16987,7 @@ const QuizzesData = [
   {
     quizId: 381,
     title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -16718,7 +17011,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -16733,7 +17026,7 @@ const QuizzesData = [
   {
     quizId: 382,
     title: '今晚几楼的女士出轨了？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -16757,7 +17050,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -16772,7 +17065,7 @@ const QuizzesData = [
   {
     quizId: 383,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -16796,7 +17089,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -16823,7 +17116,7 @@ const QuizzesData = [
   {
     quizId: 384,
     title: '谁更有可能是凶手？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -16847,7 +17140,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -16862,7 +17155,7 @@ const QuizzesData = [
   {
     quizId: 385,
     title: '谁是走私集团幕后老板？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
     question: {
@@ -16886,7 +17179,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -16913,7 +17206,7 @@ const QuizzesData = [
   {
     quizId: 386,
     title: '犯罪嫌疑人到达现场的先后顺序是什么？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -16955,7 +17248,7 @@ const QuizzesData = [
   {
     quizId: 387,
     title: '哪一发子弹最先击中墙体？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -16994,7 +17287,7 @@ const QuizzesData = [
   {
     quizId: 388,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -17033,7 +17326,7 @@ const QuizzesData = [
   {
     quizId: 389,
     title: '汽车停在几号车位？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -17084,7 +17377,7 @@ const QuizzesData = [
   {
     quizId: 390,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -17108,7 +17401,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -17150,7 +17443,7 @@ const QuizzesData = [
   {
     quizId: 391,
     title: '谁先成功潜入的？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -17174,7 +17467,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -17189,7 +17482,7 @@ const QuizzesData = [
   {
     quizId: 392,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -17213,7 +17506,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -17228,7 +17521,7 @@ const QuizzesData = [
   {
     quizId: 393,
     title: '谁最有可能遇到危险？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -17252,7 +17545,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -17267,7 +17560,7 @@ const QuizzesData = [
   {
     quizId: 394,
     title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -17291,7 +17584,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -17306,7 +17599,7 @@ const QuizzesData = [
   {
     quizId: 395,
     title: '今晚几楼的女士出轨了？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -17330,7 +17623,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -17345,7 +17638,7 @@ const QuizzesData = [
   {
     quizId: 396,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -17369,7 +17662,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -17396,7 +17689,7 @@ const QuizzesData = [
   {
     quizId: 397,
     title: '谁更有可能是凶手？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -17420,7 +17713,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -17435,7 +17728,7 @@ const QuizzesData = [
   {
     quizId: 398,
     title: '谁是走私集团幕后老板？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
     question: {
@@ -17459,7 +17752,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -17486,7 +17779,7 @@ const QuizzesData = [
   {
     quizId: 399,
     title: '犯罪嫌疑人到达现场的先后顺序是什么？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -17528,7 +17821,7 @@ const QuizzesData = [
   {
     quizId: 400,
     title: '哪一发子弹最先击中墙体？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -17567,7 +17860,7 @@ const QuizzesData = [
   {
     quizId: 401,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -17606,7 +17899,7 @@ const QuizzesData = [
   {
     quizId: 402,
     title: '汽车停在几号车位？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -17657,7 +17950,7 @@ const QuizzesData = [
   {
     quizId: 403,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -17681,7 +17974,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -17723,7 +18016,7 @@ const QuizzesData = [
   {
     quizId: 404,
     title: '谁先成功潜入的？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -17747,7 +18040,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -17762,7 +18055,7 @@ const QuizzesData = [
   {
     quizId: 405,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -17786,7 +18079,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -17801,7 +18094,7 @@ const QuizzesData = [
   {
     quizId: 406,
     title: '谁最有可能遇到危险？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -17825,7 +18118,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -17840,7 +18133,7 @@ const QuizzesData = [
   {
     quizId: 407,
     title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -17864,7 +18157,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -17879,7 +18172,7 @@ const QuizzesData = [
   {
     quizId: 408,
     title: '今晚几楼的女士出轨了？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -17903,7 +18196,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -17918,7 +18211,7 @@ const QuizzesData = [
   {
     quizId: 409,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -17942,7 +18235,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -17969,7 +18262,7 @@ const QuizzesData = [
   {
     quizId: 410,
     title: '谁更有可能是凶手？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -17993,7 +18286,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -18008,7 +18301,7 @@ const QuizzesData = [
   {
     quizId: 411,
     title: '谁是走私集团幕后老板？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
     question: {
@@ -18032,7 +18325,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -18059,7 +18352,7 @@ const QuizzesData = [
   {
     quizId: 412,
     title: '犯罪嫌疑人到达现场的先后顺序是什么？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -18101,7 +18394,7 @@ const QuizzesData = [
   {
     quizId: 413,
     title: '哪一发子弹最先击中墙体？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -18140,7 +18433,7 @@ const QuizzesData = [
   {
     quizId: 414,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -18179,7 +18472,7 @@ const QuizzesData = [
   {
     quizId: 415,
     title: '汽车停在几号车位？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -18230,7 +18523,7 @@ const QuizzesData = [
   {
     quizId: 416,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -18254,7 +18547,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -18296,7 +18589,7 @@ const QuizzesData = [
   {
     quizId: 417,
     title: '谁先成功潜入的？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -18320,7 +18613,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -18335,7 +18628,7 @@ const QuizzesData = [
   {
     quizId: 418,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -18359,7 +18652,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -18374,7 +18667,7 @@ const QuizzesData = [
   {
     quizId: 419,
     title: '谁最有可能遇到危险？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -18398,7 +18691,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -18413,7 +18706,7 @@ const QuizzesData = [
   {
     quizId: 420,
     title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -18437,7 +18730,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -18452,7 +18745,7 @@ const QuizzesData = [
   {
     quizId: 421,
     title: '今晚几楼的女士出轨了？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -18476,7 +18769,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -18491,7 +18784,7 @@ const QuizzesData = [
   {
     quizId: 422,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -18515,7 +18808,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -18542,7 +18835,7 @@ const QuizzesData = [
   {
     quizId: 423,
     title: '谁更有可能是凶手？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -18566,7 +18859,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -18581,7 +18874,7 @@ const QuizzesData = [
   {
     quizId: 424,
     title: '谁是走私集团幕后老板？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
     question: {
@@ -18605,7 +18898,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -18632,7 +18925,7 @@ const QuizzesData = [
   {
     quizId: 425,
     title: '犯罪嫌疑人到达现场的先后顺序是什么？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -18674,7 +18967,7 @@ const QuizzesData = [
   {
     quizId: 426,
     title: '哪一发子弹最先击中墙体？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -18713,7 +19006,7 @@ const QuizzesData = [
   {
     quizId: 427,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -18752,7 +19045,7 @@ const QuizzesData = [
   {
     quizId: 428,
     title: '汽车停在几号车位？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -18803,7 +19096,7 @@ const QuizzesData = [
   {
     quizId: 429,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -18827,7 +19120,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -18869,7 +19162,7 @@ const QuizzesData = [
   {
     quizId: 430,
     title: '谁先成功潜入的？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -18893,7 +19186,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -18908,7 +19201,7 @@ const QuizzesData = [
   {
     quizId: 431,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -18932,7 +19225,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -18947,7 +19240,7 @@ const QuizzesData = [
   {
     quizId: 432,
     title: '谁最有可能遇到危险？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -18971,7 +19264,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -18986,7 +19279,7 @@ const QuizzesData = [
   {
     quizId: 433,
     title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -19010,7 +19303,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -19025,7 +19318,7 @@ const QuizzesData = [
   {
     quizId: 434,
     title: '今晚几楼的女士出轨了？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -19049,7 +19342,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -19064,7 +19357,7 @@ const QuizzesData = [
   {
     quizId: 435,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -19088,7 +19381,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -19115,7 +19408,7 @@ const QuizzesData = [
   {
     quizId: 436,
     title: '谁更有可能是凶手？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -19139,7 +19432,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -19154,7 +19447,7 @@ const QuizzesData = [
   {
     quizId: 437,
     title: '谁是走私集团幕后老板？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
     question: {
@@ -19178,7 +19471,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -19205,7 +19498,7 @@ const QuizzesData = [
   {
     quizId: 438,
     title: '犯罪嫌疑人到达现场的先后顺序是什么？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -19247,7 +19540,7 @@ const QuizzesData = [
   {
     quizId: 439,
     title: '哪一发子弹最先击中墙体？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -19286,7 +19579,7 @@ const QuizzesData = [
   {
     quizId: 440,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -19325,7 +19618,7 @@ const QuizzesData = [
   {
     quizId: 441,
     title: '汽车停在几号车位？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -19376,7 +19669,7 @@ const QuizzesData = [
   {
     quizId: 442,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -19400,7 +19693,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -19442,7 +19735,7 @@ const QuizzesData = [
   {
     quizId: 443,
     title: '谁先成功潜入的？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -19466,7 +19759,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -19481,7 +19774,7 @@ const QuizzesData = [
   {
     quizId: 444,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -19505,7 +19798,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -19520,7 +19813,7 @@ const QuizzesData = [
   {
     quizId: 445,
     title: '谁最有可能遇到危险？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -19544,7 +19837,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -19559,7 +19852,7 @@ const QuizzesData = [
   {
     quizId: 446,
     title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -19583,7 +19876,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -19598,7 +19891,7 @@ const QuizzesData = [
   {
     quizId: 447,
     title: '今晚几楼的女士出轨了？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -19622,7 +19915,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -19637,7 +19930,7 @@ const QuizzesData = [
   {
     quizId: 448,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -19661,7 +19954,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -19688,7 +19981,7 @@ const QuizzesData = [
   {
     quizId: 449,
     title: '谁更有可能是凶手？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -19712,7 +20005,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -19727,7 +20020,7 @@ const QuizzesData = [
   {
     quizId: 450,
     title: '谁是走私集团幕后老板？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
     question: {
@@ -19751,7 +20044,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -19778,7 +20071,7 @@ const QuizzesData = [
   {
     quizId: 451,
     title: '犯罪嫌疑人到达现场的先后顺序是什么？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -19820,7 +20113,7 @@ const QuizzesData = [
   {
     quizId: 452,
     title: '哪一发子弹最先击中墙体？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -19859,7 +20152,7 @@ const QuizzesData = [
   {
     quizId: 453,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -19898,7 +20191,7 @@ const QuizzesData = [
   {
     quizId: 454,
     title: '汽车停在几号车位？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -19949,7 +20242,7 @@ const QuizzesData = [
   {
     quizId: 455,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -19973,7 +20266,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -20015,7 +20308,7 @@ const QuizzesData = [
   {
     quizId: 456,
     title: '谁先成功潜入的？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -20039,7 +20332,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -20054,7 +20347,7 @@ const QuizzesData = [
   {
     quizId: 457,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -20078,7 +20371,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -20093,7 +20386,7 @@ const QuizzesData = [
   {
     quizId: 458,
     title: '谁最有可能遇到危险？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -20117,7 +20410,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -20132,7 +20425,7 @@ const QuizzesData = [
   {
     quizId: 459,
     title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -20156,7 +20449,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -20171,7 +20464,7 @@ const QuizzesData = [
   {
     quizId: 460,
     title: '今晚几楼的女士出轨了？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -20195,7 +20488,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -20210,7 +20503,7 @@ const QuizzesData = [
   {
     quizId: 461,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -20234,7 +20527,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -20261,7 +20554,7 @@ const QuizzesData = [
   {
     quizId: 462,
     title: '谁更有可能是凶手？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -20285,7 +20578,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -20300,7 +20593,7 @@ const QuizzesData = [
   {
     quizId: 463,
     title: '谁是走私集团幕后老板？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
     question: {
@@ -20324,7 +20617,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -20351,7 +20644,7 @@ const QuizzesData = [
   {
     quizId: 464,
     title: '犯罪嫌疑人到达现场的先后顺序是什么？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -20393,7 +20686,7 @@ const QuizzesData = [
   {
     quizId: 465,
     title: '哪一发子弹最先击中墙体？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -20432,7 +20725,7 @@ const QuizzesData = [
   {
     quizId: 466,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -20471,7 +20764,7 @@ const QuizzesData = [
   {
     quizId: 467,
     title: '汽车停在几号车位？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -20522,7 +20815,7 @@ const QuizzesData = [
   {
     quizId: 468,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -20546,7 +20839,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -20588,7 +20881,7 @@ const QuizzesData = [
   {
     quizId: 469,
     title: '谁先成功潜入的？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -20612,7 +20905,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -20627,7 +20920,7 @@ const QuizzesData = [
   {
     quizId: 470,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -20651,7 +20944,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -20666,7 +20959,7 @@ const QuizzesData = [
   {
     quizId: 471,
     title: '谁最有可能遇到危险？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -20690,7 +20983,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -20705,7 +20998,7 @@ const QuizzesData = [
   {
     quizId: 472,
     title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -20729,7 +21022,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -20744,7 +21037,7 @@ const QuizzesData = [
   {
     quizId: 473,
     title: '今晚几楼的女士出轨了？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -20768,7 +21061,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -20783,7 +21076,7 @@ const QuizzesData = [
   {
     quizId: 474,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -20807,7 +21100,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -20834,7 +21127,7 @@ const QuizzesData = [
   {
     quizId: 475,
     title: '谁更有可能是凶手？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -20858,7 +21151,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -20873,7 +21166,7 @@ const QuizzesData = [
   {
     quizId: 476,
     title: '谁是走私集团幕后老板？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
     question: {
@@ -20897,7 +21190,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -20924,7 +21217,7 @@ const QuizzesData = [
   {
     quizId: 477,
     title: '犯罪嫌疑人到达现场的先后顺序是什么？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -20966,7 +21259,7 @@ const QuizzesData = [
   {
     quizId: 478,
     title: '哪一发子弹最先击中墙体？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -21005,7 +21298,7 @@ const QuizzesData = [
   {
     quizId: 479,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -21044,7 +21337,7 @@ const QuizzesData = [
   {
     quizId: 480,
     title: '汽车停在几号车位？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -21095,7 +21388,7 @@ const QuizzesData = [
   {
     quizId: 481,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -21119,7 +21412,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -21161,7 +21454,7 @@ const QuizzesData = [
   {
     quizId: 482,
     title: '谁先成功潜入的？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -21185,7 +21478,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -21200,7 +21493,7 @@ const QuizzesData = [
   {
     quizId: 483,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -21224,7 +21517,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -21239,7 +21532,7 @@ const QuizzesData = [
   {
     quizId: 484,
     title: '谁最有可能遇到危险？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -21263,7 +21556,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -21278,7 +21571,7 @@ const QuizzesData = [
   {
     quizId: 485,
     title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -21302,7 +21595,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -21317,7 +21610,7 @@ const QuizzesData = [
   {
     quizId: 486,
     title: '今晚几楼的女士出轨了？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -21341,7 +21634,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -21356,7 +21649,7 @@ const QuizzesData = [
   {
     quizId: 487,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -21380,7 +21673,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -21407,7 +21700,7 @@ const QuizzesData = [
   {
     quizId: 488,
     title: '谁更有可能是凶手？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -21431,7 +21724,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -21446,7 +21739,7 @@ const QuizzesData = [
   {
     quizId: 489,
     title: '谁是走私集团幕后老板？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
     question: {
@@ -21470,7 +21763,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -21497,7 +21790,7 @@ const QuizzesData = [
   {
     quizId: 490,
     title: '犯罪嫌疑人到达现场的先后顺序是什么？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -21539,7 +21832,7 @@ const QuizzesData = [
   {
     quizId: 491,
     title: '哪一发子弹最先击中墙体？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -21578,7 +21871,7 @@ const QuizzesData = [
   {
     quizId: 492,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -21617,7 +21910,7 @@ const QuizzesData = [
   {
     quizId: 493,
     title: '汽车停在几号车位？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -21668,7 +21961,7 @@ const QuizzesData = [
   {
     quizId: 494,
     title: '自杀还是谋杀？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -21692,7 +21985,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -21734,7 +22027,7 @@ const QuizzesData = [
   {
     quizId: 495,
     title: '谁先成功潜入的？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -21758,7 +22051,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -21773,7 +22066,7 @@ const QuizzesData = [
   {
     quizId: 496,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -21797,7 +22090,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -21812,7 +22105,7 @@ const QuizzesData = [
   {
     quizId: 497,
     title: '谁最有可能遇到危险？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -21836,7 +22129,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -21851,7 +22144,7 @@ const QuizzesData = [
   {
     quizId: 498,
     title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -21875,7 +22168,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -21890,7 +22183,7 @@ const QuizzesData = [
   {
     quizId: 499,
     title: '今晚几楼的女士出轨了？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -21914,7 +22207,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
@@ -21929,7 +22222,7 @@ const QuizzesData = [
   {
     quizId: 500,
     title: '',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
@@ -21953,7 +22246,7 @@ const QuizzesData = [
         ]
       },
       {
-        solutionTag: '分析',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {

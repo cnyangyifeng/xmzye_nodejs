@@ -5,10 +5,12 @@ const msgs = {
   clear_cache_title: `危险操作`,
   clear_cache_content: `是否清空全部缓存数据？`,
 
+  error_message_title: `出错了`,
+
   insufficient_keys_title: `购买 VIP`,
   insufficient_keys_content: `只需 9.9 元，即可解锁全部题目。`,
 
-  loading_title: `准备支付`,
+  loading_title: `请稍候`,
 
   login_fail_title: `登录失败`,
 
@@ -21,13 +23,7 @@ const msgs = {
   save_fail_title: `保存失败`,
   save_fail_content: `请在 “设置” 中，允许保存到相册，然后重新操作。`,
 
-  unlock_all_title: `全部解锁`,
-
-  view_solutions_title: `真相时间到了`,
-  view_solutions_content: `你心里肯定已经有答案了...\n现在揭晓谜底吗？`,
-  view_immediately_title: `好的`,
-
-  wait_a_second_title: `再等等`
+  unlock_all_title: `全部解锁`
 
 }
 

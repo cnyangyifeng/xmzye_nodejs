@@ -71,7 +71,7 @@ function requestWxpayServer(orderReqData, appid, api_key) {
     }, (err, res, body) => {
       if (!err && res.statusCode === 200) {
         parseString(body, (err, res) => {
-          console.log(`微信支付统一下单接口返回内容：`, body)
+          console.debug(`微信支付统一下单接口返回内容：`, body)
           // 准备参数
           const pack = 'prepay_id=' + res.xml.prepay_id
           const nonce_str = res.xml.nonce_str[0]

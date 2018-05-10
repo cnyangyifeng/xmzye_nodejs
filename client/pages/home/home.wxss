@@ -1,12 +1,10 @@
-/****************************************************************************************************/
-
-.home-control {
+.nav-bar {
   position: absolute;
   z-index: 1000;
   display: flex;
   flex-direction: column;
   width: 100vw;
-  background: linear-gradient(rgba(32, 44, 58, 1.0), rgba(32, 44, 58, 0.9));
+  background: linear-gradient(rgba(32, 44, 58, 1.0), rgba(32, 44, 58, 0.8));
 }
 
 .quiz-user-hd {
@@ -128,30 +126,20 @@
   background-color: #00ba80;
 }
 
-/****************************************************************************************************/
-
 .home {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 100vw;
   height: 100vh;
   margin: 0;
   background-color: #202c3a;
-  line-height: normal;
 }
 
 .quiz-grid {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 100vw;
   height: 100vh;
   margin: 0;
   background-color: #202c3a;
-  line-height: normal;
 }
 
 .quiz-grid-inner {
@@ -167,8 +155,8 @@
   position: relative;
   flex: none;
   display: flex;
-  width: 175rpx;
-  height: 175rpx;
+  width: 174rpx;
+  height: 174rpx;
   margin: 5rpx;
   box-sizing: border-box;
   border: 10rpx solid #ccc;
@@ -218,74 +206,53 @@
   font-weight: 600;
 }
 
-/****************************************************************************************************/
+/* .rankings */
 
-/* .contact-btn */
-
-.contact-btn {
+.rankings {
   position: absolute;
   z-index: 1000;
   right: 20px;
-  bottom: 80px;
+  bottom: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60px;
-  height: 60px;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
+  box-sizing: border-box;
+  border-radius: 50rpx;
+  background-color: #00ba80;
+}
+
+.rankings-hover {
+  background-color: #0c9;
+}
+
+.rankings-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100rpx;
+  height: 100rpx;
   box-sizing: border-box;
   border-radius: 50%;
-  background-color: rgba(0, 186, 128, 1.0);
+  background-color: #0c9;
+}
+
+.rankings-btn-image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.rankings-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 50rpx 0 20rpx;
   color: #fff;
   font-size: 16px;
   font-weight: 600;
-  line-height: normal;
 }
 
-.contact-btn.vip {
-  bottom: 20px;
-}
-
-.contact-btn-hover {
-  background-color: #0c9;
-}
-
-.contact-btn-image {
-  width: 32px;
-  height: 32px;
-}
-
-/* .actionbar */
-
-.actionbar {
-  position: absolute;
-  z-index: 1000;
-  bottom: 0;
-  display: flex;
-  width: 750rpx;
-  height: 60px;
-}
-
-.primary-btn {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 10rpx;
-  background-color: #00ba80;
-  color: #fff;
-  font-size: 18px;
+.rankings-value {
+  margin-left: 20rpx;
+  font-size: 20px;
   font-weight: 600;
-}
-
-.primary-btn-hover {
-  background-color: #0c9;
-}
-
-.price {
-  font-size: 24px;
-  margin-right: 20rpx;
 }

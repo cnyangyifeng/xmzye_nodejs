@@ -22,8 +22,6 @@ var ensureLoggedIn = function () {
         success: res => {
           // 更新本地缓存数据 quizUser
           const quizUser = res.data.data
-          const quizUserInfo = JSON.parse(quizUser.quizUserInfo)
-          quizUser.quizUserInfo = quizUserInfo
           QuizUser.set(quizUser)
           // 操作成功
           resolve()

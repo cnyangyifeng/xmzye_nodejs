@@ -6,17 +6,17 @@ const MongoClient = require('mongodb').MongoClient
 MongoClient.connect(configs.mongodb.url, (err, cli) => {
   console.debug('mongodb is connected')
   const db = cli.db('xmzye')
-  clearQuizzes(db, () => {
+  queryQuizUsers(db, () => {
     cli.close()
   })
 })
 
 /* ================================================================================ */
 
-const clearQuizzes = (db, callback) => {
-  const collection = db.collection('quizzes')
-  collection.deleteMany({}, (err, res) => {
-    console.debug('quizzes is clear')
+const queryQuizUsers = (db, callback) => {
+  const collection = db.collection('quizUsers')
+  collection.find({}).toArray((err, res) => {
+    console.debug('found the following records: ', res)
     callback(res)
   })
 }

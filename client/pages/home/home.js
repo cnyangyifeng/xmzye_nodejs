@@ -42,13 +42,13 @@ Page({
      *     quizTabName: '1-100',
      *     quizCards: [
      *       {
-     *         quizUserId: 'o-MYb5D7zZU-YQx09XDeFp3AAsUg',
      *         quizId: 1,
      *         quizUnlocked: 1,
-     *         quizPlayed: 0,
+     *         quizQuestionImageUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/quizzes/q1/q1.svg',
+     *         quizLoaded: 1,
      *         timeElapsed: 0,
-     *         quizSolved: 0,
-     *         quizQuestionImageUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/quizzes/q1/q1.svg'
+     *         myAnswer: 'N',
+     *         quizSolved: 0
      *       }
      *     ]
      *   }
@@ -199,12 +199,14 @@ Page({
   quizTabTap: function (e) {
     const quizTabIndex = e.currentTarget.dataset.quizTabIndex
     console.debug(`点击 quizTab: `, quizTabIndex)
+    // 更新页面数据 quizUser
     const quizUser = this.data.quizUser
     quizUser.currentQuizTabIndex = quizTabIndex
     quizUser.currentQuizTabName = this.data.quizGrid[quizTabIndex].quizTabName
     this.setData({
       quizUser: quizUser
     })
+    // 缓存 quizUser
     QuizUser.set(quizUser)
   },
 
@@ -215,12 +217,14 @@ Page({
   quizGridSwiperChange: function (e) {
     const current = e.detail.current
     console.debug(`current swiper item: ${current}`)
+    // 更新页面数据 quizUser
     const quizUser = this.data.quizUser
     quizUser.currentQuizTabIndex = current
     quizUser.currentQuizTabName = this.data.quizGrid[current].quizTabName
     this.setData({
       quizUser: quizUser
     })
+    // 缓存 quizUser
     QuizUser.set(quizUser)
   },
 
@@ -333,20 +337,23 @@ Page({
             const quizCard = {
               quizId: quizId,
               quizUnlocked: 0,
-              quizPlayed: 0,
+              quizQuestionImageUrl: '',
+              quizLoaded: 0,
               timeElapsed: 0,
-              quizSolved: 0,
-              quizQuestionImageUrl: ''
+              myAnswer: 'N',
+              quizSolved: 0
             }
             quizCards.push(quizCard)
           }
           quizTab['quizCards'] = quizCards
           quizGrid.push(quizTab)
         }
-        QuizGrid.set(quizGrid)
+        // 更新页面数据 quizGrid
         this.setData({
           quizGrid: quizGrid
         })
+        // 缓存 quizGrid
+        QuizGrid.set(quizGrid)
         // 操作成功
         resolve()
       }
@@ -423,7 +430,7 @@ Page({
               title: msgs.pay_success_title,
               mask: true
             })
-            // 更新页面数据 quizUser
+            // 标记 quizUser 为 vip
             const quizUser = this.data.quizUser
             quizUser.vip = 1
             quizUser.totalKeyCount = 9999

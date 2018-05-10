@@ -15,4 +15,7 @@ router.get('/purchase/place_order', validationMiddleware, controllers.purchase.p
 router.get('/quiz_user', validationMiddleware, controllers.quizUsers.getQuizUser)
 router.get('/quizzes/:quiz_id', validationMiddleware, controllers.quizzes.getQuiz)
 
+router.get('/tunnel', controllers.tunnel.get)
+router.post('/tunnel', controllers.tunnel.post)
+
 module.exports = router
