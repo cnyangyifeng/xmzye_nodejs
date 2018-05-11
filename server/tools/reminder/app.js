@@ -1,44 +1,48 @@
 const configs = require('../../config')
-const CronJob = require('cron').CronJob
 const MongoClient = require('mongodb').MongoClient
 const request = require('request')
 
 /* ================================================================================ */
 
+remind()
+
+/* ================================================================================ */
+
 async function remind() {
-  new CronJob('40 10 * * *', () => {
-    const cli = await MongoClient.connect(configs.mongodb.url)
-    const quizUserForms = await cli.db('xmzye').collection('quizUserForms').find({}).sort({ submitTime: -1 }).toArray()
-    cli.close()
-    let quizUserForm = null
-    if (quizUserForms && quizUserForms.length > 0) {
-      quizUserForm = quizUserForms[0]
-    }
-    const accessToken = await requestAccessToken()
-    const message = {
-      touser: quizUserForm.quizUserId,
-      template_id: 'RNbMbbXTmG3Ar0w9qJguAmFT1PzrC5uwbKCvxCSTppE',
-      page: 'pages/home/home?quiz_id=qotd',
-      form_id: quizUserForm.formId,
-      data: {
-        keyword1: {
-          value: '每日一题',
-          color: '#e91e63'
-        },
-        keyword2: {
-          value: '每答对 1 道推理题，即可获赠 1 把钥匙，解锁新的题目。'
-        },
-        keyword3: {
-          value: '1 把钥匙'
-        }
-      },
-      emphasis_keyword: 'keyword1.DATA'
-    }
-    await sendTemplateMessage(accessToken, JSON.stringify(message))
-  }, null, true, 'Asia/Shanghai')
+  console.log(`xmzye reminder starts.`)
+  const cli = await MongoClient.connect(configs.mongodb.url)
+  const collection = await cli.db('xmzye').collection('quizUserForms')
+  const quizUserForms = await collection.find({}).sort({ submitTime: -1 }).toArray()
+  for (let i = 0; i < quizUserForms.length; i++) {
+    await remindQuizUser(quizUserForms[i])
+  }
+  await collection.deleteMany({})
+  cli.close()
 }
 
-remind()
+async function remindQuizUser(quizUserForm) {
+  const accessToken = await requestAccessToken()
+  const message = {
+    touser: quizUserForm.quizUserId,
+    template_id: 'RNbMbbXTmG3Ar0w9qJguAmFT1PzrC5uwbKCvxCSTppE',
+    page: 'pages/home/home?quiz_id=qotd',
+    form_id: quizUserForm.formId,
+    data: {
+      keyword1: {
+        value: '每日一题',
+        color: '#e91e63'
+      },
+      keyword2: {
+        value: '每答对 1 道推理题，即可获赠 1 把钥匙，解锁新的题目'
+      },
+      keyword3: {
+        value: '每日签到，立即获赠 5 把钥匙'
+      }
+    },
+    emphasis_keyword: 'keyword1.DATA'
+  }
+  await sendTemplateMessage(accessToken, JSON.stringify(message))
+}
 
 /* ================================================================================ */
 

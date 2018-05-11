@@ -1,0 +1,17 @@
+{
+  "name": "xmzye_reminder",
+  "script": "app.js",
+  "cwd": "./",
+  "exec_mode": "fork",
+  "cron_restart": "00 20 * * *",
+  "watch": true,
+  "ignore_watch": [
+    "tmp"
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "engines": {
+    "node": ">=7.6"
+  }
+}

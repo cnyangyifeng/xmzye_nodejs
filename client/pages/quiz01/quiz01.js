@@ -243,7 +243,12 @@ Page({
             // 开始计时
             this.countingDown()
             // 启动信道服务
-            tunnelService.parse(this, getApp())
+            const app = getApp()
+            if (!app.tunnel || app.globalData.tunnelStatus === TunnelStatus.CLOSE) {
+              console.log(`启动信道服务...`)
+              // 启动信道服务
+              tunnelService.parse(this, getApp())
+            }
           })
         } else {
           // 跳转至 home 页面

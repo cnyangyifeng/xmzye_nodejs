@@ -35,7 +35,6 @@ async function onMessage(tunnelId, type, content) {
   console.debug(`[onMessage] =>`, { tunnelId, type, content })
   switch (type) {
     case TunnelEvent.SYNC_QUIZ_USER_REQ:
-      console.log(content.quizUser)
       const quizUser = content.quizUser
       const quizUserForm = content.quizUserForm
       try {
@@ -44,7 +43,8 @@ async function onMessage(tunnelId, type, content) {
         await db.collection('quizUsers').updateOne(
           { quizUserId: quizUser.quizUserId },
           {
-            $set: {
+            $set:
+            {
               referrerId: quizUser.referrerId,
               quizUserInfo: quizUser.quizUserInfo,
               vip: quizUser.vip,
@@ -57,17 +57,24 @@ async function onMessage(tunnelId, type, content) {
             }
           }
         )
-        await db.collection('quizUserForms').insertOne({
-          quizUserId: quizUserForm.quizUserId,
-          formId: quizUserForm.formId,
-          submitTime: quizUserForm.submitTime
-        })
+        await db.collection('quizUserForms').updateOne(
+          { quizUserId: quizUserForm.quizUserId },
+          {
+            $set:
+            {
+              quizUserId: quizUserForm.quizUserId,
+              formId: quizUserForm.formId,
+              submitTime: quizUserForm.submitTime
+            }
+          },
+          { upsert: true }
+        )
         cli.close()
         tunnel.broadcast([tunnelId], TunnelEvent.SYNC_QUIZ_USER_RES, {
           data: 'success'
         })
       } catch (e) {
-        console.log(e)
+        console.debug(e)
         tunnel.broadcast([tunnelId], TunnelEvent.SYNC_QUIZ_USER_RES, {
           error: e
         })
