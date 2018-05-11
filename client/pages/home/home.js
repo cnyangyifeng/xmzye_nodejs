@@ -18,6 +18,8 @@ Page({
 
   data: {
 
+    logginIn: false,
+
     /**
      * quizUser = {
      *   quizUserId: 'o-MYb5D7zZU-YQx09XDeFp3AAsUg',
@@ -104,40 +106,6 @@ Page({
    */
 
   onShow: function () {
-    // 确保用户已登录
-    loginService.ensureLoggedIn().then(() => {
-      // 双向更新页面和缓存数据 quizUser
-      const quizUser = QuizUser.get()
-      const referrerId = this.data.reqReferrerId
-      if (referrerId) {
-        quizUser.referrerId = referrerId
-      }
-      this.setData({
-        quizUser: quizUser
-      })
-      QuizUser.set(quizUser)
-      // 判断是否跳转页面
-      const quizId = this.data.reqQuizId
-      if (quizId && this.data.quizUser.totalKeyCount > 0) {
-        // 清空 reqQuizId，防止 quiz01 页面 navigateBack 造成循环跳转
-        this.setData({
-          reqQuizId: null
-        })
-        // 跳转至 quiz01 页面
-        console.debug(`跳转至 quiz01 页面`)
-        wx.navigateTo({
-          url: `/pages/quiz01/quiz01?quiz_id=${quizId}`
-        })
-      } else {
-        // 初始化 quizGrid
-        this.initQuizGrid().then(() => {
-          // 更新页面数据 homeState
-          this.setData({
-            homeState: HOME_STATE_MAIN
-          })
-        })
-      }
-    })
   },
 
   /**
@@ -191,6 +159,51 @@ Page({
   },
 
   /* ================================================================================ */
+
+  /**
+   * 绑定事件：点击 loginButton
+   */
+
+  loginButtonTap: function (e) {
+    console.debug(`点击 loginButton`)
+    this.setData({
+      loggingIn: true
+    })
+    // 确保用户已登录
+    loginService.ensureLoggedIn().then(() => {
+      // 双向更新页面和缓存数据 quizUser
+      const quizUser = QuizUser.get()
+      const referrerId = this.data.reqReferrerId
+      if (referrerId !== '' && quizUser.referrerId === '') {
+        quizUser.referrerId = referrerId
+      }
+      this.setData({
+        quizUser: quizUser
+      })
+      QuizUser.set(quizUser)
+      // 判断是否跳转页面
+      const quizId = this.data.reqQuizId
+      if (quizId && this.data.quizUser.totalKeyCount > 0) {
+        // 清空 reqQuizId，防止 quiz01 页面 navigateBack 造成循环跳转
+        this.setData({
+          reqQuizId: null
+        })
+        // 跳转至 quiz01 页面
+        console.debug(`跳转至 quiz01 页面`)
+        wx.navigateTo({
+          url: `/pages/quiz01/quiz01?quiz_id=${quizId}`
+        })
+      } else {
+        // 初始化 quizGrid
+        this.initQuizGrid().then(() => {
+          // 更新页面数据 homeState
+          this.setData({
+            homeState: HOME_STATE_MAIN
+          })
+        })
+      }
+    })
+  },
 
   /**
    * 绑定事件：点击 quizTab

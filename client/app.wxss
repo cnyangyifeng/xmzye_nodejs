@@ -16,3 +16,30 @@ button {
 button::after {
   display: none;
 }
+
+.cover-image {
+  flex: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 225px;
+}
+
+.login-btn {
+  flex: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  margin-top: 40px;
+  padding: 16px;
+  background-color: #00ba80;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.login-btn-hover {
+  background-color: #0c9;
+}

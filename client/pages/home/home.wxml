@@ -1,6 +1,12 @@
 <block wx:if="{{homeState===0}}">
   <view class="home">
-    <view class="spinner"></view>
+    <block wx:if="{{loggingIn}}">
+      <view class="spinner"></view>
+    </block>
+    <block wx:else>
+      <image class="cover-image" src="/assets/images/cover.jpg"></image>
+      <button class="login-btn" hover-class="login-btn-hover" open-type="getUserInfo" bindgetuserinfo="loginButtonTap">开始挑战</button>
+    </block>
   </view>
 </block>
 <block wx:elif="{{homeState===1}}">
