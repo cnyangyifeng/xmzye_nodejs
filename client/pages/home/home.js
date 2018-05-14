@@ -1,8 +1,10 @@
 const configs = require('../../config')
+const dateUtils = require('../../utils/dateUtils')
 const loginService = require('../../services/loginService')
 const msgs = require('../../msg')
 const qcloud = require('../../vendor/wafer2-client-sdk/index')
 const QuizGrid = require('../../services/quizGrid')
+const quizGridBuilder = require('../../services/quizGridBuilder')
 const QuizUser = require('../../services/quizUser')
 
 const ONLINE_TIME = 1525881600000 // 2018年5月10日00:00:00
@@ -18,7 +20,7 @@ Page({
 
   data: {
 
-    logginIn: false,
+    userInfoAuth: false,
 
     /**
      * quizUser = {
@@ -71,26 +73,8 @@ Page({
    */
 
   onLoad: function (options) {
-    // 如果指定了页面参数 referrer_id
-    const referrerId = options.referrer_id
-    if (referrerId) {
-      // 更新页面数据 reqReferrerId
-      this.setData({
-        reqReferrerId: referrerId
-      })
-    }
-    // 如果指定了页面参数 quiz_id
-    let quizId = options.quiz_id
-    if (quizId) {
-      // 如果是每日一题，获取今天真正的 quizId
-      if (quizId === 'qotd') {
-        quizId = Math.ceil((new Date() - ONLINE_TIME) / (1000 * 60 * 60 * 24))
-      }
-      // 更新页面数据 reqQuizId
-      this.setData({
-        reqQuizId: quizId
-      })
-    }
+    // 解析页面参数
+    this.parsePageOptions(options)
   },
 
   /**
@@ -98,7 +82,6 @@ Page({
    */
 
   onReady: function () {
-
   },
 
   /**
@@ -106,7 +89,8 @@ Page({
    */
 
   onShow: function () {
-    if (this.data.loggingIn) {
+    if (this.data.userInfoAuth) {
+      // 显示页面
       this.doShow()
     }
   },
@@ -116,7 +100,6 @@ Page({
    */
 
   onHide: function () {
-
   },
 
   /**
@@ -124,7 +107,6 @@ Page({
    */
 
   onUnload: function () {
-
   },
 
   /**
@@ -132,7 +114,6 @@ Page({
    */
 
   onPullDownRefresh: function () {
-
   },
 
   /**
@@ -140,7 +121,6 @@ Page({
    */
 
   onReachBottom: function () {
-
   },
 
   /**
@@ -170,7 +150,7 @@ Page({
   loginButtonTap: function (e) {
     console.debug(`点击 loginButton`)
     this.setData({
-      loggingIn: true
+      userInfoAuth: true
     })
     // 显示页面
     this.doShow()
@@ -226,27 +206,30 @@ Page({
         url: `/pages/quiz01/quiz01?quiz_id=${quizId}`
       })
     } else {
+      // 微信支付，解锁全部
+      // wx.showModal({
+      //   title: msgs.insufficient_keys_title,
+      //   content: msgs.insufficient_keys_content,
+      //   confirmText: msgs.unlock_all_title,
+      //   confirmColor: '#00ba80',
+      //   success: res => {
+      //     if (res.confirm) {
+      //       this.purchase()
+      //     }
+      //   }
+      // })
       wx.showModal({
-        title: msgs.insufficient_keys_title,
-        content: msgs.insufficient_keys_content,
-        confirmText: msgs.unlock_all_title,
+        title: msgs.get_more_keys_title,
+        content: msgs.get_more_keys_content,
+        showCancel: false,
+        confirmText: msgs.i_see_title,
         confirmColor: '#00ba80',
         success: res => {
           if (res.confirm) {
-            this.purchase()
           }
         }
       })
     }
-  },
-
-  /**
-   * 绑定事件：点击 vipButton
-   */
-
-  vipButtonTap: function () {
-    console.debug(`点击 vipButton`)
-    this.purchase()
   },
 
   /**
@@ -255,17 +238,18 @@ Page({
 
   addKeyButtonTap: function () {
     console.debug(`点击 addKeyButton`)
-    wx.showModal({
-      title: msgs.insufficient_keys_title,
-      content: msgs.insufficient_keys_content,
-      confirmText: msgs.unlock_all_title,
-      confirmColor: '#00ba80',
-      success: res => {
-        if (res.confirm) {
-          this.purchase()
-        }
-      }
-    })
+    // 微信支付，解锁全部
+    // wx.showModal({
+    //   title: msgs.insufficient_keys_title,
+    //   content: msgs.insufficient_keys_content,
+    //   confirmText: msgs.unlock_all_title,
+    //   confirmColor: '#00ba80',
+    //   success: res => {
+    //     if (res.confirm) {
+    //       this.purchase()
+    //     }
+    //   }
+    // })
   },
 
   /**
@@ -285,6 +269,10 @@ Page({
           qcloud.clearSession()
           QuizUser.clear()
           QuizGrid.clear()
+          // 更新页面数据 userInfoAuth
+          this.setData({
+            userInfoAuth: false
+          })
           // 重定向至 home 页面
           wx.redirectTo({
             url: `../home/home`
@@ -295,6 +283,36 @@ Page({
   },
 
   /* ================================================================================ */
+
+  /**
+   * 解析页面参数
+   */
+
+  parsePageOptions(options) {
+    // 如果指定了页面参数 referrer_id
+    const referrerId = options.referrer_id
+    if (referrerId) {
+      // 更新页面数据 reqReferrerId
+      this.setData({
+        reqReferrerId: referrerId
+      })
+    }
+    // 如果指定了页面参数 quiz_id
+    const quizId = options.quiz_id
+    let reqQuizId = 0
+    if (quizId) {
+      // 如果是每日一题，获取今天真正的 quizId
+      if (quizId === 'qotd') {
+        reqQuizId = Math.ceil((new Date() - ONLINE_TIME) / (1000 * 60 * 60 * 24))
+      } else {
+        reqQuizId = parseInt(quizId)
+      }
+      // 更新页面数据 reqQuizId
+      this.setData({
+        reqQuizId: reqQuizId
+      })
+    }
+  },
 
   /**
    * 显示页面
@@ -309,16 +327,20 @@ Page({
       if (referrerId !== '' && quizUser.referrerId === '') {
         quizUser.referrerId = referrerId
       }
+      if (this.dailyCheck(quizUser)) {
+        quizUser.totalKeyCount += 5
+        quizUser.lastVisitTime = dateUtils.formatTime(new Date())
+      }
       this.setData({
         quizUser: quizUser
       })
       QuizUser.set(quizUser)
       // 判断是否跳转页面
       const reqQuizId = this.data.reqQuizId
-      if (reqQuizId && this.data.quizUser.totalKeyCount > 0) {
+      if (reqQuizId !== 0 && this.data.quizUser.totalKeyCount > 0) {
         // 清空 reqQuizId，防止 quiz01 页面 navigateBack 造成循环跳转
         this.setData({
-          reqQuizId: null
+          reqQuizId: 0
         })
         // 跳转至 quiz01 页面
         console.debug(`跳转至 quiz01 页面`)
@@ -326,8 +348,12 @@ Page({
           url: `/pages/quiz01/quiz01?quiz_id=${reqQuizId}`
         })
       } else {
-        // 初始化 quizGrid
-        this.initQuizGrid().then(() => {
+        // 构建 quizGrid
+        quizGridBuilder.build().then(() => {
+          // 更新页面数据 quizGrid
+          this.setData({
+            quizGrid: QuizGrid.get()
+          })
           // 更新页面数据 homeState
           this.setData({
             homeState: HOME_STATE_MAIN
@@ -338,51 +364,17 @@ Page({
   },
 
   /**
-   * 初始化 quizGrid
+   * 每日签到
    */
 
-  initQuizGrid: function () {
-    return new Promise((resolve, reject) => {
-      // 如果缓存数据 QuizGrid 存在
-      const cachedQuizGrid = QuizGrid.get()
-      if (cachedQuizGrid) {
-        this.setData({
-          quizGrid: cachedQuizGrid
-        })
-        // 直接返回操作成功
-        resolve()
-      } else { // 否则，初始化 quizGrid
-        console.debug(`初始化 quizGrid`)
-        let quizGrid = []
-        for (let i = 0; i < 5; i++) {
-          let quizTab = { quizTabName: `${100 * i + 1}-${100 * (i + 1)}` }
-          let quizCards = []
-          for (let j = 0; j < 100; j++) {
-            const quizId = 100 * i + j + 1
-            const quizCard = {
-              quizId: quizId,
-              quizUnlocked: 0,
-              quizQuestionImageUrl: '',
-              quizLoaded: 0,
-              timeElapsed: 0,
-              myAnswer: 'N',
-              quizSolved: 0
-            }
-            quizCards.push(quizCard)
-          }
-          quizTab['quizCards'] = quizCards
-          quizGrid.push(quizTab)
-        }
-        // 更新页面数据 quizGrid
-        this.setData({
-          quizGrid: quizGrid
-        })
-        // 缓存 quizGrid
-        QuizGrid.set(quizGrid)
-        // 操作成功
-        resolve()
-      }
-    })
+  dailyCheck: function (quizUser) {
+    const lastVisitDate = new Date(quizUser.lastVisitTime.substr(0, 10).replace(/-/, "/"))
+    let today = new Date()
+    today.setHours(0)
+    today.setMinutes(0)
+    today.setSeconds(0)
+    today.setMilliseconds(0)
+    return today.getTime() > lastVisitDate.getTime() ? true : false
   },
 
   /**
@@ -437,7 +429,7 @@ Page({
       url: `${configs.weapp}/purchase/place_order`,
       login: true,
       success: res => {
-        console.log(`下单成功：`, res)
+        console.debug(`下单成功：`, res)
         // 隐藏 loading 提示框
         wx.hideLoading()
         // 发起微信支付请求
@@ -449,7 +441,7 @@ Page({
           'signType': payData.signType,
           'paySign': payData.paySign,
           'success': res => {
-            console.log(`支付成功：`, res)
+            console.debug(`支付成功：`, res)
             // 显示支付成功消息提示框
             wx.showToast({
               title: msgs.pay_success_title,
@@ -477,7 +469,7 @@ Page({
             QuizGrid.set(quizGrid)
           },
           'fail': err => {
-            console.log(`支付失败：`, err)
+            console.debug(`支付失败：`, err)
             switch (err.errMsg) {
               case 'requestPayment:fail cancel':
                 break
@@ -492,7 +484,7 @@ Page({
         })
       },
       fail: err => {
-        console.log(`下单失败：`, err)
+        console.debug(`下单失败：`, err)
         // 隐藏 loading 提示框
         wx.hideLoading()
         wx.showToast({

@@ -2,6 +2,34 @@
 
 /****************************************************************************************************/
 
+.login-btn {
+  flex: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 100px;
+  padding: 16px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background-color: #00ba80;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  animation-name: pulse;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+
+.login-btn-hover {
+  background-color: #0c9;
+}
+
+/****************************************************************************************************/
+
 .nav-bar {
   position: absolute;
   z-index: 1000;

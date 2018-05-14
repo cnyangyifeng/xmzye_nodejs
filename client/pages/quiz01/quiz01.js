@@ -3,6 +3,7 @@ const loginService = require('../../services/loginService')
 const msgs = require('../../msg')
 const qcloud = require('../../vendor/wafer2-client-sdk/index')
 const QuizGrid = require('../../services/quizGrid')
+const quizGridBuilder = require('../../services/quizGridBuilder')
 const QuizUser = require('../../services/quizUser')
 const QuizUserForm = require('../../services/quizUserForm')
 const tunnelService = require('../../services/tunnelService')
@@ -146,19 +147,11 @@ Page({
    */
 
   onLoad: function (options) {
-    const quizId = parseInt(options.quiz_id)
-    console.debug(`当前 quizId: `, quizId)
-    // 如果 quizId 不存在，则跳转至 home 页面
-    if (!quizId) {
-      console.debug(`跳转至 home 页面`)
-      wx.redirectTo({
-        url: `../home/home`
-      })
-      return
-    }
+    const reqQuizId = parseInt(options.quiz_id)
+    console.debug(`当前 quizId: `, reqQuizId)
     // 更新页面数据 reqQuizId
     this.setData({
-      reqQuizId: quizId
+      reqQuizId: reqQuizId
     })
     // 初始化各种音效
     this.initCountdownAudioContext()
@@ -187,8 +180,12 @@ Page({
         quizUser: QuizUser.get(),
         quizUserForm: QuizUserForm.get()
       })
-      // 初始化 quizGrid
-      this.initQuizGrid().then(() => {
+      // 构建 quizGrid
+      quizGridBuilder.build().then(() => {
+        // 更新页面数据 quizGrid
+        this.setData({
+          quizGrid: QuizGrid.get()
+        })
         const quizCardIndex = this.getQuizCardIndexByQuizId(this.data.reqQuizId)
         // 解锁当前 quiz
         const unlocked = this.unlockQuiz(quizCardIndex)
@@ -206,10 +203,6 @@ Page({
           })
           // 获取 quiz
           this.requestQuiz().then(() => {
-            // 获取当前 quiz 相关的全部用户数量
-            this.setData({
-              totalQuizUserCount: this.getTotalQuizUserCount()
-            })
             // 更新页面数据 quizAsLoaded
             this.setData({
               quizLoaded: 1
@@ -245,8 +238,7 @@ Page({
             // 启动信道服务
             const app = getApp()
             if (!app.tunnel || app.globalData.tunnelStatus === TunnelStatus.CLOSE) {
-              console.log(`启动信道服务...`)
-              // 启动信道服务
+              console.debug(`启动信道服务...`)
               tunnelService.parse(this, getApp())
             }
           })
@@ -295,7 +287,6 @@ Page({
    */
 
   onPullDownRefresh: function () {
-
   },
 
   /**
@@ -303,7 +294,6 @@ Page({
    */
 
   onReachBottom: function () {
-
   },
 
   /**
@@ -335,7 +325,18 @@ Page({
 
   addKeyButtonTap: function () {
     console.debug(`点击 addKeyButton`)
-    this.purchase()
+    // 微信支付，解锁全部
+    // wx.showModal({
+    //   title: msgs.insufficient_keys_title,
+    //   content: msgs.insufficient_keys_content,
+    //   confirmText: msgs.unlock_all_title,
+    //   confirmColor: '#00ba80',
+    //   success: res => {
+    //     if (res.confirm) {
+    //       this.purchase()
+    //     }
+    //   }
+    // })
   },
 
   /**
@@ -402,7 +403,7 @@ Page({
       return
     }
     const myAnswer = e.currentTarget.dataset.optionKey
-    console.log(`点击 optionButton, my answer: `, myAnswer)
+    console.debug(`点击 optionButton, my answer: `, myAnswer)
     if (myAnswer === this.data.myAnswer) {
       // 更新页面数据 myAnswer
       this.setData({
@@ -510,14 +511,26 @@ Page({
         url: `/pages/quiz01/quiz01?quiz_id=${nextQuizId}`
       })
     } else {
+      // 微信支付，解锁全部
+      // wx.showModal({
+      //   title: msgs.insufficient_keys_title,
+      //   content: msgs.insufficient_keys_content,
+      //   confirmText: msgs.unlock_all_title,
+      //   confirmColor: '#00ba80',
+      //   success: res => {
+      //     if (res.confirm) {
+      //       this.purchase()
+      //     }
+      //   }
+      // })
       wx.showModal({
-        title: msgs.insufficient_keys_title,
-        content: msgs.insufficient_keys_content,
-        confirmText: msgs.unlock_all_title,
+        title: msgs.get_more_keys_title,
+        content: msgs.get_more_keys_content,
+        showCancel: false,
+        confirmText: msgs.i_see_title,
         confirmColor: '#00ba80',
         success: res => {
           if (res.confirm) {
-            this.purchase()
           }
         }
       })
@@ -525,54 +538,6 @@ Page({
   },
 
   /* ================================================================================ */
-
-  /**
-   * 初始化 quizGrid
-   */
-
-  initQuizGrid: function () {
-    return new Promise((resolve, reject) => {
-      // 如果缓存数据 QuizGrid 存在
-      const cachedQuizGrid = QuizGrid.get()
-      if (cachedQuizGrid) {
-        this.setData({
-          quizGrid: cachedQuizGrid
-        })
-        // 直接返回操作成功
-        resolve()
-      } else { // 否则，初始化 quizGrid
-        console.debug(`初始化 quizGrid`)
-        let quizGrid = []
-        for (let i = 0; i < 10; i++) {
-          let quizTab = { quizTabName: `${100 * i + 1}-${100 * (i + 1)}` }
-          let quizCards = []
-          for (let j = 0; j < 100; j++) {
-            const quizId = 100 * i + j + 1
-            const quizCard = {
-              quizId: quizId,
-              quizUnlocked: 0,
-              quizLoaded: 0,
-              quizQuestionImageUrl: '',
-              timeElapsed: 0,
-              myAnswer: 'N',
-              quizSolved: 0
-            }
-            quizCards.push(quizCard)
-          }
-          quizTab['quizCards'] = quizCards
-          quizGrid.push(quizTab)
-        }
-        // 更新页面数据 quizGrid
-        this.setData({
-          quizGrid: quizGrid
-        })
-        // 缓存 quizGrid
-        QuizGrid.set(quizGrid)
-        // 操作成功
-        resolve()
-      }
-    })
-  },
 
   /**
    * 获取 quiz
@@ -888,7 +853,7 @@ Page({
       url: `${configs.weapp}/purchase/place_order`,
       login: true,
       success: res => {
-        console.log(`下单成功：`, res)
+        console.debug(`下单成功：`, res)
         // 隐藏 loading 提示框
         wx.hideLoading()
         // 发起微信支付请求
@@ -900,7 +865,7 @@ Page({
           'signType': payData.signType,
           'paySign': payData.paySign,
           'success': res => {
-            console.log(`支付成功：`, res)
+            console.debug(`支付成功：`, res)
             // 显示支付成功消息提示框
             wx.showToast({
               title: msgs.pay_success_title,
@@ -928,7 +893,7 @@ Page({
             QuizGrid.set(quizGrid)
           },
           'fail': err => {
-            console.log(`支付失败：`, err)
+            console.debug(`支付失败：`, err)
             switch (err.errMsg) {
               case 'requestPayment:fail cancel':
                 break
@@ -943,7 +908,7 @@ Page({
         })
       },
       fail: err => {
-        console.log(`下单失败：`, err)
+        console.debug(`下单失败：`, err)
         // 隐藏 loading 提示框
         wx.hideLoading()
         wx.showToast({
@@ -963,7 +928,7 @@ Page({
     // 发送信道消息
     const app = getApp()
     if (!app.tunnel || app.globalData.tunnelStatus === TunnelStatus.CLOSE) {
-      console.log(`重新建立信道...`)
+      console.debug(`重新建立信道...`)
       // 启动信道服务
       tunnelService.parse(this, getApp())
     }
@@ -975,7 +940,7 @@ Page({
     // 发送信道消息
     app.tunnel.emit(TunnelEvent.SYNC_QUIZ_USER_REQ, content)
     // wx.showNavigationBarLoading()
-    console.log(`emit a '${TunnelEvent.SYNC_QUIZ_USER_REQ}' message: `, content)
+    console.debug(`emit a '${TunnelEvent.SYNC_QUIZ_USER_REQ}' message: `, content)
   },
 
   /**
@@ -1152,19 +1117,6 @@ Page({
       quizGrid: quizGrid
     })
     QuizGrid.set(quizGrid)
-  },
-
-  /**
-   * 获取当前 quiz 相关的全部用户数量
-   */
-
-  getTotalQuizUserCount: function () {
-    const optionsData = this.data.quiz.options.optionsData
-    let totalQuizUserCount = 0
-    for (let i = 0; i < optionsData.length; i++) {
-      totalQuizUserCount += optionsData[i].agreeCount
-    }
-    return totalQuizUserCount
   },
 
   /**

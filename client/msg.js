@@ -7,6 +7,11 @@ const msgs = {
 
   error_message_title: `出错了`,
 
+  get_more_keys_title: `钥匙不足`,
+  get_more_keys_content: `每日打卡，可获赠 5 把钥匙。`,
+
+  i_see_title: `知道了`,
+
   insufficient_keys_title: `购买 VIP`,
   insufficient_keys_content: `只需 9.9 元，即可解锁全部题目。`,
 

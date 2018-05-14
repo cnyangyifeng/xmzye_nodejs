@@ -24,7 +24,7 @@ async function remindQuizUser(quizUserForm) {
   const accessToken = await requestAccessToken()
   const message = {
     touser: quizUserForm.quizUserId,
-    template_id: 'RNbMbbXTmG3Ar0w9qJguAmFT1PzrC5uwbKCvxCSTppE',
+    template_id: 'RNbMbbXTmG3Ar0w9qJguAjMBQNgesnt1J9reL9e1OQk',
     page: 'pages/home/home?quiz_id=qotd',
     form_id: quizUserForm.formId,
     data: {
@@ -33,10 +33,7 @@ async function remindQuizUser(quizUserForm) {
         color: '#e91e63'
       },
       keyword2: {
-        value: '每答对 1 道推理题，即可获赠 1 把钥匙，解锁新的题目'
-      },
-      keyword3: {
-        value: '每日签到，立即获赠 5 把钥匙'
+        value: '点击卡片，立即获赠 5 把钥匙'
       }
     },
     emphasis_keyword: 'keyword1.DATA'

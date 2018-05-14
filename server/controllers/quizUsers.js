@@ -21,7 +21,7 @@ async function getQuizUser(ctx, next) {
       const defaultQuizUser = {
         quizUserId: quizUserInfo.openId,
         referrerId: '',
-        quizUserInfo: JSON.stringify(quizUserInfo),
+        quizUserInfo: quizUserInfo,
         vip: 0,
         totalKeyCount: 10,
         muted: 0,
