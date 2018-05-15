@@ -31,7 +31,7 @@ async function getQuizUser(ctx, next) {
         lastVisitTime: lastVisitTime
       }
       const res = await collection.insertOne(defaultQuizUser)
-      if (res && res.acknowledged) {
+      if (res && res.result && res.result.ok === 1) {
         quizUser = defaultQuizUser
       }
     }

@@ -17,6 +17,7 @@ const queryQuizzes = (db, callback) => {
   const collection = db.collection('quizzes')
   collection.find({}).toArray((err, res) => {
     console.debug('found the following records: ', res)
+    console.debug('count: ', res.length)
     callback(res)
   })
 }

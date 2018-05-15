@@ -29,14 +29,14 @@ async function remindQuizUser(quizUserForm) {
     form_id: quizUserForm.formId,
     data: {
       keyword1: {
-        value: '每日一题',
-        color: '#e91e63'
+        value: '每日签到',
+        // color: '#e91e63'
       },
       keyword2: {
-        value: '点击卡片，立即获赠 5 把钥匙'
+        value: '点击卡片，可获赠 5 把钥匙。'
       }
     },
-    emphasis_keyword: 'keyword1.DATA'
+    // emphasis_keyword: 'keyword1.DATA'
   }
   await sendTemplateMessage(accessToken, JSON.stringify(message))
 }

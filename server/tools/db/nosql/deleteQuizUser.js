@@ -15,7 +15,7 @@ MongoClient.connect(configs.mongodb.url, (err, cli) => {
 
 const deleteQuizUser = (db, callback) => {
   const collection = db.collection('quizUsers')
-  collection.deleteOne({ quizUserId: 'o-MYb5EQt1Lcrpod7VjSccsIUTdw' }, (err, res) => {
+  collection.deleteOne({ quizUserId: 'o-MYb5D7zZU-YQx09XDeFp3AAsUg' }, (err, res) => {
     console.debug('delete quiz user: ', res.result)
     callback(res)
   })

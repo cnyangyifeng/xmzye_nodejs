@@ -6,6 +6,7 @@ const qcloud = require('../../vendor/wafer2-client-sdk/index')
 const QuizGrid = require('../../services/quizGrid')
 const quizGridBuilder = require('../../services/quizGridBuilder')
 const QuizUser = require('../../services/quizUser')
+const UserInfoAuth = require('../../services/userInfoAuth')
 
 const ONLINE_TIME = 1525881600000 // 2018年5月10日00:00:00
 
@@ -63,7 +64,6 @@ Page({
     reqQuizId: 0,
 
     homeState: HOME_STATE_LOADING, // 当前页面状态
-
   },
 
   /* ================================================================================ */
@@ -89,10 +89,8 @@ Page({
    */
 
   onShow: function () {
-    if (this.data.userInfoAuth) {
-      // 显示页面
-      this.doShow()
-    }
+    // 处理页面显示
+    this.doShow()
   },
 
   /**
@@ -100,6 +98,8 @@ Page({
    */
 
   onHide: function () {
+    // 处理页面隐藏
+    this.doHide()
   },
 
   /**
@@ -152,8 +152,9 @@ Page({
     this.setData({
       userInfoAuth: true
     })
-    // 显示页面
-    this.doShow()
+    UserInfoAuth.set(true)
+    // 处理登录
+    this.doLogin()
   },
 
   /**
@@ -269,10 +270,7 @@ Page({
           qcloud.clearSession()
           QuizUser.clear()
           QuizGrid.clear()
-          // 更新页面数据 userInfoAuth
-          this.setData({
-            userInfoAuth: false
-          })
+          UserInfoAuth.clear()
           // 重定向至 home 页面
           wx.redirectTo({
             url: `../home/home`
@@ -315,25 +313,60 @@ Page({
   },
 
   /**
-   * 显示页面
+   * 处理登录
+   */
+
+  doLogin: function () {
+    // 确保用户已登录
+    loginService.ensureLoggedIn().then(() => {
+      // 处理页面显示
+      this.doShow()
+    })
+  },
+
+  /**
+   * 处理页面显示
    */
 
   doShow: function () {
-    // 确保用户已登录
-    loginService.ensureLoggedIn().then(() => {
-      // 双向更新页面和缓存数据 quizUser
-      const quizUser = QuizUser.get()
+    // 更新页面数据 quizGrid
+    quizGridBuilder.build().then(() => {
+      this.setData({
+        quizGrid: QuizGrid.get()
+      })
+    })
+    // 更新页面数据 userInfoAuth
+    this.setData({
+      userInfoAuth: UserInfoAuth.get()
+    })
+    // 更新页面数据 quizUser
+    this.setData({
+      quizUser: QuizUser.get()
+    })
+    // 如果 quizUser 不存在
+    const quizUser = this.data.quizUser
+    if (!quizUser) {
+      // 则重新授权登录
+      UserInfoAuth.clear()
+      this.setData({
+        userInfoAuth: false
+      })
+    } else {
+      // 更新 referrerId
       const referrerId = this.data.reqReferrerId
       if (referrerId !== '' && quizUser.referrerId === '') {
         quizUser.referrerId = referrerId
       }
+      // 处理每日一题
       if (this.dailyCheck(quizUser)) {
         quizUser.totalKeyCount += 5
         quizUser.lastVisitTime = dateUtils.formatTime(new Date())
       }
+      // 更新页面数据 quizUser
       this.setData({
         quizUser: quizUser
       })
+      // 更新缓存数据 quizUser
       QuizUser.set(quizUser)
       // 判断是否跳转页面
       const reqQuizId = this.data.reqQuizId
@@ -348,23 +381,27 @@ Page({
           url: `/pages/quiz01/quiz01?quiz_id=${reqQuizId}`
         })
       } else {
-        // 构建 quizGrid
-        quizGridBuilder.build().then(() => {
-          // 更新页面数据 quizGrid
-          this.setData({
-            quizGrid: QuizGrid.get()
-          })
-          // 更新页面数据 homeState
-          this.setData({
-            homeState: HOME_STATE_MAIN
-          })
+        // 更新页面数据 homeState
+        this.setData({
+          homeState: HOME_STATE_MAIN
         })
       }
+    }
+  },
+
+  /**
+   * 处理页面隐藏
+   */
+
+  doHide: function () {
+    // 更新页面数据 homeState
+    this.setData({
+      homeState: HOME_STATE_LOADING
     })
   },
 
   /**
-   * 每日签到
+   * 每日一题
    */
 
   dailyCheck: function (quizUser) {

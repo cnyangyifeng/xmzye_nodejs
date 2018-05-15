@@ -55,7 +55,8 @@ async function onMessage(tunnelId, type, content) {
               createTime: quizUser.createTime,
               lastVisitTime: moment().format('YYYY-MM-DD HH:mm:ss')
             }
-          }
+          },
+          { upsert: true }
         )
         await db.collection('quizUserForms').updateOne(
           { quizUserId: quizUserForm.quizUserId },

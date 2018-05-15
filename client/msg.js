@@ -1,14 +1,12 @@
 const msgs = {
 
-  auth_user_info_fail_content: `请在 “设置” 中，允许使用你的 “用户信息”，然后重新登录。`,
-
   clear_cache_title: `危险操作`,
   clear_cache_content: `是否清空全部缓存数据？`,
 
   error_message_title: `出错了`,
 
   get_more_keys_title: `钥匙不足`,
-  get_more_keys_content: `每日打卡，可获赠 5 把钥匙。`,
+  get_more_keys_content: `每日签到，可获赠 5 把钥匙。`,
 
   i_see_title: `知道了`,
 

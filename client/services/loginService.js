@@ -27,23 +27,12 @@ var ensureLoggedIn = function () {
           resolve()
         },
         fail: err => {
-          // 显示 “登录失败” 弹窗
           switch (err.type) {
-            // 获取用户信息失败，则显示 “获取用户信息失败” 弹窗
             case qcloud.ERR_WX_GET_USER_INFO:
-              wx.showModal({
-                title: msgs.login_fail_title,
-                content: msgs.auth_user_info_fail_content,
-                showCancel: false,
-                success: function (res) {
-                  // 点击 “确定” 按钮，则调起 “小程序设置” 页面
-                  if (res.confirm) {
-                    wx.openSetting()
-                  }
-                }
+              wx.redirectTo({
+                url: `../home/home`
               })
               break
-            // 显示默认 “登录失败” 弹窗
             default:
               wx.showModal({
                 title: msgs.login_fail_title,
