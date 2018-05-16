@@ -55,7 +55,6 @@
             </view>
             <block wx:if="{{quizSolved===1}}">
               <block wx:if="{{item.optionKey===quiz.answerKey}}">
-                <!-- <view class="agree-count right" style="width:{{quiz.options.layout==='row'?692*item.agreeCount/totalQuizUserCount:302*item.agreeCount/totalQuizUserCount}}rpx;"></view> -->
                 <view class="agree-count right"></view>
               </block>
               <block wx:else>
@@ -109,7 +108,7 @@
   </block>
   <block wx:elif="{{quizState===2}}">
     <scroll-view class="quiz" scroll-y scroll-with-animation enable-back-to-top>
-      <image class="solutions-hd" src="https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/images/mot.png"></image>
+      <view class="solutions-hd"></view>
       <view class="solutions">
         <block wx:for="{{quiz.solutions}}" wx:key="item.solutionTag">
           <view class="solution">

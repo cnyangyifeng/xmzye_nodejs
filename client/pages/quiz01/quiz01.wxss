@@ -298,9 +298,7 @@
 .solutions-hd {
   flex: none;
   display: flex;
-  width: 360rpx;
-  height: 270rpx;
-  margin: 120rpx 195rpx 0 195rpx;
+  margin: 200rpx 195rpx 0 195rpx;
 }
 
 .solutions {

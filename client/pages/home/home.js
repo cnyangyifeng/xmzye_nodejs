@@ -107,6 +107,8 @@ Page({
    */
 
   onUnload: function () {
+    // 处理页面隐藏
+    this.doUnload()
   },
 
   /**
@@ -329,64 +331,61 @@ Page({
    */
 
   doShow: function () {
-    // 更新页面数据 quizGrid
+    // 更新页面数据 userInfoAuth, quizUser
+    this.setData({
+      userInfoAuth: UserInfoAuth.get(),
+      quizUser: QuizUser.get()
+    })
+    // 构建 quizGrid
     quizGridBuilder.build().then(() => {
       this.setData({
         quizGrid: QuizGrid.get()
       })
-    })
-    // 更新页面数据 userInfoAuth
-    this.setData({
-      userInfoAuth: UserInfoAuth.get()
-    })
-    // 更新页面数据 quizUser
-    this.setData({
-      quizUser: QuizUser.get()
-    })
-    // 如果 quizUser 不存在
-    const quizUser = this.data.quizUser
-    if (!quizUser) {
-      // 则重新授权登录
-      UserInfoAuth.clear()
-      this.setData({
-        userInfoAuth: false
-      })
-    } else {
-      // 更新 referrerId
-      const referrerId = this.data.reqReferrerId
-      if (referrerId !== '' && quizUser.referrerId === '') {
-        quizUser.referrerId = referrerId
-      }
-      // 处理每日一题
-      if (this.dailyCheck(quizUser)) {
-        quizUser.totalKeyCount += 5
-        quizUser.lastVisitTime = dateUtils.formatTime(new Date())
-      }
-      // 更新页面数据 quizUser
-      this.setData({
-        quizUser: quizUser
-      })
-      // 更新缓存数据 quizUser
-      QuizUser.set(quizUser)
-      // 判断是否跳转页面
-      const reqQuizId = this.data.reqQuizId
-      if (reqQuizId !== 0 && this.data.quizUser.totalKeyCount > 0) {
-        // 清空 reqQuizId，防止 quiz01 页面 navigateBack 造成循环跳转
+      // 如果 quizUser 不存在
+      const quizUser = this.data.quizUser
+      if (!quizUser) {
+        // 则重新授权登录
+        UserInfoAuth.clear()
         this.setData({
-          reqQuizId: 0
-        })
-        // 跳转至 quiz01 页面
-        console.debug(`跳转至 quiz01 页面`)
-        wx.navigateTo({
-          url: `/pages/quiz01/quiz01?quiz_id=${reqQuizId}`
+          userInfoAuth: false
         })
       } else {
-        // 更新页面数据 homeState
+        // 更新 referrerId
+        const referrerId = this.data.reqReferrerId
+        if (referrerId !== '' && quizUser.referrerId === '') {
+          quizUser.referrerId = referrerId
+        }
+        // 处理每日一题
+        if (this.dailyCheck(quizUser)) {
+          quizUser.totalKeyCount += 5
+          quizUser.lastVisitTime = dateUtils.formatTime(new Date())
+        }
+        // 更新页面数据 quizUser
         this.setData({
-          homeState: HOME_STATE_MAIN
+          quizUser: quizUser
         })
+        // 更新缓存数据 quizUser
+        QuizUser.set(quizUser)
+        // 判断是否跳转页面
+        const reqQuizId = this.data.reqQuizId
+        if (reqQuizId !== 0 && this.data.quizUser.totalKeyCount > 0) {
+          // 清空 reqQuizId，防止 quiz01 页面 navigateBack 造成循环跳转
+          this.setData({
+            reqQuizId: 0
+          })
+          // 跳转至 quiz01 页面
+          console.debug(`跳转至 quiz01 页面`)
+          wx.navigateTo({
+            url: `/pages/quiz01/quiz01?quiz_id=${reqQuizId}`
+          })
+        } else {
+          // 更新页面数据 homeState
+          this.setData({
+            homeState: HOME_STATE_MAIN
+          })
+        }
       }
-    }
+    })
   },
 
   /**
@@ -394,6 +393,17 @@ Page({
    */
 
   doHide: function () {
+    // 更新页面数据 homeState
+    this.setData({
+      homeState: HOME_STATE_LOADING
+    })
+  },
+
+  /**
+   * 处理页面卸载
+   */
+
+  doUnload: function () {
     // 更新页面数据 homeState
     this.setData({
       homeState: HOME_STATE_LOADING
