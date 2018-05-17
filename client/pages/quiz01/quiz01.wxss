@@ -131,24 +131,75 @@
   flex: none;
   display: flex;
   flex-direction: column;
-  padding: 180rpx 60rpx 0 60rpx;
+  padding-top: 180rpx;
 }
 
 .question-text {
   flex: none;
+  padding: 40rpx;
   color: #fff;
   font-size: 18px;
   font-weight: 600;
   line-height: 36px;
 }
 
+.question-image-container {
+  position: relative;
+  flex: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 20rpx;
+}
+
 .question-image {
   flex: none;
-  width: 630rpx;
-  margin-top: 60rpx;
+  width: 320px;
   background-color: #fff;
   box-sizing: border-box;
   border: 10rpx solid #ccc;
+}
+
+.question-image-mask {
+  position: absolute;
+  z-index: 997;
+  flex: none;
+  display: flex;
+  width: 320px;
+}
+
+.question-image-mask-title {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  opacity: 0.8;
+  color: #666;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 40px;
+}
+
+.answer-area {
+  position: absolute;
+  z-index: 998;
+  width: 80px;
+  height: 80px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 10rpx solid #00ba80;
+  background-color: rgba(0, 186, 128, 0.4);
+}
+
+.my-answer-point {
+  position: absolute;
+  z-index: 999;
+  width: 40px;
+  height: 40px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 10rpx solid #202c3a;
+  background-color: rgba(32, 44, 58, 0.4);
 }
 
 /*= .options =*/
@@ -276,7 +327,7 @@
   text-align: center;
 }
 
-.agree-count {
+.option-feedback {
   position: absolute;
   z-index: 999;
   top: 0;
@@ -285,11 +336,11 @@
   height: 100%;
 }
 
-.agree-count.right {
+.option-feedback.right {
   background: rgba(0, 186, 128, 0.8); /* #00ba80 */
 }
 
-.agree-count.wrong {
+.option-feedback.wrong {
   background: rgba(233, 30, 99, 0.8); /* #e91e63 */
 }
 
@@ -366,6 +417,7 @@
 .solution-data .image {
   display: block;
   margin-top: 20rpx;
+  width: 570rpx;
   text-align: center;
 }
 
@@ -437,7 +489,7 @@
 
 .feedback-modal {
   position: absolute;
-  z-index: 1001;
+  z-index: 1002;
   top: 0;
   left: 0;
   display: flex;

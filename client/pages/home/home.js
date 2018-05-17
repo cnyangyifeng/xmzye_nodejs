@@ -52,7 +52,9 @@ Page({
      *         quizQuestionImageUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/quizzes/q1/q1.svg',
      *         quizLoaded: 1,
      *         timeElapsed: 0,
-     *         myAnswer: 'N',
+     *         myAnswerKey: 'N',
+     *         myAnswerPoint: { x: 0, y: 0 },
+     *         myAnswerFeedback: -1,
      *         quizSolved: 0
      *       }
      *     ]
@@ -301,7 +303,7 @@ Page({
     const quizId = options.quiz_id
     let reqQuizId = 0
     if (quizId) {
-      // 如果是每日一题，获取今天真正的 quizId
+      // 如果是 qotd (quiz of the day)，获取今天真正的 quizId
       if (quizId === 'qotd') {
         reqQuizId = Math.ceil((new Date() - ONLINE_TIME) / (1000 * 60 * 60 * 24))
       } else {
@@ -355,8 +357,9 @@ Page({
         if (referrerId !== '' && quizUser.referrerId === '') {
           quizUser.referrerId = referrerId
         }
-        // 处理每日一题
+        // 处理每日签到
         if (this.dailyCheck(quizUser)) {
+          console.debug(`每日签到：已奖励`)
           quizUser.totalKeyCount += 5
           quizUser.lastVisitTime = dateUtils.formatTime(new Date())
         }
@@ -411,17 +414,17 @@ Page({
   },
 
   /**
-   * 每日一题
+   * 每日签到
    */
 
   dailyCheck: function (quizUser) {
-    const lastVisitDate = new Date(quizUser.lastVisitTime.substr(0, 10).replace(/-/, "/"))
+    const lastVisitTime = new Date(quizUser.lastVisitTime).getTime()
     let today = new Date()
     today.setHours(0)
     today.setMinutes(0)
     today.setSeconds(0)
     today.setMilliseconds(0)
-    return today.getTime() > lastVisitDate.getTime() ? true : false
+    return today.getTime() > lastVisitTime ? true : false
   },
 
   /**

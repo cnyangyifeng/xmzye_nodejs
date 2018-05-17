@@ -25,7 +25,7 @@ async function remindQuizUser(quizUserForm) {
   const message = {
     touser: quizUserForm.quizUserId,
     template_id: 'RNbMbbXTmG3Ar0w9qJguAjMBQNgesnt1J9reL9e1OQk',
-    page: 'pages/home/home?quiz_id=qotd',
+    page: 'pages/home/home',
     form_id: quizUserForm.formId,
     data: {
       keyword1: {

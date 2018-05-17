@@ -42,6 +42,8 @@ Page({
      *   vip: 0,
      *   totalKeyCount: 10,
      *   muted: 0,
+     *   currentQuizTabIndex: 0,
+     *   currentQuizTabName: '1-100',
      *   createTime: '2018-04-23 05:51:53'
      *   lastVisitTime: '2018-04-23 05:51:53'
      * }
@@ -64,6 +66,8 @@ Page({
     /**
      * quiz = {
      *   quizId: 1,
+     *   quizType: 1/2,
+     *   title: '莫尔夫人和离奇的鬼怪',
      *   bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
      *   timed: true,
      *   timeLimit: 120000,
@@ -74,6 +78,23 @@ Page({
      *       url: '',
      *       height: 630
      *     }
+     *   options: {
+     *     layout: 'row',
+     *     optionsData: [
+     *       {
+     *         optionKey: 'A',
+     *         optionData: [
+     *           {
+     *             blockId: '1',
+     *             blockType: 'normal-text',
+     *             text: '齐贝尔太太'
+     *           }
+     *         ]
+     *       }
+     *     ]
+     *   },
+     *   answerKey: 'C',
+     *   answerArea: { x: 250, y: 85 },
      *   solutions: [
      *     {
      *       solutionTag: '答案',
@@ -113,7 +134,9 @@ Page({
      *         quizLoaded: 1,
      *         quizQuestionImageUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/quizzes/q1/q1.svg',
      *         timeElapsed: 0,
-     *         myAnswer: 'N',
+     *         myAnswerKey: 'N',
+     *         myAnswerPoint: { x: 0, y: 0 },
+     *         myAnswerFeedback: -1,
      *         quizSolved: 0
      *       }
      *     ]
@@ -129,12 +152,14 @@ Page({
     timeElapsed: 0,
     percent: 0, // 进度百分比
 
-    myAnswer: 'N', // 当前用户的答案
+    myAnswerPoint: null,
+    myAnswerKey: 'N', // 当前用户的答案
+    myAnswerFeedback: -1,
+
     actionBarAnimationData: null,
     feedbackModalVisible: false,
     feedbackPanelAnimationData: null,
     quizSolved: 0, // 当前 quiz 是否解答完毕
-    totalQuizUserCount: 0,
 
     redisplayFromSharing: false, // 是否 “分享页面” 操作以后的页面重新显示
     redisplayFromHiding: false, // 是否 “隐藏页面” 操作以后的页面重新显示
@@ -315,12 +340,12 @@ Page({
     if (this.data.quizSolved === 1) {
       return
     }
-    const myAnswer = e.currentTarget.dataset.optionKey
-    console.debug(`点击 optionButton, my answer: `, myAnswer)
-    if (myAnswer === this.data.myAnswer) {
-      // 更新页面数据 myAnswer
+    const myAnswerKey = e.currentTarget.dataset.optionKey
+    console.debug(`点击 optionButton, my answer: `, myAnswerKey)
+    if (myAnswerKey === this.data.myAnswerKey) {
+      // 更新页面数据 myAnswerKey
       this.setData({
-        myAnswer: 'N'
+        myAnswerKey: 'N'
       })
       // 播放 actionBar 动画 fadeOutDown
       this.actionBarAnimation.opacity(0).translate3d(0, 60, 0).step({
@@ -331,9 +356,9 @@ Page({
         actionBarAnimationData: this.actionBarAnimation.export()
       })
     } else {
-      // 更新页面数据 myAnswer
+      // 更新页面数据 myAnswerKey
       this.setData({
-        myAnswer: myAnswer
+        myAnswerKey: myAnswerKey
       })
       // 播放 option 音效
       this.playOption()
@@ -346,8 +371,54 @@ Page({
         actionBarAnimationData: this.actionBarAnimation.export()
       })
     }
-    // 缓存 myAnswer
-    this.cacheMyAnswer()
+    // 缓存 myAnswerKey
+    this.cacheMyAnswerKey()
+  },
+
+  /**
+   * 绑定事件：点击 questionImageMask
+   */
+
+  questionImageMaskTap: function (e) {
+    if (this.data.quizSolved === 1) {
+      return
+    }
+    const touchPoint = e.detail
+    console.debug(`点击 questionImageMask, touchPoint: `, touchPoint)
+    // 更新页面数据 myAnswerPoint
+    const q = wx.createSelectorQuery()
+    q.select('#questionImageMask')
+      .boundingClientRect()
+      .exec(res => {
+        this.setData({
+          myAnswerPoint: {
+            x: touchPoint.x - res[0].left - 20,
+            y: touchPoint.y - res[0].top - 20
+          }
+        })
+        // const quiz = this.data.quiz
+        // quiz.answerArea = {
+        //   x: touchPoint.x - res[0].left - 40,
+        //   y: touchPoint.y - res[0].top - 40
+        // }
+        // this.setData({
+        //   quiz: quiz
+        // })
+        // console.debug(`quiz.answerArea: `, this.data.quiz.answerArea)
+        console.debug(`myAnswerPoint: `, this.data.myAnswerPoint)
+        // 播放 option 音效
+        this.playOption()
+        // 播放 actionBar 动画 fadeInUp
+        this.actionBarAnimation.opacity(1).translate3d(0, 0, 0).step({
+          duration: 200,
+          timingFunction: 'ease-in-out'
+        })
+        this.setData({
+          actionBarAnimationData: this.actionBarAnimation.export()
+        })
+        // 缓存 myAnswerPoint
+        this.cacheMyAnswerPoint()
+      })
   },
 
   /**
@@ -368,6 +439,8 @@ Page({
     })
     // 缓存 quizUserForm
     QuizUserForm.set(quizUserForm)
+    // 终止计时
+    this.stopCountingDown()
     // 提交我的答案
     this.submitMyAnswer()
   },
@@ -482,7 +555,9 @@ Page({
             quizUnlocked: quizCard.quizUnlocked,
             quizLoaded: quizCard.quizLoaded,
             timeElapsed: quizCard.timeElapsed,
-            myAnswer: quizCard.myAnswer,
+            myAnswerKey: quizCard.myAnswerKey,
+            myAnswerPoint: quizCard.myAnswerPoint,
+            myAnswerFeedback: quizCard.myAnswerFeedback,
             quizSolved: quizCard.quizSolved
           })
           // 获取 quiz
@@ -506,7 +581,7 @@ Page({
                 redisplayFromSharing: false
               })
             }
-            if (this.data.quizSolved === 1 || this.data.myAnswer !== 'N') {
+            if (this.data.quizSolved === 1 || this.data.myAnswerKey !== 'N' || this.data.myAnswerPoint) {
               // 播放 actionBar 动画 fadeInUp
               this.actionBarAnimation.opacity(1).translate3d(0, 0, 0).step({
                 duration: 200,
@@ -543,7 +618,7 @@ Page({
   doHide: function () {
     // 尚未开始计时，则禁用计时
     this.disableCountingDown()
-    // 已经开始计时，则停止计时
+    // 已经开始计时，则清除计时
     this.clearCountingDown()
     // 已经开始播放 solutions 音效，则停止播放 solutions 音效
     this.stopPlayingSolutions()
@@ -560,7 +635,7 @@ Page({
   doUnload: function () {
     // 尚未开始计时，则禁用计时
     this.disableCountingDown()
-    // 已经开始计时，则停止计时
+    // 已经开始计时，则清除计时
     this.clearCountingDown()
     // 已经开始播放 solutions 音效，则停止播放 solutions 音效
     this.stopPlayingSolutions()
@@ -645,8 +720,25 @@ Page({
               percent: percent
             })
           } else { // 如果已超时
-            // 提交我的答案
-            this.submitMyAnswer()
+            // 终止计时
+            this.stopCountingDown()
+            // 显示 “时间到” 弹窗
+            wx.showModal({
+              title: msgs.time_out_title,
+              content: msgs.time_out_content,
+              cancelText: msgs.wait_a_second_title,
+              confirmText: msgs.ok_title,
+              confirmColor: '#00ba80',
+              success: res => {
+                if (res.confirm) {
+                  console.debug('答题超时，查看答案')
+                  // 提交我的答案
+                  this.submitMyAnswer()
+                } else if (res.cancel) {
+                  console.debug('答题超时，先不看答案')
+                }
+              }
+            })
           }
         }, 1000)
       }
@@ -667,7 +759,23 @@ Page({
   },
 
   /**
-   * 停止计时
+   * 终止计时
+   */
+
+  stopCountingDown() {
+    // 清除计时
+    this.clearCountingDown()
+    // 更新页面数据
+    this.setData({
+      timeElapsed: this.data.quiz.timeLimit,
+      percent: 0
+    })
+    // 缓存 timeElapsed
+    this.cacheTimeElapsed()
+  },
+
+  /**
+   * 清除计时
    */
 
   clearCountingDown() {
@@ -782,24 +890,8 @@ Page({
     this.setData({
       actionBarAnimationData: this.actionBarAnimation.export()
     })
-    // 停止计时
-    this.clearCountingDown()
-    // 更新页面数据
-    this.setData({
-      timeElapsed: this.data.quiz.timeLimit,
-      percent: 0
-    })
-    // 缓存 timeElapsed
-    this.cacheTimeElapsed()
-    // 如果答对，则奖励 1 把钥匙
-    if (this.data.myAnswer === this.data.quiz.answerKey) {
-      const quizUser = this.data.quizUser
-      quizUser.totalKeyCount++
-      this.setData({
-        quizUser: quizUser
-      })
-      QuizUser.set(quizUser)
-    }
+    // 检查答案
+    this.checkMyAnswer()
     // 播放 solutions 音效
     this.playSolutions()
     // 显示 feedbackModal
@@ -824,6 +916,62 @@ Page({
     }, 400)
     // 发送 “同步用户信息” 消息
     this.emitSyncQuizUserMessage()
+  },
+
+  /**
+   * 检查答案
+   */
+
+  checkMyAnswer: function () {
+    new Promise((resolve, reject) => {
+      const quiz = this.data.quiz
+      if (quiz.quizType === 1) {
+        this.setData({
+          myAnswerFeedback: (this.data.myAnswerKey === quiz.answerKey) ? 1 : 0
+        })
+        // 操作成功
+        resolve()
+      } else if (quiz.quizType === 2) {
+        new Promise((resolve, reject) => {
+          wx.createIntersectionObserver().relativeTo('.answer-area').relativeToViewport().observe('.my-answer-point', res => {
+            console.log(`相交区域占目标节点的比例：`, res.intersectionRatio)
+            if (res.intersectionRatio > 0) {
+              this.setData({
+                myAnswerFeedback: 1
+              })
+            } else {
+              this.setData({
+                myAnswerFeedback: 0
+              })
+            }
+          })
+          // 操作成功
+          resolve()
+        }).then(() => {
+          console.log(this.data.myAnswerFeedback)
+          if (this.data.myAnswerFeedback !== 1) {
+            this.setData({
+              myAnswerFeedback: 0
+            })
+          }
+          // 操作成功
+          resolve()
+        })
+      }
+    }).then(() => {
+      const myAnswerFeedback = this.data.myAnswerFeedback
+      // 缓存 myAnswerFeedback
+      this.cacheMyAnswerFeedback(myAnswerFeedback)
+      // 缓存 quizUser
+      if (myAnswerFeedback === 1) { // 如果回答正确
+        const quizUser = this.data.quizUser
+        quizUser.totalKeyCount++
+        this.setData({
+          quizUser: quizUser
+        })
+        QuizUser.set(quizUser)
+      }
+    })
   },
 
   /**
@@ -1073,6 +1221,7 @@ Page({
    */
 
   initAnimations: function () {
+    console.debug(`初始化各种动画`)
     this.feedbackPanelAnimation = wx.createAnimation()
     this.actionBarAnimation = wx.createAnimation()
   },
@@ -1113,16 +1262,50 @@ Page({
   },
 
   /**
-   * 缓存 myAnswer
+   * 缓存 myAnswerKey
    */
 
-  cacheMyAnswer: function () {
-    console.debug(`缓存 myAnswer`)
+  cacheMyAnswerKey: function () {
+    console.debug(`缓存 myAnswerKey`)
     const remainder = this.data.reqQuizId % 100
     const quizCardIndex = (remainder === 0) ? 99 : remainder - 1
     const quizTabIndex = this.data.quizUser.currentQuizTabIndex
     const quizGrid = this.data.quizGrid
-    quizGrid[quizTabIndex].quizCards[quizCardIndex].myAnswer = this.data.myAnswer
+    quizGrid[quizTabIndex].quizCards[quizCardIndex].myAnswerKey = this.data.myAnswerKey
+    this.setData({
+      quizGrid: quizGrid
+    })
+    QuizGrid.set(quizGrid)
+  },
+
+  /**
+   * 缓存 myAnswerPoint
+   */
+
+  cacheMyAnswerPoint: function () {
+    console.debug(`缓存 myAnswerPoint`)
+    const remainder = this.data.reqQuizId % 100
+    const quizCardIndex = (remainder === 0) ? 99 : remainder - 1
+    const quizTabIndex = this.data.quizUser.currentQuizTabIndex
+    const quizGrid = this.data.quizGrid
+    quizGrid[quizTabIndex].quizCards[quizCardIndex].myAnswerPoint = this.data.myAnswerPoint
+    this.setData({
+      quizGrid: quizGrid
+    })
+    QuizGrid.set(quizGrid)
+  },
+
+  /**
+   * 缓存 myAnswerFeedback
+   */
+
+  cacheMyAnswerFeedback: function (myAnswerFeedback) {
+    console.debug(`缓存 myAnswerFeedback`)
+    const remainder = this.data.reqQuizId % 100
+    const quizCardIndex = (remainder === 0) ? 99 : remainder - 1
+    const quizTabIndex = this.data.quizUser.currentQuizTabIndex
+    const quizGrid = this.data.quizGrid
+    quizGrid[quizTabIndex].quizCards[quizCardIndex].myAnswerFeedback = myAnswerFeedback
     this.setData({
       quizGrid: quizGrid
     })

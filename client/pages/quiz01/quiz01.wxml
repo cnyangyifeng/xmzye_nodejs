@@ -37,38 +37,51 @@
     <scroll-view class="quiz" scroll-y scroll-with-animation enable-back-to-top>
       <view id="question" class="question">
         <view class="question-text">{{quiz.question.questionText}}</view>
-        <image class="question-image" style="height:{{quiz.question.questionImage.height}}rpx;" src="{{quiz.question.questionImage.url}}"></image>
-      </view>
-      <view hidden="{{!quiz.options}}" id="optionsHead" class="options-hd">选项</view>
-      <view class="options {{quiz.options.layout}}">
-        <block wx:for="{{quiz.options.optionsData}}" wx:key="item.optionKey">
-          <view class="option {{quiz.options.layout}}" data-option-key="{{item.optionKey}}" bindtap="optionButtonTap">
-            <view class="option-key {{item.optionKey===myAnswer?'check':''}}">{{item.optionKey}}</view>
-            <view class="option-data">
-              <block wx:for="{{item.optionData}}" wx:key="{{item.blockId}}">
-                <view wx:if="{{item.blockType==='space'||item.blockType==='tab'||item.blockType==='return'}}" class="{{item.blockType}}"></view>
-                <view wx:elif="{{item.blockType==='image'}}" class="{{item.blockType}}">
-                  <image style="width:{{item.width}}px;height:{{item.height}}px;" src="{{item.url}}"></image>
-                </view>
-                <view wx:else class="{{item.blockType}}">{{item.text}}</view>
-              </block>
+        <view class="question-image-container">
+          <image class="question-image" style="height:{{quiz.question.questionImage.height/2}}px;" src="{{quiz.question.questionImage.url}}"></image>
+          <block wx:if="{{quiz.quizType===2}}">
+            <view id="questionImageMask" class="question-image-mask" style="height:{{quiz.question.questionImage.height/2}}px;" bindtap="questionImageMaskTap">
+              <view hidden="{{myAnswerPoint}}" class="question-image-mask-title">
+                <text>点击图片\n指出问题</text>
+              </view>
+              <view hidden="{{!myAnswerPoint}}" class="my-answer-point" style="left:{{myAnswerPoint.x}}px;top:{{myAnswerPoint.y}}px;"></view>
+              <view hidden="{{quizSolved===0}}" class="answer-area" style="left:{{quiz.answerArea.x}}px;top:{{quiz.answerArea.y}}px;"></view>
             </view>
-            <block wx:if="{{quizSolved===1}}">
-              <block wx:if="{{item.optionKey===quiz.answerKey}}">
-                <view class="agree-count right"></view>
-              </block>
-              <block wx:else>
-                <block wx:if="{{item.optionKey===myAnswer}}">
-                  <view class="agree-count wrong"></view>
+          </block>
+        </view>
+      </view>
+      <block wx:if="{{quiz.quizType===1}}">
+        <view class="options-hd">选项</view>
+        <view class="options {{quiz.options.layout}}">
+          <block wx:for="{{quiz.options.optionsData}}" wx:key="item.optionKey">
+            <view class="option {{quiz.options.layout}}" data-option-key="{{item.optionKey}}" bindtap="optionButtonTap">
+              <view class="option-key {{item.optionKey===myAnswerKey?'check':''}}">{{item.optionKey}}</view>
+              <view class="option-data">
+                <block wx:for="{{item.optionData}}" wx:key="{{item.blockId}}">
+                  <view wx:if="{{item.blockType==='space'||item.blockType==='tab'||item.blockType==='return'}}" class="{{item.blockType}}"></view>
+                  <view wx:elif="{{item.blockType==='image'}}" class="{{item.blockType}}">
+                    <image style="width:{{item.width}}px;height:{{item.height}}px;" src="{{item.url}}"></image>
+                  </view>
+                  <view wx:else class="{{item.blockType}}">{{item.text}}</view>
+                </block>
+              </view>
+              <block wx:if="{{quizSolved===1}}">
+                <block wx:if="{{item.optionKey===quiz.answerKey}}">
+                  <view class="option-feedback right"></view>
                 </block>
                 <block wx:else>
-                  <view class="agree-count"></view>
+                  <block wx:if="{{item.optionKey===myAnswerKey}}">
+                    <view class="option-feedback wrong"></view>
+                  </block>
+                  <block wx:else>
+                    <view class="option-feedback"></view>
+                  </block>
                 </block>
               </block>
-            </block>
-          </view>
-        </block>
-      </view>
+            </view>
+          </block>
+        </view>
+      </block>
       <view class="quiz-foot"></view>
     </scroll-view>
     <block wx:if="{{quizSolved===0}}">
@@ -86,9 +99,9 @@
     </block>
     <view hidden="{{!feedbackModalVisible}}" class="feedback-modal" bindtap="feedbackModalTap">
       <view class="feedback-panel" animation="{{feedbackPanelAnimationData}}">
-        <block wx:if="{{myAnswer===quiz.answerKey}}">
+        <block wx:if="{{myAnswerFeedback===1}}">
           <view class="feedback-title">恭喜你，答对了！</view>
-          <view class="feedback-description">正确答案是
+          <view wx:if="{{quiz.quizType===1}}" class="feedback-description">正确答案是
             <text class="feedback-value">{{quiz.answerKey}}</text>
           </view>
           <view class="feedback-description">奖励
@@ -98,7 +111,7 @@
         </block>
         <block wx:else>
           <view class="feedback-title">很遗憾，答错了！</view>
-          <view class="feedback-description">正确答案是
+          <view wx:if="{{quiz.quizType===1}}" class="feedback-description">正确答案是
             <text class="feedback-value">{{quiz.answerKey}}</text>
           </view>
         </block>
@@ -116,7 +129,7 @@
             <view class="solution-data {{item.align==='center'?'center':''}}">
               <block wx:for="{{item.solutionData}}" wx:key="{{item.blockId}}">
                 <view wx:if="{{item.blockType==='space'||item.blockType==='tab'||item.blockType==='return'}}" class="{{item.blockType}}"></view>
-                <image wx:elif="{{item.blockType==='image'}}" class="{{item.blockType}}" style="width:570rpx;height:{{item.image.height}}rpx;" src="{{item.image.url}}"></image>
+                <image wx:elif="{{item.blockType==='image'}}" class="{{item.blockType}}" style="height:{{item.image.height}}rpx;" src="{{item.image.url}}"></image>
                 <view wx:else class="{{item.blockType}}">{{item.text}}</view>
               </block>
             </view>

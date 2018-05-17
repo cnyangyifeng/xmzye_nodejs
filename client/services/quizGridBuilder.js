@@ -22,7 +22,9 @@ var build = function () {
             quizLoaded: 0,
             quizQuestionImageUrl: '',
             timeElapsed: 0,
-            myAnswer: 'N',
+            myAnswerKey: 'N',
+            myAnswerPoint: null,
+            myAnswerFeedback: -1,
             quizSolved: 0
           }
           quizCards.push(quizCard)

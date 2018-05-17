@@ -1,105 +1,17 @@
 const QuizzesData = [
   {
     quizId: 1,
-    title: '谁最有可能遇到危险？',
+    quizType: 1,
+    title: '莫尔夫人和离奇的鬼怪',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
       questionId: 1,
-      questionText: '下一秒，谁最有可能遇到危险？',
+      questionText: '莫尔夫人打电话给吉塔侦探，她害怕极了，颤抖着说：“我在10点55分走出厨房，看到有人披着白床单在走廊上，一眨眼就跑到门口，那人的头撞到了门，然后跑上楼梯消失了。我害怕极了，好一会儿才发现中大奖的彩票不见了！”吉塔侦探的心中很肯定，这个“鬼怪”一定在另外3位房客中。吉塔侦探分别询问他们，10点55分时他们在哪里？齐贝尔太太说：“我在铺床，然后开始做菜。”伯尔特先生说：“我去买东西了，刚回来。”纳塞尔先生说：“我今天睡过头了，很晚才起床，刚刚洗完澡从浴室出来！”这三个人中谁的说法是错误的，从而暴露了这个鬼鬼祟祟的偷窃之鬼？',
       questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/quizzes/815gta2a.jpg',
-        height: 420
-      }
-    },
-    options: {
-      layout: 'grid',
-      optionsData: [
-        {
-          optionKey: 'A',
-          agreeCount: 1000,
-          optionData: [
-            {
-              blockId: '1',
-              blockType: 'normal-text',
-              text: '1 号'
-            }
-          ]
-        },
-        {
-          optionKey: 'B',
-          agreeCount: 1000,
-          optionData: [
-            {
-              blockId: '1',
-              blockType: 'normal-text',
-              text: '2 号'
-            }
-          ]
-        },
-        {
-          optionKey: 'C',
-          agreeCount: 1000,
-          optionData: [
-            {
-              blockId: '1',
-              blockType: 'normal-text',
-              text: '3 号'
-            }
-          ]
-        },
-        {
-          optionKey: 'D',
-          agreeCount: 1000,
-          optionData: [
-            {
-              blockId: '1',
-              blockType: 'normal-text',
-              text: '4 号'
-            }
-          ]
-        }
-      ]
-    },
-    answerKey: 'B',
-    solutions: [
-      {
-        solutionTag: '答案',
-        align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '2 号'
-          }
-        ]
-      },
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '只有 2 号的危险没有被其他人发现'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    quizId: 2,
-    title: '哪一侧是镜子中的影像？',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
-    timed: true,
-    timeLimit: 60000,
-    question: {
-      questionId: 1,
-      questionText: '下图是某天早上小英在北京家里拍摄的照片。其中有一侧是镜子中的影像，请问是哪一侧？',
-      questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/quizzes/mdflcft1.jpg',
-        height: 540
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/xfhywhen.jpg',
+        height: 480
       }
     },
     options: {
@@ -107,29 +19,37 @@ const QuizzesData = [
       optionsData: [
         {
           optionKey: 'A',
-          agreeCount: 1000,
           optionData: [
             {
               blockId: '1',
               blockType: 'normal-text',
-              text: '左侧'
+              text: '齐贝尔太太'
             }
           ]
         },
         {
           optionKey: 'B',
-          agreeCount: 1000,
           optionData: [
             {
               blockId: '1',
               blockType: 'normal-text',
-              text: '右侧'
+              text: '伯尔特先生'
+            }
+          ]
+        },
+        {
+          optionKey: 'C',
+          optionData: [
+            {
+              blockId: '1',
+              blockType: 'normal-text',
+              text: '纳赛尔先生'
             }
           ]
         }
       ]
     },
-    answerKey: 'B',
+    answerKey: 'C',
     solutions: [
       {
         solutionTag: '答案',
@@ -138,7 +58,7 @@ const QuizzesData = [
           {
             blockId: '1',
             blockType: 'normal-text',
-            text: '右侧'
+            text: '纳赛尔先生'
           }
         ]
       },
@@ -149,7 +69,37 @@ const QuizzesData = [
           {
             blockId: '1',
             blockType: 'normal-text',
-            text: '请观察闹钟，早上五点钟的太阳尚未升起'
+            text: '纳赛尔先生是那个偷窃之鬼！如果他真的刚刚洗完澡从浴室出来，那么他的头发应该是湿的，他的浴衣内也不应该穿戴着衬衫和领带，此外他额头上的创可贴正表明了刚才他的头撞到了某处。'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    quizId: 2,
+    quizType: 2,
+    title: '令人垂涎的啤酒瓶盖收藏品',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
+    timed: true,
+    timeLimit: 60000,
+    question: {
+      questionId: 1,
+      questionText: '拍卖行勒策尔公司委托多琳·达克赛一项任务——将一批罕见珍贵的啤酒瓶盖收藏品送到火车站。她所乘坐的火车在10点整发车开往汉堡，她将在那里和一位有兴趣的买家碰头。卡勒侦探陪伴他的老朋友多琳前往火车站，多琳的前同事瓦洛·拉贝悄悄地跟踪他们。瓦洛十分熟悉多琳的业务，而且他本身就是啤酒瓶盖的狂热收藏家，无论如何都想把这批宝贵的藏品占为已有。当多琳将装有啤酒瓶盖的箱子放下，抬头查看自己的火车班次发车信息时，瓦洛迅速冲上去调换了皮箱，旋即消失在人流中。不过他没有想到，卡勒侦探也会同行！卡勒侦探一直看得清清楚楚，瓦洛是如何偷盗掉包收藏品的，也知道他现在正藏在何处，卡勒侦探就要采取行动了！你看出来了吗？',
+      questionImage: {
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/b0sbp1cw.jpg',
+        height: 970
+      }
+    },
+    answerArea: { x: 250, y: 85 },
+    solutions: [
+      {
+        solutionTag: '解析',
+        align: 'left',
+        solutionData: [
+          {
+            blockId: '1',
+            blockType: 'normal-text',
+            text: '瓦洛用外观一模一样的箱子调换了多琳的箱子，他位于楼梯顶部，提着真正的箱子想要逃进小餐馆。'
           }
         ]
       }
@@ -157,6 +107,7 @@ const QuizzesData = [
   },
   {
     quizId: 3,
+    quizType: 1,
     title: '今晚几楼的女士出轨了？',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -174,7 +125,6 @@ const QuizzesData = [
       optionsData: [
         {
           optionKey: 'A',
-          agreeCount: 1000,
           optionData: [
             {
               blockId: '1',
@@ -185,7 +135,6 @@ const QuizzesData = [
         },
         {
           optionKey: 'B',
-          agreeCount: 1000,
           optionData: [
             {
               blockId: '1',
@@ -196,7 +145,6 @@ const QuizzesData = [
         },
         {
           optionKey: 'C',
-          agreeCount: 1000,
           optionData: [
             {
               blockId: '1',
@@ -235,6 +183,7 @@ const QuizzesData = [
   },
   {
     quizId: 4,
+    quizType: 1,
     title: '谁更有可能是凶手？',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -252,7 +201,6 @@ const QuizzesData = [
       optionsData: [
         {
           optionKey: 'A',
-          agreeCount: 1000,
           optionData: [
             {
               blockId: '1',
@@ -263,7 +211,6 @@ const QuizzesData = [
         },
         {
           optionKey: 'B',
-          agreeCount: 1000,
           optionData: [
             {
               blockId: '1',
@@ -274,7 +221,6 @@ const QuizzesData = [
         },
         {
           optionKey: 'C',
-          agreeCount: 1000,
           optionData: [
             {
               blockId: '1',
@@ -285,7 +231,6 @@ const QuizzesData = [
         },
         {
           optionKey: 'D',
-          agreeCount: 1000,
           optionData: [
             {
               blockId: '1',
@@ -324,6 +269,7 @@ const QuizzesData = [
   },
   {
     quizId: 5,
+    quizType: 1,
     title: '谁是走私集团幕后老板？',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -342,7 +288,6 @@ const QuizzesData = [
       [
         {
           optionKey: 'A',
-          agreeCount: 1000,
           optionData: [
             {
               blockId: '1',
@@ -353,7 +298,6 @@ const QuizzesData = [
         },
         {
           optionKey: 'B',
-          agreeCount: 1000,
           optionData: [
             {
               blockId: '1',
@@ -364,7 +308,6 @@ const QuizzesData = [
         },
         {
           optionKey: 'C',
-          agreeCount: 1000,
           optionData: [
             {
               blockId: '1',
@@ -415,6 +358,7 @@ const QuizzesData = [
   },
   {
     quizId: 6,
+    quizType: 1,
     title: '哪一发子弹最先击中墙体？',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -491,6 +435,7 @@ const QuizzesData = [
   },
   {
     quizId: 7,
+    quizType: 1,
     title: '汽车停在几号车位？',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -589,6 +534,7 @@ const QuizzesData = [
   },
   {
     quizId: 8,
+    quizType: 1,
     title: '自杀还是谋杀？',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -682,6 +628,7 @@ const QuizzesData = [
   },
   {
     quizId: 9,
+    quizType: 1,
     title: '谁先成功潜入的？',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -748,6 +695,7 @@ const QuizzesData = [
   },
   {
     quizId: 10,
+    quizType: 1,
     title: '',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -834,6 +782,7 @@ const QuizzesData = [
   },
   {
     quizId: 11,
+    quizType: 1,
     title: '谁最有可能遇到危险？',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -873,6 +822,7 @@ const QuizzesData = [
   },
   {
     quizId: 12,
+    quizType: 1,
     title: '谁最有可能遇到危险？',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -912,6 +862,7 @@ const QuizzesData = [
   },
   {
     quizId: 13,
+    quizType: 1,
     title: '谁最有可能遇到危险？',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -951,6 +902,7 @@ const QuizzesData = [
   },
   {
     quizId: 14,
+    quizType: 1,
     title: '谁最有可能遇到危险？',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -990,6 +942,7 @@ const QuizzesData = [
   },
   {
     quizId: 15,
+    quizType: 1,
     title: '哪一侧是镜子中的影像？',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -1029,6 +982,7 @@ const QuizzesData = [
   },
   {
     quizId: 16,
+    quizType: 1,
     title: '今晚几楼的女士出轨了？',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -1068,6 +1022,7 @@ const QuizzesData = [
   },
   {
     quizId: 17,
+    quizType: 1,
     title: '',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -1119,6 +1074,7 @@ const QuizzesData = [
   },
   {
     quizId: 18,
+    quizType: 1,
     title: '谁更有可能是凶手？',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -1158,6 +1114,7 @@ const QuizzesData = [
   },
   {
     quizId: 19,
+    quizType: 1,
     title: '谁是走私集团幕后老板？',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -1209,6 +1166,7 @@ const QuizzesData = [
   },
   {
     quizId: 20,
+    quizType: 1,
     title: '犯罪嫌疑人到达现场的先后顺序是什么？',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -1251,6 +1209,7 @@ const QuizzesData = [
   },
   {
     quizId: 21,
+    quizType: 1,
     title: '哪一发子弹最先击中墙体？',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -1290,6 +1249,7 @@ const QuizzesData = [
   },
   {
     quizId: 22,
+    quizType: 1,
     title: '自杀还是谋杀？',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -1329,6 +1289,7 @@ const QuizzesData = [
   },
   {
     quizId: 23,
+    quizType: 1,
     title: '汽车停在几号车位？',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -1380,6 +1341,7 @@ const QuizzesData = [
   },
   {
     quizId: 24,
+    quizType: 1,
     title: '自杀还是谋杀？',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -1446,6 +1408,7 @@ const QuizzesData = [
   },
   {
     quizId: 25,
+    quizType: 1,
     title: '谁先成功潜入的？',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -1485,6 +1448,7 @@ const QuizzesData = [
   },
   {
     quizId: 26,
+    quizType: 1,
     title: '',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -1524,6 +1488,7 @@ const QuizzesData = [
   },
   {
     quizId: 27,
+    quizType: 1,
     title: '谁最有可能遇到危险？',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -1563,6 +1528,7 @@ const QuizzesData = [
   },
   {
     quizId: 28,
+    quizType: 1,
     title: '哪一侧是镜子中的影像？',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -1602,6 +1568,7 @@ const QuizzesData = [
   },
   {
     quizId: 29,
+    quizType: 1,
     title: '今晚几楼的女士出轨了？',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -1641,6 +1608,7 @@ const QuizzesData = [
   },
   {
     quizId: 30,
+    quizType: 1,
     title: '',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -1692,6 +1660,7 @@ const QuizzesData = [
   },
   {
     quizId: 31,
+    quizType: 1,
     title: '谁更有可能是凶手？',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -1731,6 +1700,7 @@ const QuizzesData = [
   },
   {
     quizId: 32,
+    quizType: 1,
     title: '谁是走私集团幕后老板？',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -1782,6 +1752,7 @@ const QuizzesData = [
   },
   {
     quizId: 33,
+    quizType: 1,
     title: '犯罪嫌疑人到达现场的先后顺序是什么？',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -1824,6 +1795,7 @@ const QuizzesData = [
   },
   {
     quizId: 34,
+    quizType: 1,
     title: '哪一发子弹最先击中墙体？',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -1863,6 +1835,7 @@ const QuizzesData = [
   },
   {
     quizId: 35,
+    quizType: 1,
     title: '自杀还是谋杀？',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -1902,6 +1875,7 @@ const QuizzesData = [
   },
   {
     quizId: 36,
+    quizType: 1,
     title: '汽车停在几号车位？',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -1953,6 +1927,7 @@ const QuizzesData = [
   },
   {
     quizId: 37,
+    quizType: 1,
     title: '自杀还是谋杀？',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -2019,6 +1994,7 @@ const QuizzesData = [
   },
   {
     quizId: 38,
+    quizType: 1,
     title: '谁先成功潜入的？',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -2058,6 +2034,7 @@ const QuizzesData = [
   },
   {
     quizId: 39,
+    quizType: 1,
     title: '',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -2097,6 +2074,7 @@ const QuizzesData = [
   },
   {
     quizId: 40,
+    quizType: 1,
     title: '谁最有可能遇到危险？',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
