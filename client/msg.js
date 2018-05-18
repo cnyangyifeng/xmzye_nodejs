@@ -24,8 +24,8 @@ const msgs = {
 
   request_fail_title: `请求失败`,
 
-  time_out_title: `时间到`,
-  time_out_content: `但是，游戏永远不会结束。\n让我们揭晓本题谜底吧？`,
+  time_out_title: `时间到！`,
+  time_out_content: `让我们一起揭晓本题谜底吧？`,
 
   save_success_title: `保存成功`,
   save_fail_title: `保存失败`,

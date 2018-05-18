@@ -57,7 +57,7 @@
 
 .quiz-user-asset-value {
   max-width: 260rpx;
-  margin: 0 10rpx;
+  margin: 0 20rpx;
   color: #fff;
   font-size: 16px;
   font-weight: 600;
@@ -67,7 +67,7 @@
 }
 
 .quiz-user-asset-value.infinite {
-  margin-right: 26rpx;
+  margin-right: 36rpx;
 }
 
 .quiz-controls {
@@ -131,7 +131,7 @@
   flex: none;
   display: flex;
   flex-direction: column;
-  padding-top: 180rpx;
+  padding-top: 140rpx;
 }
 
 .question-text {
@@ -200,6 +200,11 @@
   border-radius: 50%;
   border: 10rpx solid #202c3a;
   background-color: rgba(32, 44, 58, 0.4);
+  animation-name: pulse;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
 }
 
 /*= .options =*/

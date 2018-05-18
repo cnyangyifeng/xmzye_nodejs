@@ -90,7 +90,7 @@ const QuizzesData = [
         height: 970
       }
     },
-    answerArea: { x: 250, y: 85 },
+    answerArea: { x: 260, y: 85 },
     solutions: [
       {
         solutionTag: '解析',
@@ -107,67 +107,21 @@ const QuizzesData = [
   },
   {
     quizId: 3,
-    quizType: 1,
-    title: '今晚几楼的女士出轨了？',
+    quizType: 2,
+    title: '银盘尾翼鹦鹉',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
       questionId: 1,
-      questionText: '请问今晚几楼的女士出轨了？',
+      questionText: '鸟笼敞开着，笼内空空如也——韦拉·施纳贝尔发现自己心爱的银盘尾翼鹦鹉不见了，她能肯定这只罕见品种的虎皮鹦鹉被偷了。她立即怀疑看门人蒂诺·弗里德里希尔，因为前天他刚刚建议她将这只罕见的鹦鹉高价出售给花鸟市场！卡勒侦探答应施纳贝尔夫人去查看一下弗里德里希尔，但是后者不肯承认，并且大发牢骚：“在哪里？我没有偷施纳贝尔夫人的鸟，我受不了鸟。”但是卡勒侦探目光敏锐，发现了弗里德里希尔的房间里藏着一些东西，证明他有把鹦鹉藏起来的嫌疑，这样卡勒侦探便可以进行下一步的搜查。卡勒侦探发现了什么呢？',
       questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/quizzes/ehojr9rf.jpg',
-        height: 900
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/5gjx6587.jpg',
+        height: 960
       }
     },
-    options: {
-      layout: 'row',
-      optionsData: [
-        {
-          optionKey: 'A',
-          optionData: [
-            {
-              blockId: '1',
-              blockType: 'normal-text',
-              text: '一楼'
-            }
-          ]
-        },
-        {
-          optionKey: 'B',
-          optionData: [
-            {
-              blockId: '1',
-              blockType: 'normal-text',
-              text: '二楼'
-            }
-          ]
-        },
-        {
-          optionKey: 'C',
-          optionData: [
-            {
-              blockId: '1',
-              blockType: 'normal-text',
-              text: '三楼'
-            }
-          ]
-        }
-      ]
-    },
-    answerKey: 'C',
+    answerArea: { x: 94, y: 80 },
     solutions: [
-      {
-        solutionTag: '答案',
-        align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '三楼'
-          }
-        ]
-      },
       {
         solutionTag: '解析',
         align: 'left',
@@ -175,7 +129,7 @@ const QuizzesData = [
           {
             blockId: '1',
             blockType: 'normal-text',
-            text: '裸体男子翻窗逃跑时一般不会往上爬或者挂在窗前；另外他的屁股上有伤，可能是三楼窗台上的仙人掌所致'
+            text: '如果蒂诺·弗里德里希尔受不了鸟，那为什么在餐具台下方的橱柜内有一包鸟饲料？他肯定有偷了施纳贝尔夫人的鸟并想把它卖掉而大赚一笔的嫌疑。'
           }
         ]
       }
@@ -183,77 +137,21 @@ const QuizzesData = [
   },
   {
     quizId: 4,
-    quizType: 1,
-    title: '谁更有可能是凶手？',
+    quizType: 2,
+    title: '易容高手奥兰多',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
       questionId: 1,
-      questionText: '请问下图中哪一位餐厅顾客更有可能是凶手？',
+      questionText: '吉塔侦探坐公共汽车前往飞机场，在她前面几排的座位上坐着奥兰多·格里齐奥——一个十分精明的赝品钻石商人。吉塔的任务就是秘密盯住他，并阻止他坐飞机离开本国。这个骗子不难辨认，因为他有一把引人注目的大胡子，还带着一个大行李包。在宽敞巨机场候机厅内，奥兰多走进了男厕所，随即消失了。不走运的吉塔！她恼火地站在柱子后面，等待他再次出现。可惜徒劳无功，奥兰多消失得无影无踪。这个骗子一定在僻静处“易容”变成了另一个人，逃脱了吉塔侦探的锐利视线，他正想方设法摆脱阻碍，离开这个国家！不过吉塔侦探并没有放弃，事实上，她的坚持得到了回报，她认出了那个骗子。她是怎样再次发现易容高手奥兰多的？他藏在哪里呢？',
       questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/quizzes/sno6yltt.jpg',
-        height: 450
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/dofilbre.jpg',
+        height: 1002
       }
     },
-    options: {
-      layout: 'grid',
-      optionsData: [
-        {
-          optionKey: 'A',
-          optionData: [
-            {
-              blockId: '1',
-              blockType: 'normal-text',
-              text: '1 号'
-            }
-          ]
-        },
-        {
-          optionKey: 'B',
-          optionData: [
-            {
-              blockId: '1',
-              blockType: 'normal-text',
-              text: '2 号'
-            }
-          ]
-        },
-        {
-          optionKey: 'C',
-          optionData: [
-            {
-              blockId: '1',
-              blockType: 'normal-text',
-              text: '3 号'
-            }
-          ]
-        },
-        {
-          optionKey: 'D',
-          optionData: [
-            {
-              blockId: '1',
-              blockType: 'normal-text',
-              text: '4 号'
-            }
-          ]
-        }
-      ]
-    },
-    answerKey: 'C',
+    answerArea: { x: 18, y: 266 },
     solutions: [
-      {
-        solutionTag: '答案',
-        align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '3 号'
-          }
-        ]
-      },
       {
         solutionTag: '解析',
         align: 'left',
@@ -261,7 +159,7 @@ const QuizzesData = [
           {
             blockId: '1',
             blockType: 'normal-text',
-            text: '在不被人注意的情况下进入女洗手间行凶，3 号顾客具备更有利的作案条件'
+            text: '奥兰多十分狡猾地将自己打扮成阿拉伯人，他藏在报刊亭右侧的角落里，但是引入注目的行李泄露了他的行踪。'
           }
         ]
       }
@@ -269,68 +167,21 @@ const QuizzesData = [
   },
   {
     quizId: 5,
-    quizType: 1,
-    title: '谁是走私集团幕后老板？',
+    quizType: 2,
+    title: '保密的面条配方',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionText: '美国警方正在调查一起石油走私案，将走私集团幕后老板锁定在了 Bill、John、Todd 三个人当中。在最后一次突击其窝点的时候，警方找到了卧底留下来的密码便签纸。请你破解其中隐藏的关键信息并指认幕后老板可能是谁。',
+      questionText: '著名的面食工厂麦克·阿罗尼公司要更新整个面条产品的配方目录。享有盛誉的面食大师推出了事前严格保密的“面条系列2000”，媒体和电视台都想方设法争取第一个报道这一全新系列产品。学徒齐波通过老板办公室的毛玻璃看到，目录草稿被悄悄地交给了一位陌生女士——她肯定是记者！齐波马上通知吉塔侦探自己发现的情况，与此同时，他必须在大街上盯着那位陌生女士，这样侦探们才能从她的手中拿到目录草稿。谁能帮助齐波在人群中找到这位女士？',
       questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/quizzes/rftzhfxr.jpg',
-        height: 315
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/gykm10pd.jpg',
+        height: 980
       }
     },
-    options: {
-      layout: 'row',
-      optionsData:
-      [
-        {
-          optionKey: 'A',
-          optionData: [
-            {
-              blockId: '1',
-              blockType: 'normal-text',
-              text: 'Bill'
-            }
-          ]
-        },
-        {
-          optionKey: 'B',
-          optionData: [
-            {
-              blockId: '1',
-              blockType: 'normal-text',
-              text: 'John'
-            }
-          ]
-        },
-        {
-          optionKey: 'C',
-          optionData: [
-            {
-              blockId: '1',
-              blockType: 'normal-text',
-              text: 'Todd'
-            }
-          ]
-        }
-      ]
-    },
-    answerKey: 'A',
+    answerArea: { x: 48, y: 240 },
     solutions: [
-      {
-        solutionTag: '答案',
-        align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: 'BILL'
-          }
-        ]
-      },
       {
         solutionTag: '解析',
         align: 'left',
@@ -338,19 +189,7 @@ const QuizzesData = [
           {
             blockId: '1',
             blockType: 'normal-text',
-            text: '请将图片上下翻转，辨认 BILL IS BOSS HE SELLS OIL 字样'
-          },
-          {
-            blockId: '2',
-            blockType: 'return'
-          },
-          {
-            blockId: '3',
-            blockType: 'image',
-            image: {
-              url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/quizzes/q6j8pc7e.jpg',
-              height: 285
-            }
+            text: '那位陌生的女士刚刚穿过马路，她的手臂夹着目录草稿的文件袋，就在图中被修剪的大树右侧。'
           }
         ]
       }
@@ -358,76 +197,29 @@ const QuizzesData = [
   },
   {
     quizId: 6,
-    quizType: 1,
-    title: '哪一发子弹最先击中墙体？',
+    quizType: 2,
+    title: '倒下的橡树',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
       questionId: 1,
-      questionText: '请问哪一发子弹最先击中墙体？',
+      questionText: '当文策尔·劳普林一大早从快乐的聚会回到家中时，他无法相信自己的眼睛：当他晚上不在家的时候，有人竟然把他院子里有着100年树龄的橡树砍倒了！劳普林马上想到了他的邻居阿克塞尔·考茨，这个家伙一直抱怨橡树的树荫！劳普林打电话给他的朋友卡勒侦探求助，6点30分的时候，他们已经站在阿克塞尔·考茨的家门前。劳普林愤怒地指责他的邻居，但是阿克塞尔坚决地驳斥他的责问：“我整个晚上也不在家，而是睡在我姐姐莉兹家。”他又怒气冲冲地说：“我5分钟之前刚刚回家，根本不可能砍掉你的橡树！”卡勒侦探早就注意到阿克塞尔是否说了真话，你呢？',
       questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/quizzes/4p712s5w.jpg',
-        height: 630
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/yzljhs7y.jpg',
+        height: 940
       }
     },
-    options: {
-      layout: 'row',
-      optionsData:
-      [
-        {
-          optionKey: 'A',
-          optionData: [
-            {
-              blockId: '1',
-              blockType: 'normal-text',
-              text: '1 号'
-            }
-          ]
-        },
-        {
-          optionKey: 'B',
-          optionData: [
-            {
-              blockId: '1',
-              blockType: 'normal-text',
-              text: '2 号'
-            }
-          ]
-        },
-        {
-          optionKey: 'C',
-          optionData: [
-            {
-              blockId: '1',
-              blockType: 'normal-text',
-              text: '3 号'
-            }
-          ]
-        }
-      ]
-    },
-    answerKey: 'B',
+    answerArea: { x: 260, y: 200 },
     solutions: [
       {
-        solutionTag: '答案',
-        align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '2 号'
-          }
-        ]
-      },
-      {
-        solutionTag: '提示',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
             blockId: '1',
             blockType: 'normal-text',
-            text: '2 号弹孔裂痕挡住了 1 号和 3 号弹孔裂痕的蔓延'
+            text: '阿克塞尔在说谎，他并非整晚离开，而是睡在自己家里。因为他的床铺还尚未整理，很明显他刚要开始吃早饭。如果他真的5分钟之前刚刚到家，那他应该顺路将报纸和牛奶瓶拿进屋子。'
           }
         ]
       }
@@ -435,98 +227,29 @@ const QuizzesData = [
   },
   {
     quizId: 7,
-    quizType: 1,
-    title: '汽车停在几号车位？',
+    quizType: 2,
+    title: '可恶的卡西莫多犯罪集团',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
       questionId: 1,
-      questionText: '请问下图中的汽车停在几号车位？',
+      questionText: '卡勒侦探听到风声——臭名昭著的卡西莫多犯罪集团逗留在普福德海姆小镇，吉塔和卡勒早就知道卡西莫多三兄弟——拉基、尼基和泰迪。现在有关于他们最新犯罪计划的新线索，因为有人在鲨鱼酒馆看到拉基在喝热巧克力饮料。当吉塔和卡勒到达那里后，在现场发现了一些蛛丝马迹，从中可以知道骗子三人组接下来的计划是什么。三兄弟将在什么时候、在哪里作案呢？',
       questionImage: {
         url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/quizzes/ymkidwpn.jpg',
         height: 378
       }
     },
-    options: {
-      layout: 'grid',
-      optionsData:
-      [
-        {
-          optionKey: 'A',
-          optionData: [
-            {
-              blockId: '1',
-              blockType: 'normal-text',
-              text: '86 号'
-            }
-          ]
-        },
-        {
-          optionKey: 'B',
-          optionData: [
-            {
-              blockId: '1',
-              blockType: 'normal-text',
-              text: '87 号'
-            }
-          ]
-        },
-        {
-          optionKey: 'C',
-          optionData: [
-            {
-              blockId: '1',
-              blockType: 'normal-text',
-              text: '88 号'
-            }
-          ]
-        },
-        {
-          optionKey: 'D',
-          optionData: [
-            {
-              blockId: '1',
-              blockType: 'normal-text',
-              text: '89 号'
-            }
-          ]
-        }
-      ]
-    },
-    answerKey: 'B',
+    answerArea: { x: 94, y: 80 },
     solutions: [
       {
-        solutionTag: '答案',
-        align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '87 号'
-          }
-        ]
-      },
-      {
-        solutionTag: '提示',
+        solutionTag: '解析',
         align: 'left',
         solutionData: [
           {
             blockId: '1',
             blockType: 'normal-text',
-            text: '请将图片上下翻转，车位编号依次是 86 87 88 89 90 91'
-          },
-          {
-            blockId: '2',
-            blockType: 'return'
-          },
-          {
-            blockId: '3',
-            blockType: 'image',
-            image: {
-              url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/quizzes/qeh6c2nh.jpg',
-              height: 378
-            }
+            text: '烟灰缸中撕碎的小纸片泄露了该犯罪集团接下来要大干一票的时间和地点，纸片上写着：“拉基，出发！星期六午夜普福德海姆储蓄银行，尼基！”'
           }
         ]
       }
@@ -534,58 +257,21 @@ const QuizzesData = [
   },
   {
     quizId: 8,
-    quizType: 1,
-    title: '自杀还是谋杀？',
+    quizType: 2,
+    title: '货币兑换处',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
       questionId: 1,
-      questionText: '请问下图中的死者可能死于自杀还是谋杀？',
+      questionText: '莫里茨·施拉格走进银行货币兑换处，在兑换窗口前，他小心翼翼地将一大叠美元推进玻璃窗口。“请兑换。”莫里茨心情愉悦地说。突然有人拍拍他的肩膀，那正是卡勒侦探！他礼貌地请莫里茨跟他去货币兑换处的主管办公室。为什么？',
       questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/quizzes/zca1v5q0.jpg',
-        height: 420
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/q3v7176i.jpg',
+        height: 960
       }
     },
-    options: {
-      layout: 'row',
-      optionsData:
-      [
-        {
-          optionKey: 'A',
-          optionData: [
-            {
-              blockId: '1',
-              blockType: 'normal-text',
-              text: '自杀'
-            }
-          ]
-        },
-        {
-          optionKey: 'B',
-          optionData: [
-            {
-              blockId: '1',
-              blockType: 'normal-text',
-              text: '谋杀'
-            }
-          ]
-        }
-      ]
-    },
-    answerKey: 'B',
+    answerArea: { x: 72, y: 312 },
     solutions: [
-      {
-        solutionTag: '答案',
-        align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '谋杀'
-          }
-        ]
-      },
       {
         solutionTag: '解析',
         align: 'left',
@@ -593,34 +279,7 @@ const QuizzesData = [
           {
             blockId: '1',
             blockType: 'normal-text',
-            text: '该名死者可能死于谋杀，原因如下：'
-          },
-          {
-            blockId: '2',
-            blockType: 'return'
-          },
-          {
-            blockId: '3',
-            blockType: 'normal-text',
-            text: '1. 房间中有多处搏斗的痕迹'
-          },
-          {
-            blockId: '4',
-            blockType: 'return'
-          },
-          {
-            blockId: '5',
-            blockType: 'normal-text',
-            text: '2. 死者似乎惯用左手，而致命伤和枪支却在右侧'
-          },
-          {
-            blockId: '6',
-            blockType: 'return'
-          },
-          {
-            blockId: '7',
-            blockType: 'normal-text',
-            text: '3. 犯罪嫌疑人可能是窗外的逃逸者'
+            text: '莫里茨手中的钞票很明显是伪造的，在美元纸币上既印刷了数字3，又印刷了数字5。'
           }
         ]
       }
@@ -628,58 +287,21 @@ const QuizzesData = [
   },
   {
     quizId: 9,
-    quizType: 1,
-    title: '谁先成功潜入的？',
+    quizType: 2,
+    title: '基佐隐匿',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 60000,
     question: {
       questionId: 1,
-      questionText: '某日，科技间谍 A 和 B 先后翻窗潜入某科研机构，企图窃取重要科研成果。请问第一个成功潜入的是 A 还是 B ？',
+      questionText: '魔术师基佐是个骗子，他使用卑鄙的诡计从人们的口袋中骗取钱财。卡勒侦探已经跟踪他好几周了，但是基佐一直小心翼翼地不露痕迹。现在卡勒得到消息，基佐躲在自己的老同事卡罗·卡茨那里，终于可以找到基佐这个骗子了吗？卡罗·卡茨也是一个令人怀疑的怪人，长久以来他一直安静地居住在市郊的一所小房子里。当卡勒侦探上门拜访他并询问有关基佐的情况时，卡罗摸着自己锃亮的光头，不动声色地否认道：“只有我一个人住在这里，你自己冷静地查看一遍，伯纳！”',
       questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/quizzes/7ngefjnt.jpg',
-        height: 546
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/2qjhay5k.jpg',
+        height: 960
       }
     },
-    options: {
-      layout: 'row',
-      optionsData:
-      [
-        {
-          optionKey: 'A',
-          optionData: [
-            {
-              blockId: '1',
-              blockType: 'normal-text',
-              text: '左'
-            }
-          ]
-        },
-        {
-          optionKey: 'B',
-          optionData: [
-            {
-              blockId: '1',
-              blockType: 'normal-text',
-              text: '右'
-            }
-          ]
-        }
-      ]
-    },
-    answerKey: 'B',
+    answerArea: { x: 246, y: 260 },
     solutions: [
-      {
-        solutionTag: '答案',
-        align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: 'A'
-          }
-        ]
-      },
       {
         solutionTag: '解析',
         align: 'center',
@@ -687,7 +309,7 @@ const QuizzesData = [
           {
             blockId: '1',
             blockType: 'normal-text',
-            text: '注意树叶的数量'
+            text: '抽屉柜上的梳子还带着头发。既然卡罗是光头，他就不需要梳子，因此卡罗一定隐瞒了有人和他同住的信息，这个人只可能是人们搜寻的基佐。'
           }
         ]
       }

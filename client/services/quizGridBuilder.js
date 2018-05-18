@@ -12,10 +12,10 @@ var build = function () {
       console.debug(`初始化 quizGrid`)
       let quizGrid = []
       for (let i = 0; i < 5; i++) {
-        let quizTab = { quizTabName: `${100 * i + 1}-${100 * (i + 1)}` }
+        let quizTab = { quizTabName: `${60 * i + 1}-${60 * (i + 1)}` }
         let quizCards = []
-        for (let j = 0; j < 100; j++) {
-          const quizId = 100 * i + j + 1
+        for (let j = 0; j < 60; j++) {
+          const quizId = 60 * i + j + 1
           const quizCard = {
             quizId: quizId,
             quizUnlocked: 0,

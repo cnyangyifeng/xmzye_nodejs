@@ -25,11 +25,11 @@ async function remindQuizUser(quizUserForm) {
   const message = {
     touser: quizUserForm.quizUserId,
     template_id: 'RNbMbbXTmG3Ar0w9qJguAjMBQNgesnt1J9reL9e1OQk',
-    page: 'pages/home/home',
+    page: `pages/home/home?prom_type=1&prom_code=${quizUserForm.formId}`,
     form_id: quizUserForm.formId,
     data: {
       keyword1: {
-        value: '每日签到',
+        value: '签到奖励',
         // color: '#e91e63'
       },
       keyword2: {

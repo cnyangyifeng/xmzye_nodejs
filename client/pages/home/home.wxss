@@ -17,11 +17,7 @@
   color: #fff;
   font-size: 18px;
   font-weight: 600;
-  animation-name: pulse;
-  animation-duration: 0.8s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-fill-mode: both;
+  line-height: 28px;
 }
 
 .login-btn-hover {
@@ -186,6 +182,7 @@
   justify-content: center;
   width: 750rpx;
   margin-top: 240rpx;
+  padding-bottom: 10rpx;
 }
 
 .quiz-card {

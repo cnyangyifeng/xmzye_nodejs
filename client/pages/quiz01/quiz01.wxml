@@ -35,12 +35,15 @@
   <block wx:if="{{quizState===1}}">
     <progress class="quiz-progress" percent="{{percent}}" stroke-width="4" activeColor="#00ba80" backgroundColor="#202c3a"></progress>
     <scroll-view class="quiz" scroll-y scroll-with-animation enable-back-to-top>
-      <view id="question" class="question">
+      <view class="question">
         <view class="question-text">{{quiz.question.questionText}}</view>
         <view class="question-image-container">
           <image class="question-image" style="height:{{quiz.question.questionImage.height/2}}px;" src="{{quiz.question.questionImage.url}}"></image>
-          <block wx:if="{{quiz.quizType===2}}">
-            <view id="questionImageMask" class="question-image-mask" style="height:{{quiz.question.questionImage.height/2}}px;" bindtap="questionImageMaskTap">
+          <block wx:if="{{quiz.quizType===1}}">
+            <view id="questionImageMask" class="question-image-mask" style="height:{{quiz.question.questionImage.height/2}}px;" bindlongpress="questionImageMaskLongPress"></view>
+          </block>
+          <block wx:elif="{{quiz.quizType===2}}">
+            <view id="questionImageMask" class="question-image-mask" style="height:{{quiz.question.questionImage.height/2}}px;" bindtap="questionImageMaskTap" bindlongpress="questionImageMaskLongPress">
               <view hidden="{{myAnswerPoint}}" class="question-image-mask-title">
                 <text>点击图片\n指出问题</text>
               </view>
@@ -110,7 +113,7 @@
           </view>
         </block>
         <block wx:else>
-          <view class="feedback-title">很遗憾，答错了！</view>
+          <view class="feedback-title">很遗憾，答错了...</view>
           <view wx:if="{{quiz.quizType===1}}" class="feedback-description">正确答案是
             <text class="feedback-value">{{quiz.answerKey}}</text>
           </view>

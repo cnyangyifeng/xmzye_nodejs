@@ -396,6 +396,7 @@ Page({
             y: touchPoint.y - res[0].top - 20
           }
         })
+
         // const quiz = this.data.quiz
         // quiz.answerArea = {
         //   x: touchPoint.x - res[0].left - 40,
@@ -405,6 +406,7 @@ Page({
         //   quiz: quiz
         // })
         // console.debug(`quiz.answerArea: `, this.data.quiz.answerArea)
+
         console.debug(`myAnswerPoint: `, this.data.myAnswerPoint)
         // 播放 option 音效
         this.playOption()
@@ -419,6 +421,19 @@ Page({
         // 缓存 myAnswerPoint
         this.cacheMyAnswerPoint()
       })
+  },
+
+  /**
+   * 绑定事件：长按 questionImageMask
+   */
+
+  questionImageMaskLongPress: function (e) {
+    console.debug(`长按 questionImageMask`)
+    const questionImageUrl = this.data.quiz.question.questionImage.url
+    wx.previewImage({
+      current: questionImageUrl,
+      urls: [questionImageUrl]
+    })
   },
 
   /**
@@ -934,7 +949,7 @@ Page({
       } else if (quiz.quizType === 2) {
         new Promise((resolve, reject) => {
           wx.createIntersectionObserver().relativeTo('.answer-area').relativeToViewport().observe('.my-answer-point', res => {
-            console.log(`相交区域占目标节点的比例：`, res.intersectionRatio)
+            console.debug(`相交区域占目标节点的比例：`, res.intersectionRatio)
             if (res.intersectionRatio > 0) {
               this.setData({
                 myAnswerFeedback: 1
@@ -948,7 +963,6 @@ Page({
           // 操作成功
           resolve()
         }).then(() => {
-          console.log(this.data.myAnswerFeedback)
           if (this.data.myAnswerFeedback !== 1) {
             this.setData({
               myAnswerFeedback: 0

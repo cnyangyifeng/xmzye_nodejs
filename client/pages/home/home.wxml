@@ -5,7 +5,7 @@
     </block>
     <block wx:else>
       <button class="login-btn" hover-class="login-btn-hover" open-type="getUserInfo" bindgetuserinfo="loginButtonTap">
-        <text>START</text>
+        <text>微信\n登录</text>
       </button>
     </block>
   </view>
@@ -63,7 +63,7 @@
             </view>
           </block>
         </view>
-        <view class="home-foot"></view>
+        <!-- <view class="home-foot"></view> -->
       </scroll-view>
     </swiper-item>
   </swiper>

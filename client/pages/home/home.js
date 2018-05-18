@@ -2,13 +2,14 @@ const configs = require('../../config')
 const dateUtils = require('../../utils/dateUtils')
 const loginService = require('../../services/loginService')
 const msgs = require('../../msg')
+const PromCodes = require('../../services/promCodes')
 const qcloud = require('../../vendor/wafer2-client-sdk/index')
 const QuizGrid = require('../../services/quizGrid')
 const quizGridBuilder = require('../../services/quizGridBuilder')
 const QuizUser = require('../../services/quizUser')
 const UserInfoAuth = require('../../services/userInfoAuth')
 
-const ONLINE_TIME = 1525881600000 // 2018年5月10日00:00:00
+const PROM_TYPE_FORM_HOOK = 1
 
 const HOME_STATE_LOADING = 0
 const HOME_STATE_MAIN = 1
@@ -22,6 +23,9 @@ Page({
   data: {
 
     userInfoAuth: false,
+
+    reqPromType: 0,
+    reqPromCode: '',
 
     /**
      * quizUser = {
@@ -66,6 +70,7 @@ Page({
     reqQuizId: 0,
 
     homeState: HOME_STATE_LOADING, // 当前页面状态
+
   },
 
   /* ================================================================================ */
@@ -301,17 +306,20 @@ Page({
     }
     // 如果指定了页面参数 quiz_id
     const quizId = options.quiz_id
-    let reqQuizId = 0
     if (quizId) {
-      // 如果是 qotd (quiz of the day)，获取今天真正的 quizId
-      if (quizId === 'qotd') {
-        reqQuizId = Math.ceil((new Date() - ONLINE_TIME) / (1000 * 60 * 60 * 24))
-      } else {
-        reqQuizId = parseInt(quizId)
-      }
       // 更新页面数据 reqQuizId
       this.setData({
-        reqQuizId: reqQuizId
+        reqQuizId: parseInt(quizId)
+      })
+    }
+    // 如果指定了页面参数 promType, promCode
+    const promType = options.prom_type
+    const promCode = options.prom_code
+    if (promCode) {
+      // 更新页面数据 reqPromType, reqPromCode
+      this.setData({
+        reqPromType: promType,
+        reqPromCode: promCode
       })
     }
   },
@@ -357,11 +365,24 @@ Page({
         if (referrerId !== '' && quizUser.referrerId === '') {
           quizUser.referrerId = referrerId
         }
-        // 处理每日签到
-        if (this.dailyCheck(quizUser)) {
-          console.debug(`每日签到：已奖励`)
-          quizUser.totalKeyCount += 5
-          quizUser.lastVisitTime = dateUtils.formatTime(new Date())
+        // 应用促销码
+        const reqPromType = this.data.reqPromType
+        const reqPromCode = this.data.reqPromCode
+        const myPromCodes = PromCodes.get()
+        if (myPromCodes && Array.isArray(myPromCodes)) {
+          const existed = myPromCodes.some((item, index, arr) => {
+            return item === reqPromCode
+          })
+          if (!existed) {
+            switch (reqPromType) {
+              case PROM_TYPE_FORM_HOOK:
+                quizUser.totalKeyCount += 5
+                quizUser.lastVisitTime = dateUtils.formatTime(new Date())
+                myPromCodes.push(reqPromCode)
+                PromCodes.set(myPromCodes)
+                break
+            }
+          }
         }
         // 更新页面数据 quizUser
         this.setData({
@@ -411,20 +432,6 @@ Page({
     this.setData({
       homeState: HOME_STATE_LOADING
     })
-  },
-
-  /**
-   * 每日签到
-   */
-
-  dailyCheck: function (quizUser) {
-    const lastVisitTime = new Date(quizUser.lastVisitTime).getTime()
-    let today = new Date()
-    today.setHours(0)
-    today.setMinutes(0)
-    today.setSeconds(0)
-    today.setMilliseconds(0)
-    return today.getTime() > lastVisitTime ? true : false
   },
 
   /**
