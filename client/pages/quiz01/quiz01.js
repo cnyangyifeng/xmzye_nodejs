@@ -424,15 +424,16 @@ Page({
   },
 
   /**
-   * 绑定事件：长按 questionImageMask
+   * 绑定事件：点击 questionImageFoot
    */
 
-  questionImageMaskLongPress: function (e) {
-    console.debug(`长按 questionImageMask`)
+  questionImageFootTap: function () {
+    console.debug(`点击 questionImageFoot`)
     const questionImageUrl = this.data.quiz.question.questionImage.url
+    const previewImageUrl = questionImageUrl.substring(0, questionImageUrl.lastIndexOf('.')) + '_hd.jpg'
     wx.previewImage({
-      current: questionImageUrl,
-      urls: [questionImageUrl]
+      current: previewImageUrl,
+      urls: [previewImageUrl]
     })
   },
 
@@ -502,10 +503,23 @@ Page({
     console.debug(`点击 nextButton`)
     // 停止播放 solutions 音效
     this.stopPlayingSolutions()
-    // 解锁下一个 quiz
+    // 更新 quizUser.currentQuizTabIndex
     const quizId = this.data.reqQuizId
-    const nextQuizId = (quizId === 500) ? 1 : quizId + 1
+    const remainder = quizId % quizGridBuilder.QUIZ_CARD_COUNT_PER_TAB
+    if (remainder === 0) {
+      const quizUser = this.data.quizUser
+      quizUser.currentQuizTabIndex++
+      this.setData({
+        quizUser: quizUser
+      })
+      QuizUser.set(quizUser)
+    }
+    console.log(`currentQuizTabIndex: `, this.data.quizUser.currentQuizTabIndex)
+    // 根据 quizId 获取 quizCardIndex
+    const nextQuizId = (quizId === quizGridBuilder.QUIZ_CARD_COUNT_PER_TAB * quizGridBuilder.QUIZ_TAB_COUNT) ? 1 : quizId + 1
     const nextQuizCardIndex = this.getQuizCardIndexByQuizId(nextQuizId)
+    console.log(`nextQuizCardIndex: `, nextQuizCardIndex)
+    // 解锁 quiz
     const unlocked = this.unlockQuiz(nextQuizCardIndex)
     if (unlocked) {
       wx.redirectTo({
@@ -1246,9 +1260,8 @@ Page({
 
   cacheQuizAsLoaded: function () {
     console.debug(`缓存 quizAsLoaded`)
-    const remainder = this.data.reqQuizId % 100
-    const quizCardIndex = (remainder === 0) ? 99 : remainder - 1
     const quizTabIndex = this.data.quizUser.currentQuizTabIndex
+    const quizCardIndex = this.getQuizCardIndexByQuizId(this.data.reqQuizId)
     const quizGrid = this.data.quizGrid
     quizGrid[quizTabIndex].quizCards[quizCardIndex].quizLoaded = this.data.quizLoaded
     quizGrid[quizTabIndex].quizCards[quizCardIndex].quizQuestionImageUrl = this.data.quiz.question.questionImage.url
@@ -1264,9 +1277,8 @@ Page({
 
   cacheTimeElapsed: function () {
     console.debug(`缓存 timeElapsed`)
-    const remainder = this.data.reqQuizId % 100
-    const quizCardIndex = (remainder === 0) ? 99 : remainder - 1
     const quizTabIndex = this.data.quizUser.currentQuizTabIndex
+    const quizCardIndex = this.getQuizCardIndexByQuizId(this.data.reqQuizId)
     const quizGrid = this.data.quizGrid
     quizGrid[quizTabIndex].quizCards[quizCardIndex].timeElapsed = this.data.timeElapsed
     this.setData({
@@ -1281,9 +1293,8 @@ Page({
 
   cacheMyAnswerKey: function () {
     console.debug(`缓存 myAnswerKey`)
-    const remainder = this.data.reqQuizId % 100
-    const quizCardIndex = (remainder === 0) ? 99 : remainder - 1
     const quizTabIndex = this.data.quizUser.currentQuizTabIndex
+    const quizCardIndex = this.getQuizCardIndexByQuizId(this.data.reqQuizId)
     const quizGrid = this.data.quizGrid
     quizGrid[quizTabIndex].quizCards[quizCardIndex].myAnswerKey = this.data.myAnswerKey
     this.setData({
@@ -1298,9 +1309,8 @@ Page({
 
   cacheMyAnswerPoint: function () {
     console.debug(`缓存 myAnswerPoint`)
-    const remainder = this.data.reqQuizId % 100
-    const quizCardIndex = (remainder === 0) ? 99 : remainder - 1
     const quizTabIndex = this.data.quizUser.currentQuizTabIndex
+    const quizCardIndex = this.getQuizCardIndexByQuizId(this.data.reqQuizId)
     const quizGrid = this.data.quizGrid
     quizGrid[quizTabIndex].quizCards[quizCardIndex].myAnswerPoint = this.data.myAnswerPoint
     this.setData({
@@ -1315,9 +1325,8 @@ Page({
 
   cacheMyAnswerFeedback: function (myAnswerFeedback) {
     console.debug(`缓存 myAnswerFeedback`)
-    const remainder = this.data.reqQuizId % 100
-    const quizCardIndex = (remainder === 0) ? 99 : remainder - 1
     const quizTabIndex = this.data.quizUser.currentQuizTabIndex
+    const quizCardIndex = this.getQuizCardIndexByQuizId(this.data.reqQuizId)
     const quizGrid = this.data.quizGrid
     quizGrid[quizTabIndex].quizCards[quizCardIndex].myAnswerFeedback = myAnswerFeedback
     this.setData({
@@ -1332,9 +1341,8 @@ Page({
 
   cacheQuizAsSolved: function () {
     console.debug(`缓存 quizSolved`)
-    const remainder = this.data.reqQuizId % 100
-    const quizCardIndex = (remainder === 0) ? 99 : remainder - 1
     const quizTabIndex = this.data.quizUser.currentQuizTabIndex
+    const quizCardIndex = this.getQuizCardIndexByQuizId(this.data.reqQuizId)
     const quizGrid = this.data.quizGrid
     quizGrid[quizTabIndex].quizCards[quizCardIndex].quizSolved = this.data.quizSolved
     this.setData({
@@ -1348,8 +1356,8 @@ Page({
    */
 
   getQuizCardIndexByQuizId: function (quizId) {
-    const remainder = quizId % 100
-    return (remainder === 0) ? 99 : remainder - 1
+    const remainder = quizId % quizGridBuilder.QUIZ_CARD_COUNT_PER_TAB
+    return (remainder === 0) ? quizGridBuilder.QUIZ_CARD_COUNT_PER_TAB - 1 : remainder - 1
   }
 
 })

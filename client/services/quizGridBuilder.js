@@ -1,5 +1,8 @@
 const QuizGrid = require('./quizGrid')
 
+const QUIZ_TAB_COUNT = 5
+const QUIZ_CARD_COUNT_PER_TAB = 40
+
 /**
  * 构建 quizGrid
  */
@@ -12,10 +15,10 @@ var build = function () {
       console.debug(`初始化 quizGrid`)
       let quizGrid = []
       for (let i = 0; i < 5; i++) {
-        let quizTab = { quizTabName: `${60 * i + 1}-${60 * (i + 1)}` }
+        let quizTab = { quizTabName: `${40 * i + 1}-${40 * (i + 1)}` }
         let quizCards = []
-        for (let j = 0; j < 60; j++) {
-          const quizId = 60 * i + j + 1
+        for (let j = 0; j < 40; j++) {
+          const quizId = 40 * i + j + 1
           const quizCard = {
             quizId: quizId,
             quizUnlocked: 0,
@@ -44,5 +47,7 @@ var build = function () {
 }
 
 module.exports = {
+  QUIZ_TAB_COUNT: QUIZ_TAB_COUNT,
+  QUIZ_CARD_COUNT_PER_TAB: QUIZ_CARD_COUNT_PER_TAB,
   build: build
 }

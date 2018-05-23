@@ -312,8 +312,11 @@ Page({
         reqQuizId: parseInt(quizId)
       })
     }
+    // 测试数据
+    // options.prom_type = 1
+    // options.prom_code = 'test_code'
     // 如果指定了页面参数 promType, promCode
-    const promType = options.prom_type
+    const promType = parseInt(options.prom_type)
     const promCode = options.prom_code
     if (promCode) {
       // 更新页面数据 reqPromType, reqPromCode
@@ -368,20 +371,23 @@ Page({
         // 应用促销码
         const reqPromType = this.data.reqPromType
         const reqPromCode = this.data.reqPromCode
-        const myPromCodes = PromCodes.get()
-        if (myPromCodes && Array.isArray(myPromCodes)) {
-          const existed = myPromCodes.some((item, index, arr) => {
+        let promCodes = PromCodes.get()
+        let reqPromCodeExisted = false
+        if (promCodes && Array.isArray(promCodes)) {
+          reqPromCodeExisted = promCodes.some((item, index, arr) => {
             return item === reqPromCode
           })
-          if (!existed) {
-            switch (reqPromType) {
-              case PROM_TYPE_FORM_HOOK:
-                quizUser.totalKeyCount += 5
-                quizUser.lastVisitTime = dateUtils.formatTime(new Date())
-                myPromCodes.push(reqPromCode)
-                PromCodes.set(myPromCodes)
-                break
-            }
+        } else {
+          promCodes = []
+        }
+        if (!reqPromCodeExisted) {
+          switch (reqPromType) {
+            case PROM_TYPE_FORM_HOOK:
+              quizUser.totalKeyCount += 5
+              quizUser.lastVisitTime = dateUtils.formatTime(new Date())
+              promCodes.push(reqPromCode)
+              PromCodes.set(promCodes)
+              break
           }
         }
         // 更新页面数据 quizUser

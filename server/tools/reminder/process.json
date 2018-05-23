@@ -3,7 +3,7 @@
   "script": "app.js",
   "cwd": "./",
   "exec_mode": "fork",
-  "cron_restart": "00 00 * * *",
+  "cron_restart": "30 19 * * *",
   "watch": true,
   "ignore_watch": [
     "tmp"
