@@ -9,39 +9,42 @@ const QuizUser = require('./quizUser')
 
 var login = options => {
   return new Promise((resolve, reject) => {
-    // 如果在本地缓存中存在 Session 数据，则直接返回操作成功
-    // 否则，执行登录操作
-    if (qcloud.getSession()) {
-      resolve()
-    } else {
-      // 为了获取更多的用户数据库中存储的信息
-      // 放弃 qcloud.login, 直接使用 qcloud.request
-      qcloud.request({
-        url: `${configs.weapp}/quiz_user`,
-        login: true,
-        success: res => {
-          // 更新本地缓存数据 quizUser
-          const quizUser = res.data.data
-          QuizUser.set(quizUser)
-          // 操作成功
-          resolve()
-        },
-        fail: err => {
-          switch (err.type) {
-            case qcloud.ERR_WX_GET_USER_INFO:
-              wx.redirectTo({
-                url: `../home/home`
-              })
-              break
-            default:
-              wx.showModal({
-                title: msgs.login_fail_title,
-                content: err.message,
-                showCancel: false
-              })
+    wx.login({
+      success: res => {
+        console.debug(`wx.login 调用成功`)
+        qcloud.requestLogin({
+          loginParams: {
+            code: res.code,
+            encryptedData: options.encryptedData,
+            iv: options.iv,
+          },
+          success: () => {
+            console.debug(`qcloud.requestLogin 调用成功`)
+            // 初始化 quizUser
+            const createTime = dateUtils.formatTime(new Date())
+            const quizUser = {
+              quizUserId: options.userInfo.openId,
+              referrerId: '',
+              quizUserInfo: options.userInfo,
+              vip: 0,
+              totalKeyCount: 10,
+              muted: 0,
+              currentQuizTabIndex: 0,
+              currentQuizTabName: '1-100',
+              createTime: createTime,
+              lastVisitTime: createTime
+            }
+            // 缓存 quizUser
+            QuizUser.set(quizUser)
+            // 操作成功
+            resolve()
+          },
+          fail: err => {
+            console.debug(`qcloud.requestLogin 报错：`, err)
+            wx.redirectTo({
+              url: `../home/home`
+            })
           }
-          // 操作失败
-          // reject()
         })
       },
       fail: err => {
