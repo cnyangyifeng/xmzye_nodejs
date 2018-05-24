@@ -746,11 +746,11 @@ const QuizzesData = [
       questionId: 1,
       questionText: '洛拉·舍恩是著名的歌手，也是利贝林赌场的特邀歌手。不过这位极其敏感的艺术家现在火冒三丈！在她登台演唱时，一定有人偷偷潜人了她的化妆更衣间。经理许茨勒马上将吉塔侦探请来弄清事实真相。吉塔侦探仔细倾听，洛拉说：“当我在上场前最后化妆时，我觉得有人在悄悄地窥视我的化妆间，但是我没有继续注意这些，现在我能肯定，有人曾经进人这里，肯定有些东西变了，他是不是偷了我的东西？吉塔侦探笑着说：“我相信，那个小偷是您的粉丝！”比较上下两张图片就能知道吉塔侦探如何得出上述答案。',
       questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/quizzes/jqe6qijt.jpg',
-        height: 524.5
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/i86tsl8o.jpg',
+        height: 1413
       }
     },
-    answerArea: { x: 246, y: 260 },
+    answerArea: { x: 128, y: 28 },
     solutions: [
       {
         solutionTag: '解析',
@@ -776,11 +776,11 @@ const QuizzesData = [
       questionId: 1,
       questionText: '瓦尔多和菲蒙一起伪造支票骗取了一大笔钱财，他们在作案后分开行动，以免被抓获。菲蒙藏在他的祖母家里，瓦尔多把装钱的袋子放在安全的隐秘处后，他也消失了。根据事先的约定，不久后，菲蒙从瓦尔多那里得到了一张密码纸条，可是，紧接着菲蒙就被警察抓获，他携带的密码纸条也被发现了，因为警察对于复杂的符号束手无策，于是请来卡勒和吉塔侦探协助破案。只要破解这个通知的密码，就能知道他们在哪里寻找那笔钱款了！最终他们找到了线索，破解了密码，先到一步取到了那笔钱款。（后续消息瓦尔多不久前也在他的外祖母处被捕。）',
       questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/quizzes/4p712s5w.jpg',
-        height: 630
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/0zm0znun.jpg',
+        height: 980
       }
     },
-    answerArea: { x: 246, y: 260 },
+    answerArea: { x: 82, y: 24 },
     solutions: [
       {
         solutionTag: '解析',
@@ -854,11 +854,11 @@ const QuizzesData = [
       questionId: 1,
       questionText: '几周以来，卡勒侦探一直在跟踪保险箱撬窃者米基·库尔。在从侦探社回家的路上，他在地铁站西出口和这个嫌疑人擦肩而过，一眨眼米基就消失在人群中。卡勒侦探试着找到米基的踪迹，并跟踪个可能是米基的男子，但是卡勒侦探并不能肯定，一切都发生得太快了。最后，卡勒侦探拐进了一个昏暗的工厂区，因为他确信看到米基在这里不见了。在一家还有灯光的老锻造工厂里，卡勒侦探终于发现了一样东西，证明他追踪了正确的线索，米基的确藏在这里。卡勒侦探发现了什么呢？',
       questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/quizzes/ymkidwpn.jpg',
-        height: 378
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/ztye1s4u.jpg',
+        height: 1350
       }
     },
-    answerArea: { x: 200, y: 170 },
+    answerArea: { x: 234, y: 568 },
     solutions: [
       {
         solutionTag: '解析',
@@ -884,11 +884,11 @@ const QuizzesData = [
       questionId: 1,
       questionText: '“我的‘普法芬堡将军’被偷了！”冯·科尔肯施泰因男爵夫人在庄园中惊慌失措地大叫。“普法芬堡将军”是一幅名画，许多艺术爱好者都想将它据为已有。吉塔侦探能破解这次偷盗案件吗？男爵的别墅中有许多犯罪嫌疑人：女佣厨师、司机、烟囱清扫工人园丁，甚至可能是男爵或者男爵夫人自导自演了一场骗局？吉塔侦探首先仔细观察了四周，这是正确的决定！她很快发现了线索，现在她已经知道准偷了名画“普法芬保将军”。那个人是谁呢？',
       questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/quizzes/zca1v5q0.jpg',
-        height: 420
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/142496kj.jpg',
+        height: 433
       }
     },
-    answerArea: { x: 200, y: 170 },
+    answerArea: { x: -18, y: 130 },
     solutions: [
       {
         solutionTag: '解析',
@@ -935,7 +935,7 @@ const QuizzesData = [
   },
   {
     quizId: 26,
-    quizType: 2,
+    quizType: 1,
     title: '照片谜题',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -944,11 +944,56 @@ const QuizzesData = [
       questionId: 1,
       questionText: '“啊，真讨厌！”吉塔侦探大叫，她竟然把当前的通缉犯照片给撕碎了，太糟糕了。她只想清理些旧文件，让自己在堆积如山的资料中喘口气。“别惊讶，这里一团糟。”她咕哝道。她撕碎了3张照片，其中之一是路齐的照片，他可是一个坏家伙，明天晚上，吉塔侦探要根据照片在大型会议上找到他的踪迹。现在除了把这此碎片再次拼成完整的照片外，没有别的办法了。幸运的是，她还有一张路齐的模拟图像。路齐的识别编号是多少?',
       questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/quizzes/kd2ojfdj.jpg',
-        height: 590
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/zst7dcmj.jpg',
+        height: 1430
       }
     },
-    answerArea: { x: 200, y: 170 },
+    options: {
+      layout: 'row',
+      optionsData: [
+        {
+          optionKey: 'A',
+          optionData: [
+            {
+              blockId: '1',
+              blockType: 'normal-text',
+              text: '479901'
+            }
+          ]
+        },
+        {
+          optionKey: 'B',
+          optionData: [
+            {
+              blockId: '1',
+              blockType: 'normal-text',
+              text: '367315'
+            }
+          ]
+        },
+        {
+          optionKey: 'C',
+          optionData: [
+            {
+              blockId: '1',
+              blockType: 'normal-text',
+              text: '723927'
+            }
+          ]
+        },
+        {
+          optionKey: 'D',
+          optionData: [
+            {
+              blockId: '1',
+              blockType: 'normal-text',
+              text: '367927'
+            }
+          ]
+        }
+      ]
+    },
+    answerKey: 'A',
     solutions: [
       {
         solutionTag: '解析',
@@ -972,13 +1017,13 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionText: '齐勒塔尔家庭宠物展览会的大奖已经颁布，多莉·明斯克和她的可爱小猪仔平基成为幸运的胜利者！多莉高兴得忘乎所以，可是当她爱抱起平基时，她大叫声小猪平基不见了。多莉四处寻找，可是小猪毫无踪迹。正巧卡勒侦探带着他会跳舞的中国小老鼠也参加了这次展览，当然立即到位侦查。“一定有人偷走了平基，小猪对我很忠诚，不会自己跑开的。”多莉抱怨道。她的推测正确吗？',
+      questionText: '齐勒塔尔家庭宠物展览会的大奖已经颁布，多莉·明斯克和她的可爱小猪仔平基成为幸运的胜利者！多莉高兴得忘乎所以，可是当她要抱起平基时，她大叫声小猪平基不见了。多莉四处寻找，可是小猪毫无踪迹。正巧卡勒侦探带着他会跳舞的中国小老鼠也参加了这次展览，当然立即到位侦查。“一定有人偷走了平基，小猪对我很忠诚，不会自己跑开的。”多莉抱怨道。她的推测正确吗？',
       questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/quizzes/815gta2a.jpg',
-        height: 420
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/2ycyph4s.jpg',
+        height: 960
       }
     },
-    answerArea: { x: 200, y: 170 },
+    answerArea: { x: 250, y: 290 },
     solutions: [
       {
         solutionTag: '解析',
@@ -1002,13 +1047,13 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionText: '吉塔侦探拜访了策伯尔·格拉茨克，她向他询向了一些有关上个周日咖啡杯被盗的情况，策伯尔在她的嫌疑人名单中，并且他的作案可能性最大。不过，策伯尔吸了一口烟，笑着说：“我什么都不知道，它们怎么会在我这里，证据在哪里？吉塔侦探出去了一下，取来了放在摩托车行李盒内的包和放大镜。当她回来时，她发出会心的微笑。虽然策伯尔还是懒洋洋地坐在那里，仿佛没有离开过位置，一直在沉思，但是吉塔侦探敏锐的眼睛立即发现了策伯尔把什么东西藏了起来，极有可能就是周日被偷的咖啡杯。当吉塔侦探出去的时候，发生了什么？',
+      questionText: '吉塔侦探拜访了策伯尔·格拉茨克，她向他询向了一些有关上个周日咖啡杯被盗的情况，策伯尔在她的嫌疑人名单中，并且他的作案可能性最大。不过，策伯尔吸了一口烟，笑着说：“我什么都不知道，它们怎么会在我这里，证据在哪里？”吉塔侦探出去了一下，取来了放在摩托车行李盒内的包和放大镜。当她回来时，她发出会心的微笑。虽然策伯尔还是懒洋洋地坐在那里，仿佛没有离开过位置，一直在沉思，但是吉塔侦探敏锐的眼睛立即发现了策伯尔把什么东西藏了起来，极有可能就是周日被偷的咖啡杯。当吉塔侦探出去的时候，发生了什么？',
       questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/quizzes/mdflcft1.jpg',
-        height: 540
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/i3hqx5ny.jpg',
+        height: 1319
       }
     },
-    answerArea: { x: 200, y: 170 },
+    answerArea: { x: 220, y: 548 },
     solutions: [
       {
         solutionTag: '解析',
@@ -1094,11 +1139,11 @@ const QuizzesData = [
       questionId: 1,
       questionText: '吉塔侦探希望将诡计多端的问谍005当场抓获，她获悉005将和接头人X在一家鞋店里传递一卷秘密微型胶卷，整个交接过程如下：X走进索尔·沃尔鞋店，他试穿了许多双鞋子，很快店里就乱作一团。他趁人不注意的时候悄悄地把微型胶卷藏到一只鞋子内，将另一只鞋子塞入大衣内。最后他买了一双拖鞋并离开商店。在鞋店老板将许多鞋子排放整齐之前，005来到店内，他让老板展示了几双凉鞋，现在他只需要找到那个单只的鞋子，就可以拿走其中的胶卷。吉塔侦探还在等待，直到005将这个重要物品拿到手中，才出面将他抓获。那么，这卷胶卷藏在哪只鞋子中呢？',
       questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/quizzes/sno6yltt.jpg',
-        height: 450
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/togv925t.jpg',
+        height: 435
       }
     },
-    answerArea: { x: 196, y: 140 },
+    answerArea: { x: 170, y: 90 },
     solutions: [
       {
         solutionTag: '解析',
@@ -1124,11 +1169,11 @@ const QuizzesData = [
       questionId: 1,
       questionText: '鲁迪·舍比希是个特别的罪犯，从事十分可疑的业务，几年前卡勒侦探就认识他，而且知道鲁迪不是一个人犯案，他有一个身材高大的同伙。现在卡勒侦探很想知道那个高大的陌生人是谁，住在哪里。没有比今天更好的机会了！他看到鲁迪走进邮局给他的同伙寄了个小包裹。邮局的工作一结束，卡勒侦探马上就进去检查今天收到的包裹。用这个办法，他终于找到了那个高大陌生人的名字和住址。你能找到吗？',
       questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/quizzes/rftzhfxr.jpg',
-        height: 315
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/plmd2eoo.jpg',
+        height: 1390
       }
     },
-    answerArea: { x: 196, y: 140 },
+    answerArea: { x: 98, y: 320 },
     solutions: [
       {
         solutionTag: '解析',

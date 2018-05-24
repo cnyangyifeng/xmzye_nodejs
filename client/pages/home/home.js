@@ -22,10 +22,12 @@ Page({
 
   data: {
 
-    userInfoAuth: false,
-
+    reqReferrerId: '',
     reqPromType: 0,
     reqPromCode: '',
+    reqQuizId: 0,
+
+    userInfoAuth: false,
 
     /**
      * quizUser = {
@@ -43,7 +45,6 @@ Page({
      */
 
     quizUser: null, // 当前 quizUser
-    reqReferrerId: '',
 
     /**
      * quizGrid = [
@@ -67,7 +68,6 @@ Page({
      */
 
     quizGrid: null, // 当前 quizGrid
-    reqQuizId: 0,
 
     homeState: HOME_STATE_LOADING, // 当前页面状态
 
@@ -80,6 +80,10 @@ Page({
    */
 
   onLoad: function (options) {
+    // 获取 userInfoAuth
+    this.setData({
+      userInfoAuth: UserInfoAuth.get()
+    })
     // 解析页面参数
     this.parsePageOptions(options)
   },
@@ -158,12 +162,17 @@ Page({
 
   loginButtonTap: function (e) {
     console.debug(`点击 loginButton`)
-    this.setData({
-      userInfoAuth: true
+    new Promise((resolve, reject) => {
+      this.setData({
+        userInfoAuth: true
+      })
+      UserInfoAuth.set(true)
+      // 操作成功
+      resolve()
+    }).then(() => {
+      // 处理登录
+      this.doLogin(e.detail)
     })
-    UserInfoAuth.set(true)
-    // 处理登录
-    this.doLogin()
   },
 
   /**
@@ -216,18 +225,6 @@ Page({
         url: `/pages/quiz01/quiz01?quiz_id=${quizId}`
       })
     } else {
-      // 微信支付，解锁全部
-      // wx.showModal({
-      //   title: msgs.insufficient_keys_title,
-      //   content: msgs.insufficient_keys_content,
-      //   confirmText: msgs.unlock_all_title,
-      //   confirmColor: '#00ba80',
-      //   success: res => {
-      //     if (res.confirm) {
-      //       this.purchase()
-      //     }
-      //   }
-      // })
       wx.showModal({
         title: msgs.get_more_keys_title,
         content: msgs.get_more_keys_content,
@@ -240,26 +237,6 @@ Page({
         }
       })
     }
-  },
-
-  /**
-   * 绑定事件：点击 addKeyButton
-   */
-
-  addKeyButtonTap: function () {
-    console.debug(`点击 addKeyButton`)
-    // 微信支付，解锁全部
-    // wx.showModal({
-    //   title: msgs.insufficient_keys_title,
-    //   content: msgs.insufficient_keys_content,
-    //   confirmText: msgs.unlock_all_title,
-    //   confirmColor: '#00ba80',
-    //   success: res => {
-    //     if (res.confirm) {
-    //       this.purchase()
-    //     }
-    //   }
-    // })
   },
 
   /**
@@ -331,9 +308,8 @@ Page({
    * 处理登录
    */
 
-  doLogin: function () {
-    // 确保用户已登录
-    loginService.ensureLoggedIn().then(() => {
+  doLogin: function (options) {
+    loginService.login(options).then(() => {
       // 处理页面显示
       this.doShow()
     })
@@ -344,78 +320,118 @@ Page({
    */
 
   doShow: function () {
-    // 更新页面数据 userInfoAuth, quizUser
+    // 更新页面数据 quizUser
     this.setData({
-      userInfoAuth: UserInfoAuth.get(),
       quizUser: QuizUser.get()
     })
+    if (!this.data.quizUser) {
+      this.setData({
+        userInfoAuth: false
+      })
+      UserInfoAuth.set(false)
+      return
+    }
     // 构建 quizGrid
     quizGridBuilder.build().then(() => {
+      // 更新页面数据 quizGrid
       this.setData({
         quizGrid: QuizGrid.get()
       })
-      // 如果 quizUser 不存在
-      const quizUser = this.data.quizUser
-      if (!quizUser) {
-        // 则重新授权登录
-        UserInfoAuth.clear()
-        this.setData({
-          userInfoAuth: false
+      // 处理 reqReferrerId
+      this.handleReqReferrerId()
+      // 处理 reqPromCode
+      this.handleReqPromCode()
+      // 处理页面路由
+      this.handlePageRoute()
+    })
+  },
+
+  /**
+   * 处理 reqReferrerId
+   */
+
+  handleReqReferrerId: function () {
+    const quizUser = this.data.quizUser
+    const reqReferrerId = this.data.reqReferrerId
+    if (reqReferrerId !== '' && quizUser.referrerId === '') {
+      quizUser.referrerId = reqReferrerId
+      // 用完重置 reqReferrerId
+      this.setData({
+        reqReferrerId: ''
+      })
+      // 更新页面数据 quizUser
+      this.setData({
+        quizUser: quizUser
+      })
+      // 更新缓存数据 quizUser
+      QuizUser.set(quizUser)
+    }
+  },
+
+  /**
+   * 处理 reqPromCode
+   */
+
+  handleReqPromCode: function () {
+    const quizUser = this.data.quizUser
+    const reqPromType = this.data.reqPromType
+    const reqPromCode = this.data.reqPromCode
+    if (reqPromCode !== '') {
+      let promCodes = PromCodes.get()
+      let reqPromCodeExisted = false
+      if (promCodes && Array.isArray(promCodes)) {
+        reqPromCodeExisted = promCodes.some((item, index, arr) => {
+          return item === reqPromCode
         })
       } else {
-        // 更新 referrerId
-        const referrerId = this.data.reqReferrerId
-        if (referrerId !== '' && quizUser.referrerId === '') {
-          quizUser.referrerId = referrerId
-        }
-        // 应用促销码
-        const reqPromType = this.data.reqPromType
-        const reqPromCode = this.data.reqPromCode
-        let promCodes = PromCodes.get()
-        let reqPromCodeExisted = false
-        if (promCodes && Array.isArray(promCodes)) {
-          reqPromCodeExisted = promCodes.some((item, index, arr) => {
-            return item === reqPromCode
-          })
-        } else {
-          promCodes = []
-        }
-        if (!reqPromCodeExisted) {
-          switch (reqPromType) {
-            case PROM_TYPE_FORM_HOOK:
-              quizUser.totalKeyCount += 5
-              quizUser.lastVisitTime = dateUtils.formatTime(new Date())
-              promCodes.push(reqPromCode)
-              PromCodes.set(promCodes)
-              break
-          }
-        }
-        // 更新页面数据 quizUser
-        this.setData({
-          quizUser: quizUser
-        })
-        // 更新缓存数据 quizUser
-        QuizUser.set(quizUser)
-        // 判断是否跳转页面
-        const reqQuizId = this.data.reqQuizId
-        if (reqQuizId !== 0 && this.data.quizUser.totalKeyCount > 0) {
-          // 清空 reqQuizId，防止 quiz01 页面 navigateBack 造成循环跳转
-          this.setData({
-            reqQuizId: 0
-          })
-          // 跳转至 quiz01 页面
-          console.debug(`跳转至 quiz01 页面`)
-          wx.navigateTo({
-            url: `/pages/quiz01/quiz01?quiz_id=${reqQuizId}`
-          })
-        } else {
-          // 更新页面数据 homeState
-          this.setData({
-            homeState: HOME_STATE_MAIN
-          })
+        promCodes = []
+      }
+      if (!reqPromCodeExisted) {
+        switch (reqPromType) {
+          case PROM_TYPE_FORM_HOOK:
+            quizUser.totalKeyCount += 5
+            quizUser.lastVisitTime = dateUtils.formatTime(new Date())
+            promCodes.push(reqPromCode)
+            PromCodes.set(promCodes)
+            break
         }
       }
-    })
+      // 用完重置 reqPromCode
+      this.setData({
+        reqPromType: 0,
+        reqPromCode: ''
+      })
+      // 更新页面数据 quizUser
+      this.setData({
+        quizUser: quizUser
+      })
+      // 更新缓存数据 quizUser
+      QuizUser.set(quizUser)
+    }
+  },
+
+  /**
+   * 处理页面路由
+   */
+
+  handlePageRoute: function () {
+    const reqQuizId = this.data.reqQuizId
+    if (reqQuizId !== 0 && this.data.quizUser.totalKeyCount > 0) {
+      // 用完重置 reqQuizId，防止 quiz01 页面 navigateBack 造成循环跳转
+      this.setData({
+        reqQuizId: 0
+      })
+      // 跳转至 quiz01 页面
+      console.debug(`跳转至 quiz01 页面`)
+      wx.navigateTo({
+        url: `/pages/quiz01/quiz01?quiz_id=${reqQuizId}`
+      })
+    } else {
+      // 更新页面数据 homeState
+      this.setData({
+        homeState: HOME_STATE_MAIN
+      })
+    }
   },
 
   /**
@@ -475,88 +491,6 @@ Page({
       unlocked = true
     }
     return unlocked
-  },
-
-  /**
-   * 下单支付
-   */
-
-  purchase: function () {
-    // 显示 loading 提示框
-    wx.showLoading({
-      title: msgs.loading_title,
-      mask: true
-    })
-    // 调用微信支付统一下单接口
-    qcloud.request({
-      url: `${configs.weapp}/purchase/place_order`,
-      login: true,
-      success: res => {
-        console.debug(`下单成功：`, res)
-        // 隐藏 loading 提示框
-        wx.hideLoading()
-        // 发起微信支付请求
-        const payData = res.data.data
-        wx.requestPayment({
-          'timeStamp': payData.timeStamp,
-          'nonceStr': payData.nonceStr,
-          'package': payData.package,
-          'signType': payData.signType,
-          'paySign': payData.paySign,
-          'success': res => {
-            console.debug(`支付成功：`, res)
-            // 显示支付成功消息提示框
-            wx.showToast({
-              title: msgs.pay_success_title,
-              mask: true
-            })
-            // 标记 quizUser 为 vip
-            const quizUser = this.data.quizUser
-            quizUser.vip = 1
-            quizUser.totalKeyCount = 999999
-            this.setData({
-              quizUser: quizUser
-            })
-            QuizUser.set(quizUser)
-            // 解锁 quizGrid
-            const quizGrid = this.data.quizGrid
-            for (let i = 0; i < quizGrid.length; i++) {
-              let quizCards = quizGrid[i].quizCards
-              for (let j = 0; j < quizCards.length; j++) {
-                quizCards[j].quizUnlocked = 1
-              }
-            }
-            this.setData({
-              quizGrid: quizGrid
-            })
-            QuizGrid.set(quizGrid)
-          },
-          'fail': err => {
-            console.debug(`支付失败：`, err)
-            switch (err.errMsg) {
-              case 'requestPayment:fail cancel':
-                break
-              default:
-                wx.showToast({
-                  title: msgs.pay_fail_title,
-                  image: '/assets/images/warning.png',
-                  mask: true
-                })
-            }
-          }
-        })
-      },
-      fail: err => {
-        console.debug(`下单失败：`, err)
-        // 隐藏 loading 提示框
-        wx.hideLoading()
-        wx.showToast({
-          title: msgs.request_fail_title,
-          image: '/assets/images/warning.png',
-          mask: true
-        })
-      }
-    })
   }
 
 })

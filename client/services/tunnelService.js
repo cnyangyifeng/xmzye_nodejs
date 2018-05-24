@@ -3,7 +3,7 @@ const TunnelEvent = require('./tunnelEvent')
 const TunnelStatus = require('./tunnelStatus')
 
 /**
- * 创建 LaTeX 渲染信道
+ * 创建信道
  */
 
 var parse = (page, app) => {

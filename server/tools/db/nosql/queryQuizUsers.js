@@ -15,7 +15,7 @@ MongoClient.connect(configs.mongodb.url, (err, cli) => {
 
 const queryQuizUsers = (db, callback) => {
   const collection = db.collection('quizUsers')
-  collection.find({}).toArray((err, res) => {
+  collection.find({}).sort({ "lastVisitTime": -1 }).toArray((err, res) => {
     console.debug('found the following records: ', res)
     console.debug('count: ', res.length)
     callback(res)

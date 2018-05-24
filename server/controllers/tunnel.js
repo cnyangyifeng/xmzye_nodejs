@@ -45,6 +45,7 @@ async function onMessage(tunnelId, type, content) {
           {
             $set:
             {
+              quizUserId: quizUser.quizUserId,
               referrerId: quizUser.referrerId,
               quizUserInfo: quizUser.quizUserInfo,
               vip: quizUser.vip,

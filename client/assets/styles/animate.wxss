@@ -28,7 +28,7 @@
   }
 
   50% {
-    transform: scale3d(1.2, 1.2, 1.2);
+    transform: scale3d(1.08, 1.08, 1.08);
   }
 
   to {

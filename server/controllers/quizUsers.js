@@ -1,7 +1,6 @@
 const configs = require('../config')
 const MongoClient = require('mongodb').MongoClient
 const moment = require('moment')
-const uuidGenerator = require('uuid/v4')
 
 /* ================================================================================ */
 

@@ -7,7 +7,7 @@ const QUIZ_CARD_COUNT_PER_TAB = 40
  * 构建 quizGrid
  */
 
-var build = function () {
+var build = () => {
   return new Promise((resolve, reject) => {
     // 如果缓存数据 QuizGrid 不存在
     const cachedQuizGrid = QuizGrid.get()

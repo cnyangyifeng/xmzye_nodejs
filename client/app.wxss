@@ -17,3 +17,112 @@ button {
 button::after {
   display: none;
 }
+
+/****************************************************************************************************/
+
+.nav-bar {
+  position: absolute;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  background: linear-gradient(rgba(32, 44, 58, 1.0), rgba(32, 44, 58, 0.8));
+}
+
+.quiz-user-info {
+  flex: none;
+  display: flex;
+  align-items: center;
+}
+
+.quiz-user-vip {
+  flex: none;
+  width: 48rpx;
+  height: 48rpx;
+  margin-right: 10rpx;
+}
+
+.quiz-user-nick-name {
+  flex: none;
+  color: #fff;
+  max-width: 240rpx;
+  margin-right: 30rpx;
+  font-size: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.quiz-user-asset {
+  flex: none;
+  display: flex;
+  align-items: center;
+  height: 60rpx;
+  padding: 0 20rpx;
+  border-radius: 40rpx;
+  border: 1px solid #666;
+  background-color: #282828;
+}
+
+.quiz-user-asset-hover {
+  background-color: #666;
+}
+
+.quiz-user-asset-icon {
+  width: 36rpx;
+  height: 36rpx;
+  margin-top: 2rpx;
+}
+
+.quiz-user-asset-value {
+  margin: 0 20rpx;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/****************************************************************************************************/
+
+.action-bar {
+  position: absolute;
+  z-index: 1000;
+  bottom: 0;
+  display: flex;
+  width: 100vw;
+  height: 60px;
+  opacity: 0;
+  transform: translate3d(0, 100%, 0);
+}
+
+.primary-btn {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10rpx;
+  background-color: #00ba80;
+  color: #fff;
+  font-size: 18px;
+}
+
+.primary-btn-hover {
+  background-color: #0c9;
+}
+
+.secondary-btn {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10rpx;
+  background-color: #f2f2f2;
+  color: #202c3a;
+  font-size: 18px;
+}
+
+.secondary-btn-hover {
+  background-color: #fff;
+}

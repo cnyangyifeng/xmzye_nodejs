@@ -1,38 +1,36 @@
 {
-  "_args": [
-    [
-      "wafer2-client-sdk@1.1.1",
-      "/Users/yangyifeng/Workspace/weixin/xmzyd_nodejs/client"
-    ]
-  ],
-  "_from": "wafer2-client-sdk@1.1.1",
-  "_id": "wafer2-client-sdk@1.1.1",
+  "_from": "wafer2-client-sdk",
+  "_id": "wafer2-client-sdk@1.1.3",
   "_inBundle": false,
-  "_integrity": "sha1-xgdMHu4xSYRoaFVeRNX2yStLRIk=",
+  "_integrity": "sha1-4DeEdWZCiHXH8NW/E3ZCEuhmeY4=",
   "_location": "/wafer2-client-sdk",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "tag",
     "registry": true,
-    "raw": "wafer2-client-sdk@1.1.1",
+    "raw": "wafer2-client-sdk",
     "name": "wafer2-client-sdk",
     "escapedName": "wafer2-client-sdk",
-    "rawSpec": "1.1.1",
+    "rawSpec": "",
     "saveSpec": null,
-    "fetchSpec": "1.1.1"
+    "fetchSpec": "latest"
   },
   "_requiredBy": [
+    "#USER",
     "/"
   ],
-  "_resolved": "http://registry.npm.taobao.org/wafer2-client-sdk/download/wafer2-client-sdk-1.1.1.tgz",
-  "_spec": "1.1.1",
-  "_where": "/Users/yangyifeng/Workspace/weixin/xmzyd_nodejs/client",
+  "_resolved": "http://registry.npm.taobao.org/wafer2-client-sdk/download/wafer2-client-sdk-1.1.3.tgz",
+  "_shasum": "e037847566428875c7f0d5bf13764212e866798e",
+  "_spec": "wafer2-client-sdk",
+  "_where": "/Users/yangyifeng/Workspace/weixin/xmzye_nodejs/client",
   "author": {
     "name": "CFETeam"
   },
   "bugs": {
     "url": "https://github.com/tencentyun/wafer2-client-sdk/issues"
   },
+  "bundleDependencies": false,
+  "deprecated": false,
   "description": "Wafer client SDK",
   "directories": {
     "lib": "lib"
@@ -45,5 +43,5 @@
     "type": "git",
     "url": "git+https://github.com/tencentyun/wafer2-client-sdk.git"
   },
-  "version": "1.1.1"
+  "version": "1.1.3"
 }

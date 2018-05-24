@@ -1,6 +1,5 @@
 const configs = require('./config')
 const qcloud = require('./vendor/wafer2-client-sdk/index')
-const quizGridBuilder = require('./services/quizGridBuilder')
 const TunnelStatus = require('./services/tunnelStatus')
 
 App({
@@ -14,8 +13,6 @@ App({
   onLaunch: function () {
     // 设置 login url
     qcloud.setLoginUrl(`${configs.weapp}/login`)
-    // 构建 quizGrid
-    quizGridBuilder.build()
   },
 
   /* ================================================================================ */

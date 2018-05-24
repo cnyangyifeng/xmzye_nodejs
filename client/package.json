@@ -1,0 +1,12 @@
+{
+  "name": "xmzye",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "wafer2-client-sdk": "^1.1.3"
+  },
+  "devDependencies": {},
+  "author": "Eric YANG",
+  "license": "MIT"
+}

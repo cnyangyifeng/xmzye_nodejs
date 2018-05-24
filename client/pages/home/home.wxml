@@ -21,10 +21,9 @@
         </block>
         <block wx:else>
           <view class="quiz-user-nick-name">{{quizUser.quizUserInfo.nickName}}</view>
-          <view class="quiz-user-asset" hover-class="quiz-user-asset-hover" bindtap="addKeyButtonTap">
-            <image class="quiz-user-asset-icon left" src="/assets/images/key.svg"></image>
+          <view class="quiz-user-asset" hover-class="quiz-user-asset-hover">
+            <image class="quiz-user-asset-icon" src="/assets/images/key.svg"></image>
             <view class="quiz-user-asset-value">{{quizUser.totalKeyCount}}</view>
-            <image class="quiz-user-asset-icon right" src="/assets/images/add_fill.svg"></image>
           </view>
         </block>
       </view>
@@ -63,7 +62,7 @@
             </view>
           </block>
         </view>
-        <!-- <view class="home-foot"></view> -->
+        <view class="home-foot">© 2018 一分钟推理</view>
       </scroll-view>
     </swiper-item>
   </swiper>

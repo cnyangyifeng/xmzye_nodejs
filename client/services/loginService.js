@@ -1,13 +1,13 @@
-const configs = require('../config')
+const dateUtils = require('../utils/dateUtils')
 const msgs = require('../msg')
 const qcloud = require('../vendor/wafer2-client-sdk/index')
 const QuizUser = require('./quizUser')
 
 /**
- * 确保用户始终处于登录状态
+ * 登录
  */
 
-var ensureLoggedIn = function () {
+var login = options => {
   return new Promise((resolve, reject) => {
     // 如果在本地缓存中存在 Session 数据，则直接返回操作成功
     // 否则，执行登录操作
@@ -42,12 +42,18 @@ var ensureLoggedIn = function () {
           }
           // 操作失败
           // reject()
-        }
-      })
-    }
+        })
+      },
+      fail: err => {
+        console.debug(`wx.login 报错：`, err)
+        wx.redirectTo({
+          url: `../home/home`
+        })
+      }
+    })
   })
 }
 
 module.exports = {
-  ensureLoggedIn: ensureLoggedIn
+  login: login
 }
