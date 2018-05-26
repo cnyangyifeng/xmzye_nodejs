@@ -62,7 +62,7 @@
             </view>
           </block>
         </view>
-        <view class="home-foot">© 2018 一分钟推理</view>
+        <view class="home-ft">© 2018 一分钟推理</view>
       </scroll-view>
     </swiper-item>
   </swiper>

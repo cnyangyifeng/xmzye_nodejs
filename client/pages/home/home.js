@@ -143,7 +143,6 @@ Page({
   onShareAppMessage: function () {
     return {
       title: `一分钟考验你的观察力和推理能力，赶快来挑战~`,
-      imageUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/images/cover.jpg',
       path: `/pages/home/home?referrer_id=${this.data.quizUser.quizUserId}`,
       success: res => {
         console.debug(`转发成功`)

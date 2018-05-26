@@ -61,3 +61,14 @@
     transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
   }
 }
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.8, 0.8, 0.8);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}

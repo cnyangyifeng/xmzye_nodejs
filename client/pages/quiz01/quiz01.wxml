@@ -18,7 +18,6 @@
         </block>
       </view>
       <view class="quiz-controls">
-        <view hidden="{{quizSolved===0}}" class="quiz-control-label">分享获得更多钥匙 ☞</view>
         <button class="quiz-control" hover-class="quiz-control-hover" open-type="share">
           <image class="quiz-control-icon" src="/assets/images/share_fill.svg"></image>
         </button>
@@ -48,7 +47,12 @@
     </block>
     <scroll-view class="quiz" scroll-y scroll-with-animation enable-back-to-top>
       <view class="question">
-        <view class="question-text">{{quiz.question.questionText}}</view>
+        <view class="question-text-data">
+          <block wx:for="{{quiz.question.questionTextData}}" wx:key="{{item.blockId}}">
+            <view wx:if="{{item.blockType==='space'||item.blockType==='tab'||item.blockType==='return'}}" class="{{item.blockType}}"></view>
+            <view wx:else class="{{item.blockType}}">{{item.text}}</view>
+          </block>
+        </view>
         <view class="question-image-container">
           <image class="question-image" style="height:{{quiz.question.questionImage.height/2}}px;" src="{{quiz.question.questionImage.url}}"></image>
           <block wx:if="{{quiz.quizType===1}}">
@@ -57,19 +61,20 @@
           <block wx:elif="{{quiz.quizType===2}}">
             <view id="questionImageMask" class="question-image-mask" style="height:{{quiz.question.questionImage.height/2}}px;" bindtap="questionImageMaskTap">
               <view hidden="{{myAnswerPoint}}" class="question-image-mask-title">
+                <view class="question-image-mask-text">点击这里，解锁图片</view>
                 <view class="question-image-mask-text">
-                  <text>点击图片，用</text>
+                  <text>然后用</text>
                   <image class="my-answer-point-icon" src="/assets/images/my_answer_point.svg"></image>
-                  <text>标记出</text>
+                  <text>指出图中的</text>
                 </view>
-                <view class="question-image-mask-text">图中的线索或者问题</view>
+                <view class="question-image-mask-text">破案线索或者问题</view>
               </view>
               <view hidden="{{!myAnswerPoint}}" class="my-answer-point" style="left:{{myAnswerPoint.x}}px;top:{{myAnswerPoint.y}}px;"></view>
               <view hidden="{{quizSolved===0}}" class="answer-area" style="left:{{quiz.answerArea.x}}px;top:{{quiz.answerArea.y}}px;"></view>
             </view>
           </block>
         </view>
-        <view class="question-image-foot" bindtap="questionImageFootTap">
+        <view class="question-image-ft" bindtap="questionImageFootTap">
           <text>☞ 查看大图 ☜</text>
         </view>
       </view>
@@ -105,7 +110,7 @@
           </block>
         </view>
       </block>
-      <view class="quiz-foot">© 2018 一分钟推理</view>
+      <view class="quiz-ft">© 2018 一分钟推理</view>
     </scroll-view>
     <view hidden="{{!feedbackModalVisible}}" class="feedback-modal" bindtap="feedbackModalTap">
       <view class="feedback-panel" animation="{{feedbackPanelAnimationData}}">
@@ -125,7 +130,7 @@
             <text class="feedback-value">{{quiz.answerKey}}</text>
           </view>
         </block>
-        <image class="feedback-close-btn" src="/assets/images/close.svg"></image>
+        <!-- <image class="feedback-close-btn" src="/assets/images/close.svg"></image> -->
       </view>
     </view>
   </block>
@@ -146,7 +151,7 @@
           </view>
         </block>
       </view>
-      <view class="quiz-foot">© 2018 一分钟推理</view>
+      <view class="quiz-ft">© 2018 一分钟推理</view>
     </scroll-view>
     <view class="action-bar" animation="{{actionBarAnimationData}}">
       <view class="secondary-btn" hover-class="secondary-btn-hover" bindtap="undoButtonTap">返回看题目</view>

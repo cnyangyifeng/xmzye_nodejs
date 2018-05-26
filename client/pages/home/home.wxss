@@ -156,7 +156,7 @@
   font-size: 18px;
 }
 
-.home-foot {
+.home-ft {
   flex: none;
   display: flex;
   justify-content: center;

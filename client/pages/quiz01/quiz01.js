@@ -331,7 +331,7 @@ Page({
         myAnswerKey: 'N'
       })
       // 播放 actionBar 动画 fadeOutDown
-      this.actionBarAnimation.opacity(0).translate3d(0, 60, 0).step({
+      this.actionBarAnimation.opacity(0).height(0).step({
         duration: 200,
         timingFunction: 'ease-in-out'
       })
@@ -346,7 +346,7 @@ Page({
       // 播放 option 音效
       this.playOption()
       // 播放 actionBar 动画 fadeInUp
-      this.actionBarAnimation.opacity(1).translate3d(0, 0, 0).step({
+      this.actionBarAnimation.opacity(1).height(60).step({
         duration: 200,
         timingFunction: 'ease-in-out'
       })
@@ -394,7 +394,7 @@ Page({
         // 播放 option 音效
         this.playOption()
         // 播放 actionBar 动画 fadeInUp
-        this.actionBarAnimation.opacity(1).translate3d(0, 0, 0).step({
+        this.actionBarAnimation.opacity(1).height(60).step({
           duration: 200,
           timingFunction: 'ease-in-out'
         })
@@ -579,7 +579,7 @@ Page({
           }
           if (this.data.quizSolved === 1 || this.data.myAnswerKey !== 'N' || this.data.myAnswerPoint) {
             // 播放 actionBar 动画 fadeInUp
-            this.actionBarAnimation.opacity(1).translate3d(0, 0, 0).step({
+            this.actionBarAnimation.opacity(1).height(60).step({
               duration: 200,
               timingFunction: 'ease-in-out',
               delay: 400
@@ -649,6 +649,7 @@ Page({
       } else {
         qcloud.request({
           url: `${configs.weapp}/quizzes/${this.data.reqQuizId}`,
+          login: true,
           success: res => {
             // 更新页面数据 quiz
             console.debug(`获取 quiz 成功`)
@@ -878,7 +879,7 @@ Page({
 
   submitMyAnswer() {
     // 播放 actionBar 动画 fadeOutDown
-    this.actionBarAnimation.opacity(0).translate3d(0, 60, 0).step({
+    this.actionBarAnimation.opacity(0).height(0).step({
       duration: 200,
       timingFunction: 'ease-in-out'
     })
@@ -998,7 +999,7 @@ Page({
         }, 400)
       }).then(() => {
         // 播放 actionBar 动画 fadeInUp
-        this.actionBarAnimation.opacity(1).translate3d(0, 0, 0).step({
+        this.actionBarAnimation.opacity(1).height(60).step({
           duration: 200,
           timingFunction: 'ease-in-out'
         })

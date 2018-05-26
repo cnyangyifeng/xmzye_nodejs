@@ -16,7 +16,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 120rpx;
+  height: 140rpx;
   padding: 0 20rpx;
 }
 
@@ -25,16 +25,6 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-}
-
-.quiz-control-label {
-  flex: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 140rpx;
-  color: #00ba80;
-  font-size: 16px;
 }
 
 .quiz-control {
@@ -102,12 +92,38 @@
   line-height: 36px;
 }
 
+.question-text-data {
+  flex: none;
+  padding: 40rpx;
+  color: #fff;
+  font-size: 18px;
+  line-height: 36px;
+}
+
+.question-text-data .normal-text {
+  display: inline;
+}
+
+.question-text-data .space {
+  display: inline;
+  padding: 4.7px;
+}
+
+.question-text-data .tab {
+  display: inline;
+  padding: 18.8px;
+}
+
+.question-text-data .return {
+  display: block;
+}
+
 .question-image-container {
   position: relative;
   flex: none;
   display: flex;
   justify-content: center;
-  margin-top: 20rpx;
+  margin-top: 40rpx;
 }
 
 .question-image {
@@ -133,7 +149,7 @@
   justify-content: center;
   align-items: center;
   background-color: #fff;
-  opacity: 0.8;
+  opacity: 0.92;
 }
 
 .question-image-mask-text {
@@ -150,6 +166,11 @@
   width: 48px;
   height: 48px;
   margin: 0 10px;
+  animation-name: pulse;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
 }
 
 .answer-area {
@@ -179,7 +200,7 @@
   animation-fill-mode: both;
 }
 
-.question-image-foot {
+.question-image-ft {
   flex: none;
   display: flex;
   justify-content: center;
@@ -197,7 +218,7 @@
   justify-content: center;
   align-items: center;
   height: 100rpx;
-  color: #666;
+  color: #999;
   font-size: 16px;
   text-align: center;
   text-indent: 20rpx;
@@ -333,7 +354,7 @@
 .solutions-hd {
   flex: none;
   display: flex;
-  margin: 200rpx 195rpx 0 195rpx;
+  margin: 160rpx 195rpx 0 195rpx;
 }
 
 .solutions {
@@ -346,6 +367,10 @@
   background-color: #fff;
   box-sizing: border-box;
   border: 10rpx solid #ccc;
+  animation-name: zoomIn;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
 }
 
 .solution {
@@ -403,9 +428,9 @@
   text-align: center;
 }
 
-/*= .quiz-foot =*/
+/*= .quiz-ft =*/
 
-.quiz-foot {
+.quiz-ft {
   flex: none;
   display: flex;
   justify-content: center;
