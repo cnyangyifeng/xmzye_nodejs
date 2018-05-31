@@ -16,6 +16,7 @@ const msgs = {
   loading_title: `请稍候`,
 
   login_fail_title: `登录失败`,
+  login_processing_title: `登录中`,
 
   ok_title: `好的`,
 

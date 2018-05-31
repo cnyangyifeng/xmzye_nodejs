@@ -1,0 +1,67 @@
+/****************************************************************************************************/
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+
+.login-bg {
+  position: absolute;
+  z-index: -1000;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  will-change: transform;
+}
+
+.login-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 120px;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.quiz-user-avatar {
+  flex: none;
+  display: flex;
+  width: 72px;
+  height: 72px;
+  margin-bottom: 40px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  overflow: hidden;
+  will-change: transform;
+}
+
+.login-bar {
+  position: absolute;
+  z-index: 1000;
+  bottom: 20px;
+  display: flex;
+}
+
+.login-primary-btn {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80vw;
+  height: 100rpx;
+  box-sizing: border-box;
+  border-radius: 100rpx;
+  background-color: #00ba80;
+  color: #fff;
+  font-size: 16px;
+}
+
+.login-primary-btn-hover {
+  background-color: #0c9;
+}

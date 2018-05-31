@@ -8,7 +8,7 @@ const TunnelStatus = require('./tunnelStatus')
 
 var parse = (page, app) => {
   // 关闭之前的信道
-  if (app.globalData.tunnelStatus !== TunnelStatus.CLOSE) {
+  if (app.tunnel) {
     console.debug(`close previous tunnel`)
     app.tunnel.close()
   }

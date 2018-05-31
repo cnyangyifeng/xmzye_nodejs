@@ -31,7 +31,7 @@
     </view>
   </view>
   <block wx:if="{{quizState===1}}">
-    <progress class="quiz-progress" percent="{{percent}}" stroke-width="4" activeColor="#00ba80" backgroundColor="#202c3a"></progress>
+    <progress class="quiz-progress" percent="{{percent}}" stroke-width="4" activeColor="#00ba80" backgroundColor="#2e2b3b"></progress>
     <block wx:if="{{quizSolved===0}}">
       <form report-submit bindsubmit="myAnswerFormSubmit">
         <view class="action-bar" animation="{{actionBarAnimationData}}">

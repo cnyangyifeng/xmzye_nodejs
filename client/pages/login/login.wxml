@@ -1,0 +1,8 @@
+<view class="login">
+  <image mode="aspectFill" class="login-bg" src="{{bgUrl}}"></image>
+  <open-data type="userAvatarUrl" class="quiz-user-avatar"></open-data>
+  <view class="login-title">一分钟推理</view>
+  <view class="login-bar">
+    <button class="login-primary-btn" hover-class="login-primary-btn-hover" open-type="getUserInfo" bindgetuserinfo="loginButtonTap">微信登录</button>
+  </view>
+</view>

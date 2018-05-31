@@ -152,6 +152,7 @@ function Tunnel(serviceUrl) {
         requestLib.request({
             url: serviceUrl,
             method: 'GET',
+            login: true,
             success: function (response) {
                 if (+response.statusCode === 200 && response.data && response.data.data.connectUrl) {
                     openSocket(me.socketUrl = response.data.data.connectUrl);

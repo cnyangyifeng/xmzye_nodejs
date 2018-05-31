@@ -1,13 +1,10 @@
 const configs = require('../../config')
 const dateUtils = require('../../utils/dateUtils')
-const loginService = require('../../services/loginService')
 const msgs = require('../../msg')
 const PromCodes = require('../../services/promCodes')
-const qcloud = require('../../vendor/wafer2-client-sdk/index')
 const QuizGrid = require('../../services/quizGrid')
 const quizGridBuilder = require('../../services/quizGridBuilder')
 const QuizUser = require('../../services/quizUser')
-const UserInfoAuth = require('../../services/userInfoAuth')
 
 const PROM_TYPE_FORM_HOOK = 1
 
@@ -26,8 +23,6 @@ Page({
     reqPromType: 0,
     reqPromCode: '',
     reqQuizId: 0,
-
-    userInfoAuth: false,
 
     /**
      * quizUser = {
@@ -70,7 +65,6 @@ Page({
     quizGrid: null, // 当前 quizGrid
 
     homeState: HOME_STATE_LOADING, // 当前页面状态
-
   },
 
   /* ================================================================================ */
@@ -80,10 +74,6 @@ Page({
    */
 
   onLoad: function (options) {
-    // 获取 userInfoAuth
-    this.setData({
-      userInfoAuth: UserInfoAuth.get()
-    })
     // 解析页面参数
     this.parsePageOptions(options)
   },
@@ -142,8 +132,9 @@ Page({
 
   onShareAppMessage: function () {
     return {
-      title: `一分钟考验你的观察力和推理能力，赶快来挑战~`,
+      title: `一分钟考验你的观察力和推理能力`,
       path: `/pages/home/home?referrer_id=${this.data.quizUser.quizUserId}`,
+      imageUrl: `/assets/images/share_cover.jpg`,
       success: res => {
         console.debug(`转发成功`)
       },
@@ -154,25 +145,6 @@ Page({
   },
 
   /* ================================================================================ */
-
-  /**
-   * 绑定事件：点击 loginButton
-   */
-
-  loginButtonTap: function (e) {
-    console.debug(`点击 loginButton`)
-    new Promise((resolve, reject) => {
-      this.setData({
-        userInfoAuth: true
-      })
-      UserInfoAuth.set(true)
-      // 操作成功
-      resolve()
-    }).then(() => {
-      // 处理登录
-      this.doLogin(e.detail)
-    })
-  },
 
   /**
    * 绑定事件：点击 quizTab
@@ -252,10 +224,8 @@ Page({
         if (res.confirm) {
           // 清空全部缓存数据
           console.debug(`清空全部缓存数据`)
-          qcloud.clearSession()
           QuizUser.clear()
           QuizGrid.clear()
-          UserInfoAuth.clear()
           // 重定向至 home 页面
           wx.redirectTo({
             url: `../home/home`
@@ -271,7 +241,7 @@ Page({
    * 解析页面参数
    */
 
-  parsePageOptions(options) {
+  parsePageOptions: function (options) {
     // 如果指定了页面参数 referrer_id
     const referrerId = options.referrer_id
     if (referrerId) {
@@ -288,9 +258,6 @@ Page({
         reqQuizId: parseInt(quizId)
       })
     }
-    // 测试数据
-    // options.prom_type = 1
-    // options.prom_code = 'test_code'
     // 如果指定了页面参数 promType, promCode
     const promType = parseInt(options.prom_type)
     const promCode = options.prom_code
@@ -304,17 +271,6 @@ Page({
   },
 
   /**
-   * 处理登录
-   */
-
-  doLogin: function (options) {
-    loginService.login(options).then(() => {
-      // 处理页面显示
-      this.doShow()
-    })
-  },
-
-  /**
    * 处理页面显示
    */
 
@@ -324,25 +280,26 @@ Page({
       quizUser: QuizUser.get()
     })
     if (!this.data.quizUser) {
-      this.setData({
-        userInfoAuth: false
+      // 跳转至 login 页面
+      console.debug(`跳转至 login 页面`)
+      wx.navigateTo({
+        url: `/pages/login/login`
       })
-      UserInfoAuth.set(false)
-      return
+    } else {
+      // 构建 quizGrid
+      quizGridBuilder.build().then(() => {
+        // 更新页面数据 quizGrid
+        this.setData({
+          quizGrid: QuizGrid.get()
+        })
+        // 处理 reqReferrerId
+        this.handleReqReferrerId()
+        // 处理 reqPromCode
+        this.handleReqPromCode()
+        // 处理页面路由
+        this.handlePageRoute()
+      })
     }
-    // 构建 quizGrid
-    quizGridBuilder.build().then(() => {
-      // 更新页面数据 quizGrid
-      this.setData({
-        quizGrid: QuizGrid.get()
-      })
-      // 处理 reqReferrerId
-      this.handleReqReferrerId()
-      // 处理 reqPromCode
-      this.handleReqPromCode()
-      // 处理页面路由
-      this.handlePageRoute()
-    })
   },
 
   /**
@@ -426,10 +383,12 @@ Page({
         url: `/pages/quiz01/quiz01?quiz_id=${reqQuizId}`
       })
     } else {
-      // 更新页面数据 homeState
-      this.setData({
-        homeState: HOME_STATE_MAIN
-      })
+      setTimeout(() => {
+        // 更新页面数据 homeState
+        this.setData({
+          homeState: HOME_STATE_MAIN
+        })
+      }, 600)
     }
   },
 

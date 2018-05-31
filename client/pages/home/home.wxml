@@ -1,13 +1,6 @@
 <block wx:if="{{homeState===0}}">
   <view class="home">
-    <block wx:if="{{userInfoAuth}}">
-      <view class="spinner"></view>
-    </block>
-    <block wx:else>
-      <button class="login-btn" hover-class="login-btn-hover" open-type="getUserInfo" bindgetuserinfo="loginButtonTap">
-        <text>微信\n登录</text>
-      </button>
-    </block>
+    <view class="spinner"></view>
   </view>
 </block>
 <block wx:elif="{{homeState===1}}">
@@ -36,14 +29,7 @@
       </view>
     </scroll-view>
   </view>
-  <view hidden class="rankings" hover-class="rankings-hover">
-    <view class="rankings-btn">
-      <image class="rankings-btn-image" src="/assets/images/rankings.svg"></image>
-    </view>
-    <view class="rankings-text">推理世界排名
-      <text class="rankings-value">6296591</text>
-    </view>
-  </view>
+  <button class="share-btn" hover-class="share-btn-hover" open-type="share">邀请好友一起挑战</button>
   <swiper class="home" current="{{quizUser.currentQuizTabIndex}}" bindchange="quizGridSwiperChange">
     <swiper-item wx:for="{{quizGrid}}" wx:key="quizTabName">
       <scroll-view class="quiz-grid" scroll-y scroll-with-animation enable-back-to-top>

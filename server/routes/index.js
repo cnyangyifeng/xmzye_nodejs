@@ -13,7 +13,7 @@ router.post('/message', controllers.message.post)
 router.get('/purchase/place_order', validationMiddleware, controllers.purchase.placeOrder)
 
 router.get('/quiz_user', validationMiddleware, controllers.quizUsers.getQuizUser)
-router.get('/quizzes/:quiz_id', validationMiddleware, controllers.quizzes.getQuiz)
+router.get('/quizzes/:quiz_id', controllers.quizzes.getQuiz)
 
 router.get('/tunnel', controllers.tunnel.get)
 router.post('/tunnel', controllers.tunnel.post)

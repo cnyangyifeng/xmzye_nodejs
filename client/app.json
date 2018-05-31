@@ -1,13 +1,14 @@
 {
   "pages": [
     "pages/home/home",
+    "pages/login/login",    
     "pages/quiz01/quiz01"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#202c3a",
+    "navigationBarBackgroundColor": "#2e2b3b",
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "一分钟推理",
-    "backgroundColor": "#202c3a",
+    "backgroundColor": "#2e2b3b",
     "backgroundTextStyle": "light",
     "enablePullDownRefresh": false,
     "onReachBottomDistance": 50

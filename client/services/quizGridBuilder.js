@@ -14,7 +14,7 @@ var build = () => {
     if (!cachedQuizGrid) {
       console.debug(`初始化 quizGrid`)
       let quizGrid = []
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < 2; i++) {
         let quizTab = { quizTabName: `${40 * i + 1}-${40 * (i + 1)}` }
         let quizCards = []
         for (let j = 0; j < 40; j++) {
@@ -35,6 +35,9 @@ var build = () => {
         quizTab['quizCards'] = quizCards
         quizGrid.push(quizTab)
       }
+      // 添加 “敬请期待” quizTab
+      const todoQuizTab = { quizTabName: `敬请期待`, quizCards: [] }
+      quizGrid.push(todoQuizTab)
       // 缓存 quizGrid
       QuizGrid.set(quizGrid)
       // 操作成功

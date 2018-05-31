@@ -1,6 +1,5 @@
 const configs = require('../../config')
 const msgs = require('../../msg')
-const qcloud = require('../../vendor/wafer2-client-sdk/index')
 const QuizGrid = require('../../services/quizGrid')
 const quizGridBuilder = require('../../services/quizGridBuilder')
 const QuizUser = require('../../services/quizUser')
@@ -379,17 +378,6 @@ Page({
             y: touchPoint.y - res[0].top - 20
           }
         })
-
-        // const quiz = this.data.quiz
-        // quiz.answerArea = {
-        //   x: touchPoint.x - res[0].left - 40,
-        //   y: touchPoint.y - res[0].top - 40
-        // }
-        // this.setData({
-        //   quiz: quiz
-        // })
-        // console.debug(`quiz.answerArea: `, this.data.quiz.answerArea)
-
         console.debug(`myAnswerPoint: `, this.data.myAnswerPoint)
         // 播放 option 音效
         this.playOption()
@@ -647,9 +635,8 @@ Page({
         // 直接返回操作成功
         resolve()
       } else {
-        qcloud.request({
+        wx.request({
           url: `${configs.weapp}/quizzes/${this.data.reqQuizId}`,
-          login: true,
           success: res => {
             // 更新页面数据 quiz
             console.debug(`获取 quiz 成功`)

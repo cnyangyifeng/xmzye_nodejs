@@ -1,6 +1,6 @@
 page {
   margin: 0;
-  background-color: #202c3a;
+  background-color: #2e2b3b;
   /* font-family: -apple-system-font, Helvetica, sans-serif; */
   font-family: 'Arial Narrow', Arial, -apple-system-font, Helvetica, sans-serif;
   font-size: 16px;
@@ -26,7 +26,7 @@ button::after {
   display: flex;
   flex-direction: column;
   width: 100vw;
-  background: linear-gradient(rgba(32, 44, 58, 1.0), rgba(32, 44, 58, 0.8));
+  background: linear-gradient(rgba(46, 43, 59, 1.0), rgba(46, 43, 59, 0.8));
 }
 
 .quiz-user-info {
@@ -117,7 +117,7 @@ button::after {
   align-items: center;
   padding: 0 10rpx;
   background-color: #f2f2f2;
-  color: #202c3a;
+  color: #2e2b3b;
   font-size: 18px;
 }
 
