@@ -20,6 +20,12 @@
   padding: 0 20rpx;
 }
 
+.quiz-id {
+  color: #fff;
+  font-size: 16px;
+  margin-right: 40rpx;
+}
+
 .quiz-controls {
   flex: 1;
   display: flex;
@@ -75,21 +81,24 @@
   background-color: #2e2b3b;
 }
 
+.quiz-title {
+  flex: none;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 0 40rpx;
+  padding-top: 160rpx;
+  color: #fff;
+  font-size: 20px;
+  line-height: 36px;
+}
+
 /*= .question =*/
 
 .question {
   flex: none;
   display: flex;
   flex-direction: column;
-  padding-top: 120rpx;
-}
-
-.question-text {
-  flex: none;
-  padding: 40rpx;
-  color: #fff;
-  font-size: 18px;
-  line-height: 36px;
 }
 
 .question-text-data {
@@ -116,6 +125,7 @@
 
 .question-text-data .return {
   display: block;
+  height: 10px;
 }
 
 .question-image-container {
@@ -130,8 +140,6 @@
   flex: none;
   width: 320px;
   background-color: #fff;
-  box-sizing: border-box;
-  border: 5px solid #ccc;
 }
 
 .question-image-mask {
@@ -192,7 +200,7 @@
   box-sizing: border-box;
   border-radius: 50%;
   border: 10rpx solid #2e2b3b;
-  background-color: rgba(32, 44, 58, 0.4);
+  background-color: rgba(46, 43, 59, 0.4);
   animation-name: pulse;
   animation-duration: 0.8s;
   animation-timing-function: ease-in-out;
@@ -218,7 +226,7 @@
   justify-content: center;
   align-items: center;
   height: 100rpx;
-  color: #999;
+  color: #666;
   font-size: 16px;
   text-align: center;
   text-indent: 20rpx;
@@ -234,6 +242,7 @@
 
 .options.row {
   flex-direction: column;
+  align-items: center;
 }
 
 .options.grid {
@@ -248,13 +257,11 @@
   justify-content: center;
   align-items: center;
   margin: 0 20rpx 20rpx 20rpx;
-  box-sizing: border-box;
-  border: 10rpx solid #ccc;
   background-color: #fff;
 }
 
 .option.row {
-  width: 710rpx;
+  width: 320px;
   margin: 0 20rpx 20rpx 20rpx;
 }
 
@@ -351,22 +358,13 @@
 
 /*= .solutions =*/
 
-.solutions-hd {
-  flex: none;
-  display: flex;
-  margin: 160rpx 195rpx 0 195rpx;
-}
-
 .solutions {
   flex: none;
   display: flex;
   flex-direction: column;
-  width: 670rpx;
-  margin: 0 40rpx 0;
+  margin: 160rpx 40rpx 0 40rpx;
   padding: 40rpx;
   background-color: #fff;
-  box-sizing: border-box;
-  border: 10rpx solid #ccc;
   animation-name: zoomIn;
   animation-duration: 0.4s;
   animation-timing-function: ease-in-out;
@@ -382,7 +380,7 @@
 .solution-tag {
   flex: 1;
   padding-bottom: 20rpx;
-  border-bottom: 2px solid #d9d9d9;
+  border-bottom: 1rpx solid #d9d9d9;
   color: #666;
   font-size: 16px;
   text-align: center;
@@ -392,7 +390,6 @@
 
 .solution-data {
   flex: 1;
-  width: 570rpx;
   margin: 20rpx 0 80rpx 0;
   color: #2e2b3b;
   font-size: 18px;
@@ -434,7 +431,7 @@
   flex: none;
   display: flex;
   justify-content: center;
-  padding: 60rpx 0 180rpx 0;
+  padding: 60rpx 0 200rpx 0;
   color: #666;
   font-size: 16px;
 }
@@ -452,7 +449,7 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(32, 44, 58, 0.9);
+  background-color: rgba(46, 43, 59, 0.9);
 }
 
 .feedback-panel {
@@ -477,8 +474,8 @@
   justify-content: center;
   align-items: center;
   margin-top: 40rpx;
-  color: #ccc;
-  font-size: 20px;
+  color: #f2f2f2;
+  font-size: 18px;
 }
 
 .feedback-value {

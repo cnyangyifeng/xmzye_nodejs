@@ -93,11 +93,10 @@
   position: relative;
   flex: none;
   display: flex;
-  width: 174rpx;
-  height: 174rpx;
-  margin: 5rpx;
+  width: 175rpx;
+  height: 175rpx;
   box-sizing: border-box;
-  border: 10rpx solid #ccc;
+  border: 2px solid #2e2b3b;
   background-color: #fff;
 }
 
@@ -105,15 +104,15 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 157rpx;
-  height: 157rpx;
+  width: 175rpx;
+  height: 175rpx;
   opacity: 0.3;
 }
 
 .quiz-card-ok {
   position: absolute;
-  right: 10rpx;
-  bottom: 10rpx;
+  right: 14rpx;
+  bottom: 12rpx;
   width: 40rpx;
   height: 40rpx;
 }
@@ -137,7 +136,7 @@
   flex: none;
   display: flex;
   justify-content: center;
-  padding: 60rpx 0 180rpx 0;
+  padding: 60rpx 0 200rpx 0;
   color: #666;
   font-size: 16px;
 }
@@ -149,8 +148,8 @@
 .share-btn {
   position: absolute;
   z-index: 1000;
-  right: 20px;
-  bottom: 20px;
+  right: 40rpx;
+  bottom: 40rpx;
   display: flex;
   justify-content: center;
   align-items: center;

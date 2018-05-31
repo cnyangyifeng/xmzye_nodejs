@@ -7,6 +7,7 @@
   <view class="nav-bar">
     <view class="quiz-user-hd">
       <view class="quiz-user-info">
+        <view class="quiz-id">第 {{quiz.quizId}} 题</view>
         <block wx:if="{{quizUser.vip===1}}">
           <image class="quiz-user-vip" src="/assets/images/vip.svg"></image>
         </block>
@@ -46,6 +47,7 @@
       </view>
     </block>
     <scroll-view class="quiz" scroll-y scroll-with-animation enable-back-to-top>
+      <view class="quiz-title">{{quiz.title}}</view>
       <view class="question">
         <view class="question-text-data">
           <block wx:for="{{quiz.question.questionTextData}}" wx:key="{{item.blockId}}">
@@ -136,7 +138,6 @@
   </block>
   <block wx:elif="{{quizState===2}}">
     <scroll-view class="quiz" scroll-y scroll-with-animation enable-back-to-top>
-      <view class="solutions-hd"></view>
       <view class="solutions">
         <block wx:for="{{quiz.solutions}}" wx:key="item.solutionTag">
           <view class="solution">

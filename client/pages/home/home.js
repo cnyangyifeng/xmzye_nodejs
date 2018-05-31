@@ -383,12 +383,10 @@ Page({
         url: `/pages/quiz01/quiz01?quiz_id=${reqQuizId}`
       })
     } else {
-      setTimeout(() => {
-        // 更新页面数据 homeState
-        this.setData({
-          homeState: HOME_STATE_MAIN
-        })
-      }, 600)
+      // 更新页面数据 homeState
+      this.setData({
+        homeState: HOME_STATE_MAIN
+      })
     }
   },
 

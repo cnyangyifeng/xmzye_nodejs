@@ -23,10 +23,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 120px;
+  margin-bottom: 90px;
   color: #fff;
   font-size: 24px;
-  font-weight: 600;
 }
 
 .quiz-user-avatar {
@@ -44,7 +43,7 @@
 .login-bar {
   position: absolute;
   z-index: 1000;
-  bottom: 20px;
+  bottom: 40rpx;
   display: flex;
 }
 
