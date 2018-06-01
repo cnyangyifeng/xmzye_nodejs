@@ -172,7 +172,7 @@ const QuizzesData = [
         }
       ],
       questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/dofilbre.jpg',
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/qdata/dofilbre.jpg',
         height: 1000
       }
     },
@@ -1087,7 +1087,7 @@ const QuizzesData = [
         }
       ],
       questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/ztye1s4u.jpg',
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/qdata/ztye1s4u.jpg',
         height: 1350
       }
     },
@@ -1974,7 +1974,7 @@ const QuizzesData = [
         {
           blockId: '5',
           blockType: 'normal-text',
-          text: '终于，骗子帝诺犯下一个错误：在温特拉肯海滨浴场，他居然想要算计卡勒侦探的阿姨——富有的安东尼娅·洛阿格。安东尼娅怒气冲冲地将这一情况告知了自己的外甥，她详细地描述了骗子的长相：'
+          text: '终于，骗子蒂诺犯下一个错误：在温特拉肯海滨浴场，他居然想要算计卡勒侦探的阿姨——富有的安东尼娅·洛阿格。安东尼娅怒气冲冲地将这一情况告知了自己的外甥，她详细地描述了骗子的长相：'
         },
         {
           blockId: '6',

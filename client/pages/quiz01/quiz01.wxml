@@ -6,6 +6,17 @@
 <block wx:else>
   <view class="nav-bar">
     <view class="quiz-user-hd">
+      <view class="quiz-controls">
+        <view class="quiz-control" hover-class="quiz-control-hover" bindtap="downloadControlTap">
+          <image class="quiz-control-icon" src="/assets/images/return.svg"></image>
+        </view>
+        <button class="quiz-control" hover-class="quiz-control-hover" open-type="share">
+          <image class="quiz-control-icon" src="/assets/images/share.svg"></image>
+        </button>
+        <view hidden="{{timeElapsed>=quiz.timeLimit}}" class="quiz-control {{quizUser.muted===0?'playing':''}}" hover-class="quiz-control-hover" bindtap="bgmControlTap">
+          <image class="quiz-control-icon" src="/assets/images/{{quizUser.muted===0?'music_note.svg':'music_note_off.svg'}}"></image>
+        </view>
+      </view>
       <view class="quiz-user-info">
         <view class="quiz-id">第 {{quiz.quizId}} 题</view>
         <block wx:if="{{quizUser.vip===1}}">
@@ -17,17 +28,6 @@
             <view class="quiz-user-asset-value">{{quizUser.totalKeyCount}}</view>
           </view>
         </block>
-      </view>
-      <view class="quiz-controls">
-        <button class="quiz-control" hover-class="quiz-control-hover" open-type="share">
-          <image class="quiz-control-icon" src="/assets/images/share_fill.svg"></image>
-        </button>
-        <view hidden="{{timeElapsed>=quiz.timeLimit}}" class="quiz-control {{quizUser.muted===0?'playing':''}}" hover-class="quiz-control-hover" bindtap="bgmControlTap">
-          <image class="quiz-control-icon" src="/assets/images/{{quizUser.muted===0?'music_note.svg':'music_note_off.svg'}}"></image>
-        </view>
-        <view class="quiz-control" hover-class="quiz-control-hover" bindtap="downloadControlTap">
-          <image class="quiz-control-icon" src="/assets/images/home_fill.svg"></image>
-        </view>
       </view>
     </view>
   </view>
@@ -116,23 +116,16 @@
     </scroll-view>
     <view hidden="{{!feedbackModalVisible}}" class="feedback-modal" bindtap="feedbackModalTap">
       <view class="feedback-panel" animation="{{feedbackPanelAnimationData}}">
+        <view class="feedback-title">{{feedbackTitle}}</view>
+        <view wx:if="{{quiz.quizType===1}}" class="feedback-description">正确答案是
+          <text class="feedback-value">{{quiz.answerKey}}</text>
+        </view>
         <block wx:if="{{myAnswerFeedback===1}}">
-          <view class="feedback-title">恭喜你，答对了！</view>
-          <view wx:if="{{quiz.quizType===1}}" class="feedback-description">正确答案是
-            <text class="feedback-value">{{quiz.answerKey}}</text>
-          </view>
           <view class="feedback-description">奖励
             <image class="feedback-asset-icon" src="/assets/images/key.svg"></image>x
             <text class="feedback-value">1</text>
           </view>
         </block>
-        <block wx:else>
-          <view class="feedback-title">很遗憾，答错了...</view>
-          <view wx:if="{{quiz.quizType===1}}" class="feedback-description">正确答案是
-            <text class="feedback-value">{{quiz.answerKey}}</text>
-          </view>
-        </block>
-        <!-- <image class="feedback-close-btn" src="/assets/images/close.svg"></image> -->
       </view>
     </view>
   </block>

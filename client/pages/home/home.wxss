@@ -96,7 +96,7 @@
   width: 175rpx;
   height: 175rpx;
   box-sizing: border-box;
-  border: 2px solid #2e2b3b;
+  border: 5rpx solid #2e2b3b;
   background-color: #fff;
 }
 
@@ -104,8 +104,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 175rpx;
-  height: 175rpx;
+  width: 170rpx;
+  height: 170rpx;
   opacity: 0.3;
 }
 

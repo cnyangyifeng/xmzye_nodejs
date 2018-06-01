@@ -83,8 +83,9 @@ Page({
 
   doLogin: function (options) {
     quizUserBuilder.build(options).then(() => {
-      wx.navigateBack({
-        delta: -1
+      // 重定向至 home 页面
+      wx.redirectTo({
+        url: `../home/home`
       })
     })
   }

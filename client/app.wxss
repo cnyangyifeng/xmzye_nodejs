@@ -71,7 +71,6 @@ button::after {
 .quiz-user-asset-icon {
   width: 36rpx;
   height: 36rpx;
-  margin-top: 1px;
 }
 
 .quiz-user-asset-value {

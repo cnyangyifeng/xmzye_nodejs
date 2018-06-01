@@ -15,6 +15,9 @@ const QUIZ_STATE_SOLUTIONS = 2
 const MUTED_STATE_OFF = 0
 const MUTED_STATE_ON = 1
 
+const FEEDBACK_TITLE_RIGHT = '恭喜你，答对了！'
+const FEEDBACK_TITLE_WRONG = '很遗憾，答错了...'
+
 Page({
 
   bgmAudioContext: null,
@@ -157,6 +160,7 @@ Page({
     actionBarAnimationData: null,
     feedbackModalVisible: false,
     feedbackPanelAnimationData: null,
+    feedbackTitle: '',
     quizSolved: 0, // 当前 quiz 是否解答完毕
 
     redisplayFromSharing: false, // 是否 “分享页面” 操作以后的页面重新显示
@@ -265,9 +269,9 @@ Page({
 
   downloadControlTap: function () {
     console.debug(`点击 downloadControl`)
-    // 跳转至 home 页面
-    wx.navigateBack({
-      delta: 1
+    // 重定向至 home 页面
+    wx.redirectTo({
+      url: `../home/home`
     })
   },
 
@@ -586,9 +590,9 @@ Page({
           }
         })
       } else {
-        // 跳转至 home 页面
-        wx.navigateBack({
-          delta: 1
+        // 重定向至 home 页面
+        wx.redirectTo({
+          url: `../home/home`
         })
       }
     })
@@ -648,9 +652,9 @@ Page({
           },
           fail: err => {
             console.debug(`获取 quiz 失败`)
-            // 跳转至 home 页面
-            wx.navigateBack({
-              delta: 1
+            // 重定向至 home 页面
+            wx.redirectTo({
+              url: `../home/home`
             })
             // 操作失败
             // reject()
@@ -909,9 +913,17 @@ Page({
     new Promise((resolve, reject) => {
       const quiz = this.data.quiz
       if (quiz.quizType === 1) {
-        this.setData({
-          myAnswerFeedback: (this.data.myAnswerKey === quiz.answerKey) ? 1 : 0
-        })
+        if (this.data.myAnswerKey === quiz.answerKey) {
+          this.setData({
+            myAnswerFeedback: 1,
+            feedbackTitle: FEEDBACK_TITLE_RIGHT
+          })
+        } else {
+          this.setData({
+            myAnswerFeedback: 0,
+            feedbackTitle: FEEDBACK_TITLE_WRONG
+          })
+        }
         // 操作成功
         resolve()
       } else if (quiz.quizType === 2) {
@@ -920,22 +932,27 @@ Page({
             console.debug(`相交区域占目标节点的比例：`, res.intersectionRatio)
             if (res.intersectionRatio > 0) {
               this.setData({
-                myAnswerFeedback: 1
+                myAnswerFeedback: 1,
+                feedbackTitle: FEEDBACK_TITLE_RIGHT
               })
               // 操作成功
               resolve()
             } else {
               this.setData({
-                myAnswerFeedback: 0
+                myAnswerFeedback: 0,
+                feedbackTitle: FEEDBACK_TITLE_WRONG
               })
               // 操作成功
               resolve()
             }
           })
+          // 操作成功
+          resolve()
         }).then(() => {
           if (this.data.myAnswerFeedback !== 1) {
             this.setData({
-              myAnswerFeedback: 0
+              myAnswerFeedback: 0,
+              feedbackTitle: FEEDBACK_TITLE_WRONG
             })
           }
           // 操作成功

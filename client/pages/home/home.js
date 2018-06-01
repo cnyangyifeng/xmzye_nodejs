@@ -192,7 +192,7 @@ Page({
     console.debug(`点击 quizCard: ${quizId}`)
     const unlocked = this.unlockQuiz(quizCardIndex)
     if (unlocked) {
-      wx.navigateTo({
+      wx.redirectTo({
         url: `/pages/quiz01/quiz01?quiz_id=${quizId}`
       })
     } else {
@@ -282,7 +282,7 @@ Page({
     if (!this.data.quizUser) {
       // 跳转至 login 页面
       console.debug(`跳转至 login 页面`)
-      wx.navigateTo({
+      wx.redirectTo({
         url: `/pages/login/login`
       })
     } else {
@@ -373,13 +373,13 @@ Page({
   handlePageRoute: function () {
     const reqQuizId = this.data.reqQuizId
     if (reqQuizId !== 0 && this.data.quizUser.totalKeyCount > 0) {
-      // 用完重置 reqQuizId，防止 quiz01 页面 navigateBack 造成循环跳转
+      // 用完重置 reqQuizId
       this.setData({
         reqQuizId: 0
       })
       // 跳转至 quiz01 页面
       console.debug(`跳转至 quiz01 页面`)
-      wx.navigateTo({
+      wx.redirectTo({
         url: `/pages/quiz01/quiz01?quiz_id=${reqQuizId}`
       })
     } else {
