@@ -1,0 +1,38 @@
+<view class="retention">
+  <view class="retention-title">
+    <image class="retention-title-icon" src="/assets/images/r1.svg"></image>
+    <text>会员专享</text>
+  </view>
+  <view class="retention-task">
+    <view class="retention-task-bd">
+      <view class="retention-task-description">
+        <text>只需</text>
+        <view class="retention-task-value">9.9</view>
+        <text>元，解锁全部题目</text>
+      </view>
+      <view hidden="{{platform!=='ios'}}" class="retention-task-description secondary">
+        <text>iOS 用户暂不支持微信支付\n请联系客服并回复数字 1</text>
+      </view>
+    </view>
+    <view class="retention-task-ft">
+      <button wx:if="{{platform==='ios'}}" class="retention-primary-btn" hover-class="retention-primary-btn-hover" open-type="contact">联系客服</button>
+      <button wx:else class="retention-primary-btn" hover-class="retention-primary-btn-hover" bindtap="unlockAllButtonTap">全部解锁</button>
+    </view>
+  </view>
+  <view class="retention-title">
+    <image class="retention-title-icon" src="/assets/images/r2.svg"></image>
+    <text>一起挑战</text>
+  </view>
+  <view class="retention-task">
+    <view class="retention-task-bd">
+      <view class="retention-task-description">
+        <text>每邀请一人，可获赠</text>
+        <view class="retention-task-value">3</view>
+        <text>把钥匙</text>
+      </view>
+    </view>
+    <view class="retention-task-ft">
+      <button class="retention-primary-btn" hover-class="retention-primary-btn-hover" open-type="share">邀请好友</button>
+    </view>
+  </view>
+</view>

@@ -6,17 +6,6 @@
 <block wx:else>
   <view class="nav-bar">
     <view class="quiz-user-hd">
-      <view class="quiz-controls">
-        <view class="quiz-control" hover-class="quiz-control-hover" bindtap="downloadControlTap">
-          <image class="quiz-control-icon" src="/assets/images/return.svg"></image>
-        </view>
-        <button class="quiz-control" hover-class="quiz-control-hover" open-type="share">
-          <image class="quiz-control-icon" src="/assets/images/share.svg"></image>
-        </button>
-        <view hidden="{{timeElapsed>=quiz.timeLimit}}" class="quiz-control {{quizUser.muted===0?'playing':''}}" hover-class="quiz-control-hover" bindtap="bgmControlTap">
-          <image class="quiz-control-icon" src="/assets/images/{{quizUser.muted===0?'music_note.svg':'music_note_off.svg'}}"></image>
-        </view>
-      </view>
       <view class="quiz-user-info">
         <view class="quiz-id">第 {{quiz.quizId}} 题</view>
         <block wx:if="{{quizUser.vip===1}}">
@@ -28,6 +17,14 @@
             <view class="quiz-user-asset-value">{{quizUser.totalKeyCount}}</view>
           </view>
         </block>
+      </view>
+      <view class="quiz-controls">
+        <view hidden="{{timeElapsed>=quiz.timeLimit}}" class="quiz-control {{quizUser.muted===0?'playing':''}}" hover-class="quiz-control-hover" bindtap="bgmControlTap">
+          <image class="quiz-control-icon" src="/assets/images/{{quizUser.muted===0?'music_note.svg':'music_note_off.svg'}}"></image>
+        </view>
+        <button class="quiz-control" hover-class="quiz-control-hover" open-type="share">
+          <image class="quiz-control-icon" src="/assets/images/share.svg"></image>
+        </button>
       </view>
     </view>
   </view>
@@ -130,7 +127,7 @@
     </view>
   </block>
   <block wx:elif="{{quizState===2}}">
-    <scroll-view class="quiz" scroll-y scroll-with-animation enable-back-to-top>
+    <scroll-view class="quiz" scroll-y scroll-with-animation enable-back-to-top bindtap="undoButtonTap">
       <view class="solutions">
         <block wx:for="{{quiz.solutions}}" wx:key="item.solutionTag">
           <view class="solution">

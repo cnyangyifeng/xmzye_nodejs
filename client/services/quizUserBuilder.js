@@ -14,7 +14,7 @@ var build = options => {
       // 初始化 quizUser
       const createTime = dateUtils.formatTime(new Date())
       const quizUser = {
-        quizUserId: options.userInfo.openId,
+        quizUserId: '',
         referrerId: '',
         quizUserInfo: options.userInfo,
         vip: 0,

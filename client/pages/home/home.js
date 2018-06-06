@@ -2,6 +2,7 @@ const configs = require('../../config')
 const dateUtils = require('../../utils/dateUtils')
 const msgs = require('../../msg')
 const PromCodes = require('../../services/promCodes')
+const qcloud = require('../../vendor/wafer2-client-sdk/index')
 const QuizGrid = require('../../services/quizGrid')
 const quizGridBuilder = require('../../services/quizGridBuilder')
 const QuizUser = require('../../services/quizUser')
@@ -136,7 +137,7 @@ Page({
       path: `/pages/home/home?referrer_id=${this.data.quizUser.quizUserId}`,
       imageUrl: `/assets/images/share_cover.jpg`,
       success: res => {
-        console.debug(`转发成功`)
+        console.debug(`转发成功：`, res)
       },
       fail: err => {
         console.debug(`取消转发`)
@@ -192,20 +193,13 @@ Page({
     console.debug(`点击 quizCard: ${quizId}`)
     const unlocked = this.unlockQuiz(quizCardIndex)
     if (unlocked) {
-      wx.redirectTo({
+      wx.navigateTo({
         url: `/pages/quiz01/quiz01?quiz_id=${quizId}`
       })
     } else {
-      wx.showModal({
-        title: msgs.get_more_keys_title,
-        content: msgs.get_more_keys_content,
-        showCancel: false,
-        confirmText: msgs.i_see_title,
-        confirmColor: '#00ba80',
-        success: res => {
-          if (res.confirm) {
-          }
-        }
+      // 跳转至 retention 页面
+      wx.navigateTo({
+        url: `../retention/retention`
       })
     }
   },
@@ -226,6 +220,7 @@ Page({
           console.debug(`清空全部缓存数据`)
           QuizUser.clear()
           QuizGrid.clear()
+          qcloud.clearSession()
           // 重定向至 home 页面
           wx.redirectTo({
             url: `../home/home`
@@ -282,8 +277,10 @@ Page({
     if (!this.data.quizUser) {
       // 跳转至 login 页面
       console.debug(`跳转至 login 页面`)
-      wx.redirectTo({
-        url: `/pages/login/login`
+      const reqReferrerId = this.data.reqReferrerId
+      const param = (reqReferrerId === null) ? '' : `?referrer_id=${reqReferrerId}`
+      wx.navigateTo({
+        url: `/pages/login/login${param}`
       })
     } else {
       // 构建 quizGrid
@@ -379,7 +376,7 @@ Page({
       })
       // 跳转至 quiz01 页面
       console.debug(`跳转至 quiz01 页面`)
-      wx.redirectTo({
+      wx.navigateTo({
         url: `/pages/quiz01/quiz01?quiz_id=${reqQuizId}`
       })
     } else {

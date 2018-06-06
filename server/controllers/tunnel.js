@@ -34,6 +34,10 @@ function onClose(tunnelId) {
 async function onMessage(tunnelId, type, content) {
   console.debug(`[onMessage] =>`, { tunnelId, type, content })
   switch (type) {
+    case TunnelEvent.REF_QUIZ_USER_REQ:
+      const quizUser = content.quizUser
+      console.log(`ref quiz user`)
+      break
     case TunnelEvent.SYNC_QUIZ_USER_REQ:
       const quizUser = content.quizUser
       const quizUserForm = content.quizUserForm
@@ -108,6 +112,7 @@ module.exports = {
 
   post: async ctx => {
     // 当用户发送消息到信道上时，使用 onTunnelMessage 处理信道上的消息
+    console.debug(ctx.request.body)
     const packet = await tunnel.onTunnelMessage(ctx.request.body)
     switch (packet.type) {
       case 'connect':

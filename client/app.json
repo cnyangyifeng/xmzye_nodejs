@@ -1,8 +1,9 @@
 {
   "pages": [
     "pages/home/home",
-    "pages/login/login",    
-    "pages/quiz01/quiz01"
+    "pages/login/login",
+    "pages/quiz01/quiz01",
+    "pages/retention/retention"
   ],
   "window": {
     "navigationBarBackgroundColor": "#2e2b3b",

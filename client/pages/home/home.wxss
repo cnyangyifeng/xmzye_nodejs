@@ -93,8 +93,8 @@
   position: relative;
   flex: none;
   display: flex;
-  width: 175rpx;
-  height: 175rpx;
+  width: 180rpx;
+  height: 180rpx;
   box-sizing: border-box;
   border: 5rpx solid #2e2b3b;
   background-color: #fff;
@@ -104,8 +104,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 170rpx;
-  height: 170rpx;
+  width: 175rpx;
+  height: 175rpx;
   opacity: 0.3;
 }
 

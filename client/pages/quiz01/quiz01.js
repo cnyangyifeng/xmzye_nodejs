@@ -137,7 +137,7 @@ Page({
      *         timeElapsed: 0,
      *         myAnswerKey: 'N',
      *         myAnswerPoint: { x: 0, y: 0 },
-     *         myAnswerFeedback: -1,
+     *         myAnswerFeedback: 0,
      *         quizSolved: 0
      *       }
      *     ]
@@ -155,12 +155,12 @@ Page({
 
     myAnswerPoint: null,
     myAnswerKey: 'N', // 当前用户的答案
-    myAnswerFeedback: -1,
+    myAnswerFeedback: 0,
 
     actionBarAnimationData: null,
     feedbackModalVisible: false,
     feedbackPanelAnimationData: null,
-    feedbackTitle: '',
+    feedbackTitle: FEEDBACK_TITLE_WRONG,
     quizSolved: 0, // 当前 quiz 是否解答完毕
 
     redisplayFromSharing: false, // 是否 “分享页面” 操作以后的页面重新显示
@@ -247,13 +247,6 @@ Page({
       imageUrl: this.data.quiz.question.questionImage.url,
       success: res => {
         console.debug(`转发成功：`, res)
-        const quizUser = this.data.quizUser
-        quizUser.totalKeyCount++
-        this.setData({
-          quizUser: quizUser,
-          redisplayFromSharing: true
-        })
-        QuizUser.set(quizUser)
       },
       fail: err => {
         console.debug(`取消转发`)
@@ -262,18 +255,6 @@ Page({
   },
 
   /* ================================================================================ */
-
-  /**
-   * 绑定事件：点击 downloadControl
-   */
-
-  downloadControlTap: function () {
-    console.debug(`点击 downloadControl`)
-    // 重定向至 home 页面
-    wx.redirectTo({
-      url: `../home/home`
-    })
-  },
 
   /**
    * 绑定事件：点击 bgmControl
@@ -499,16 +480,9 @@ Page({
         url: `/pages/quiz01/quiz01?quiz_id=${nextQuizId}`
       })
     } else {
-      wx.showModal({
-        title: msgs.get_more_keys_title,
-        content: msgs.get_more_keys_content,
-        showCancel: false,
-        confirmText: msgs.i_see_title,
-        confirmColor: '#00ba80',
-        success: res => {
-          if (res.confirm) {
-          }
-        }
+      // 跳转至 retention 页面
+      wx.navigateTo({
+        url: `../retention/retention`
       })
     }
   },
@@ -590,9 +564,8 @@ Page({
           }
         })
       } else {
-        // 重定向至 home 页面
-        wx.redirectTo({
-          url: `../home/home`
+        wx.navigateBack({
+          delta: -1
         })
       }
     })
@@ -652,9 +625,8 @@ Page({
           },
           fail: err => {
             console.debug(`获取 quiz 失败`)
-            // 重定向至 home 页面
-            wx.redirectTo({
-              url: `../home/home`
+            wx.navigateBack({
+              delta: -1
             })
             // 操作失败
             // reject()
@@ -901,7 +873,7 @@ Page({
       // 缓存 quizSolved
       this.cacheQuizAsSolved()
     }, 400)
-    // 发送 “同步用户信息” 消息
+    // 发送 “同步用户” 消息
     this.emitSyncQuizUserMessage()
   },
 
@@ -927,34 +899,12 @@ Page({
         // 操作成功
         resolve()
       } else if (quiz.quizType === 2) {
-        new Promise((resolve, reject) => {
-          wx.createIntersectionObserver().relativeTo('.answer-area').relativeToViewport().observe('.my-answer-point', res => {
-            console.debug(`相交区域占目标节点的比例：`, res.intersectionRatio)
-            if (res.intersectionRatio > 0) {
-              this.setData({
-                myAnswerFeedback: 1,
-                feedbackTitle: FEEDBACK_TITLE_RIGHT
-              })
-              // 操作成功
-              resolve()
-            } else {
-              this.setData({
-                myAnswerFeedback: 0,
-                feedbackTitle: FEEDBACK_TITLE_WRONG
-              })
-              // 操作成功
-              resolve()
-            }
+        wx.createIntersectionObserver().relativeTo('.answer-area').relativeToViewport().observe('.my-answer-point', res => {
+          console.debug(`相交区域占目标节点的比例：`, res.intersectionRatio)
+          this.setData({
+            myAnswerFeedback: 1,
+            feedbackTitle: FEEDBACK_TITLE_RIGHT
           })
-          // 操作成功
-          resolve()
-        }).then(() => {
-          if (this.data.myAnswerFeedback !== 1) {
-            this.setData({
-              myAnswerFeedback: 0,
-              feedbackTitle: FEEDBACK_TITLE_WRONG
-            })
-          }
           // 操作成功
           resolve()
         })
@@ -1015,14 +965,14 @@ Page({
   },
 
   /**
-   * 发送 “同步用户信息” 消息
+   * 发送 “同步用户” 消息
    */
 
   emitSyncQuizUserMessage: function () {
     // 发送信道消息
     const app = getApp()
     if (!app.tunnel || app.globalData.tunnelStatus === TunnelStatus.CLOSE) {
-      console.debug(`重新建立信道...`)
+      console.debug(`建立信道...`)
       // 启动信道服务
       tunnelService.parse(this, getApp())
     }
@@ -1033,7 +983,6 @@ Page({
     }
     // 发送信道消息
     app.tunnel.emit(TunnelEvent.SYNC_QUIZ_USER_REQ, content)
-    // wx.showNavigationBarLoading()
     console.debug(`emit a '${TunnelEvent.SYNC_QUIZ_USER_REQ}' message: `, content)
   },
 

@@ -75,8 +75,6 @@ App({
       console.info("emit pong")
     })
     // 打开信道
-    // 修改 wafer2-client-sdk，为 tunnel.openConnect() 增加 login: true 参数
-    // 先保证处于登录状态，再打开信道
     tunnel.open()
     console.log(`open tunnel`)
   }

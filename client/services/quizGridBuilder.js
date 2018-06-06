@@ -27,7 +27,7 @@ var build = () => {
             timeElapsed: 0,
             myAnswerKey: 'N',
             myAnswerPoint: null,
-            myAnswerFeedback: -1,
+            myAnswerFeedback: 0,
             quizSolved: 0
           }
           quizCards.push(quizCard)

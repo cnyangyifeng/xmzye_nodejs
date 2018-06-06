@@ -1,3 +1,4 @@
+const configs = require('../config')
 const dateUtils = require('../utils/dateUtils')
 const msgs = require('../msg')
 const qcloud = require('../vendor/wafer2-client-sdk/index')
@@ -50,6 +51,8 @@ var purchase = (quizUser, quizGrid) => {
               }
             }
             QuizGrid.set(quizGrid)
+            // 操作成功
+            resolve()
           },
           'fail': err => {
             console.debug(`支付失败：`, err)
@@ -63,6 +66,8 @@ var purchase = (quizUser, quizGrid) => {
                   mask: true
                 })
             }
+            // 操作失败
+            // reject()
           }
         })
       },

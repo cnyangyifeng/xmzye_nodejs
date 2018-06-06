@@ -7,6 +7,7 @@ const moment = require('moment')
 async function getQuizUser(ctx, next) {
   if (ctx.state.$wxInfo.loginState === 1) {
     const quizUserInfo = ctx.state.$wxInfo.userinfo
+    const referrerId = ctx.request.query['referrer_id']
     const cli = await MongoClient.connect(configs.mongodb.url)
     const db = cli.db('xmzye')
     const collection = db.collection('quizUsers')
@@ -19,13 +20,13 @@ async function getQuizUser(ctx, next) {
       const lastVisitTime = createTime
       const defaultQuizUser = {
         quizUserId: quizUserInfo.openId,
-        referrerId: '',
+        referrerId: referrerId,
         quizUserInfo: quizUserInfo,
         vip: 0,
-        totalKeyCount: 10,
+        totalKeyCount: 5,
         muted: 0,
         currentQuizTabIndex: 0,
-        currentQuizTabName: '1-100',
+        currentQuizTabName: '1-40',
         createTime: createTime,
         lastVisitTime: lastVisitTime
       }

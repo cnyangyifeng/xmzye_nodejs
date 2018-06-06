@@ -1,0 +1,108 @@
+/****************************************************************************************************/
+
+.retention {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  background-color: #2e2b3b;
+}
+
+.retention-title-icon {
+  width: 24px;
+  height: 24px;
+  margin: 0 10px 2px 0;
+}
+
+.retention-title {
+  flex: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 160rpx;
+  color: #fff;
+  font-size: 20px;
+}
+
+.retention-task {
+  flex: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 640rpx;
+  margin: 0 60rpx 60rpx 60rpx;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.retention-task-bd {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 60rpx 0 60rpx 0;
+}
+
+.retention-task-description {
+  flex: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  line-height: 30px;
+  color: #2e2b3b;
+}
+
+.retention-task-description.secondary {
+  margin-top: 20rpx;
+  font-size: 16px;
+  color: #666;
+  text-align: center;
+}
+
+.retention-task-value {
+  font-size: 24px;
+  color: #ffa000;
+  font-weight: 600;
+  padding: 0 10rpx;
+}
+
+.retention-task-value.left {
+  padding-left: 10rpx;
+}
+
+.retention-task-value.right {
+  padding-right: 10rpx;
+}
+
+.retention-task-ft {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 60rpx;
+}
+
+.retention-primary-btn {
+  flex: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 360rpx;
+  height: 100rpx;
+  padding: 0 50rpx;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: #00ba80;
+  color: #fff;
+  font-size: 16px;
+}
+
+.retention-primary-btn-hover {
+  background-color: #0c9;
+}

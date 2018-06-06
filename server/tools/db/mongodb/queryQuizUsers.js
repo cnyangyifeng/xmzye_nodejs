@@ -29,6 +29,8 @@ const queryQuizUsers = (db, callback) => {
     logger.debug('found the following records: ', res)
     logger.debug('count: ', res.length)
     console.debug('quiz users exported')
+    console.debug('found the following records: ', res)
+    console.debug('count: ', res.length)
     callback(res)
   })
 }
