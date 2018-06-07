@@ -1268,59 +1268,6 @@ const QuizzesData = [
   {
     quizId: 21,
     quizType: 2,
-    title: '寻找咖啡杯小偷',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
-    timed: true,
-    timeLimit: 120000,
-    question: {
-      questionId: 1,
-      questionTextData: [
-        {
-          blockId: '1',
-          blockType: 'tab'
-        },
-        {
-          blockId: '2',
-          blockType: 'normal-text',
-          text: '吉塔侦探拜访了策伯尔·格拉茨克，向他询向了有关上周日咖啡杯被盗的情况，因为策伯尔在她的嫌疑人名单中，并且他的作案可能性最大。'
-        },
-        {
-          blockId: '3',
-          blockType: 'return'
-        },
-        {
-          blockId: '4',
-          blockType: 'tab'
-        },
-        {
-          blockId: '5',
-          blockType: 'normal-text',
-          text: '策伯尔吸了一口烟，笑着说：“我什么都不知道，怎么可能会在我这里，证据在哪儿？”吉塔侦探出去了一下，去拿忘在车内的记录本。当她回来时，虽然策伯尔还是懒洋洋地坐在那里，仿佛没有离开过椅子，但是吉塔侦探敏锐地发现了策伯尔把什么东西藏了起来，极有可能就是周日被偷的咖啡杯。那么，当吉塔侦探出去的时候，发生了什么？'
-        }
-      ],
-      questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/i3hqx5ny.jpg',
-        height: 1319
-      }
-    },
-    answerArea: { x: 220, y: 548 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '当吉塔侦探出去时，策伯尔·格拉茨取下了钥匙板上的钥匙，把架子上的黑色皮包藏进了工作桌下面的柜子里，没有来得及放回钥匙，黑色皮包里极有可能装有他偷走的咖啡杯。'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    quizId: 22,
-    quizType: 2,
     title: '午夜牌局',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -1359,7 +1306,7 @@ const QuizzesData = [
     ]
   },
   {
-    quizId: 23,
+    quizId: 22,
     quizType: 2,
     title: '艺术品背后的诡计',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -1399,7 +1346,7 @@ const QuizzesData = [
     ]
   },
   {
-    quizId: 24,
+    quizId: 23,
     quizType: 2,
     title: '鞋店中的交接',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -1452,7 +1399,7 @@ const QuizzesData = [
     ]
   },
   {
-    quizId: 25,
+    quizId: 24,
     quizType: 1,
     title: '甜蜜的诱惑',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -1551,7 +1498,7 @@ const QuizzesData = [
     ]
   },
   {
-    quizId: 26,
+    quizId: 25,
     quizType: 2,
     title: '舒蒙尔先生不老实',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -1604,73 +1551,7 @@ const QuizzesData = [
     ]
   },
   {
-    quizId: 27,
-    quizType: 2,
-    title: '足球赛场中的双胞胎逃犯',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
-    timed: true,
-    timeLimit: 120000,
-    question: {
-      questionId: 1,
-      questionTextData: [
-        {
-          blockId: '1',
-          blockType: 'tab'
-        },
-        {
-          blockId: '2',
-          blockType: 'normal-text',
-          text: '双胞胎兄弟维利和比利，从头到脚都长得一模一样。这两年他们在米尔贝格尔监狱服刑，最近越狱逃往城市北部，卡勒侦探已经紧紧盯着他们。'
-        },
-        {
-          blockId: '3',
-          blockType: 'return'
-        },
-        {
-          blockId: '4',
-          blockType: 'tab'
-        },
-        {
-          blockId: '5',
-          blockType: 'normal-text',
-          text: '不过一个突发事件却有助于两兄弟继续逃跑。在巨大的体育场内，足球比赛即将开始，几千名观众涌入体育场就座，维利和比利也乔装打扮混在人群中入场坐在看台上，当然他们没有坐在一起。'
-        },
-        {
-          blockId: '6',
-          blockType: 'return'
-        },
-        {
-          blockId: '7',
-          blockType: 'tab'
-        },
-        {
-          blockId: '8',
-          blockType: 'normal-text',
-          text: '在拥挤的人群中找出两兄弟并不容易，不过卡勒侦探有一双敏锐的眼睛。你也发现那两兄弟了吗？'
-        }
-      ],
-      questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/64c39z3b.jpg',
-        height: 990
-      }
-    },
-    answerArea: { x: 184, y: 318 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '维利坐在下方第一排，在冰激凌小贩左上方。比利坐在图片的左上角，在一位络腮胡子先生后面。这对双胞胎长得实在太像了，也许是，比利在下方第一排，而维利则在左上方？'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    quizId: 28,
+    quizId: 26,
     quizType: 2,
     title: '仔细观察指印',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -1710,7 +1591,7 @@ const QuizzesData = [
     ]
   },
   {
-    quizId: 29,
+    quizId: 27,
     quizType: 2,
     title: '普福尔茨劳小姐',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -1763,7 +1644,7 @@ const QuizzesData = [
     ]
   },
   {
-    quizId: 30,
+    quizId: 28,
     quizType: 2,
     title: '美味的火腿',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -1829,7 +1710,7 @@ const QuizzesData = [
     ]
   },
   {
-    quizId: 31,
+    quizId: 29,
     quizType: 2,
     title: '感到危险',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -1869,7 +1750,7 @@ const QuizzesData = [
     ]
   },
   {
-    quizId: 32,
+    quizId: 30,
     quizType: 2,
     title: '通缉追捕',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -1948,7 +1829,7 @@ const QuizzesData = [
     ]
   },
   {
-    quizId: 33,
+    quizId: 31,
     quizType: 2,
     title: '在君特弗洛做客',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -2001,7 +1882,7 @@ const QuizzesData = [
     ]
   },
   {
-    quizId: 34,
+    quizId: 32,
     quizType: 1,
     title: '机密文件的“火星移动”',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -2154,7 +2035,7 @@ const QuizzesData = [
     ]
   },
   {
-    quizId: 35,
+    quizId: 33,
     quizType: 2,
     title: '保险柜',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -2233,7 +2114,7 @@ const QuizzesData = [
     ]
   },
   {
-    quizId: 36,
+    quizId: 34,
     quizType: 2,
     title: '谁是真正的佐罗',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -2299,7 +2180,7 @@ const QuizzesData = [
     ]
   },
   {
-    quizId: 37,
+    quizId: 35,
     quizType: 2,
     title: '被雪覆盖的雪茄',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -2417,7 +2298,7 @@ const QuizzesData = [
     ]
   },
   {
-    quizId: 38,
+    quizId: 36,
     quizType: 2,
     title: '施魏因斯堡瓷器',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -2483,7 +2364,7 @@ const QuizzesData = [
     ]
   },
   {
-    quizId: 39,
+    quizId: 37,
     quizType: 2,
     title: '裤子纽扣的小把戏',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -2575,7 +2456,7 @@ const QuizzesData = [
     ]
   },
   {
-    quizId: 40,
+    quizId: 38,
     quizType: 2,
     title: '陌生的床',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -2654,7 +2535,7 @@ const QuizzesData = [
     ]
   },
   {
-    quizId: 41,
+    quizId: 39,
     quizType: 2,
     title: '伪造的科勒蒂画像',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -2707,7 +2588,7 @@ const QuizzesData = [
     ]
   },
   {
-    quizId: 42,
+    quizId: 40,
     quizType: 2,
     title: '盈利的魔术',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',

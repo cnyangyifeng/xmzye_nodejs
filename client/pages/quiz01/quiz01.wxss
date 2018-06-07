@@ -192,6 +192,10 @@
   background-color: rgba(0, 186, 128, 0.4);
 }
 
+.answer-area.hidden {
+  opacity: 0;
+}
+
 .my-answer-point {
   position: absolute;
   z-index: 999;
@@ -483,10 +487,4 @@
   margin: 0 20rpx;
   color: #ffa000;
   font-size: 24px;
-}
-
-.feedback-asset-icon {
-  width: 24px;
-  height: 24px;
-  margin: 0 20rpx;
 }

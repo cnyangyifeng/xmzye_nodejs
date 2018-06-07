@@ -1,5 +1,6 @@
 const configs = require('./config')
 const qcloud = require('./vendor/wafer2-client-sdk/index')
+const tunnelService = require('./services/tunnelService')
 const TunnelStatus = require('./services/tunnelStatus')
 
 App({
@@ -13,6 +14,9 @@ App({
   onLaunch: function () {
     // 设置 login url
     qcloud.setLoginUrl(`${configs.weapp}/login`)
+    // 启动信道服务
+    console.debug(`启动信道服务...`)
+    tunnelService.parse(this)
   },
 
   /* ================================================================================ */

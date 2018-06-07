@@ -6,9 +6,7 @@ const qcloud = require('../../vendor/wafer2-client-sdk/index')
 const QuizGrid = require('../../services/quizGrid')
 const quizGridBuilder = require('../../services/quizGridBuilder')
 const QuizUser = require('../../services/quizUser')
-const tunnelService = require('../../services/tunnelService')
 const TunnelEvent = require('../../services/tunnelEvent')
-const TunnelStatus = require('../../services/tunnelStatus')
 
 const PROM_TYPE_FORM_HOOK = 1
 
@@ -459,12 +457,6 @@ Page({
 
   syncQuizUser: function (formId) {
     return new Promise((resolve, reject) => {
-      // 启动信道服务
-      const app = getApp()
-      if (!app.tunnel || app.globalData.tunnelStatus === TunnelStatus.CLOSE) {
-        console.debug(`启动信道服务...`)
-        tunnelService.parse(this, getApp())
-      }
       // 准备信道消息
       let content
       if (formId) {
@@ -482,6 +474,7 @@ Page({
         }
       }
       // 发送信道消息
+      const app = getApp()
       app.tunnel.emit(TunnelEvent.SYNC_QUIZ_USER_REQ, content)
       console.debug(`emit a '${TunnelEvent.SYNC_QUIZ_USER_REQ}' message: `, content)
       // 操作成功

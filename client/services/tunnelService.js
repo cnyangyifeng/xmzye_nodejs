@@ -6,7 +6,7 @@ const TunnelStatus = require('./tunnelStatus')
  * 创建信道
  */
 
-var parse = (page, app) => {
+var parse = (app) => {
   // 关闭之前的信道
   if (app.tunnel) {
     console.debug(`close previous tunnel`)

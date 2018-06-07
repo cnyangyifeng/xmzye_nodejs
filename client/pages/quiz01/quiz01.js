@@ -4,9 +4,7 @@ const msgs = require('../../msg')
 const QuizGrid = require('../../services/quizGrid')
 const quizGridBuilder = require('../../services/quizGridBuilder')
 const QuizUser = require('../../services/quizUser')
-const tunnelService = require('../../services/tunnelService')
 const TunnelEvent = require('../../services/tunnelEvent')
-const TunnelStatus = require('../../services/tunnelStatus')
 
 const QUIZ_STATE_LOADING = 0
 const QUIZ_STATE_MAIN = 1
@@ -14,9 +12,6 @@ const QUIZ_STATE_SOLUTIONS = 2
 
 const MUTED_STATE_OFF = 0
 const MUTED_STATE_ON = 1
-
-const FEEDBACK_TITLE_RIGHT = '恭喜你，答对了！'
-const FEEDBACK_TITLE_WRONG = '很遗憾，答错了...'
 
 Page({
 
@@ -28,6 +23,8 @@ Page({
   countdownTimer: null,
   feedbackPanelAnimation: null,
   actionBarAnimation: null,
+
+  myAnswerPointObserver: null,
 
   /**
    * 页面的初始数据
@@ -148,7 +145,6 @@ Page({
     actionBarAnimationData: null,
     feedbackModalVisible: false,
     feedbackPanelAnimationData: null,
-    feedbackTitle: FEEDBACK_TITLE_WRONG,
     quizSolved: 0, // 当前 quiz 是否解答完毕
 
     redisplayFromSharing: false, // 是否 “分享页面” 操作以后的页面重新显示
@@ -362,6 +358,17 @@ Page({
         })
         // 缓存 myAnswerPoint
         this.cacheMyAnswerPoint()
+        // 监听 .answer-area 和 .my-answer-point 的相交状态
+        if (this.data.quiz.quizType === 2 && this.data.quizSolved === 0) {
+          if (!this.myAnswerPointObserver) {
+            this.myAnswerPointObserver = wx.createIntersectionObserver().relativeTo('.answer-area').relativeToViewport().observe('.my-answer-point', res => {
+              console.debug(`相交区域占目标节点的比例：`, res.intersectionRatio)
+              this.setData({
+                myAnswerFeedback: 1
+              })
+            })
+          }
+        }
       })
   },
 
@@ -822,14 +829,26 @@ Page({
       actionBarAnimationData: this.actionBarAnimation.export()
     })
     // 检查答案
-    this.checkMyAnswer()
-    // 播放 solutions 音效
-    this.playSolutions()
-    // 显示 feedbackModal
-    this.setData({
-      feedbackModalVisible: true
-    })
-    setTimeout(() => {
+    this.checkMyAnswer().then(() => {
+      // 缓存 myAnswerFeedback
+      const myAnswerFeedback = this.data.myAnswerFeedback
+      this.cacheMyAnswerFeedback(myAnswerFeedback)
+      // 如果回答正确，则缓存并同步 quizUser
+      if (myAnswerFeedback === 1) {
+        const quizUser = this.data.quizUser
+        quizUser.totalKeyCount++
+        this.setData({
+          quizUser: quizUser
+        })
+        QuizUser.set(quizUser)
+        this.syncQuizUser()
+      }
+      // 播放 solutions 音效
+      this.playSolutions()
+      // 显示 feedbackModal
+      this.setData({
+        feedbackModalVisible: true
+      })
       // 播放 feedbackPanel 动画 zoomIn
       this.feedbackPanelAnimation.opacity(1).scale3d(1, 1, 1).step({
         duration: 200,
@@ -847,7 +866,7 @@ Page({
       setTimeout(() => {
         this.feedback()
       }, 2400)
-    }, 400)
+    })
   },
 
   /**
@@ -855,47 +874,24 @@ Page({
    */
 
   checkMyAnswer: function () {
-    new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
       const quiz = this.data.quiz
       if (quiz.quizType === 1) {
         if (this.data.myAnswerKey === quiz.answerKey) {
           this.setData({
-            myAnswerFeedback: 1,
-            feedbackTitle: FEEDBACK_TITLE_RIGHT
+            myAnswerFeedback: 1
           })
         } else {
           this.setData({
-            myAnswerFeedback: 0,
-            feedbackTitle: FEEDBACK_TITLE_WRONG
+            myAnswerFeedback: 0
           })
         }
         // 操作成功
         resolve()
       } else if (quiz.quizType === 2) {
-        wx.createIntersectionObserver().relativeTo('.answer-area').relativeToViewport().observe('.my-answer-point', res => {
-          console.debug(`相交区域占目标节点的比例：`, res.intersectionRatio)
-          this.setData({
-            myAnswerFeedback: 1,
-            feedbackTitle: FEEDBACK_TITLE_RIGHT
-          })
-          // 操作成功
-          resolve()
-        })
-      }
-    }).then(() => {
-      // 缓存 myAnswerFeedback
-      const myAnswerFeedback = this.data.myAnswerFeedback
-      this.cacheMyAnswerFeedback(myAnswerFeedback)
-      // 缓存 quizUser
-      if (myAnswerFeedback === 1) { // 如果回答正确
-        const quizUser = this.data.quizUser
-        quizUser.totalKeyCount++
-        this.setData({
-          quizUser: quizUser
-        })
-        QuizUser.set(quizUser)
-        // 同步 quizUser
-        this.syncQuizUser()
+        // 请查看 wx.createIntersectionObserver() 的回调方法
+        // 操作成功
+        resolve()
       }
     })
   },
@@ -945,12 +941,6 @@ Page({
 
   syncQuizUser: function (formId) {
     return new Promise((resolve, reject) => {
-      // 启动信道服务
-      const app = getApp()
-      if (!app.tunnel || app.globalData.tunnelStatus === TunnelStatus.CLOSE) {
-        console.debug(`启动信道服务...`)
-        tunnelService.parse(this, getApp())
-      }
       // 准备信道消息
       let content
       if (formId) {
@@ -968,6 +958,7 @@ Page({
         }
       }
       // 发送信道消息
+      const app = getApp()
       app.tunnel.emit(TunnelEvent.SYNC_QUIZ_USER_REQ, content)
       console.debug(`emit a '${TunnelEvent.SYNC_QUIZ_USER_REQ}' message: `, content)
       // 操作成功

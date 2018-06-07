@@ -69,7 +69,7 @@
                 <view class="question-image-mask-text">破案线索或者问题</view>
               </view>
               <view hidden="{{!myAnswerPoint}}" class="my-answer-point" style="left:{{myAnswerPoint.x}}px;top:{{myAnswerPoint.y}}px;"></view>
-              <view hidden="{{quizSolved===0}}" class="answer-area" style="left:{{quiz.answerArea.x}}px;top:{{quiz.answerArea.y}}px;"></view>
+              <view class="answer-area {{quizSolved===0?'hidden':''}}" style="left:{{quiz.answerArea.x}}px;top:{{quiz.answerArea.y}}px;"></view>
             </view>
           </block>
         </view>
@@ -113,15 +113,21 @@
     </scroll-view>
     <view hidden="{{!feedbackModalVisible}}" class="feedback-modal" bindtap="feedbackModalTap">
       <view class="feedback-panel" animation="{{feedbackPanelAnimationData}}">
-        <view class="feedback-title">{{feedbackTitle}}</view>
-        <view wx:if="{{quiz.quizType===1}}" class="feedback-description">正确答案是
-          <text class="feedback-value">{{quiz.answerKey}}</text>
-        </view>
         <block wx:if="{{myAnswerFeedback===1}}">
+          <view class="feedback-title">恭喜你，答对了</view>
+          <view hidden="{{quiz.quizType!==1}}" class="feedback-description">正确答案是
+            <text class="feedback-value">{{quiz.answerKey}}</text>
+          </view>
           <view class="feedback-description">
             <text>奖励</text>
             <text class="feedback-value">1</text>
             <text>把钥匙</text>
+          </view>
+        </block>
+        <block wx:else>
+          <view class="feedback-title">很遗憾，答错了</view>
+          <view hidden="{{quiz.quizType!==1}}" class="feedback-description">正确答案是
+            <text class="feedback-value">{{quiz.answerKey}}</text>
           </view>
         </block>
       </view>
