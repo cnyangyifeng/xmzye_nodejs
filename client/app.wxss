@@ -20,6 +20,15 @@ button::after {
 
 /****************************************************************************************************/
 
+.spinner {
+  flex: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 20px;
+}
+
 .nav-bar {
   position: absolute;
   z-index: 1000;

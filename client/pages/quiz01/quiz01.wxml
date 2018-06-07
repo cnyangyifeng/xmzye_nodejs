@@ -1,6 +1,6 @@
 <block wx:if="{{quizState===0}}">
   <view class="quiz">
-    <view class="spinner"></view>
+    <view class="spinner">加载中</view>
   </view>
 </block>
 <block wx:else>
@@ -118,9 +118,10 @@
           <text class="feedback-value">{{quiz.answerKey}}</text>
         </view>
         <block wx:if="{{myAnswerFeedback===1}}">
-          <view class="feedback-description">奖励
-            <image class="feedback-asset-icon" src="/assets/images/key.svg"></image>x
+          <view class="feedback-description">
+            <text>奖励</text>
             <text class="feedback-value">1</text>
+            <text>把钥匙</text>
           </view>
         </block>
       </view>

@@ -71,17 +71,36 @@ Page({
           })
           resolve()
         }).then(() => {
-          setTimeout(() => {
+          this.syncQuizUser().then(() => {
             wx.navigateBack({
               delta: -1
             })
-          }, 1600)
+          })
         })
       },
       fail: err => {
         console.debug(`取消转发`)
       }
     }
+  },
+
+  /* ================================================================================ */
+
+  /**
+   * 绑定事件：点击 unlockAllButton
+   */
+
+  unlockAllButtonTap: function () {
+    console.debug(`点击 unlockAllButton`)
+    const quizUser = this.data.quizUser
+    const quizGrid = QuizGrid.get()
+    purchaseService.purchase(quizUser, quizGrid).then(() => {
+      this.syncQuizUser().then(() => {
+        wx.navigateBack({
+          delta: -1
+        })
+      })
+    })
   },
 
   /* ================================================================================ */
@@ -102,43 +121,40 @@ Page({
     }
   },
 
-
   /**
-   * 绑定事件：点击 unlockAllButton
+   * 同步 quizUser
    */
 
-  unlockAllButtonTap: function () {
-    console.debug(`点击 unlockAllButton`)
-    const quizUser = this.data.quizUser
-    const quizGrid = QuizGrid.get()
-    purchaseService.purchase(quizUser, quizGrid).then(() => {
-      new Promise((resolve, reject) => {
-        // 启动信道服务
-        const app = getApp()
-        if (!app.tunnel || app.globalData.tunnelStatus === TunnelStatus.CLOSE) {
-          console.debug(`启动信道服务...`)
-          tunnelService.parse(this, getApp())
-        }
-        // 准备信道消息
-        const content = {
+  syncQuizUser: function (formId) {
+    return new Promise((resolve, reject) => {
+      // 启动信道服务
+      const app = getApp()
+      if (!app.tunnel || app.globalData.tunnelStatus === TunnelStatus.CLOSE) {
+        console.debug(`启动信道服务...`)
+        tunnelService.parse(this, getApp())
+      }
+      // 准备信道消息
+      let content
+      if (formId) {
+        content = {
           quizUser: this.data.quizUser,
           quizUserForm: {
             quizUserId: this.data.quizUser.quizUserId,
-            formId: '',
-            submitTime: new Date().getTime()
+            formId: formId,
+            submitTime: dateUtils.formatTime(new Date())
           }
         }
-        // 发送信道消息
-        app.tunnel.emit(TunnelEvent.SYNC_QUIZ_USER_REQ, content)
-        console.debug(`emit a '${TunnelEvent.SYNC_QUIZ_USER_REQ}' message: `, content)
-        // 操作成功
-        resolve()
-      }).then(() => {
-        wx.navigateBack({
-          delta: -1
-        })
-      })
+      } else {
+        content = {
+          quizUser: this.data.quizUser
+        }
+      }
+      // 发送信道消息
+      app.tunnel.emit(TunnelEvent.SYNC_QUIZ_USER_REQ, content)
+      console.debug(`emit a '${TunnelEvent.SYNC_QUIZ_USER_REQ}' message: `, content)
+      // 操作成功
+      resolve()
     })
-  }
+  },
 
 })

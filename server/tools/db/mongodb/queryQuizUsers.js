@@ -33,4 +33,12 @@ const queryQuizUsers = (db, callback) => {
     console.debug('count: ', res.length)
     callback(res)
   })
+  // collection.createIndex(
+  //   { 'quizUserId': 1 },
+  //   null,
+  //   (err, res) => {
+  //     console.debug('index: ', res)
+  //     callback()
+  //   }
+  // )
 }

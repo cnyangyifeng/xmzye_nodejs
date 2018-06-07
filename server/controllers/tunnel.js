@@ -31,56 +31,60 @@ function onClose(tunnelId) {
  * 客户端推送消息到信道服务器以后会调用本方法，此时可以处理信道消息
  */
 
-async function onMessage(tunnelId, type, content) {
-  console.debug(`[onMessage] =>`, { tunnelId, type, content })
-  switch (type) {
+async function onMessage(tunnelId, messageType, messageContent) {
+  console.debug(`[onMessage] =>`, { tunnelId, messageType, messageContent })
+  switch (messageType) {
     case TunnelEvent.REF_QUIZ_USER_REQ:
-      const quizUser = content.quizUser
-      console.log(`ref quiz user`)
       break
     case TunnelEvent.SYNC_QUIZ_USER_REQ:
-      const quizUser = content.quizUser
-      const quizUserForm = content.quizUserForm
+      const quizUser = messageContent.quizUser
+      const quizUserForm = messageContent.quizUserForm
       try {
         const cli = await MongoClient.connect(configs.mongodb.url)
         const db = cli.db('xmzye')
-        await db.collection('quizUsers').updateOne(
-          { quizUserId: quizUser.quizUserId },
-          {
-            $set:
+        console.debug(`quizUser: `, quizUser)
+        if (quizUser) {
+          await db.collection('quizUsers').updateOne(
+            { quizUserId: quizUser.quizUserId },
             {
-              quizUserId: quizUser.quizUserId,
-              referrerId: quizUser.referrerId,
-              quizUserInfo: quizUser.quizUserInfo,
-              vip: quizUser.vip,
-              totalKeyCount: quizUser.totalKeyCount,
-              muted: quizUser.muted,
-              currentQuizTabIndex: quizUser.currentQuizTabIndex,
-              currentQuizTabName: quizUser.currentQuizTabName,
-              createTime: quizUser.createTime,
-              lastVisitTime: moment().format('YYYY-MM-DD HH:mm:ss')
-            }
-          },
-          { upsert: true }
-        )
-        await db.collection('quizUserForms').updateOne(
-          { quizUserId: quizUserForm.quizUserId },
-          {
-            $set:
+              $set:
+              {
+                quizUserId: quizUser.quizUserId,
+                referrerId: quizUser.referrerId,
+                quizUserInfo: quizUser.quizUserInfo,
+                vip: quizUser.vip,
+                totalKeyCount: quizUser.totalKeyCount,
+                muted: quizUser.muted,
+                currentQuizTabIndex: quizUser.currentQuizTabIndex,
+                currentQuizTabName: quizUser.currentQuizTabName,
+                createTime: quizUser.createTime,
+                lastVisitTime: moment().format('YYYY-MM-DD HH:mm:ss')
+              }
+            },
+            { upsert: true }
+          )
+        }
+        console.debug(`quizUserForm: `, quizUserForm)
+        if (quizUserForm) {
+          await db.collection('quizUserForms').updateOne(
+            { quizUserId: quizUserForm.quizUserId },
             {
-              quizUserId: quizUserForm.quizUserId,
-              formId: quizUserForm.formId,
-              submitTime: quizUserForm.submitTime
-            }
-          },
-          { upsert: true }
-        )
+              $set:
+              {
+                quizUserId: quizUserForm.quizUserId,
+                formId: quizUserForm.formId,
+                submitTime: quizUserForm.submitTime
+              }
+            },
+            { upsert: true }
+          )
+        }
         cli.close()
         tunnel.broadcast([tunnelId], TunnelEvent.SYNC_QUIZ_USER_RES, {
           data: 'success'
         })
       } catch (e) {
-        console.debug(e)
+        console.debug(`[onMessage] error: `, e)
         tunnel.broadcast([tunnelId], TunnelEvent.SYNC_QUIZ_USER_RES, {
           error: e
         })
@@ -112,8 +116,8 @@ module.exports = {
 
   post: async ctx => {
     // 当用户发送消息到信道上时，使用 onTunnelMessage 处理信道上的消息
-    console.debug(ctx.request.body)
     const packet = await tunnel.onTunnelMessage(ctx.request.body)
+    console.debug(`tunnel packet: `, packet)
     switch (packet.type) {
       case 'connect':
         onConnect(packet.tunnelId)
@@ -122,7 +126,7 @@ module.exports = {
         onClose(packet.tunnelId)
         break
       case 'message':
-        onMessage(packet.tunnelId, packet.content.messageType, packet.content.messageContent)
+        await onMessage(packet.tunnelId, packet.content.messageType, packet.content.messageContent)
         break
     }
   }

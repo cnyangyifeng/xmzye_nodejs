@@ -1,13 +1,15 @@
 <view class="login">
   <image mode="aspectFill" class="login-bg" src="{{bgUrl}}"></image>
-  <open-data type="userAvatarUrl" class="quiz-user-avatar"></open-data>
-  <view class="login-title">一分钟推理</view>
-  <view class="login-bar">
-    <block wx:if="{{!loggingIn}}">
+  <block wx:if="{{!loggingIn}}">
+    <view class="login-title">一分钟推理</view>
+    <view class="login-bar">
       <button class="login-primary-btn" open-type="getUserInfo" bindgetuserinfo="loginButtonTap">微信登录</button>
-    </block>
-    <block wx:else>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="login-title">登录中</view>
+    <view class="login-bar">
       <button class="login-primary-btn disabled">登录中，请稍候...</button>
-    </block>
-  </view>
+    </view>
+  </block>
 </view>

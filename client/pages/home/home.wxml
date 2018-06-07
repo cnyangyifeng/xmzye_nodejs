@@ -1,6 +1,6 @@
 <block wx:if="{{homeState===0}}">
   <view class="home">
-    <view class="spinner"></view>
+    <view class="spinner">加载中</view>
   </view>
 </block>
 <block wx:elif="{{homeState===1}}">

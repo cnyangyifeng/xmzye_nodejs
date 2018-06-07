@@ -6,6 +6,9 @@ const qcloud = require('../../vendor/wafer2-client-sdk/index')
 const QuizGrid = require('../../services/quizGrid')
 const quizGridBuilder = require('../../services/quizGridBuilder')
 const QuizUser = require('../../services/quizUser')
+const tunnelService = require('../../services/tunnelService')
+const TunnelEvent = require('../../services/tunnelEvent')
+const TunnelStatus = require('../../services/tunnelStatus')
 
 const PROM_TYPE_FORM_HOOK = 1
 
@@ -31,7 +34,7 @@ Page({
      *   referrerId: 'o-MYb5Bl8ACVPSATTQqRwlJCUsXk',
      *   quizUserInfo: Object,
      *   vip: 0,
-     *   totalKeyCount: 10,
+     *   totalKeyCount: 5,
      *   muted: 0,
      *   currentQuizTabIndex: 0,
      *   currentQuizTabName: '1-100',
@@ -342,7 +345,7 @@ Page({
       if (!reqPromCodeExisted) {
         switch (reqPromType) {
           case PROM_TYPE_FORM_HOOK:
-            quizUser.totalKeyCount += 5
+            quizUser.totalKeyCount += 3
             quizUser.lastVisitTime = dateUtils.formatTime(new Date())
             promCodes.push(reqPromCode)
             PromCodes.set(promCodes)
@@ -360,6 +363,8 @@ Page({
       })
       // 更新缓存数据 quizUser
       QuizUser.set(quizUser)
+      // 同步 quizUser
+      this.syncQuizUser()
     }
   },
 
@@ -436,6 +441,8 @@ Page({
           quizUser: quizUser
         })
         QuizUser.set(quizUser)
+        // 同步 quizUser
+        this.syncQuizUser()
         unlocked = true
       } else { // 如果当前用户的钥匙数量不足
         unlocked = false
@@ -444,6 +451,42 @@ Page({
       unlocked = true
     }
     return unlocked
+  },
+
+  /**
+   * 同步 quizUser
+   */
+
+  syncQuizUser: function (formId) {
+    return new Promise((resolve, reject) => {
+      // 启动信道服务
+      const app = getApp()
+      if (!app.tunnel || app.globalData.tunnelStatus === TunnelStatus.CLOSE) {
+        console.debug(`启动信道服务...`)
+        tunnelService.parse(this, getApp())
+      }
+      // 准备信道消息
+      let content
+      if (formId) {
+        content = {
+          quizUser: this.data.quizUser,
+          quizUserForm: {
+            quizUserId: this.data.quizUser.quizUserId,
+            formId: formId,
+            submitTime: dateUtils.formatTime(new Date())
+          }
+        }
+      } else {
+        content = {
+          quizUser: this.data.quizUser
+        }
+      }
+      // 发送信道消息
+      app.tunnel.emit(TunnelEvent.SYNC_QUIZ_USER_REQ, content)
+      console.debug(`emit a '${TunnelEvent.SYNC_QUIZ_USER_REQ}' message: `, content)
+      // 操作成功
+      resolve()
+    })
   }
 
 })

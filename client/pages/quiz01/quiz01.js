@@ -1,9 +1,9 @@
 const configs = require('../../config')
+const dateUtils = require('../../utils/dateUtils')
 const msgs = require('../../msg')
 const QuizGrid = require('../../services/quizGrid')
 const quizGridBuilder = require('../../services/quizGridBuilder')
 const QuizUser = require('../../services/quizUser')
-const QuizUserForm = require('../../services/quizUserForm')
 const tunnelService = require('../../services/tunnelService')
 const TunnelEvent = require('../../services/tunnelEvent')
 const TunnelStatus = require('../../services/tunnelStatus')
@@ -41,7 +41,7 @@ Page({
      *   referrerId: 'o-MYb5Bl8ACVPSATTQqRwlJCUsXk',
      *   quizUserInfo: Object,
      *   vip: 0,
-     *   totalKeyCount: 10,
+     *   totalKeyCount: 5,
      *   muted: 0,
      *   currentQuizTabIndex: 0,
      *   currentQuizTabName: '1-100',
@@ -51,18 +51,6 @@ Page({
      */
 
     quizUser: null, // 当前 quizUser
-
-    /**
-     * quizUserForm = [
-     *   {
-     *     quizUserId: 'o-MYb5D7zZU-YQx09XDeFp3AAsUg',
-     *     formId: '',
-     *     submitTime: '1525881600000'
-     *   }
-     * ]
-     */
-
-    quizUserForm: null, // 当前 quizUser 提交过的 formId
 
     /**
      * quiz = {
@@ -274,13 +262,12 @@ Page({
         console.debug(`播放 countdown 音效`)
         this.countdownAudioContext.play()
       }
-      // 更新页面数据 quizUser.muted
+      // 更新缓存数据 quizUser.muted
       const quizUser = this.data.quizUser
       quizUser.muted = MUTED_STATE_OFF
       this.setData({
         quizUser: quizUser
       })
-      // 更新缓存数据 quizUser.muted
       QuizUser.set(quizUser)
     } else { // 如果已开启正常播放模式
       // 暂停 bgm 音效、countdown 音效
@@ -288,13 +275,12 @@ Page({
       this.bgmAudioContext.pause()
       console.debug(`暂停 countdown 音效`)
       this.countdownAudioContext.pause()
-      // 更新页面数据 quizUser.muted
+      // 更新缓存数据 quizUser.muted
       const quizUser = this.data.quizUser
       quizUser.muted = MUTED_STATE_ON
       this.setData({
         quizUser: quizUser
       })
-      // 更新缓存数据 quizUser.muted
       QuizUser.set(quizUser)
     }
   },
@@ -400,19 +386,10 @@ Page({
   myAnswerFormSubmit: function (e) {
     const formId = e.detail.formId
     console.debug(`点击 myAnswerForm, formId: `, formId)
-    // 更新页面数据 quizUserForm
-    const quizUserForm = {
-      quizUserId: this.data.quizUser.quizUserId,
-      formId: formId,
-      submitTime: new Date().getTime()
-    }
-    this.setData({
-      quizUserForm: quizUserForm
-    })
-    // 缓存 quizUserForm
-    QuizUserForm.set(quizUserForm)
     // 终止计时
     this.stopCountingDown()
+    // 同步 quizUser
+    this.syncQuizUser(formId)
     // 提交答案
     this.submitMyAnswer()
   },
@@ -496,8 +473,7 @@ Page({
   doShow: function () {
     // 更新页面数据 quizUser
     this.setData({
-      quizUser: QuizUser.get(),
-      quizUserForm: QuizUserForm.get()
+      quizUser: QuizUser.get()
     })
     // 构建 quizGrid
     quizGridBuilder.build().then(() => {
@@ -556,12 +532,6 @@ Page({
           }
           // 开始计时
           this.countingDown()
-          // 启动信道服务
-          const app = getApp()
-          if (!app.tunnel || app.globalData.tunnelStatus === TunnelStatus.CLOSE) {
-            console.debug(`启动信道服务...`)
-            tunnelService.parse(this, getApp())
-          }
         })
       } else {
         wx.navigateBack({
@@ -826,6 +796,8 @@ Page({
           quizUser: quizUser
         })
         QuizUser.set(quizUser)
+        // 同步 quizUser
+        this.syncQuizUser()
         unlocked = true
       } else { // 如果当前用户的钥匙数量不足
         unlocked = false
@@ -866,15 +838,16 @@ Page({
       this.setData({
         feedbackPanelAnimationData: this.feedbackPanelAnimation.export()
       })
-      // 更新页面数据 quizSolved
+      // 缓存 quizSolved
       this.setData({
         quizSolved: 1
       })
-      // 缓存 quizSolved
       this.cacheQuizAsSolved()
+      // 答题反馈
+      setTimeout(() => {
+        this.feedback()
+      }, 2400)
     }, 400)
-    // 发送 “同步用户” 消息
-    this.emitSyncQuizUserMessage()
   },
 
   /**
@@ -910,8 +883,8 @@ Page({
         })
       }
     }).then(() => {
-      const myAnswerFeedback = this.data.myAnswerFeedback
       // 缓存 myAnswerFeedback
+      const myAnswerFeedback = this.data.myAnswerFeedback
       this.cacheMyAnswerFeedback(myAnswerFeedback)
       // 缓存 quizUser
       if (myAnswerFeedback === 1) { // 如果回答正确
@@ -921,6 +894,8 @@ Page({
           quizUser: quizUser
         })
         QuizUser.set(quizUser)
+        // 同步 quizUser
+        this.syncQuizUser()
       }
     })
   },
@@ -965,25 +940,39 @@ Page({
   },
 
   /**
-   * 发送 “同步用户” 消息
+   * 同步 quizUser
    */
 
-  emitSyncQuizUserMessage: function () {
-    // 发送信道消息
-    const app = getApp()
-    if (!app.tunnel || app.globalData.tunnelStatus === TunnelStatus.CLOSE) {
-      console.debug(`建立信道...`)
+  syncQuizUser: function (formId) {
+    return new Promise((resolve, reject) => {
       // 启动信道服务
-      tunnelService.parse(this, getApp())
-    }
-    // 准备信道消息
-    const content = {
-      quizUser: this.data.quizUser,
-      quizUserForm: this.data.quizUserForm
-    }
-    // 发送信道消息
-    app.tunnel.emit(TunnelEvent.SYNC_QUIZ_USER_REQ, content)
-    console.debug(`emit a '${TunnelEvent.SYNC_QUIZ_USER_REQ}' message: `, content)
+      const app = getApp()
+      if (!app.tunnel || app.globalData.tunnelStatus === TunnelStatus.CLOSE) {
+        console.debug(`启动信道服务...`)
+        tunnelService.parse(this, getApp())
+      }
+      // 准备信道消息
+      let content
+      if (formId) {
+        content = {
+          quizUser: this.data.quizUser,
+          quizUserForm: {
+            quizUserId: this.data.quizUser.quizUserId,
+            formId: formId,
+            submitTime: dateUtils.formatTime(new Date())
+          }
+        }
+      } else {
+        content = {
+          quizUser: this.data.quizUser
+        }
+      }
+      // 发送信道消息
+      app.tunnel.emit(TunnelEvent.SYNC_QUIZ_USER_REQ, content)
+      console.debug(`emit a '${TunnelEvent.SYNC_QUIZ_USER_REQ}' message: `, content)
+      // 操作成功
+      resolve()
+    })
   },
 
   /**

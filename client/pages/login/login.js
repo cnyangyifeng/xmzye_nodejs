@@ -113,6 +113,7 @@ Page({
    */
 
   doLogin: function (options) {
+    wx.showNavigationBarLoading()
     this.setData({
       loggingIn: true
     })
@@ -132,6 +133,7 @@ Page({
       },
       fail: err => {
         console.debug(`登录失败：`, err)
+        wx.hideNavigationBarLoading()
         this.setData({
           loggingIn: false
         })

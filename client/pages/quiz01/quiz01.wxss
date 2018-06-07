@@ -460,6 +460,7 @@
   align-items: center;
   padding-bottom: 120rpx;
   opacity: 0;
+  will-change: contents;
   transform: scale3d(0.3, 0.3, 0.3);
 }
 
