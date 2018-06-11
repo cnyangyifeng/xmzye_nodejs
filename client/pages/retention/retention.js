@@ -125,18 +125,13 @@ Page({
 
   syncQuizUser: function (formId) {
     return new Promise((resolve, reject) => {
-      // 启动信道服务
-      // if (!app.tunnel || app.globalData.tunnelStatus === TunnelStatus.CLOSE) {
-      //   console.debug(`启动信道服务...`)
-      //   tunnelService.parse(this, getApp())
-      // }
-      // 准备信道消息
       let content
       if (formId) {
         content = {
           quizUser: this.data.quizUser,
           quizUserForm: {
             quizUserId: this.data.quizUser.quizUserId,
+            nickName: this.data.quizUser.nickName,
             formId: formId,
             submitTime: dateUtils.formatTime(new Date())
           }

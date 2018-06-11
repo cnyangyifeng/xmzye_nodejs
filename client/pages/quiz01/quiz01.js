@@ -948,6 +948,7 @@ Page({
           quizUser: this.data.quizUser,
           quizUserForm: {
             quizUserId: this.data.quizUser.quizUserId,
+            nickName: this.data.quizUser.nickName,
             formId: formId,
             submitTime: dateUtils.formatTime(new Date())
           }

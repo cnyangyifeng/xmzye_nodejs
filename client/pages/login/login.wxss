@@ -21,12 +21,20 @@
   will-change: transform;
 }
 
-.login-title {
+.weapp-title {
   display: flex;
   justify-content: center;
   align-items: center;
   color: #fff;
   font-size: 24px;
+}
+
+.login-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 20px;
 }
 
 .login-bar {

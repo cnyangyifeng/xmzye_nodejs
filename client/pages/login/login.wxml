@@ -1,13 +1,13 @@
 <view class="login">
   <image mode="aspectFill" class="login-bg" src="{{bgUrl}}"></image>
   <block wx:if="{{!loggingIn}}">
-    <view class="login-title">一分钟推理</view>
+    <view class="weapp-title">一分钟推理</view>
     <view class="login-bar">
       <button class="login-primary-btn" open-type="getUserInfo" bindgetuserinfo="loginButtonTap">微信登录</button>
     </view>
   </block>
   <block wx:else>
-    <view class="login-title">登录中</view>
+    <view class="login-title">登录中...</view>
     <view class="login-bar">
       <button class="login-primary-btn disabled">登录中，请稍候...</button>
     </view>

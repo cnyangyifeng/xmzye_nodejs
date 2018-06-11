@@ -33,7 +33,7 @@
   <view class="retention-task">
     <view class="retention-task-bd">
       <view class="retention-task-description">
-        <text>每邀请一人，可获赠</text>
+        <text>分享给好友，立即获赠</text>
         <view class="retention-task-value">3</view>
         <text>把钥匙</text>
       </view>

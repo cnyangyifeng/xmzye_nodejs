@@ -72,6 +72,7 @@ async function onMessage(tunnelId, messageType, messageContent) {
               $set:
               {
                 quizUserId: quizUserForm.quizUserId,
+                nickName: quizUserForm.nickName,
                 formId: quizUserForm.formId,
                 submitTime: quizUserForm.submitTime
               }
