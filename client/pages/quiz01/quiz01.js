@@ -363,9 +363,15 @@ Page({
           if (!this.myAnswerPointObserver) {
             this.myAnswerPointObserver = wx.createIntersectionObserver().relativeTo('.answer-area').relativeToViewport().observe('.my-answer-point', res => {
               console.debug(`相交区域占目标节点的比例：`, res.intersectionRatio)
-              this.setData({
-                myAnswerFeedback: 1
-              })
+              if (res.intersectionRatio > 0) {
+                this.setData({
+                  myAnswerFeedback: 1
+                })
+              } else {
+                this.setData({
+                  myAnswerFeedback: 0
+                })
+              }
             })
           }
         }

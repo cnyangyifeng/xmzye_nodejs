@@ -1,6 +1,6 @@
 <block wx:if="{{quizState===0}}">
   <view class="quiz">
-    <view class="spinner">加载中...</view>
+    <view class="spinner">加载中</view>
   </view>
 </block>
 <block wx:else>

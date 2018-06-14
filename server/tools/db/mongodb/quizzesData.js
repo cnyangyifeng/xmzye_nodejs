@@ -2,7 +2,7 @@ const QuizzesData = [
   {
     quizId: 1,
     quizType: 1,
-    title: '虚惊一场',
+    title: '白色的幽灵',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/f0d3707x.mp3',
     timed: true,
     timeLimit: 120000,
@@ -16,7 +16,7 @@ const QuizzesData = [
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '莫尔夫人颤抖着对吉塔探长说：“吓死我了！一分钟之前，好像有个白色的幽灵从我家客厅一闪而过，撞到了门上，然后就消失了。我壮着胆子去客厅，没有找到幽灵，却发现中奖的彩票不见了！”'
+          text: '莫尔夫人颤抖着对吉塔侦探说：“吓死我了！刚刚好像有个白色的幽灵从我家客厅里一闪而过，撞到门上然后就消失了。我壮着胆子去客厅，没有找到幽灵，却发现中奖的彩票不见了！”'
         },
         {
           blockId: '3',
@@ -29,7 +29,7 @@ const QuizzesData = [
         {
           blockId: '5',
           blockType: 'normal-text',
-          text: '吉塔探长推测，应该是莫尔夫人的某个邻居，为了偷她的彩票，在装神弄鬼。她立刻找到所有的犯罪嫌疑人，挨个询问他们刚刚在干什么。'
+          text: '吉塔侦探推测，很有可能是莫尔夫人的某位邻居，为了偷她的彩票，故意装神弄鬼。她立刻找来所有的犯罪嫌疑人，挨个询问他们刚刚在干什么。'
         },
         {
           blockId: '6',
@@ -81,7 +81,7 @@ const QuizzesData = [
         {
           blockId: '17',
           blockType: 'normal-text',
-          text: '这三个人中谁在说谎？请从图片下方的 A、B、C 三个选项中，选出正确答案。'
+          text: '这三个人之中谁在说谎？请从图片下方的 A、B、C 三个选项中，选出正确答案。'
         }
       ],
       questionImage: {
@@ -133,7 +133,7 @@ const QuizzesData = [
           {
             blockId: '1',
             blockType: 'normal-text',
-            text: 'C 纳赛尔先生'
+            text: 'C. 纳赛尔先生'
           }
         ]
       },
@@ -143,8 +143,25 @@ const QuizzesData = [
         solutionData: [
           {
             blockId: '1',
+            blockType: 'tab'
+          },
+          {
+            blockId: '2',
             blockType: 'normal-text',
-            text: '纳赛尔先生是那个偷窃鬼。如果他真的刚洗完澡从浴室出来，那么他的头发应该是湿的，他的浴衣内也不应该穿着衬衫和领带。另外，他额头上的创可贴表明曾经受伤。'
+            text: '纳赛尔先生在说谎。如果他真的刚洗完澡从浴室出来，那么头发应该是湿的，更不应该在浴袍里面还穿着衬衫、打着领带。'
+          },
+          {
+            blockId: '3',
+            blockType: 'return'
+          },
+          {
+            blockId: '4',
+            blockType: 'tab'
+          },
+          {
+            blockId: '5',
+            blockType: 'normal-text',
+            text: '另外，他的额头上还贴着创可贴呢，说不定就是他刚刚撞到门上了。'
           }
         ]
       }
@@ -152,470 +169,6 @@ const QuizzesData = [
   },
   {
     quizId: 2,
-    quizType: 2,
-    title: '令人垂涎的啤酒瓶盖收藏品',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
-    timed: true,
-    timeLimit: 120000,
-    question: {
-      questionId: 1,
-      questionTextData: [
-        {
-          blockId: '1',
-          blockType: 'tab'
-        },
-        {
-          blockId: '2',
-          blockType: 'normal-text',
-          text: '拍卖行勒策尔公司的职员多琳要将一批罕见的啤酒瓶盖收藏品送到汉堡市。她将在那里和一位买家见面，却没有发现自己的前同事瓦洛一直在悄悄地跟踪着她。'
-        },
-        {
-          blockId: '3',
-          blockType: 'return'
-        },
-        {
-          blockId: '4',
-          blockType: 'tab'
-        },
-        {
-          blockId: '5',
-          blockType: 'normal-text',
-          text: '瓦洛是啤酒瓶盖的狂热收藏者，他很想把这批罕见的藏品占为已有。当多琳放下装有藏品的手提箱，抬头看火车时刻表的时候，瓦洛迅速调换了箱子，很快就消失在人流当中。不过他没有想到的是，多琳的老朋友卡勒侦探也在现场！'
-        },
-        {
-          blockId: '6',
-          blockType: 'return'
-        },
-        {
-          blockId: '7',
-          blockType: 'tab'
-        },
-        {
-          blockId: '8',
-          blockType: 'normal-text',
-          text: '卡勒侦探看得清清楚楚，知道瓦洛是如何调换箱子的，也知道他现在藏在哪里。卡勒侦探马上就要采取行动了！你也找到瓦洛了吗？'
-        }
-      ],
-      questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/b0sbp1cw.jpg',
-        height: 980
-      }
-    },
-    answerArea: { x: 260, y: 86 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '瓦洛提着外观与多琳的箱子一模一样的箱子在楼梯顶部，就在“小餐馆”标示牌的右侧。'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    quizId: 3,
-    quizType: 2,
-    title: '易容高手奥兰多',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
-    timed: true,
-    timeLimit: 120000,
-    question: {
-      questionId: 1,
-      questionTextData: [
-        {
-          blockId: '1',
-          blockType: 'tab'
-        },
-        {
-          blockId: '2',
-          blockType: 'normal-text',
-          text: '吉塔侦探乘坐机场大巴前往机场，在她前排的座位上坐着一个精明的赝品钻石商人，名叫奥兰多。吉塔侦探的任务就是秘密盯住他，并阻止他坐飞机出境。这个骗子商人不难辨认，因为他有一把引人注目的大胡子，还带着一个大行李包。'
-        },
-        {
-          blockId: '1',
-          blockType: 'return'
-        },
-        {
-          blockId: '1',
-          blockType: 'tab'
-        },
-        {
-          blockId: '2',
-          blockType: 'normal-text',
-          text: '在宽敞的机场候机厅内，奥兰多走进男厕所后却消失了！这个骗子一定是易容成了另一个人，才摆脱了吉塔侦探的锐利视线！不过吉塔侦探并没有放弃，她在登机口继续搜寻，终于发现了那个骗子。她是怎样再次发现易容高手奥兰多的？他藏在哪里呢？'
-        }
-      ],
-      questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/dofilbre.jpg',
-        height: 995
-      }
-    },
-    answerArea: { x: 10, y: 270 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '奥兰多藏在报刊亭右侧的角落里。他狡猾地变装成阿拉伯人，但是没有对行李做伪装。'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    quizId: 4,
-    quizType: 2,
-    title: '保密的新产品',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
-    timed: true,
-    timeLimit: 120000,
-    question: {
-      questionId: 1,
-      questionTextData: [
-        {
-          blockId: '1',
-          blockType: 'tab'
-        },
-        {
-          blockId: '2',
-          blockType: 'normal-text',
-          text: '著名的面食厂商麦克·阿罗尼公司近期要改良他们历史悠久的面条产品配方，当地媒体和电视台都在想方设法率先报道这一最新产品。工厂员工波齐透过办公室的半透明玻璃看到，配方被交给了一个陌生人——肯定是记者！波齐马上通知老板这一情况，与此同时，他必须在街上盯住那个陌生人，这样才能追回配方。请帮助波齐在人群中找出那个陌生人。'
-        }
-      ],
-      questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/gykm10pd.jpg',
-        height: 1360
-      }
-    },
-    answerArea: { x: 50, y: 430 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '那个人在图中被修剪的大树右侧，左手臂里夹着文件袋。他的发型与波齐看到的陌生人的剪影是一样的。'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    quizId: 5,
-    quizType: 2,
-    title: '倒下的橡树',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
-    timed: true,
-    timeLimit: 120000,
-    question: {
-      questionId: 1,
-      questionTextData: [
-        {
-          blockId: '1',
-          blockType: 'tab'
-        },
-        {
-          blockId: '2',
-          blockType: 'normal-text',
-          text: '当劳普林一大早从彻夜狂欢的聚会中回到家里时，他无法相信自己的眼睛：有人趁他晚上不在家的时候，把他院子里有着100年树龄的橡树砍倒了！劳普林马上想到了他的邻居阿克塞尔，这个家伙一直抱怨橡树的树荫！卡勒侦探接到劳普林的委托，对他的邻居阿克塞尔展开调查，但是阿克塞尔坚决地驳斥：“我整个晚上都不在家，而是睡在我姐姐莉兹家。”他又怒气冲冲地说：“我5分钟之前刚刚回家，根本不可能砍掉他的橡树！”卡勒侦探早就注意到阿克塞尔是不是在说谎，你呢？'
-        }
-      ],
-      questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/yzljhs7y.jpg',
-        height: 940
-      }
-    },
-    answerArea: { x: 260, y: 200 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '阿克塞尔在说谎，他应该就睡在自己家里，因为床铺还没有整理。他的桌子上摆着早餐，明显是刚要开始吃早饭，如果他5分钟之前刚刚到家，那么他应该顺便把门外的晨报和牛奶瓶拿回家。'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    quizId: 6,
-    quizType: 2,
-    title: '基佐的藏身处',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
-    timed: true,
-    timeLimit: 120000,
-    question: {
-      questionId: 1,
-      questionTextData: [
-        {
-          blockId: '1',
-          blockType: 'tab'
-        },
-        {
-          blockId: '2',
-          blockType: 'normal-text',
-          text: '魔术师基佐其实是个使用诡计骗取财物的骗子。卡勒侦探已经追查他好几周了，但是基佐总是能不动声色地隐藏行踪。现在卡勒侦探得到新消息：基佐躲在他的老朋友卡罗位于郊外的家。当卡勒侦探上门拜访卡罗并询问有关基佐的情况时，卡罗摸着自己锃亮的光头，不动声色地否认道：“只有我一个人住在这里，不相信的话你可以进来随意搜查。”事实上，基佐的确和他住在一起，是什么证实了这一点？'
-        }
-      ],
-      questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/2qjhay5k.jpg',
-        height: 990
-      }
-    },
-    answerArea: { x: 246, y: 260 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '右侧抽屉柜上的梳子上有头发。既然卡罗一个人住，而且他是光头，那么他就不需要梳子，梳子上也更不可能有头发。'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    quizId: 7,
-    quizType: 2,
-    title: '退出车赛',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
-    timed: true,
-    timeLimit: 120000,
-    question: {
-      questionId: 1,
-      questionTextData: [
-        {
-          blockId: '1',
-          blockType: 'tab'
-        },
-        {
-          blockId: '2',
-          blockType: 'normal-text',
-          text: '在格兰匹治大赛中，赛车风驰电掣地从赛道上呼啸而过。这项著名的赛事马上就要决出最后的名次。著名车手拉瑟遥遥领先，和其他选手一样，拉瑟的赛车在最后冲刺前必须进维修站给油箱加油。拉瑟采用的是特制的混合汽油F98，他的赛车发动机只能用这种燃料。拉瑟请来老朋友吉塔侦探监视他的维修站，以防有人做手脚。'
-        },
-        {
-          blockId: '3',
-          blockType: 'return'
-        },
-        {
-          blockId: '4',
-          blockType: 'tab'
-        },
-        {
-          blockId: '5',
-          blockType: 'normal-text',
-          text: '事实上，吉塔侦探确实发现到了一些情况！她看到了假冒的工作人员想要搞破坏给车手致命打击。那个假冒的工作人员是要做什么手脚呢？'
-        }
-      ],
-      questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/emzuvmt8.jpg',
-        height: 990
-      }
-    },
-    answerArea: { x: 250, y: 170 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '假冒的工作人员要用水替换F98混合汽油加进赛车的油箱。'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    quizId: 8,
-    quizType: 2,
-    title: '胡尔达市长的化妆舞会',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
-    timed: true,
-    timeLimit: 120000,
-    question: {
-      questionId: 1,
-      questionTextData: [
-        {
-          blockId: '1',
-          blockType: 'tab'
-        },
-        {
-          blockId: '2',
-          blockType: 'normal-text',
-          text: '女市长胡尔达在宴会厅举办盛大的化妆舞会，客人们都穿着最稀奇古怪的服装到场。突然一封匿名信和一张男性照片交到了胡尔达市长的手上，信中透露在奇装异服的客人中有一名“抽奖奖金盗窃专家”，他将提前引燃原本在午夜燃放的焰火，造成混乱借机窃取巨额的抽奖奖金。胡尔达市长立即叫来卡勒侦探，要求他找到这个不受欢迎的捣乱者。这应该不太困难，不是吗？'
-        }
-      ],
-      questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/imbhuyha.jpg',
-        height: 1350
-      }
-    },
-    answerArea: { x: 164, y: 280 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '照片中的盗窃专家左耳戴着耳环。在化妆舞会上他穿着水手服戴着墨镜，站在戴帽子的女士与骑士中间。'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    quizId: 9,
-    quizType: 2,
-    title: '苏门答腊蓝宝石',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
-    timed: true,
-    timeLimit: 120000,
-    question: {
-      questionId: 1,
-      questionTextData: [
-        {
-          blockId: '1',
-          blockType: 'tab'
-        },
-        {
-          blockId: '2',
-          blockType: 'normal-text',
-          text: '陶施拜因在他的珠宝店内焦急地说：“苏门答腊蓝宝石，我最精美的宝石不见了！”吉塔侦探环顾了商店说：“请您描述一下案发过程。”'
-        },
-        {
-          blockId: '3',
-          blockType: 'return'
-        },
-        {
-          blockId: '4',
-          blockType: 'tab'
-        },
-        {
-          blockId: '5',
-          blockType: 'normal-text',
-          text: '陶施拜因先生深深地吸了口气：“一切都发生得太快了。大约在17点15分时，一位先生来到店里，他对苏门答腊蓝宝石很感兴趣，为了避免干扰，我们就到店后面的顾客室去了。这位先生先是在仔细观察那颗宝石，然后突然跳起来，拿着宝石就跑回店里，一脚把顾客室的门踢上关住，阻挡住了我。他逃到了大街上，很快就混入人群消失不见了。”'
-        },
-        {
-          blockId: '6',
-          blockType: 'return'
-        },
-        {
-          blockId: '7',
-          blockType: 'tab'
-        },
-        {
-          blockId: '8',
-          blockType: 'normal-text',
-          text: '吉塔侦探再次观察了商店，向店主提出一个问题：“这颗宝石是否上了保险?”当陶施拜因先生给予肯定的回答后，她就确定这是珠宝商自导自演的骗局，要借此骗取保险金。因为在他的描述中，有一点不正确。那么，是哪一点呢？'
-        }
-      ],
-      questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/utfsxusz.jpg',
-        height: 960
-      }
-    },
-    answerArea: { x: -10, y: 96 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '陶施拜因先生讲述的故事并不正确，他不可能从店里用脚踢上顾客室的门，因为门是向内打开的。'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    quizId: 10,
-    quizType: 2,
-    title: '布鲁诺的服装不翼而飞',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
-    timed: true,
-    timeLimit: 120000,
-    question: {
-      questionId: 1,
-      questionTextData: [
-        {
-          blockId: '1',
-          blockType: 'tab'
-        },
-        {
-          blockId: '2',
-          blockType: 'normal-text',
-          text: '霍夫剧院里一片混乱！离演出开始只有3分钟了！矮胖敦实的男主角布鲁诺，双手湿漉漉地跑过化妆更衣室过道，他还穿着浴袍！布鲁诺在《0Z的魔术师》中扮演铁皮人，通常在这个时候他应该已经穿好铁皮戏服。可是今天晚上他的戏服失踪了，而且现在根本没时间为布鲁诺准备新的戏服——尤其是必须适合他的矮胖身材！'
-        },
-        {
-          blockId: '3',
-          blockType: 'return'
-        },
-        {
-          blockId: '4',
-          blockType: 'tab'
-        },
-        {
-          blockId: '5',
-          blockType: 'normal-text',
-          text: '走投无路的剧院经理别无选择，只能启用布鲁诺的替补演员——身材修长的莱奥出演这个角色。令布鲁诺惊讶的是，莱奥已经早早穿好戏服，准备完毕了！'
-        },
-        {
-          blockId: '6',
-          blockType: 'return'
-        },
-        {
-          blockId: '7',
-          blockType: 'tab'
-        },
-        {
-          blockId: '8',
-          blockType: 'normal-text',
-          text: '“这太可疑了！”布鲁诺怒气冲冲地说，他确信一定是莱奥做了手脚。那么，有什么证据能证明，莱奥事先做过手脚？'
-        }
-      ],
-      questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/5jkqjy7k.jpg',
-        height: 980
-      }
-    },
-    answerArea: { x: 144, y: 270 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '莱奥为了能够登台演出而将布鲁诺的铁皮人戏服藏在自己位于楼梯下方的化妆更衣室里。'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    quizId: 11,
     quizType: 1,
     title: '粉色玛格达勒娜',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -766,382 +319,7 @@ const QuizzesData = [
     ]
   },
   {
-    quizId: 12,
-    quizType: 2,
-    title: '被打搅的游轮之旅',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
-    timed: true,
-    timeLimit: 120000,
-    question: {
-      questionId: 1,
-      questionTextData: [
-        {
-          blockId: '1',
-          blockType: 'tab'
-        },
-        {
-          blockId: '2',
-          blockType: 'normal-text',
-          text: '吉塔侦探终于可以休假了！她参加了游轮旅行团，在甲板上尽情地享受假期。突然，船上响起了警钟。“甲板上有偷渡客！”船长从广播中宣布。水手和船上的工作人员在甲板上冲来冲去，搜寻偷渡客。'
-        },
-        {
-          blockId: '3',
-          blockType: 'return'
-        },
-        {
-          blockId: '4',
-          blockType: 'tab'
-        },
-        {
-          blockId: '5',
-          blockType: 'normal-text',
-          text: '船长知道老朋友吉塔侦探在船上，就请她帮忙。虽然吉塔侦探不想在假期中办案，但她还是爽快地答应帮忙。'
-        },
-        {
-          blockId: '6',
-          blockType: 'return'
-        },
-        {
-          blockId: '7',
-          blockType: 'tab'
-        },
-        {
-          blockId: '8',
-          blockType: 'normal-text',
-          text: '吉塔侦探检查了偷渡客曾经藏身的救生艇之后， 她已经知道要找到偷渡客并不难。那么，偷渡客现在藏在哪里呢？'
-        }
-      ],
-      questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/86wqwnhm.jpg',
-        height: 970
-      }
-    },
-    answerArea: { x: 10, y: 50 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '在游轮顶层夹板的左边，有一个只穿着一只鞋的人，他就是偷渡客。他从救生艇匆忙逃跑时把另一只鞋掉在了救生艇里。'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    quizId: 13,
-    quizType: 2,
-    title: '马可·波罗失踪了',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
-    timed: true,
-    timeLimit: 120000,
-    question: {
-      questionId: 1,
-      questionTextData: [
-        {
-          blockId: '1',
-          blockType: 'tab'
-        },
-        {
-          blockId: '2',
-          blockType: 'normal-text',
-          text: '米歇尔·德安吉罗是一位著名的艺术家、雕塑家。此时，他几乎无法相信：在宫殿公园中，他最喜欢的雕塑——骄傲地站立在底座上的马可·波罗像——消失了，地上散落着碎石和一把锤子。“哪个庸俗的家伙偷走了我的马可·波罗？”他怒气冲冲地打电话给吉塔侦探。'
-        },
-        {
-          blockId: '3',
-          blockType: 'return'
-        },
-        {
-          blockId: '4',
-          blockType: 'tab'
-        },
-        {
-          blockId: '5',
-          blockType: 'normal-text',
-          text: '看门人把吉塔侦探带到米歇尔面前，他还待在案发现场。在此期间，公园管理员毛罗听到喧哗声也赶了过来，他们在空空如也的底座前遇到。吉塔侦探仔细查看了现场，进行了询问，最后她对米歇尔说：“这两位工作人员中的某个人就是盗窃犯。”那么，是什么暴露了作案人？'
-        }
-      ],
-      questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/vkbgz5f5.jpg',
-        height: 980
-      }
-    },
-    answerArea: { x: 160, y: 400 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '地上的碎石中有一颗纽扣，而看门人的制服上少了一颗同样的纽扣，因此看门人就是盗窃犯。'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    quizId: 14,
-    quizType: 2,
-    title: '音乐家花园陶俑',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
-    timed: true,
-    timeLimit: 120000,
-    question: {
-      questionId: 1,
-      questionTextData: [
-        {
-          blockId: '1',
-          blockType: 'tab'
-        },
-        {
-          blockId: '2',
-          blockType: 'normal-text',
-          text: '乌多是花园陶俑博物馆的馆长，当他走过收藏品时，十分惊讶地发现“坐着的小提琴手”陶俑不在原来的位置上，它毫无迹象地消失了！乌多馆长立即报告了这起偷窃案，“肯定是希尔达·齐普弗从中作梗！现在只有卡勒和吉塔侦探能帮忙。”'
-        },
-        {
-          blockId: '3',
-          blockType: 'return'
-        },
-        {
-          blockId: '4',
-          blockType: 'tab'
-        },
-        {
-          blockId: '5',
-          blockType: 'normal-text',
-          text: '希尔达住在河边的花园小屋内，她同样十分喜欢花园陶俑，一直向博物馆申请购买“坐着的小提琴手”陶俑，总是遭到婉拒。卡勒和吉塔侦探拜访了希尔达，并仔细查看了她的陶俑乐园。希尔达听到偷窃事件时惊慌失措，一再保证自己和这件事毫无关系。那么，卡勒和吉塔侦探能找到反驳她的证据吗？'
-        }
-      ],
-      questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/a8jbc4rk.jpg',
-        height: 980
-      }
-    },
-    answerArea: { x: 30, y: 360 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '希尔达把偷来的陶俑藏在自己的花园小屋里，就在紧挨门口的地上。'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    quizId: 15,
-    quizType: 2,
-    title: '突然死亡的玛格丽塔雏菊',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
-    timed: true,
-    timeLimit: 120000,
-    question: {
-      questionId: 1,
-      questionTextData: [
-        {
-          blockId: '1',
-          blockType: 'tab'
-        },
-        {
-          blockId: '2',
-          blockType: 'normal-text',
-          text: '罗莎·格林斯的梦想即将成真：经过无数次的努力，她终于成功种植了一棵玛格丽塔雏菊。玛格丽塔雏菊是一种特别需要阳光的植物，黑暗对它而言就意味着死亡，因此它必须放在花园暖房的最上层，就在玻璃屋顶的下方。'
-        },
-        {
-          blockId: '3',
-          blockType: 'return'
-        },
-        {
-          blockId: '4',
-          blockType: 'tab'
-        },
-        {
-          blockId: '5',
-          blockType: 'normal-text',
-          text: '几周以来，罗莎和她的雇员里塔·平克以及阿尔多·施特雷克共同照料这棵罕见的植物。明天，玛格丽塔雏菊将在盛大的植物种植者大会上展出。但是今天晚上，罗莎遭到了致命打击！在花架的最下方，她的玛格丽塔雏菊在黑暗中枯萎了，耷拉着倒了下来，就在蕨类植物和仙人掌之间。罗莎意识到有人要阻止她出席植物种植者大会，于是她马上向卡勒侦探报案！'
-        },
-        {
-          blockId: '6',
-          blockType: 'return'
-        },
-        {
-          blockId: '7',
-          blockType: 'tab'
-        },
-        {
-          blockId: '8',
-          blockType: 'normal-text',
-          text: '只有罗莎的雇员里塔和阿尔多有花园暖房的钥匙，于是卡勒侦探把两个雇员叫到面前询问。这里是他们的陈述：阿尔多说他已经很久没去暖房了。里塔说他昨天一整天都在办公室里度过。但是卡勒侦探凭借敏锐的观察，立即告诉罗莎谁说谎了。'
-        }
-      ],
-      questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/svau38xj.jpg',
-        height: 980
-      }
-    },
-    answerArea: { x: 30, y: 290 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '说谎的是雇员里塔·平克，她的工作服上有许多仙人掌刺，是她在挪走玛格丽塔雏菊后，弯腰放在花架最下层时由于黑暗看不清周围环境而沾到了仙人掌刺。'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    quizId: 16,
-    quizType: 2,
-    title: '米基·库尔的踪迹',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
-    timed: true,
-    timeLimit: 120000,
-    question: {
-      questionId: 1,
-      questionTextData: [
-        {
-          blockId: '1',
-          blockType: 'tab'
-        },
-        {
-          blockId: '2',
-          blockType: 'normal-text',
-          text: '几周以来，卡勒侦探一直在跟踪保险箱撬窃者米基·库尔（Mickey Chur）。在从侦探社回家的路上，他在地铁站西出口和这个嫌疑人擦肩而过，但是一眨眼的时间米基就消失在人群中。卡勒侦探没有放弃搜寻，他跟踪了一个可能是米基的男子，但是卡勒侦探并不能肯定。卡勒侦探继续跟踪，拐进了一片昏暗的工厂区。在一家还有灯光的老锻造工厂里，卡勒侦探发现了一样东西，证明他追踪的是正确的线索，米基的确藏在这里。那么卡勒侦探发现了什么呢？'
-        }
-      ],
-      questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/ztye1s4u.jpg',
-        height: 1360
-      }
-    },
-    answerArea: { x: 234, y: 568 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '米基·库尔的工具箱在老锻造工场里，上面还有他的名字的首字母缩写MC，卡勒侦探在地铁站就看到了这个保险箱撬窃者提着工具箱匆匆走过。'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    quizId: 17,
-    quizType: 2,
-    title: '普法芬堡将军失踪记',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
-    timed: true,
-    timeLimit: 120000,
-    question: {
-      questionId: 1,
-      questionTextData: [
-        {
-          blockId: '1',
-          blockType: 'tab'
-        },
-        {
-          blockId: '2',
-          blockType: 'normal-text',
-          text: '“我的《普法芬堡将军》被偷了！”冯·科尔肯施泰因男爵夫人在庄园中惊慌失措地大叫。《普法芬堡将军》是一幅名画，很多艺术品收藏家都想拥有。吉塔侦探能破解这次盗窃案吗？男爵的庄园里可是有许多犯罪嫌疑人：女佣、厨师、烟囱清洁工、司机、园丁，甚至可能是男爵或者男爵夫人自导自演了一场骗局？吉塔侦探首先仔细观察了四周，这是正确的决定！她很快发现了线索，现在她已经知道是谁偷了名画《普法芬保将军》。那个人是谁呢？'
-        }
-      ],
-      questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/142496kj.jpg',
-        height: 560
-      }
-    },
-    answerArea: { x: -18, y: 210 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '司机把《普法芬堡将军》藏在汽车后备箱中。'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    quizId: 18,
-    quizType: 2,
-    title: '图弗特尔的最新发明',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
-    timed: true,
-    timeLimit: 120000,
-    question: {
-      questionId: 1,
-      questionTextData: [
-        {
-          blockId: '1',
-          blockType: 'tab'
-        },
-        {
-          blockId: '2',
-          blockType: 'normal-text',
-          text: '蒂诺·图弗特尔在他的实验室里开发出了新产品：一种保证有效的生发剂！就在同一天晚上，他邀请了一些同事和朋友来实验室，向他们展示自己的成果。就在他做介绍时，突发短路停电事故，整个实验室陷入黑暗中。还好图弗特尔很快就排除了故障，灯又亮了起来。可是他发现记录在笔记本上的生发剂分子式已经被撕掉了。这让他确信是现场的某人撕走了这张纸片。'
-        },
-        {
-          blockId: '3',
-          blockType: 'return'
-        },
-        {
-          blockId: '4',
-          blockType: 'tab'
-        },
-        {
-          blockId: '5',
-          blockType: 'normal-text',
-          text: '不过这个小偷很倒霉——因为图弗特尔也邀请了他的老朋友卡勒侦探。他只要稍稍观察一下，就能知道是谁偷走了分子式。你们也可以吗？'
-        }
-      ],
-      questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/93b1pf7y.jpg',
-        height: 980
-      }
-    },
-    answerArea: { x: 200, y: 170 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'tab'
-          },
-          {
-            blockId: '2',
-            blockType: 'normal-text',
-            text: '图中最右侧的女士趁着黑暗偷走了印有机密分子式的纸片，夹在她胳膊下的文件资料中。'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    quizId: 19,
+    quizId: 3,
     quizType: 1,
     title: '照片谜题',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -1226,193 +404,7 @@ const QuizzesData = [
     ]
   },
   {
-    quizId: 20,
-    quizType: 2,
-    title: '并非人人都是幸运儿',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
-    timed: true,
-    timeLimit: 120000,
-    question: {
-      questionId: 1,
-      questionTextData: [
-        {
-          blockId: '1',
-          blockType: 'tab'
-        },
-        {
-          blockId: '2',
-          blockType: 'normal-text',
-          text: '齐勒塔尔家庭宠物展览会的大奖已经颁布，多莉·明斯克和她的可爱小猪仔平基成为胜利者！多莉高兴得忘乎所以，可是当她想要抱起平基时，她却大叫道小猪平基不见了。'
-        },
-        {
-          blockId: '3',
-          blockType: 'return'
-        },
-        {
-          blockId: '4',
-          blockType: 'tab'
-        },
-        {
-          blockId: '5',
-          blockType: 'normal-text',
-          text: '“一定有人偷走了平基，小猪对我很依赖，不会自己跑开的。”多莉抱怨道，那么她的推测正确吗？'
-        }
-      ],
-      questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/2ycyph4s.jpg',
-        height: 960
-      }
-    },
-    answerArea: { x: 250, y: 290 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '多莉的推测是正确的。有人把小猪平基藏在单肩包里偷偷带走，这个人和多莉在展示台的同一层。'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    quizId: 21,
-    quizType: 2,
-    title: '午夜牌局',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
-    timed: true,
-    timeLimit: 120000,
-    question: {
-      questionId: 1,
-      questionTextData: [
-        {
-          blockId: '1',
-          blockType: 'tab'
-        },
-        {
-          blockId: '2',
-          blockType: 'normal-text',
-          text: '四个扑克爱好者聚在会员制的洛丽塔酒吧玩牌，他们分别是：可疑的花花公子罗茨·弗拉林、演员诺尔玛·劳斯、酒吧老板比尔·佩克和正在出差的商人萨姆·莫克。牌局在酒吧的私人VIP室中进行，通常这样的牌局赌注都很大，但是这场局牌其实早就有了结果，其中三家必定是输家。他们要注意什么才有可能不输钱呢？'
-        }
-      ],
-      questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/exliniux.jpg',
-        height: 970
-      }
-    },
-    answerArea: { x: 160, y: 270 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '出老千的人是图中右下角的商人萨姆·莫克。一副扑克牌中只有四张A，牌桌上已经有三张，而他手中却拿着两张同样花色的A。'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    quizId: 22,
-    quizType: 2,
-    title: '艺术品背后的诡计',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
-    timed: true,
-    timeLimit: 120000,
-    question: {
-      questionId: 1,
-      questionTextData: [
-        {
-          blockId: '1',
-          blockType: 'tab'
-        },
-        {
-          blockId: '2',
-          blockType: 'normal-text',
-          text: '艺术品商人里克·洪德尔紧张地捋着头发，闷声抱怨道：“我也是第一次知道，这幅版画是赝品。”此前，里克正要把版画“偷吃甜食的小姑娘”卖给艺术品收藏家施蒂希莱恩。他声称这幅版画是一位16世纪的著名版画家的唯一存世之作，价值连城。不过，施蒂希莱恩立刻判断出这是赝品。那么，施蒂希莱恩为什么会产生怀疑呢？你能在这幅版画中找到答案吗？'
-        }
-      ],
-      questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/c61a4cde.jpg',
-        height: 980
-      }
-    },
-    answerArea: { x: 196, y: 140 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '版画中的小姑娘背后有一部电话。16世纪还没有发明电话。'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    quizId: 23,
-    quizType: 2,
-    title: '鞋店中的交接',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
-    timed: true,
-    timeLimit: 120000,
-    question: {
-      questionId: 1,
-      questionTextData: [
-        {
-          blockId: '1',
-          blockType: 'tab'
-        },
-        {
-          blockId: '2',
-          blockType: 'normal-text',
-          text: '吉塔侦探获悉间谍005将和接头人X在一家鞋店里秘密交接一卷微型胶卷。整个交接过程如下：X走进索尔·沃尔鞋店，故意试穿了许多双鞋，店里很快就会乱作一团。他趁机悄悄地把微型胶卷藏到一只鞋内，再将另一只鞋塞入大衣后离开商店。'
-        },
-        {
-          blockId: '3',
-          blockType: 'return'
-        },
-        {
-          blockId: '4',
-          blockType: 'tab'
-        },
-        {
-          blockId: '5',
-          blockType: 'normal-text',
-          text: '在店员将铺满地面的鞋排放整齐之前，005走入了鞋店。他让店员展示了几双鞋，现在他只需要仔细观察找到那个单只的鞋，就可以拿走其中的胶卷。吉塔侦探还在等待，要等005将这个重要物品拿到手中，才能出面将他抓获。那么，这卷胶卷藏在哪只鞋中呢？'
-        }
-      ],
-      questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/togv925t.jpg',
-        height: 425
-      }
-    },
-    answerArea: { x: 170, y: 90 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '藏有微型胶卷的单只鞋没有穿鞋带，在图中店员的左耳上方。'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    quizId: 24,
+    quizId: 4,
     quizType: 1,
     title: '甜蜜的诱惑',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -1505,6 +497,1155 @@ const QuizzesData = [
             blockId: '1',
             blockType: 'normal-text',
             text: '面粉上的运动鞋印透露了小偷穿的鞋，会计佩拉穿的是皮鞋，店员维尔玛穿的是高跟鞋，只有送货员多纳尔德穿的是轻便的运动鞋。'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    quizId: 5,
+    quizType: 2,
+    title: '被调包的收藏品',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
+    timed: true,
+    timeLimit: 120000,
+    question: {
+      questionId: 1,
+      questionTextData: [
+        {
+          blockId: '1',
+          blockType: 'tab'
+        },
+        {
+          blockId: '2',
+          blockType: 'normal-text',
+          text: '德国纳高拍卖公司的业务经理米娅要送一批珍贵的硬币收藏品到汉堡市的买家手里。米娅的前同事瓦洛是一名狂热的硬币收藏者，他很想将这批收藏品据为己有，于是千方百计打听到了米娅的行程安排，然后一路跟踪她到了火车站。'
+        },
+        {
+          blockId: '3',
+          blockType: 'return'
+        },
+        {
+          blockId: '4',
+          blockType: 'tab'
+        },
+        {
+          blockId: '5',
+          blockType: 'normal-text',
+          text: '就在米娅放下手提箱、抬头核对火车时刻表的时候，瓦洛悄悄走过去调换了箱子，然后迅速混入人流之中，很快就要消失不见了。'
+        },
+        {
+          blockId: '6',
+          blockType: 'return'
+        },
+        {
+          blockId: '7',
+          blockType: 'tab'
+        },
+        {
+          blockId: '8',
+          blockType: 'normal-text',
+          text: '幸运的是，大名鼎鼎的卡勒侦探碰巧也在候车大厅！他亲眼目睹了瓦洛调换箱子的全过程，而且一直紧盯着他的去向。卡勒侦探马上就要采取行动了！'
+        },
+        {
+          blockId: '9',
+          blockType: 'return'
+        },
+        {
+          blockId: '10',
+          blockType: 'tab'
+        },
+        {
+          blockId: '11',
+          blockType: 'normal-text',
+          text: '你也找到瓦洛了吗？请在下图中指出他的位置。'
+        }
+      ],
+      questionImage: {
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/b0sbp1cw.jpg',
+        height: 980
+      }
+    },
+    answerArea: { x: 260, y: 90 },
+    solutions: [
+      {
+        solutionTag: '答案',
+        align: 'left',
+        solutionData: [
+          {
+            blockId: '1',
+            blockType: 'tab'
+          },
+          {
+            blockId: '2',
+            blockType: 'normal-text',
+            text: '瓦洛提着外观一模一样的箱子，就站在 “小餐馆” 标识牌右侧的楼梯上。'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    quizId: 6,
+    quizType: 2,
+    title: '诈骗犯奥兰多',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
+    timed: true,
+    timeLimit: 120000,
+    question: {
+      questionId: 1,
+      questionTextData: [
+        {
+          blockId: '1',
+          blockType: 'tab'
+        },
+        {
+          blockId: '2',
+          blockType: 'normal-text',
+          text: '在前往机场的大巴上，吉塔侦探紧盯着坐在她前排座位上的诈骗犯奥兰多。在法院下达限制出境令之前，吉塔侦探必须尽可能阻止他坐飞机离境。奥兰多的外貌特征很明显：他蓄着一把大胡子，还抱着一个大行李包。'
+        },
+        {
+          blockId: '3',
+          blockType: 'return'
+        },
+        {
+          blockId: '4',
+          blockType: 'tab'
+        },
+        {
+          blockId: '5',
+          blockType: 'normal-text',
+          text: '在拥挤的机场候机厅里，奥兰多走进了男厕所，然后就消失不见了。这个骗子一定是变装易容了！'
+        },
+        {
+          blockId: '6',
+          blockType: 'return'
+        },
+        {
+          blockId: '7',
+          blockType: 'tab'
+        },
+        {
+          blockId: '8',
+          blockType: 'normal-text',
+          text: '吉塔侦探很着急，她现在很需要你的帮助！请在下面的第二张图中指出奥兰多藏在哪里。'
+        }
+      ],
+      questionImage: {
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/dofilbre.jpg',
+        height: 995
+      }
+    },
+    answerArea: { x: 10, y: 270 },
+    solutions: [
+      {
+        solutionTag: '答案',
+        align: 'left',
+        solutionData: [
+          {
+            blockId: '1',
+            blockType: 'tab'
+          },
+          {
+            blockId: '2',
+            blockType: 'normal-text',
+            text: '狡猾的奥兰多就藏在报刊亭右侧的角落里。'
+          }
+        ]
+      },
+      {
+        solutionTag: '解析',
+        align: 'left',
+        solutionData: [
+          {
+            blockId: '1',
+            blockType: 'tab'
+          },
+          {
+            blockId: '2',
+            blockType: 'normal-text',
+            text: '他把自己打扮成阿拉伯人，却没有想到他的大行李包暴露了他的真实身份。'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    quizId: 7,
+    quizType: 2,
+    title: '保密的新品配方',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
+    timed: true,
+    timeLimit: 120000,
+    question: {
+      questionId: 1,
+      questionTextData: [
+        {
+          blockId: '1',
+          blockType: 'tab'
+        },
+        {
+          blockId: '2',
+          blockType: 'normal-text',
+          text: '著名的食品生产商麦克·阿罗尼公司决定改良其备受好评的面条加工配方，明天就要召开新品发布会了。公司员工波奇刚刚无意间路过市场总监办公室。透过半透明玻璃，他震惊地发现：新品配方居然被交给了竞争对手派来的商业间谍！'
+        },
+        {
+          blockId: '3',
+          blockType: 'return'
+        },
+        {
+          blockId: '4',
+          blockType: 'tab'
+        },
+        {
+          blockId: '5',
+          blockType: 'normal-text',
+          text: '那名商业间谍现在已经走到大街上了。波奇决定为公司追回配方，避免无法挽救的商业损失。请在下面的第二张图中帮他指出间谍走到哪里了。'
+        }
+      ],
+      questionImage: {
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/gykm10pd.jpg',
+        height: 1360
+      }
+    },
+    answerArea: { x: 50, y: 430 },
+    solutions: [
+      {
+        solutionTag: '答案',
+        align: 'left',
+        solutionData: [
+          {
+            blockId: '1',
+            blockType: 'tab'
+          },
+          {
+            blockId: '2',
+            blockType: 'normal-text',
+            text: '那名商业间谍就走在大树的右侧，左手还夹着文件袋呢。'
+          }
+        ]
+      },
+      {
+        solutionTag: '解析',
+        align: 'left',
+        solutionData: [
+          {
+            blockId: '1',
+            blockType: 'tab'
+          },
+          {
+            blockId: '2',
+            blockType: 'normal-text',
+            text: '看发型就知道一定是她！'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    quizId: 8,
+    quizType: 2,
+    title: '被偷砍掉的银杏树',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
+    timed: true,
+    timeLimit: 120000,
+    question: {
+      questionId: 1,
+      questionTextData: [
+        {
+          blockId: '1',
+          blockType: 'tab'
+        },
+        {
+          blockId: '2',
+          blockType: 'normal-text',
+          text: '早上 7 点钟，劳普林刚刚结束彻夜狂欢的公司聚会回到自己家里，却震惊地发现：有人趁他昨晚不在家的时候，把他院子里的银杏树砍掉了！劳普林脑海里第一个想到的就是他的邻居阿克塞尔，这个家伙经常抱怨那棵银杏树影响自家院子的采光！'
+        },
+        {
+          blockId: '3',
+          blockType: 'return'
+        },
+        {
+          blockId: '4',
+          blockType: 'tab'
+        },
+        {
+          blockId: '5',
+          blockType: 'normal-text',
+          text: '卡勒侦探很快就接到了劳普林的委托，前来拜访阿克塞尔并询问他是否了解情况。没想到阿克塞尔矢口否认，而且一口咬定说：“我昨天去我姐姐家住了，一整晚都不在，刚刚 5 分钟之前才进家门，根本不可能去偷砍什么破银杏树！”'
+        },
+        {
+          blockId: '6',
+          blockType: 'return'
+        },
+        {
+          blockId: '7',
+          blockType: 'tab'
+        },
+        {
+          blockId: '8',
+          blockType: 'normal-text',
+          text: '卡勒侦探现在已经知道阿克塞尔是在说谎了，你呢？请在下图中指出他说谎的证据。'
+        }
+      ],
+      questionImage: {
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/yzljhs7y.jpg',
+        height: 940
+      }
+    },
+    answerArea: { x: 260, y: 170 },
+    solutions: [
+      {
+        solutionTag: '答案',
+        align: 'left',
+        solutionData: [
+          {
+            blockId: '1',
+            blockType: 'tab'
+          },
+          {
+            blockId: '2',
+            blockType: 'normal-text',
+            text: '1. 阿克塞尔的床铺很乱，说明他昨晚很有可能是在家里睡的。'
+          },
+          {
+            blockId: '3',
+            blockType: 'return'
+          },
+          {
+            blockId: '4',
+            blockType: 'tab'
+          },
+          {
+            blockId: '5',
+            blockType: 'normal-text',
+            text: '2. 桌子上摆着早餐，说明阿克塞尔正准备吃饭，那么他肯定不是 5 分钟之前才进家门的。'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    quizId: 9,
+    quizType: 2,
+    title: '怪盗基佐的藏身处',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
+    timed: true,
+    timeLimit: 120000,
+    question: {
+      questionId: 1,
+      questionTextData: [
+        {
+          blockId: '1',
+          blockType: 'tab'
+        },
+        {
+          blockId: '2',
+          blockType: 'normal-text',
+          text: '怪盗基佐是一名擅长使用魔术手法偷取珠宝的超级盗窃犯。卡勒侦探已经跟踪他很久了，但是始终无法找到他的藏身之处。现在卡勒侦探得到新消息：基佐躲在他的老朋友卡罗位于郊外的家。当卡勒侦探上门拜访卡罗并询问有关基佐的情况时，卡罗摸着自己锃亮的光头，不动声色地否认道：“只有我一个人住在这里，不相信的话你可以进来随意搜查。”事实上，基佐的确和他住在一起，是什么证实了这一点？'
+        }
+      ],
+      questionImage: {
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/2qjhay5k.jpg',
+        height: 990
+      }
+    },
+    answerArea: { x: 246, y: 260 },
+    solutions: [
+      {
+        solutionTag: '解析',
+        align: 'center',
+        solutionData: [
+          {
+            blockId: '1',
+            blockType: 'normal-text',
+            text: '右侧抽屉柜上的梳子上有头发。既然卡罗一个人住，而且他是光头，那么他就不需要梳子，梳子上也更不可能有头发。'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    quizId: 10,
+    quizType: 2,
+    title: '退出车赛',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
+    timed: true,
+    timeLimit: 120000,
+    question: {
+      questionId: 1,
+      questionTextData: [
+        {
+          blockId: '1',
+          blockType: 'tab'
+        },
+        {
+          blockId: '2',
+          blockType: 'normal-text',
+          text: '在格兰匹治大赛中，赛车风驰电掣地从赛道上呼啸而过。这项著名的赛事马上就要决出最后的名次。著名车手拉瑟遥遥领先，和其他选手一样，拉瑟的赛车在最后冲刺前必须进维修站给油箱加油。拉瑟采用的是特制的混合汽油F98，他的赛车发动机只能用这种燃料。拉瑟请来老朋友吉塔侦探监视他的维修站，以防有人做手脚。'
+        },
+        {
+          blockId: '3',
+          blockType: 'return'
+        },
+        {
+          blockId: '4',
+          blockType: 'tab'
+        },
+        {
+          blockId: '5',
+          blockType: 'normal-text',
+          text: '事实上，吉塔侦探确实发现到了一些情况！她看到了假冒的工作人员想要搞破坏给车手致命打击。那个假冒的工作人员是要做什么手脚呢？'
+        }
+      ],
+      questionImage: {
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/emzuvmt8.jpg',
+        height: 990
+      }
+    },
+    answerArea: { x: 250, y: 170 },
+    solutions: [
+      {
+        solutionTag: '解析',
+        align: 'left',
+        solutionData: [
+          {
+            blockId: '1',
+            blockType: 'normal-text',
+            text: '假冒的工作人员要用水替换F98混合汽油加进赛车的油箱。'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    quizId: 11,
+    quizType: 2,
+    title: '胡尔达市长的化妆舞会',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
+    timed: true,
+    timeLimit: 120000,
+    question: {
+      questionId: 1,
+      questionTextData: [
+        {
+          blockId: '1',
+          blockType: 'tab'
+        },
+        {
+          blockId: '2',
+          blockType: 'normal-text',
+          text: '女市长胡尔达在宴会厅举办盛大的化妆舞会，客人们都穿着最稀奇古怪的服装到场。突然一封匿名信和一张男性照片交到了胡尔达市长的手上，信中透露在奇装异服的客人中有一名“抽奖奖金盗窃专家”，他将提前引燃原本在午夜燃放的焰火，造成混乱借机窃取巨额的抽奖奖金。胡尔达市长立即叫来卡勒侦探，要求他找到这个不受欢迎的捣乱者。这应该不太困难，不是吗？'
+        }
+      ],
+      questionImage: {
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/imbhuyha.jpg',
+        height: 1350
+      }
+    },
+    answerArea: { x: 164, y: 280 },
+    solutions: [
+      {
+        solutionTag: '解析',
+        align: 'left',
+        solutionData: [
+          {
+            blockId: '1',
+            blockType: 'normal-text',
+            text: '照片中的盗窃专家左耳戴着耳环。在化妆舞会上他穿着水手服戴着墨镜，站在戴帽子的女士与骑士中间。'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    quizId: 12,
+    quizType: 2,
+    title: '星光蓝宝石',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
+    timed: true,
+    timeLimit: 120000,
+    question: {
+      questionId: 1,
+      questionTextData: [
+        {
+          blockId: '1',
+          blockType: 'tab'
+        },
+        {
+          blockId: '2',
+          blockType: 'normal-text',
+          text: '陶施拜因在他的珠宝店内焦急地说：“星光蓝宝石，我最精美的宝石不见了！”吉塔侦探环顾了商店说：“请您描述一下案发过程。”'
+        },
+        {
+          blockId: '3',
+          blockType: 'return'
+        },
+        {
+          blockId: '4',
+          blockType: 'tab'
+        },
+        {
+          blockId: '5',
+          blockType: 'normal-text',
+          text: '陶施拜因先生深深地吸了口气：“一切都发生得太快了。大约在17点15分时，一位先生来到店里，他对星光蓝宝石很感兴趣，为了避免干扰，我们就到店后面的顾客室去了。这位先生先是在仔细观察那颗宝石，然后突然跳起来，拿着宝石就跑回店里，一脚把顾客室的门踢上关住，阻挡住了我。他逃到了大街上，很快就混入人群消失不见了。”'
+        },
+        {
+          blockId: '6',
+          blockType: 'return'
+        },
+        {
+          blockId: '7',
+          blockType: 'tab'
+        },
+        {
+          blockId: '8',
+          blockType: 'normal-text',
+          text: '吉塔侦探再次观察了商店，向店主提出一个问题：“这颗宝石是否上了保险?”当陶施拜因先生给予肯定的回答后，她就确定这是珠宝商自导自演的骗局，要借此骗取保险金。因为在他的描述中，有一点不正确。那么，是哪一点呢？'
+        }
+      ],
+      questionImage: {
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/utfsxusz.jpg',
+        height: 960
+      }
+    },
+    answerArea: { x: -10, y: 96 },
+    solutions: [
+      {
+        solutionTag: '解析',
+        align: 'left',
+        solutionData: [
+          {
+            blockId: '1',
+            blockType: 'normal-text',
+            text: '陶施拜因先生讲述的故事并不正确，他不可能从店里用脚踢上顾客室的门，因为门是向内打开的。'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    quizId: 13,
+    quizType: 2,
+    title: '布鲁诺的服装不翼而飞',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
+    timed: true,
+    timeLimit: 120000,
+    question: {
+      questionId: 1,
+      questionTextData: [
+        {
+          blockId: '1',
+          blockType: 'tab'
+        },
+        {
+          blockId: '2',
+          blockType: 'normal-text',
+          text: '霍夫剧院里一片混乱！离演出开始只有 3 分钟了！矮胖敦实的男主角布鲁诺，双手湿漉漉地跑过化妆更衣室过道，他还穿着浴袍！布鲁诺在《0Z的魔术师》中扮演铁皮人，通常在这个时候他应该已经穿好铁皮戏服。可是今天晚上他的戏服失踪了，而且现在根本没时间为布鲁诺准备新的戏服——尤其是必须适合他的矮胖身材！'
+        },
+        {
+          blockId: '3',
+          blockType: 'return'
+        },
+        {
+          blockId: '4',
+          blockType: 'tab'
+        },
+        {
+          blockId: '5',
+          blockType: 'normal-text',
+          text: '走投无路的剧院经理别无选择，只能启用布鲁诺的替补演员——身材修长的莱奥出演这个角色。令布鲁诺惊讶的是，莱奥已经早早穿好戏服，准备完毕了！'
+        },
+        {
+          blockId: '6',
+          blockType: 'return'
+        },
+        {
+          blockId: '7',
+          blockType: 'tab'
+        },
+        {
+          blockId: '8',
+          blockType: 'normal-text',
+          text: '“这太可疑了！”布鲁诺怒气冲冲地说，他确信一定是莱奥做了手脚。那么，有什么证据能证明，莱奥事先做过手脚？'
+        }
+      ],
+      questionImage: {
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/5jkqjy7k.jpg',
+        height: 980
+      }
+    },
+    answerArea: { x: 144, y: 270 },
+    solutions: [
+      {
+        solutionTag: '解析',
+        align: 'left',
+        solutionData: [
+          {
+            blockId: '1',
+            blockType: 'normal-text',
+            text: '莱奥为了能够登台演出而将布鲁诺的铁皮人戏服藏在自己位于楼梯下方的化妆更衣室里。'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    quizId: 14,
+    quizType: 2,
+    title: '被打搅的游轮之旅',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
+    timed: true,
+    timeLimit: 120000,
+    question: {
+      questionId: 1,
+      questionTextData: [
+        {
+          blockId: '1',
+          blockType: 'tab'
+        },
+        {
+          blockId: '2',
+          blockType: 'normal-text',
+          text: '吉塔侦探终于可以休假了！她参加了游轮旅行团，在甲板上尽情地享受假期。突然，船上响起了警钟。“甲板上有偷渡客！”船长从广播中宣布。水手和船上的工作人员在甲板上冲来冲去，搜寻偷渡客。'
+        },
+        {
+          blockId: '3',
+          blockType: 'return'
+        },
+        {
+          blockId: '4',
+          blockType: 'tab'
+        },
+        {
+          blockId: '5',
+          blockType: 'normal-text',
+          text: '船长知道老朋友吉塔侦探在船上，就请她帮忙。虽然吉塔侦探不想在假期中办案，但她还是爽快地答应帮忙。'
+        },
+        {
+          blockId: '6',
+          blockType: 'return'
+        },
+        {
+          blockId: '7',
+          blockType: 'tab'
+        },
+        {
+          blockId: '8',
+          blockType: 'normal-text',
+          text: '吉塔侦探检查了偷渡客曾经藏身的救生艇之后， 她已经知道要找到偷渡客并不难。那么，偷渡客现在藏在哪里呢？'
+        }
+      ],
+      questionImage: {
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/86wqwnhm.jpg',
+        height: 970
+      }
+    },
+    answerArea: { x: 10, y: 50 },
+    solutions: [
+      {
+        solutionTag: '解析',
+        align: 'left',
+        solutionData: [
+          {
+            blockId: '1',
+            blockType: 'normal-text',
+            text: '在游轮顶层夹板的左边，有一个只穿着一只鞋的人，他就是偷渡客。他从救生艇匆忙逃跑时把另一只鞋掉在了救生艇里。'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    quizId: 15,
+    quizType: 2,
+    title: '马可·波罗失踪了',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
+    timed: true,
+    timeLimit: 120000,
+    question: {
+      questionId: 1,
+      questionTextData: [
+        {
+          blockId: '1',
+          blockType: 'tab'
+        },
+        {
+          blockId: '2',
+          blockType: 'normal-text',
+          text: '米歇尔·德安吉罗是一位著名的艺术家、雕塑家。此时，他几乎无法相信：在宫殿公园中，他最喜欢的雕塑——骄傲地站立在底座上的马可·波罗像——消失了，地上散落着碎石和一把锤子。“哪个庸俗的家伙偷走了我的马可·波罗？”他怒气冲冲地打电话给吉塔侦探。'
+        },
+        {
+          blockId: '3',
+          blockType: 'return'
+        },
+        {
+          blockId: '4',
+          blockType: 'tab'
+        },
+        {
+          blockId: '5',
+          blockType: 'normal-text',
+          text: '看门人把吉塔侦探带到米歇尔面前，他还待在案发现场。在此期间，公园管理员毛罗听到喧哗声也赶了过来，他们在空空如也的底座前遇到。吉塔侦探仔细查看了现场，进行了询问，最后她对米歇尔说：“这两位工作人员中的某个人就是盗窃犯。”那么，是什么暴露了作案人？'
+        }
+      ],
+      questionImage: {
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/vkbgz5f5.jpg',
+        height: 980
+      }
+    },
+    answerArea: { x: 160, y: 400 },
+    solutions: [
+      {
+        solutionTag: '解析',
+        align: 'left',
+        solutionData: [
+          {
+            blockId: '1',
+            blockType: 'normal-text',
+            text: '地上的碎石中有一颗纽扣，而看门人的制服上少了一颗同样的纽扣，因此看门人就是盗窃犯。'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    quizId: 16,
+    quizType: 2,
+    title: '音乐家花园陶俑',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
+    timed: true,
+    timeLimit: 120000,
+    question: {
+      questionId: 1,
+      questionTextData: [
+        {
+          blockId: '1',
+          blockType: 'tab'
+        },
+        {
+          blockId: '2',
+          blockType: 'normal-text',
+          text: '乌多是花园陶俑博物馆的馆长，当他走过收藏品时，十分惊讶地发现“坐着的小提琴手”陶俑不在原来的位置上，它毫无迹象地消失了！乌多馆长立即报告了这起偷窃案，“肯定是希尔达·齐普弗从中作梗！现在只有卡勒和吉塔侦探能帮忙。”'
+        },
+        {
+          blockId: '3',
+          blockType: 'return'
+        },
+        {
+          blockId: '4',
+          blockType: 'tab'
+        },
+        {
+          blockId: '5',
+          blockType: 'normal-text',
+          text: '希尔达住在河边的花园小屋内，她同样十分喜欢花园陶俑，一直向博物馆申请购买“坐着的小提琴手”陶俑，总是遭到婉拒。卡勒和吉塔侦探拜访了希尔达，并仔细查看了她的陶俑乐园。希尔达听到偷窃事件时惊慌失措，一再保证自己和这件事毫无关系。那么，卡勒和吉塔侦探能找到反驳她的证据吗？'
+        }
+      ],
+      questionImage: {
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/a8jbc4rk.jpg',
+        height: 980
+      }
+    },
+    answerArea: { x: 30, y: 360 },
+    solutions: [
+      {
+        solutionTag: '解析',
+        align: 'left',
+        solutionData: [
+          {
+            blockId: '1',
+            blockType: 'normal-text',
+            text: '希尔达把偷来的陶俑藏在自己的花园小屋里，就在紧挨门口的地上。'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    quizId: 17,
+    quizType: 2,
+    title: '突然死亡的玛格丽塔雏菊',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
+    timed: true,
+    timeLimit: 120000,
+    question: {
+      questionId: 1,
+      questionTextData: [
+        {
+          blockId: '1',
+          blockType: 'tab'
+        },
+        {
+          blockId: '2',
+          blockType: 'normal-text',
+          text: '罗莎·格林斯的梦想即将成真：经过无数次的努力，她终于成功种植了一棵玛格丽塔雏菊。玛格丽塔雏菊是一种特别需要阳光的植物，黑暗对它而言就意味着死亡，因此它必须放在花园暖房的最上层，就在玻璃屋顶的下方。'
+        },
+        {
+          blockId: '3',
+          blockType: 'return'
+        },
+        {
+          blockId: '4',
+          blockType: 'tab'
+        },
+        {
+          blockId: '5',
+          blockType: 'normal-text',
+          text: '几周以来，罗莎和她的雇员里塔·平克以及阿尔多·施特雷克共同照料这棵罕见的植物。明天，玛格丽塔雏菊将在盛大的植物种植者大会上展出。但是今天晚上，罗莎遭到了致命打击！在花架的最下方，她的玛格丽塔雏菊在黑暗中枯萎了，耷拉着倒了下来，就在蕨类植物和仙人掌之间。罗莎意识到有人要阻止她出席植物种植者大会，于是她马上向卡勒侦探报案！'
+        },
+        {
+          blockId: '6',
+          blockType: 'return'
+        },
+        {
+          blockId: '7',
+          blockType: 'tab'
+        },
+        {
+          blockId: '8',
+          blockType: 'normal-text',
+          text: '只有罗莎的雇员里塔和阿尔多有花园暖房的钥匙，于是卡勒侦探把两个雇员叫到面前询问。这里是他们的陈述：阿尔多说他已经很久没去暖房了。里塔说他昨天一整天都在办公室里度过。但是卡勒侦探凭借敏锐的观察，立即告诉罗莎谁说谎了。'
+        }
+      ],
+      questionImage: {
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/svau38xj.jpg',
+        height: 980
+      }
+    },
+    answerArea: { x: 30, y: 290 },
+    solutions: [
+      {
+        solutionTag: '解析',
+        align: 'left',
+        solutionData: [
+          {
+            blockId: '1',
+            blockType: 'normal-text',
+            text: '说谎的是雇员里塔·平克，她的工作服上有许多仙人掌刺，是她在挪走玛格丽塔雏菊后，弯腰放在花架最下层时由于黑暗看不清周围环境而沾到了仙人掌刺。'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    quizId: 18,
+    quizType: 2,
+    title: '米基·库尔的踪迹',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
+    timed: true,
+    timeLimit: 120000,
+    question: {
+      questionId: 1,
+      questionTextData: [
+        {
+          blockId: '1',
+          blockType: 'tab'
+        },
+        {
+          blockId: '2',
+          blockType: 'normal-text',
+          text: '几周以来，卡勒侦探一直在跟踪保险箱撬窃者米基·库尔（Mickey Chur）。在从侦探社回家的路上，他在地铁站西出口和这个嫌疑人擦肩而过，但是一眨眼的时间米基就消失在人群中。卡勒侦探没有放弃搜寻，他跟踪了一个可能是米基的男子，但是卡勒侦探并不能肯定。卡勒侦探继续跟踪，拐进了一片昏暗的工厂区。在一家还有灯光的老锻造工厂里，卡勒侦探发现了一样东西，证明他追踪的是正确的线索，米基的确藏在这里。那么卡勒侦探发现了什么呢？'
+        }
+      ],
+      questionImage: {
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/ztye1s4u.jpg',
+        height: 1360
+      }
+    },
+    answerArea: { x: 234, y: 568 },
+    solutions: [
+      {
+        solutionTag: '解析',
+        align: 'left',
+        solutionData: [
+          {
+            blockId: '1',
+            blockType: 'normal-text',
+            text: '米基·库尔的工具箱在老锻造工场里，上面还有他的名字的首字母缩写MC，卡勒侦探在地铁站就看到了这个保险箱撬窃者提着工具箱匆匆走过。'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    quizId: 19,
+    quizType: 2,
+    title: '普法芬堡将军失踪记',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
+    timed: true,
+    timeLimit: 120000,
+    question: {
+      questionId: 1,
+      questionTextData: [
+        {
+          blockId: '1',
+          blockType: 'tab'
+        },
+        {
+          blockId: '2',
+          blockType: 'normal-text',
+          text: '“我的《普法芬堡将军》被偷了！”冯·科尔肯施泰因男爵夫人在庄园中惊慌失措地大叫。《普法芬堡将军》是一幅名画，很多艺术品收藏家都想拥有。吉塔侦探能破解这次盗窃案吗？男爵的庄园里可是有许多犯罪嫌疑人：女佣、厨师、烟囱清洁工、司机、园丁，甚至可能是男爵或者男爵夫人自导自演了一场骗局？吉塔侦探首先仔细观察了四周，这是正确的决定！她很快发现了线索，现在她已经知道是谁偷了名画《普法芬保将军》。那个人是谁呢？'
+        }
+      ],
+      questionImage: {
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/142496kj.jpg',
+        height: 560
+      }
+    },
+    answerArea: { x: -18, y: 210 },
+    solutions: [
+      {
+        solutionTag: '解析',
+        align: 'left',
+        solutionData: [
+          {
+            blockId: '1',
+            blockType: 'normal-text',
+            text: '司机把《普法芬堡将军》藏在汽车后备箱中。'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    quizId: 20,
+    quizType: 2,
+    title: '图弗特尔的最新发明',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
+    timed: true,
+    timeLimit: 120000,
+    question: {
+      questionId: 1,
+      questionTextData: [
+        {
+          blockId: '1',
+          blockType: 'tab'
+        },
+        {
+          blockId: '2',
+          blockType: 'normal-text',
+          text: '蒂诺·图弗特尔在他的实验室里开发出了新产品：一种保证有效的生发剂！就在同一天晚上，他邀请了一些同事和朋友来实验室，向他们展示自己的成果。就在他做介绍时，突发短路停电事故，整个实验室陷入黑暗中。还好图弗特尔很快就排除了故障，灯又亮了起来。可是他发现记录在笔记本上的生发剂分子式已经被撕掉了。这让他确信是现场的某人撕走了这张纸片。'
+        },
+        {
+          blockId: '3',
+          blockType: 'return'
+        },
+        {
+          blockId: '4',
+          blockType: 'tab'
+        },
+        {
+          blockId: '5',
+          blockType: 'normal-text',
+          text: '不过这个小偷很倒霉——因为图弗特尔也邀请了他的老朋友卡勒侦探。他只要稍稍观察一下，就能知道是谁偷走了分子式。你们也可以吗？'
+        }
+      ],
+      questionImage: {
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/93b1pf7y.jpg',
+        height: 980
+      }
+    },
+    answerArea: { x: 200, y: 170 },
+    solutions: [
+      {
+        solutionTag: '解析',
+        align: 'left',
+        solutionData: [
+          {
+            blockId: '1',
+            blockType: 'tab'
+          },
+          {
+            blockId: '2',
+            blockType: 'normal-text',
+            text: '图中最右侧的女士趁着黑暗偷走了印有机密分子式的纸片，夹在她胳膊下的文件资料中。'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    quizId: 21,
+    quizType: 2,
+    title: '并非人人都是幸运儿',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
+    timed: true,
+    timeLimit: 120000,
+    question: {
+      questionId: 1,
+      questionTextData: [
+        {
+          blockId: '1',
+          blockType: 'tab'
+        },
+        {
+          blockId: '2',
+          blockType: 'normal-text',
+          text: '齐勒塔尔家庭宠物展览会的大奖已经颁布，多莉·明斯克和她的可爱小猪仔平基成为胜利者！多莉高兴得忘乎所以，可是当她想要抱起平基时，她却大叫道小猪平基不见了。'
+        },
+        {
+          blockId: '3',
+          blockType: 'return'
+        },
+        {
+          blockId: '4',
+          blockType: 'tab'
+        },
+        {
+          blockId: '5',
+          blockType: 'normal-text',
+          text: '“一定有人偷走了平基，小猪对我很依赖，不会自己跑开的。”多莉抱怨道，那么她的推测正确吗？'
+        }
+      ],
+      questionImage: {
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/2ycyph4s.jpg',
+        height: 960
+      }
+    },
+    answerArea: { x: 250, y: 290 },
+    solutions: [
+      {
+        solutionTag: '解析',
+        align: 'left',
+        solutionData: [
+          {
+            blockId: '1',
+            blockType: 'normal-text',
+            text: '多莉的推测是正确的。有人把小猪平基藏在单肩包里偷偷带走，这个人和多莉在展示台的同一层。'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    quizId: 22,
+    quizType: 2,
+    title: '午夜牌局',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
+    timed: true,
+    timeLimit: 120000,
+    question: {
+      questionId: 1,
+      questionTextData: [
+        {
+          blockId: '1',
+          blockType: 'tab'
+        },
+        {
+          blockId: '2',
+          blockType: 'normal-text',
+          text: '四个扑克爱好者聚在会员制的洛丽塔酒吧玩牌，他们分别是：可疑的花花公子罗茨·弗拉林、演员诺尔玛·劳斯、酒吧老板比尔·佩克和正在出差的商人萨姆·莫克。牌局在酒吧的私人VIP室中进行，通常这样的牌局赌注都很大，但是这场局牌其实早就有了结果，其中三家必定是输家。他们要注意什么才有可能不输钱呢？'
+        }
+      ],
+      questionImage: {
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/exliniux.jpg',
+        height: 970
+      }
+    },
+    answerArea: { x: 160, y: 270 },
+    solutions: [
+      {
+        solutionTag: '解析',
+        align: 'left',
+        solutionData: [
+          {
+            blockId: '1',
+            blockType: 'normal-text',
+            text: '出老千的人是图中右下角的商人萨姆·莫克。一副扑克牌中只有四张A，牌桌上已经有三张，而他手中却拿着两张同样花色的A。'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    quizId: 23,
+    quizType: 2,
+    title: '艺术品背后的诡计',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
+    timed: true,
+    timeLimit: 120000,
+    question: {
+      questionId: 1,
+      questionTextData: [
+        {
+          blockId: '1',
+          blockType: 'tab'
+        },
+        {
+          blockId: '2',
+          blockType: 'normal-text',
+          text: '艺术品商人里克·洪德尔紧张地捋着头发，闷声抱怨道：“我也是第一次知道，这幅版画是赝品。”此前，里克正要把版画“偷吃甜食的小姑娘”卖给艺术品收藏家施蒂希莱恩。他声称这幅版画是一位16世纪的著名版画家的唯一存世之作，价值连城。不过，施蒂希莱恩立刻判断出这是赝品。那么，施蒂希莱恩为什么会产生怀疑呢？你能在这幅版画中找到答案吗？'
+        }
+      ],
+      questionImage: {
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/c61a4cde.jpg',
+        height: 980
+      }
+    },
+    answerArea: { x: 196, y: 140 },
+    solutions: [
+      {
+        solutionTag: '解析',
+        align: 'left',
+        solutionData: [
+          {
+            blockId: '1',
+            blockType: 'normal-text',
+            text: '版画中的小姑娘背后有一部电话。16世纪还没有发明电话。'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    quizId: 24,
+    quizType: 2,
+    title: '鞋店中的交接',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
+    timed: true,
+    timeLimit: 120000,
+    question: {
+      questionId: 1,
+      questionTextData: [
+        {
+          blockId: '1',
+          blockType: 'tab'
+        },
+        {
+          blockId: '2',
+          blockType: 'normal-text',
+          text: '吉塔侦探获悉间谍005将和接头人X在一家鞋店里秘密交接一卷微型胶卷。整个交接过程如下：X走进索尔·沃尔鞋店，故意试穿了许多双鞋，店里很快就会乱作一团。他趁机悄悄地把微型胶卷藏到一只鞋内，再将另一只鞋塞入大衣后离开商店。'
+        },
+        {
+          blockId: '3',
+          blockType: 'return'
+        },
+        {
+          blockId: '4',
+          blockType: 'tab'
+        },
+        {
+          blockId: '5',
+          blockType: 'normal-text',
+          text: '在店员将铺满地面的鞋排放整齐之前，005走入了鞋店。他让店员展示了几双鞋，现在他只需要仔细观察找到那个单只的鞋，就可以拿走其中的胶卷。吉塔侦探还在等待，要等005将这个重要物品拿到手中，才能出面将他抓获。那么，这卷胶卷藏在哪只鞋中呢？'
+        }
+      ],
+      questionImage: {
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/togv925t.jpg',
+        height: 425
+      }
+    },
+    answerArea: { x: 170, y: 90 },
+    solutions: [
+      {
+        solutionTag: '解析',
+        align: 'left',
+        solutionData: [
+          {
+            blockId: '1',
+            blockType: 'normal-text',
+            text: '藏有微型胶卷的单只鞋没有穿鞋带，在图中店员的左耳上方。'
           }
         ]
       }
@@ -1658,125 +1799,6 @@ const QuizzesData = [
   },
   {
     quizId: 28,
-    quizType: 2,
-    title: '感到危险',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
-    timed: true,
-    timeLimit: 120000,
-    question: {
-      questionId: 1,
-      questionTextData: [
-        {
-          blockId: '1',
-          blockType: 'tab'
-        },
-        {
-          blockId: '2',
-          blockType: 'normal-text',
-          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。卡勒侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的走私犯。卡勒侦探并没有这个走私犯的相貌信息，他仅仅知道该走私犯经常会通过这条线路来从事可疑的业务。很快，所有乘客的行李都被放入大客车的行李仓内，当卡勒侦探迅速看了一下行李后发现：之前在停车场上一共有19件行李，然而现在行李仓内仅有18件。那个走私犯一定在最后一刻认出了卡勒侦探，于是悄悄地溜之大吉了。那个人是谁呢？'
-        }
-      ],
-      questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/37qma0l9.jpg',
-        height: 1385
-      }
-    },
-    answerArea: { x: 248, y: 430 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '那个人就站在台阶上，在背着背包挥手的年轻人边上，他就是鱼子酱走私者。大客车的行李箱内没有他的箱子，他认出来卡勒侦探并逃之夭夭了。'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    quizId: 29,
-    quizType: 2,
-    title: '通缉追捕',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
-    timed: true,
-    timeLimit: 120000,
-    question: {
-      questionId: 1,
-      questionTextData: [
-        {
-          blockId: '1',
-          blockType: 'tab'
-        },
-        {
-          blockId: '2',
-          blockType: 'normal-text',
-          text: '蒂诺·马茨是声名狼藉的婚姻骗子，长久以来，卡勒侦探一直都在想方设法阻止他，可惜都没有成功！他仅知道，蒂诺经常在知名度假胜地作案，总是关注那些渴望婚姻的富有女性。'
-        },
-        {
-          blockId: '3',
-          blockType: 'return'
-        },
-        {
-          blockId: '4',
-          blockType: 'tab'
-        },
-        {
-          blockId: '5',
-          blockType: 'normal-text',
-          text: '终于，骗子蒂诺犯下一个错误：在温特拉肯海滨浴场，他居然想要算计卡勒侦探的阿姨——富有的安东尼娅·洛阿格。安东尼娅怒气冲冲地将这一情况告知了自己的外甥，她详细地描述了骗子的长相：'
-        },
-        {
-          blockId: '6',
-          blockType: 'return'
-        },
-        {
-          blockId: '7',
-          blockType: 'tab'
-        },
-        {
-          blockId: '8',
-          blockType: 'normal-text',
-          text: '黑头发，黑胡子，戴眼镜，白衬衫，黑夹克，白裤子，在库尔巴德宾馆的浴场中见过他。'
-        },
-        {
-          blockId: '9',
-          blockType: 'return'
-        },
-        {
-          blockId: '10',
-          blockType: 'tab'
-        },
-        {
-          blockId: '11',
-          blockType: 'normal-text',
-          text: '卡勒侦探没有浪费时间，立即前往温特拉肯海滨浴场。他的迅速行动取得了成效，在库尔巴德宾馆的浴场中发现了蒂诺！那么，他们在哪里发现了蒂诺呢？'
-        }
-      ],
-      questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/r1uk2pfg.jpg',
-        height: 980
-      }
-    },
-    answerArea: { x: -10, y: 140 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '蒂诺正要从图片上最靠左侧边缘的更衣间内出来。'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    quizId: 30,
     quizType: 1,
     title: '机密文件的“火星移动”',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -1923,6 +1945,125 @@ const QuizzesData = [
             blockId: '1',
             blockType: 'normal-text',
             text: '维尔马尔·普法夫在说谎。他宣称把眼镜忘在家里了，没有它就没法看清教授的资料。但是显而易见，他不需要眼镜就可以毫无问题地阅读晨报！因此他根本不需要眼镜！'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    quizId: 29,
+    quizType: 2,
+    title: '感到危险',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
+    timed: true,
+    timeLimit: 120000,
+    question: {
+      questionId: 1,
+      questionTextData: [
+        {
+          blockId: '1',
+          blockType: 'tab'
+        },
+        {
+          blockId: '2',
+          blockType: 'normal-text',
+          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。卡勒侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的走私犯。卡勒侦探并没有这个走私犯的相貌信息，他仅仅知道该走私犯经常会通过这条线路来从事可疑的业务。很快，所有乘客的行李都被放入大客车的行李仓内，当卡勒侦探迅速看了一下行李后发现：之前在停车场上一共有19件行李，然而现在行李仓内仅有18件。那个走私犯一定在最后一刻认出了卡勒侦探，于是悄悄地溜之大吉了。那个人是谁呢？'
+        }
+      ],
+      questionImage: {
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/37qma0l9.jpg',
+        height: 1385
+      }
+    },
+    answerArea: { x: 248, y: 430 },
+    solutions: [
+      {
+        solutionTag: '解析',
+        align: 'left',
+        solutionData: [
+          {
+            blockId: '1',
+            blockType: 'normal-text',
+            text: '那个人就站在台阶上，在背着背包挥手的年轻人边上，他就是鱼子酱走私者。大客车的行李箱内没有他的箱子，他认出来卡勒侦探并逃之夭夭了。'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    quizId: 30,
+    quizType: 2,
+    title: '通缉追捕',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
+    timed: true,
+    timeLimit: 120000,
+    question: {
+      questionId: 1,
+      questionTextData: [
+        {
+          blockId: '1',
+          blockType: 'tab'
+        },
+        {
+          blockId: '2',
+          blockType: 'normal-text',
+          text: '蒂诺·马茨是声名狼藉的婚姻骗子，长久以来，卡勒侦探一直都在想方设法阻止他，可惜都没有成功！他仅知道，蒂诺经常在知名度假胜地作案，总是关注那些渴望婚姻的富有女性。'
+        },
+        {
+          blockId: '3',
+          blockType: 'return'
+        },
+        {
+          blockId: '4',
+          blockType: 'tab'
+        },
+        {
+          blockId: '5',
+          blockType: 'normal-text',
+          text: '终于，骗子蒂诺犯下一个错误：在温特拉肯海滨浴场，他居然想要算计卡勒侦探的阿姨——富有的安东尼娅·洛阿格。安东尼娅怒气冲冲地将这一情况告知了自己的外甥，她详细地描述了骗子的长相：'
+        },
+        {
+          blockId: '6',
+          blockType: 'return'
+        },
+        {
+          blockId: '7',
+          blockType: 'tab'
+        },
+        {
+          blockId: '8',
+          blockType: 'normal-text',
+          text: '黑头发，黑胡子，戴眼镜，白衬衫，黑夹克，白裤子，在库尔巴德宾馆的浴场中见过他。'
+        },
+        {
+          blockId: '9',
+          blockType: 'return'
+        },
+        {
+          blockId: '10',
+          blockType: 'tab'
+        },
+        {
+          blockId: '11',
+          blockType: 'normal-text',
+          text: '卡勒侦探没有浪费时间，立即前往温特拉肯海滨浴场。他的迅速行动取得了成效，在库尔巴德宾馆的浴场中发现了蒂诺！那么，他们在哪里发现了蒂诺呢？'
+        }
+      ],
+      questionImage: {
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/r1uk2pfg.jpg',
+        height: 980
+      }
+    },
+    answerArea: { x: -10, y: 140 },
+    solutions: [
+      {
+        solutionTag: '解析',
+        align: 'left',
+        solutionData: [
+          {
+            blockId: '1',
+            blockType: 'normal-text',
+            text: '蒂诺正要从图片上最靠左侧边缘的更衣间内出来。'
           }
         ]
       }

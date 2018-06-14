@@ -7,7 +7,7 @@
     </view>
   </block>
   <block wx:else>
-    <view class="login-title">登录中...</view>
+    <view class="login-title">登录中</view>
     <view class="login-bar">
       <button class="login-primary-btn disabled">登录中，请稍候...</button>
     </view>
