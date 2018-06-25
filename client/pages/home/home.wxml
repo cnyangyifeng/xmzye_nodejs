@@ -1,6 +1,6 @@
 <block wx:if="{{homeState===0}}">
   <view class="home">
-    <view class="spinner">加载中</view>
+    <view class="spinner"></view>
   </view>
 </block>
 <block wx:elif="{{homeState===1}}">
@@ -16,7 +16,7 @@
           <view class="quiz-user-nick-name">{{quizUser.quizUserInfo.nickName}}</view>
           <view class="quiz-user-asset" hover-class="quiz-user-asset-hover">
             <image class="quiz-user-asset-icon" src="/assets/images/key.svg"></image>
-            <view class="quiz-user-asset-value">{{quizUser.totalKeyCount}}</view>
+            <view class="quiz-user-asset-value">x {{quizUser.totalKeyCount}}</view>
           </view>
         </block>
       </view>
@@ -39,7 +39,7 @@
               <block wx:if="{{item.quizUnlocked===1}}">
                 <view class="quiz-card-title">{{item.quizId}}</view>
                 <image wx:if="{{item.quizLoaded===1}}" class="quiz-card-image" src="{{item.quizQuestionImageUrl}}" mode="aspectFill"></image>
-                <image wx:if="{{item.quizSolved===1}}" class="quiz-card-ok" src="/assets/images/ok.svg"></image>
+                <image wx:if="{{item.quizSolved===1}}" class="quiz-card-ok" src="/assets/images/{{item.myAnswerFeedback===1?'right':'wrong'}}_fill.svg"></image>
               </block>
               <block wx:else>
                 <view class="quiz-card-title">{{item.quizId}}</view>

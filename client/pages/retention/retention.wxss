@@ -39,7 +39,7 @@
   width: 640rpx;
   margin: 0 60rpx 60rpx 60rpx;
   border-radius: 5px;
-  background: #fff;
+  background-color: #fff;
 }
 
 .retention-task-bd {

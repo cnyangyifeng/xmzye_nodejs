@@ -11,7 +11,9 @@ async function getQuizUser(ctx, next) {
     const cli = await MongoClient.connect(configs.mongodb.url)
     const db = cli.db('xmzye')
     const collection = db.collection('quizUsers')
-    const quizUsers = await collection.find({ 'quizUserId': quizUserInfo.openId }).toArray()
+    const quizUsers = await collection.find({
+      'quizUserId': quizUserInfo.openId
+    }).toArray()
     let quizUser = null
     if (quizUsers && quizUsers.length > 0) {
       quizUser = quizUsers[0]
@@ -23,10 +25,11 @@ async function getQuizUser(ctx, next) {
         referrerId: referrerId,
         quizUserInfo: quizUserInfo,
         vip: 0,
-        totalKeyCount: 5,
+        totalKeyCount: 1,
         muted: 0,
         currentQuizTabIndex: 0,
         currentQuizTabName: '1-40',
+        maxAvailableQuizId: 1,
         createTime: createTime,
         lastVisitTime: lastVisitTime
       }

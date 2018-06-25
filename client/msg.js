@@ -3,7 +3,7 @@ const msgs = {
   clear_cache_title: `危险操作`,
   clear_cache_content: `是否清空全部缓存数据？`,
 
-  loading_title: `请稍候`,
+  loading_title: `加载中`,
 
   login_fail_title: `登录失败`,
   login_processing_title: `登录中`,

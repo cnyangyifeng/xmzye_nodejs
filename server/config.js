@@ -23,11 +23,6 @@ const configs = {
   mongodb: {
     url: 'mongodb://mongouser:2018%5Exmzy@10.66.246.29:27017/admin'
   },
-  redis: {
-    host: '10.66.161.154', // qcloud intranet ip
-    port: '6379',
-    pass: 'crs-m6jrx2id:2018^xmzy'
-  },
   cos: {
     region: 'ap-guangzhou',
     fileBucket: 'xmzye',

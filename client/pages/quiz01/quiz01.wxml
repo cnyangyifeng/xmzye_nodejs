@@ -1,6 +1,6 @@
 <block wx:if="{{quizState===0}}">
   <view class="quiz">
-    <view class="spinner">加载中</view>
+    <view class="spinner"></view>
   </view>
 </block>
 <block wx:else>
@@ -8,13 +8,16 @@
     <view class="quiz-user-hd">
       <view class="quiz-user-info">
         <view class="quiz-id">第 {{quiz.quizId}} 题</view>
+        <block wx:if="{{quizSolved===1}}">
+          <view class="my-answer-feedback {{myAnswerFeedback===1?'right':'wrong'}}">{{myAnswerFeedback===1?'回答正确':'回答错误'}}</view>
+        </block>
         <block wx:if="{{quizUser.vip===1}}">
           <image class="quiz-user-vip" src="/assets/images/vip.svg"></image>
         </block>
         <block wx:else>
           <view class="quiz-user-asset" hover-class="quiz-user-asset-hover">
             <image class="quiz-user-asset-icon" src="/assets/images/key.svg"></image>
-            <view class="quiz-user-asset-value">{{quizUser.totalKeyCount}}</view>
+            <view class="quiz-user-asset-value">x {{quizUser.totalKeyCount}}</view>
           </view>
         </block>
       </view>
@@ -23,8 +26,13 @@
           <image class="quiz-control-icon" src="/assets/images/{{quizUser.muted===0?'music_note.svg':'music_note_off.svg'}}"></image>
         </view>
         <button class="quiz-control" hover-class="quiz-control-hover" open-type="share">
-          <image class="quiz-control-icon" src="/assets/images/share.svg"></image>
+          <image class="quiz-control-icon" src="/assets/images/forward.svg"></image>
         </button>
+        <!--
+        <view class="quiz-control" hover-class="quiz-control-hover" bindtap="posterControlTap">
+          <image class="quiz-control-icon" src="/assets/images/picture1.svg"></image>
+        </view>
+        -->
       </view>
     </view>
   </view>
@@ -54,10 +62,7 @@
         </view>
         <view class="question-image-container">
           <image class="question-image" style="height:{{quiz.question.questionImage.height/2}}px;" src="{{quiz.question.questionImage.url}}"></image>
-          <block wx:if="{{quiz.quizType===1}}">
-            <view id="questionImageMask" class="question-image-mask" style="height:{{quiz.question.questionImage.height/2}}px;"></view>
-          </block>
-          <block wx:elif="{{quiz.quizType===2}}">
+          <block wx:if="{{quiz.quizType===2}}">
             <view id="questionImageMask" class="question-image-mask" style="height:{{quiz.question.questionImage.height/2}}px;" bindtap="questionImageMaskTap">
               <view hidden="{{myAnswerPoint}}" class="question-image-mask-title">
                 <view class="question-image-mask-text">点击这里，解锁图片</view>
@@ -130,6 +135,11 @@
             <text class="feedback-value">{{quiz.answerKey}}</text>
           </view>
         </block>
+      </view>
+    </view>
+    <view hidden="{{!posterModalVisible}}" class="poster-modal" bindtap="posterModalTap">
+      <view class="poster-panel" animation="{{posterPanelAnimationData}}">
+        <image src="{{poster.imgData}}" style="width:{{poster.width/3}}px;height:{{poster.height/3}}px;"></image>
       </view>
     </view>
   </block>

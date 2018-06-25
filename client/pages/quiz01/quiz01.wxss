@@ -66,6 +66,19 @@
   margin-right: 30rpx;
 }
 
+.my-answer-feedback {
+  font-size: 16px;
+  margin-right: 30rpx;
+}
+
+.my-answer-feedback.right {
+  color: #00ba80;
+}
+
+.my-answer-feedback.wrong {
+  color: #f06292;
+}
+
 /****************************************************************************************************/
 
 /* .quiz */
@@ -86,8 +99,7 @@
   display: flex;
   justify-content: center;
   align-content: center;
-  padding: 0 40rpx;
-  padding-top: 160rpx;
+  padding: 180rpx 40rpx 20rpx 40rpx;
   color: #fff;
   font-size: 20px;
   line-height: 36px;
@@ -278,14 +290,6 @@
   margin: 10rpx;
 }
 
-.option.right {
-  border: 10rpx solid #00ba80;
-}
-
-.option.wrong {
-  border: 10rpx solid #e91e63;
-}
-
 .option-key {
   flex: none;
   display: flex;
@@ -302,16 +306,6 @@
 
 .option-key.check {
   background-color: #2e2b3b;
-  color: #fff;
-}
-
-.option-key.right {
-  background-color: #00ba80;
-  color: #fff;
-}
-
-.option-key.wrong {
-  background-color: #e91e63;
   color: #fff;
 }
 
@@ -358,11 +352,11 @@
 }
 
 .option-feedback.right {
-  background: rgba(0, 186, 128, 0.8); /* #00ba80 */
+  background-color: rgba(0, 186, 128, 0.8); /* #00ba80 */
 }
 
 .option-feedback.wrong {
-  background: rgba(233, 30, 99, 0.8); /* #e91e63 */
+  background-color: rgba(240, 98, 146, 0.8); /* #f06292 */
 }
 
 /*= .solutions =*/
@@ -448,6 +442,17 @@
 
 /****************************************************************************************************/
 
+.action-bar {
+  position: absolute;
+  z-index: 1000;
+  bottom: 0;
+  display: flex;
+  width: 100vw;
+  height: 0;
+}
+
+/****************************************************************************************************/
+
 .feedback-modal {
   position: absolute;
   z-index: 1002;
@@ -493,4 +498,34 @@
   margin: 0 20rpx;
   color: #ffa000;
   font-size: 24px;
+}
+
+/****************************************************************************************************/
+
+.poster-modal {
+  position: absolute;
+  z-index: 1002;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(46, 43, 59, 0.9);
+}
+
+.poster-panel {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 120rpx;
+  background-color: #282828;
+  border: 1rpx solid #fff;
+  opacity: 0;
+  will-change: contents;
+  transform: scale3d(0.3, 0.3, 0.3);
 }

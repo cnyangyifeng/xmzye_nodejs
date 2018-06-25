@@ -1,7 +1,6 @@
 const configs = require('../../config')
 const msgs = require('../../msg')
 const qcloud = require('../../vendor/wafer2-client-sdk/index')
-const quizUserBuilder = require('../../services/quizUserBuilder')
 const QuizUser = require('../../services/quizUser')
 
 Page({
@@ -11,10 +10,12 @@ Page({
    */
 
   data: {
+
     reqReferrerId: null,
 
     bgUrl: null,
     loggingIn: false
+
   },
 
   /**
@@ -64,11 +65,11 @@ Page({
 
   parsePageOptions: function (options) {
     // 如果指定了页面参数 referrer_id
-    const referrerId = options.referrer_id
-    if (referrerId) {
+    const reqReferrerId = options.referrer_id
+    if (reqReferrerId) {
       // 更新页面数据 reqReferrerId
       this.setData({
-        reqReferrerId: referrerId
+        reqReferrerId: reqReferrerId
       })
     }
   },

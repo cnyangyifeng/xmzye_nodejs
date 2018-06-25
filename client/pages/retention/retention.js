@@ -11,8 +11,11 @@ Page({
    */
 
   data: {
+
     quizUser: null, // 当前 quizUser
+
     platform: ''
+
   },
 
   /**
@@ -58,7 +61,7 @@ Page({
         console.debug(`转发成功：`, res)
         new Promise((resolve, reject) => {
           const quizUser = this.data.quizUser
-          quizUser.totalKeyCount += 3
+          quizUser.totalKeyCount += 1
           this.setData({
             quizUser: quizUser
           })

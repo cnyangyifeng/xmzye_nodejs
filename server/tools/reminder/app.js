@@ -33,7 +33,7 @@ async function remindQuizUser(quizUserForm) {
         // color: '#e91e63'
       },
       keyword2: {
-        value: '点击卡片，可获赠 3 把钥匙。'
+        value: '点击卡片，可获赠 1 把钥匙。'
       }
     },
     // emphasis_keyword: 'keyword1.DATA'

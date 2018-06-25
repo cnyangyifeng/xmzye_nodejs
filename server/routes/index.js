@@ -10,6 +10,7 @@ router.get('/login', authorizationMiddleware, controllers.login)
 router.get('/message', controllers.message.get)
 router.post('/message', controllers.message.post)
 
+router.get('/posters/:quiz_id', controllers.posters.getPoster)
 router.get('/purchase/place_order', validationMiddleware, controllers.purchase.placeOrder)
 
 router.get('/quiz_user', validationMiddleware, controllers.quizUsers.getQuizUser)

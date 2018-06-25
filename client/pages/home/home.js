@@ -67,6 +67,7 @@ Page({
     quizGrid: null, // 当前 quizGrid
 
     homeState: HOME_STATE_LOADING, // 当前页面状态
+
   },
 
   /* ================================================================================ */
@@ -239,29 +240,29 @@ Page({
 
   parsePageOptions: function (options) {
     // 如果指定了页面参数 referrer_id
-    const referrerId = options.referrer_id
-    if (referrerId) {
+    const reqReferrerId = options.referrer_id
+    if (reqReferrerId) {
       // 更新页面数据 reqReferrerId
       this.setData({
-        reqReferrerId: referrerId
+        reqReferrerId: reqReferrerId
       })
     }
     // 如果指定了页面参数 quiz_id
-    const quizId = options.quiz_id
-    if (quizId) {
+    const reqQuizId = parseInt(options.quiz_id)
+    if (reqQuizId) {
       // 更新页面数据 reqQuizId
       this.setData({
-        reqQuizId: parseInt(quizId)
+        reqQuizId: reqQuizId
       })
     }
     // 如果指定了页面参数 promType, promCode
-    const promType = parseInt(options.prom_type)
-    const promCode = options.prom_code
-    if (promCode) {
+    const reqPromType = parseInt(options.prom_type)
+    const reqPromCode = options.prom_code
+    if (reqPromCode) {
       // 更新页面数据 reqPromType, reqPromCode
       this.setData({
-        reqPromType: promType,
-        reqPromCode: promCode
+        reqPromType: reqPromType,
+        reqPromCode: reqPromCode
       })
     }
   },
@@ -271,6 +272,10 @@ Page({
    */
 
   doShow: function () {
+    // 显示 loading 提示框
+    wx.showLoading({
+      title: msgs.loading_title,
+    })
     // 更新页面数据 quizUser
     this.setData({
       quizUser: QuizUser.get()
@@ -343,7 +348,7 @@ Page({
       if (!reqPromCodeExisted) {
         switch (reqPromType) {
           case PROM_TYPE_FORM_HOOK:
-            quizUser.totalKeyCount += 3
+            quizUser.totalKeyCount += 1
             quizUser.lastVisitTime = dateUtils.formatTime(new Date())
             promCodes.push(reqPromCode)
             PromCodes.set(promCodes)
@@ -387,6 +392,8 @@ Page({
       this.setData({
         homeState: HOME_STATE_MAIN
       })
+      // 隐藏 loading 提示框
+      wx.hideLoading()
     }
   },
 

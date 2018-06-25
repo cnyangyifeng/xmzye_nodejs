@@ -80,11 +80,10 @@ button::after {
 .quiz-user-asset-icon {
   width: 36rpx;
   height: 36rpx;
-  margin-top: 2px;
 }
 
 .quiz-user-asset-value {
-  margin: 0 20rpx;
+  margin: 0 12rpx 0 6rpx;
   color: #fff;
   font-size: 16px;
   text-align: center;
@@ -94,15 +93,6 @@ button::after {
 }
 
 /****************************************************************************************************/
-
-.action-bar {
-  position: absolute;
-  z-index: 1000;
-  bottom: 0;
-  display: flex;
-  width: 100vw;
-  height: 0;
-}
 
 .primary-btn {
   flex: 1;

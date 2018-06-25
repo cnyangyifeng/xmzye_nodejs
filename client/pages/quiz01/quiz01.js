@@ -24,6 +24,8 @@ Page({
   feedbackPanelAnimation: null,
   actionBarAnimation: null,
 
+  posterPanelAnimation: null,
+
   myAnswerPointObserver: null,
 
   /**
@@ -31,6 +33,8 @@ Page({
    */
 
   data: {
+
+    reqQuizId: 0, // 当前请求的 quizId
 
     /**
      * quizUser = {
@@ -107,7 +111,8 @@ Page({
      */
 
     quiz: null, // 当前 quiz
-    reqQuizId: 0, // 当前请求的 quizId
+
+    poster: null, // 当前 poster
 
     /**
      * quizGrid = [
@@ -147,8 +152,12 @@ Page({
     feedbackPanelAnimationData: null,
     quizSolved: 0, // 当前 quiz 是否解答完毕
 
+    posterModalVisible: false,
+    posterPanelAnimationData: null,
+
     redisplayFromSharing: false, // 是否 “分享页面” 操作以后的页面重新显示
     redisplayFromHiding: false, // 是否 “隐藏页面” 操作以后的页面重新显示
+
   },
 
   /* ================================================================================ */
@@ -157,13 +166,9 @@ Page({
    * 监听页面加载
    */
 
-  onLoad: function (options) {
-    const reqQuizId = parseInt(options.quiz_id)
-    console.debug(`当前 quizId: `, reqQuizId)
-    // 更新页面数据 reqQuizId
-    this.setData({
-      reqQuizId: reqQuizId
-    })
+  onLoad: function(options) {
+    // 解析页面参数
+    this.parsePageOptions(options)
     // 初始化各种音效
     this.initCountdownAudioContext()
     this.initOptionAudioContext()
@@ -176,14 +181,13 @@ Page({
    * 监听页面初次渲染完成
    */
 
-  onReady: function () {
-  },
+  onReady: function() {},
 
   /**
    * 监听页面显示
    */
 
-  onShow: function () {
+  onShow: function() {
     // 处理页面显示
     this.doShow()
   },
@@ -192,7 +196,7 @@ Page({
    * 监听页面隐藏
    */
 
-  onHide: function () {
+  onHide: function() {
     // 处理页面隐藏
     this.doHide()
   },
@@ -201,7 +205,7 @@ Page({
    * 监听页面卸载
    */
 
-  onUnload: function () {
+  onUnload: function() {
     // 处理页面卸载
     this.doUnload()
   },
@@ -210,24 +214,22 @@ Page({
    * 监听用户下拉动作
    */
 
-  onPullDownRefresh: function () {
-  },
+  onPullDownRefresh: function() {},
 
   /**
    * 页面上拉触底事件的处理函数
    */
 
-  onReachBottom: function () {
-  },
+  onReachBottom: function() {},
 
   /**
    * 用户点击右上角分享
    */
 
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
     return {
       title: this.data.quiz.title,
-      path: `/pages/home/home?quiz_id=${this.data.reqQuizId}&referrer_id=${this.data.quizUser.quizUserId}`,
+      path: `/pages/home/home?referrer_id=${this.data.quizUser.quizUserId}&quiz_id=${this.data.reqQuizId}`,
       imageUrl: this.data.quiz.question.questionImage.url,
       success: res => {
         console.debug(`转发成功：`, res)
@@ -244,7 +246,7 @@ Page({
    * 绑定事件：点击 bgmControl
    */
 
-  bgmControlTap: function () {
+  bgmControlTap: function() {
     console.debug(`点击 bgmControl`)
     const muted = this.data.quizUser.muted
     // 如果已开启静音模式
@@ -282,10 +284,33 @@ Page({
   },
 
   /**
+   * 绑定事件：点击 posterControl
+   */
+
+  posterControlTap: function() {
+    console.debug(`点击 posterControl`)
+    // 获取 poster
+    this.requestPoster().then(() => {
+      // 显示 posterModal
+      this.setData({
+        posterModalVisible: true
+      })
+      // 播放 posterPanel 动画 zoomIn
+      this.posterPanelAnimation.opacity(1).scale3d(1, 1, 1).step({
+        duration: 200,
+        timingFunction: 'ease-in-out'
+      })
+      this.setData({
+        posterPanelAnimationData: this.posterPanelAnimation.export()
+      })
+    })
+  },
+
+  /**
    * 绑定事件：点击 optionButton
    */
 
-  optionButtonTap: function (e) {
+  optionButtonTap: function(e) {
     if (this.data.quizSolved === 1) {
       return
     }
@@ -328,7 +353,7 @@ Page({
    * 绑定事件：点击 questionImageMask
    */
 
-  questionImageMaskTap: function (e) {
+  questionImageMaskTap: function(e) {
     if (this.data.quizSolved === 1) {
       return
     }
@@ -363,14 +388,16 @@ Page({
           if (!this.myAnswerPointObserver) {
             this.myAnswerPointObserver = wx.createIntersectionObserver().relativeTo('.answer-area').relativeToViewport().observe('.my-answer-point', res => {
               console.debug(`相交区域占目标节点的比例：`, res.intersectionRatio)
-              if (res.intersectionRatio > 0) {
-                this.setData({
-                  myAnswerFeedback: 1
-                })
-              } else {
-                this.setData({
-                  myAnswerFeedback: 0
-                })
+              if (this.data.quizSolved !== 1) {
+                if (res.intersectionRatio > 0) {
+                  this.setData({
+                    myAnswerFeedback: 1
+                  })
+                } else {
+                  this.setData({
+                    myAnswerFeedback: 0
+                  })
+                }
               }
             })
           }
@@ -382,7 +409,7 @@ Page({
    * 绑定事件：点击 questionImageFoot
    */
 
-  questionImageFootTap: function () {
+  questionImageFootTap: function() {
     console.debug(`点击 questionImageFoot`)
     const questionImageUrl = this.data.quiz.question.questionImage.url
     const previewImageUrl = questionImageUrl.substring(0, questionImageUrl.lastIndexOf('.')) + '_hd.jpg'
@@ -396,7 +423,7 @@ Page({
    * 绑定事件：提交 myAnswerForm
    */
 
-  myAnswerFormSubmit: function (e) {
+  myAnswerFormSubmit: function(e) {
     const formId = e.detail.formId
     console.debug(`点击 myAnswerForm, formId: `, formId)
     // 终止计时
@@ -411,17 +438,27 @@ Page({
    * 绑定事件：点击 feedbackModal
    */
 
-  feedbackModalTap: function () {
+  feedbackModalTap: function() {
     console.debug(`点击 feedbackModal`)
-    // 答题反馈
-    this.feedback()
+    // 隐藏 feedbackModal
+    this.hideFeedbackModal()
+  },
+
+  /**
+   * 绑定事件：点击 posterModal
+   */
+
+  posterModalTap: function() {
+    console.debug(`点击 posterModal`)
+    // 隐藏 posterModal
+    this.hidePosterModal()
   },
 
   /**
    * 绑定事件：点击 viewSolutionsButtonTap
    */
 
-  viewSolutionsButtonTap: function () {
+  viewSolutionsButtonTap: function() {
     console.debug(`点击 viewSolutionsButton`)
     // 更新页面数据 quizState
     this.setData({
@@ -433,7 +470,7 @@ Page({
    * 绑定事件：点击 undoButton
    */
 
-  undoButtonTap: function () {
+  undoButtonTap: function() {
     console.debug(`点击 undoButton`)
     // 更新页面数据 quizState
     this.setData({
@@ -445,7 +482,7 @@ Page({
    * 绑定事件：点击 nextButton
    */
 
-  nextButtonTap: function () {
+  nextButtonTap: function() {
     console.debug(`点击 nextButton`)
     // 停止播放 solutions 音效
     this.stopPlayingSolutions()
@@ -455,9 +492,9 @@ Page({
     if (remainder === 0) {
       const quizUser = this.data.quizUser
       quizUser.currentQuizTabIndex++
-      this.setData({
-        quizUser: quizUser
-      })
+        this.setData({
+          quizUser: quizUser
+        })
       QuizUser.set(quizUser)
     }
     // 根据 quizId 获取 quizCardIndex
@@ -480,10 +517,29 @@ Page({
   /* ================================================================================ */
 
   /**
+   * 解析页面参数
+   */
+
+  parsePageOptions: function(options) {
+    // 如果指定了页面参数 quiz_id
+    const reqQuizId = parseInt(options.quiz_id)
+    if (reqQuizId) {
+      // 更新页面数据 reqQuizId
+      this.setData({
+        reqQuizId: reqQuizId
+      })
+    }
+  },
+
+  /**
    * 处理页面隐藏
    */
 
-  doShow: function () {
+  doShow: function() {
+    // 显示 loading 提示框
+    wx.showLoading({
+      title: msgs.loading_title,
+    })
     // 更新页面数据 quizUser
     this.setData({
       quizUser: QuizUser.get()
@@ -543,10 +599,13 @@ Page({
               actionBarAnimationData: this.actionBarAnimation.export()
             })
           }
+          // 隐藏 loading 提示框
+          wx.hideLoading()
           // 开始计时
           this.countingDown()
         })
       } else {
+        wx.hideLoading()
         wx.navigateBack({
           delta: -1
         })
@@ -558,7 +617,7 @@ Page({
    * 处理页面隐藏
    */
 
-  doHide: function () {
+  doHide: function() {
     // 尚未开始计时，则禁用计时
     this.disableCountingDown()
     // 已经开始计时，则清除计时
@@ -575,7 +634,7 @@ Page({
    * 处理页面卸载
    */
 
-  doUnload: function () {
+  doUnload: function() {
     // 尚未开始计时，则禁用计时
     this.disableCountingDown()
     // 已经开始计时，则清除计时
@@ -585,10 +644,52 @@ Page({
   },
 
   /**
+   * 获取 poster
+   */
+
+  requestPoster: function() {
+    return new Promise((resolve, reject) => {
+      // 显示 loading 提示框
+      wx.showLoading({
+        title: msgs.loading_title,
+      })
+      // 如果页面数据 poster 存在
+      if (this.data.poster) {
+        // 隐藏 loading 提示框
+        wx.hideLoading()
+        // 直接返回操作成功
+        resolve()
+      } else {
+        wx.request({
+          url: `${configs.weapp}/posters/${this.data.reqQuizId}`,
+          success: res => {
+            console.debug(`获取 poster 成功`)
+            // 隐藏 loading 提示框
+            wx.hideLoading()
+            // 更新页面数据 poster
+            this.setData({
+              poster: res.data.data
+            })
+            // 操作成功
+            resolve()
+          },
+          fail: err => {
+            console.debug(`获取 poster 失败`)
+            // 隐藏 loading 提示框
+            wx.hideLoading()
+            // 操作失败
+            // reject()
+          }
+        })
+      }
+    })
+  },
+
+  /**
    * 获取 quiz
    */
 
-  requestQuiz: function () {
+  requestQuiz: function() {
     return new Promise((resolve, reject) => {
       // 如果页面数据 quiz 存在
       if (this.data.quiz) {
@@ -623,7 +724,7 @@ Page({
    * 开始计时
    */
 
-  countingDown: function () {
+  countingDown: function() {
     // 如果是 “隐藏页面” 操作以后的页面重新显示
     if (this.data.redisplayFromHiding) {
       this.setData({
@@ -634,7 +735,8 @@ Page({
     // 启用计时
     if (this.data.quiz.timed && this.data.countingDownEnabled) {
       const timeLimit = this.data.quiz.timeLimit
-      let timeElapsed = this.data.timeElapsed, percent
+      let timeElapsed = this.data.timeElapsed,
+        percent
       // 如果未超时
       if (timeElapsed < timeLimit) {
         console.debug(`开始计时`)
@@ -786,7 +888,7 @@ Page({
    * 解锁 quiz
    */
 
-  unlockQuiz: function (quizCardIndex) {
+  unlockQuiz: function(quizCardIndex) {
     let unlocked = false
     const quizGrid = this.data.quizGrid
     const quizTabIndex = this.data.quizUser.currentQuizTabIndex
@@ -805,9 +907,9 @@ Page({
         // 消耗 1 把钥匙
         const quizUser = this.data.quizUser
         quizUser.totalKeyCount--
-        this.setData({
-          quizUser: quizUser
-        })
+          this.setData({
+            quizUser: quizUser
+          })
         QuizUser.set(quizUser)
         // 同步 quizUser
         this.syncQuizUser()
@@ -843,9 +945,9 @@ Page({
       if (myAnswerFeedback === 1) {
         const quizUser = this.data.quizUser
         quizUser.totalKeyCount++
-        this.setData({
-          quizUser: quizUser
-        })
+          this.setData({
+            quizUser: quizUser
+          })
         QuizUser.set(quizUser)
         this.syncQuizUser()
       }
@@ -868,9 +970,9 @@ Page({
         quizSolved: 1
       })
       this.cacheQuizAsSolved()
-      // 答题反馈
+      // 隐藏 feedbackModal
       setTimeout(() => {
-        this.feedback()
+        this.hideFeedbackModal()
       }, 2400)
     })
   },
@@ -879,7 +981,7 @@ Page({
    * 检查答案
    */
 
-  checkMyAnswer: function () {
+  checkMyAnswer: function() {
     return new Promise((resolve, reject) => {
       const quiz = this.data.quiz
       if (quiz.quizType === 1) {
@@ -903,10 +1005,10 @@ Page({
   },
 
   /**
-   * 答题反馈
+   * 隐藏 feedbackModal
    */
 
-  feedback() {
+  hideFeedbackModal() {
     new Promise((resolve, reject) => {
       // 播放 feedbackPanel 动画 zoomOut
       this.feedbackPanelAnimation.opacity(0).scale3d(0, 0, 0).step({
@@ -921,7 +1023,7 @@ Page({
     }).then(() => {
       new Promise((resolve, reject) => {
         setTimeout(() => {
-          // 隐藏 feedback
+          // 隐藏 feedbackModal
           this.setData({
             feedbackModalVisible: false
           })
@@ -942,10 +1044,40 @@ Page({
   },
 
   /**
+   * 隐藏 posterModal
+   */
+
+  hidePosterModal: function() {
+    new Promise((resolve, reject) => {
+      // 播放 posterPanel 动画 zoomOut
+      this.posterPanelAnimation.opacity(0).scale3d(0, 0, 0).step({
+        duration: 200,
+        timingFunction: 'ease-in-out'
+      })
+      this.setData({
+        posterPanelAnimationData: this.posterPanelAnimation.export()
+      })
+      // 操作完成
+      resolve()
+    }).then(() => {
+      new Promise((resolve, reject) => {
+        setTimeout(() => {
+          // 隐藏 feedbackModal
+          this.setData({
+            posterModalVisible: false
+          })
+          // 操作完成
+          resolve()
+        }, 400)
+      })
+    })
+  },
+
+  /**
    * 同步 quizUser
    */
 
-  syncQuizUser: function (formId) {
+  syncQuizUser: function(formId) {
     return new Promise((resolve, reject) => {
       // 准备信道消息
       let content
@@ -977,7 +1109,7 @@ Page({
    * 初始化 bgmAudioContext
    */
 
-  initBgmAudioContext: function (bgmUrl) {
+  initBgmAudioContext: function(bgmUrl) {
     console.debug(`初始化 bgm 音效`)
     this.bgmAudioContext = wx.createInnerAudioContext()
     this.bgmAudioContext.src = bgmUrl
@@ -1002,7 +1134,7 @@ Page({
    * 初始化 countdownAudioContext
    */
 
-  initCountdownAudioContext: function () {
+  initCountdownAudioContext: function() {
     console.debug(`初始化 countdown 音效`)
     this.countdownAudioContext = wx.createInnerAudioContext()
     this.countdownAudioContext.src = '/assets/audios/ticking.mp3'
@@ -1027,7 +1159,7 @@ Page({
    * 初始化 optionAudioContext
    */
 
-  initOptionAudioContext: function () {
+  initOptionAudioContext: function() {
     console.debug(`初始化 option 音效`)
     this.optionAudioContext = wx.createInnerAudioContext()
     this.optionAudioContext.src = '/assets/audios/ding.mp3'
@@ -1051,7 +1183,7 @@ Page({
    * 初始化 solutionsAudioContext
    */
 
-  initSolutionsAudioContext: function () {
+  initSolutionsAudioContext: function() {
     console.debug(`初始化 solutions 音效`)
     this.solutionsAudioContext = wx.createInnerAudioContext()
     this.solutionsAudioContext.src = '/assets/audios/mot.mp3'
@@ -1075,17 +1207,18 @@ Page({
    * 初始化各种动画
    */
 
-  initAnimations: function () {
+  initAnimations: function() {
     console.debug(`初始化各种动画`)
     this.feedbackPanelAnimation = wx.createAnimation()
     this.actionBarAnimation = wx.createAnimation()
+    this.posterPanelAnimation = wx.createAnimation()
   },
 
   /**
    * 缓存 quizAsLoaded
    */
 
-  cacheQuizAsLoaded: function () {
+  cacheQuizAsLoaded: function() {
     console.debug(`缓存 quizAsLoaded`)
     const quizTabIndex = this.data.quizUser.currentQuizTabIndex
     const quizCardIndex = this.getQuizCardIndexByQuizId(this.data.reqQuizId)
@@ -1102,7 +1235,7 @@ Page({
    * 缓存 timeElapsed
    */
 
-  cacheTimeElapsed: function () {
+  cacheTimeElapsed: function() {
     console.debug(`缓存 timeElapsed`)
     const quizTabIndex = this.data.quizUser.currentQuizTabIndex
     const quizCardIndex = this.getQuizCardIndexByQuizId(this.data.reqQuizId)
@@ -1118,7 +1251,7 @@ Page({
    * 缓存 myAnswerKey
    */
 
-  cacheMyAnswerKey: function () {
+  cacheMyAnswerKey: function() {
     console.debug(`缓存 myAnswerKey`)
     const quizTabIndex = this.data.quizUser.currentQuizTabIndex
     const quizCardIndex = this.getQuizCardIndexByQuizId(this.data.reqQuizId)
@@ -1134,7 +1267,7 @@ Page({
    * 缓存 myAnswerPoint
    */
 
-  cacheMyAnswerPoint: function () {
+  cacheMyAnswerPoint: function() {
     console.debug(`缓存 myAnswerPoint`)
     const quizTabIndex = this.data.quizUser.currentQuizTabIndex
     const quizCardIndex = this.getQuizCardIndexByQuizId(this.data.reqQuizId)
@@ -1150,7 +1283,7 @@ Page({
    * 缓存 myAnswerFeedback
    */
 
-  cacheMyAnswerFeedback: function (myAnswerFeedback) {
+  cacheMyAnswerFeedback: function(myAnswerFeedback) {
     console.debug(`缓存 myAnswerFeedback`)
     const quizTabIndex = this.data.quizUser.currentQuizTabIndex
     const quizCardIndex = this.getQuizCardIndexByQuizId(this.data.reqQuizId)
@@ -1166,7 +1299,7 @@ Page({
    * 缓存 quizSolved
    */
 
-  cacheQuizAsSolved: function () {
+  cacheQuizAsSolved: function() {
     console.debug(`缓存 quizSolved`)
     const quizTabIndex = this.data.quizUser.currentQuizTabIndex
     const quizCardIndex = this.getQuizCardIndexByQuizId(this.data.reqQuizId)
@@ -1182,7 +1315,7 @@ Page({
    * 根据 quizId 获取 quizCardIndex
    */
 
-  getQuizCardIndexByQuizId: function (quizId) {
+  getQuizCardIndexByQuizId: function(quizId) {
     const remainder = quizId % quizGridBuilder.QUIZ_CARD_COUNT_PER_TAB
     return (remainder === 0) ? quizGridBuilder.QUIZ_CARD_COUNT_PER_TAB - 1 : remainder - 1
   }

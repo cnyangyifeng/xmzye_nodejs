@@ -1,5 +1,4 @@
-const QuizzesData = [
-  {
+const QuizzesData = [{
     quizId: 1,
     quizType: 1,
     title: '白色的幽灵',
@@ -8,15 +7,14 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '莫尔夫人颤抖着对吉塔侦探说：“吓死我了！刚刚好像有个白色的幽灵从我家客厅里一闪而过，撞到门上然后就消失了。我壮着胆子去客厅，没有找到幽灵，却发现中奖的彩票不见了！”'
+          text: '李阿姨颤抖着说：“刚刚好像有个白色的幽灵从我家客厅里一闪而过，撞到了门上，然后就消失了。我壮着胆子去客厅里检查，没有找到幽灵，却发现中奖的彩票不见了！”'
         },
         {
           blockId: '3',
@@ -29,7 +27,7 @@ const QuizzesData = [
         {
           blockId: '5',
           blockType: 'normal-text',
-          text: '吉塔侦探推测，很有可能是莫尔夫人的某位邻居，为了偷她的彩票，故意装神弄鬼。她立刻找来所有的犯罪嫌疑人，挨个询问他们刚刚在干什么。'
+          text: '警方怀疑很有可能是李阿姨的邻居为了偷她的彩票故意跑过来装神弄鬼，于是紧急传讯了三名嫌疑人并询问他们刚刚在做什么。章秋太太说：“我在做菜。” 范安先生说：“我刚刚出去买东西了。” 邵武先生说：“我刚洗完澡从浴室里出来。”'
         },
         {
           blockId: '6',
@@ -42,45 +40,6 @@ const QuizzesData = [
         {
           blockId: '8',
           blockType: 'normal-text',
-          text: '齐贝尔太太说：“我在做菜。”'
-        },
-        {
-          blockId: '9',
-          blockType: 'return'
-        },
-        {
-          blockId: '10',
-          blockType: 'tab'
-        },
-        {
-          blockId: '11',
-          blockType: 'normal-text',
-          text: '伯尔特先生说：“我出去买东西了。”'
-        },
-        {
-          blockId: '12',
-          blockType: 'return'
-        },
-        {
-          blockId: '13',
-          blockType: 'tab'
-        },
-        {
-          blockId: '14',
-          blockType: 'normal-text',
-          text: '纳塞尔先生说：“我刚洗完澡从浴室出来。”'
-        },
-        {
-          blockId: '15',
-          blockType: 'return'
-        },
-        {
-          blockId: '16',
-          blockType: 'tab'
-        },
-        {
-          blockId: '17',
-          blockType: 'normal-text',
           text: '这三个人之中谁在说谎？请从图片下方的 A、B、C 三个选项中，选出正确答案。'
         }
       ],
@@ -91,64 +50,53 @@ const QuizzesData = [
     },
     options: {
       layout: 'row',
-      optionsData: [
-        {
+      optionsData: [{
           optionKey: 'A',
-          optionData: [
-            {
-              blockId: '1',
-              blockType: 'normal-text',
-              text: '齐贝尔太太'
-            }
-          ]
+          optionData: [{
+            blockId: '1',
+            blockType: 'normal-text',
+            text: '章秋太太'
+          }]
         },
         {
           optionKey: 'B',
-          optionData: [
-            {
-              blockId: '1',
-              blockType: 'normal-text',
-              text: '伯尔特先生'
-            }
-          ]
+          optionData: [{
+            blockId: '1',
+            blockType: 'normal-text',
+            text: '范安先生'
+          }]
         },
         {
           optionKey: 'C',
-          optionData: [
-            {
-              blockId: '1',
-              blockType: 'normal-text',
-              text: '纳赛尔先生'
-            }
-          ]
+          optionData: [{
+            blockId: '1',
+            blockType: 'normal-text',
+            text: '邵武先生'
+          }]
         }
       ]
     },
     answerKey: 'C',
-    solutions: [
-      {
+    solutions: [{
         solutionTag: '答案',
         align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: 'C. 纳赛尔先生'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: 'C. 邵武先生'
+        }]
       },
       {
         solutionTag: '解析',
         align: 'left',
-        solutionData: [
-          {
+        solutionData: [{
             blockId: '1',
             blockType: 'tab'
           },
           {
             blockId: '2',
             blockType: 'normal-text',
-            text: '纳赛尔先生在说谎。如果他真的刚洗完澡从浴室出来，那么头发应该是湿的，更不应该在浴袍里面还穿着衬衫、打着领带。'
+            text: '邵武先生在说谎。如果他真的刚洗完澡从浴室里出来，那么头发应该是湿的，更不应该在浴袍里面还穿着衬衫、打着领带。'
           },
           {
             blockId: '3',
@@ -161,7 +109,7 @@ const QuizzesData = [
           {
             blockId: '5',
             blockType: 'normal-text',
-            text: '另外，他的额头上还贴着创可贴呢，说不定就是他刚刚撞到门上了。'
+            text: '另外，他的额头上贴着创可贴，应该就是他刚刚撞到门上了。'
           }
         ]
       }
@@ -170,21 +118,20 @@ const QuizzesData = [
   {
     quizId: 2,
     quizType: 1,
-    title: '粉色玛格达勒娜',
+    title: '疯狂的黒女王邮票',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '毛里提乌斯·蔡信最珍贵的邮票——粉色玛格达勒娜失踪了。今天曾经有3个人来拜访他，肯定是他们中的某人从起居室的集邮册里拿走了这枚邮票。'
+          text: '陈平先生珍藏多年的黒女王邮票被人偷走了！他认真回忆了一下，确定今天只有三个外人分别来过家里，应该是他们之中的某个人从书房的集邮册里拿走了这枚邮票。'
         },
         {
           blockId: '3',
@@ -197,7 +144,7 @@ const QuizzesData = [
         {
           blockId: '5',
           blockType: 'normal-text',
-          text: '卡勒侦探查看了3个人的陈述：奥托是水管工，他在厨房里修理漏水的水龙头，没有进人其他房间。弗里德尔·施托尔是保险经纪人，他怒气冲冲地点燃一根雪茄并解释，他只是来送保险文件，放在厨房的桌子上了。特鲁德·维施尔是家政员，她每周四固定来打扫房间，但是起居室是由蔡信先生自己整理，她不能进入。'
+          text: '李冰是一名维修工，他说自己一整天都在厨房修理漏水的水龙头，没有进过其他房间。杨阳是一名保险推销员，他说自己只是来送保险文件的，把文件放到客厅桌子上就离开了。王萍是一名家政服务员，她每周都来家里打扫卫生，但是书房一直都是由陈平先生亲自收拾的，不需要她帮忙。'
         },
         {
           blockId: '6',
@@ -210,7 +157,7 @@ const QuizzesData = [
         {
           blockId: '8',
           blockType: 'normal-text',
-          text: '卡勒侦探在起居室里发现一个重要证物，驳斥了其中一个人的陈述。请仔细观察！小偷在起居室里留下了什么，从而证明了他的犯罪事实？'
+          text: '在陈平先生的书房里有一个重要证物，可以确定这三个人之中到底是谁在说谎。请从图片下方的 A、B、C 三个选项中，选出正确答案。'
         }
       ],
       questionImage: {
@@ -220,14 +167,12 @@ const QuizzesData = [
     },
     options: {
       layout: 'row',
-      optionsData: [
-        {
+      optionsData: [{
           optionKey: 'A',
-          optionData: [
-            {
+          optionData: [{
               blockId: '1',
               blockType: 'normal-text',
-              text: '奥托'
+              text: '李冰'
             },
             {
               blockId: '2',
@@ -246,11 +191,10 @@ const QuizzesData = [
         },
         {
           optionKey: 'B',
-          optionData: [
-            {
+          optionData: [{
               blockId: '1',
               blockType: 'normal-text',
-              text: '弗里德尔·施托尔'
+              text: '杨阳'
             },
             {
               blockId: '2',
@@ -269,11 +213,10 @@ const QuizzesData = [
         },
         {
           optionKey: 'C',
-          optionData: [
-            {
+          optionData: [{
               blockId: '1',
               blockType: 'normal-text',
-              text: '特鲁德·维施尔'
+              text: '王萍'
             },
             {
               blockId: '2',
@@ -293,28 +236,26 @@ const QuizzesData = [
       ]
     },
     answerKey: 'B',
-    solutions: [
-      {
+    solutions: [{
         solutionTag: '答案',
         align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: 'B 弗里德尔·施托尔'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: 'B. 杨阳'
+        }]
       },
       {
         solutionTag: '解析',
         align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '蔡信先生起居室里的沙发下面有一个雪茄烟蒂，只有保险经纪人弗里德尔·施托尔抽雪茄，因此他说没有进入过起居室的证词是假的，就是他偷走了邮票。'
-          }
-        ]
+        solutionData: [{
+          blockId: '13',
+          blockType: 'tab'
+        }, {
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '陈平先生书房的沙发底下有一个烟头。三名嫌疑人之中只有保险推销员杨阳抽烟。所以他肯定进过书房，是他在说谎。'
+        }]
       }
     ]
   },
@@ -327,100 +268,14 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '“啊，弄错了！”吉塔侦探大叫，她竟然把当前的通缉犯照片给撕碎了，太糟糕了。她只想清理些旧文件，让自己在堆积如山的资料中喘口气。她一共撕碎了3个通缉犯的照片，其中之一是路齐。明天晚上吉塔侦探就要根据照片在某场大型会议上搜寻他的踪迹。现在除了把这此碎片再次拼成完整的照片外，没有别的办法了。幸运的是，她还有一张路齐的模拟图像。接下来，请帮助吉塔侦探复原通缉犯路齐的识别编号。'
-        }
-      ],
-      questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/zst7dcmj.jpg',
-        height: 1400
-      }
-    },
-    options: {
-      layout: 'row',
-      optionsData: [
-        {
-          optionKey: 'A',
-          optionData: [
-            {
-              blockId: '1',
-              blockType: 'normal-text',
-              text: '479901'
-            }
-          ]
-        },
-        {
-          optionKey: 'B',
-          optionData: [
-            {
-              blockId: '1',
-              blockType: 'normal-text',
-              text: '367315'
-            }
-          ]
-        },
-        {
-          optionKey: 'C',
-          optionData: [
-            {
-              blockId: '1',
-              blockType: 'normal-text',
-              text: '723927'
-            }
-          ]
-        },
-        {
-          optionKey: 'D',
-          optionData: [
-            {
-              blockId: '1',
-              blockType: 'normal-text',
-              text: '367927'
-            }
-          ]
-        }
-      ]
-    },
-    answerKey: 'A',
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '根据照片碎片的边缘拼出盗窃犯路齐的识别编号是：479901。'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    quizId: 4,
-    quizType: 1,
-    title: '甜蜜的诱惑',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
-    timed: true,
-    timeLimit: 120000,
-    question: {
-      questionId: 1,
-      questionTextData: [
-        {
-          blockId: '1',
-          blockType: 'tab'
-        },
-        {
-          blockId: '2',
-          blockType: 'normal-text',
-          text: '楚克迈尔面包房的招牌甜品是“克拉赫堡美味小蛋糕”，客人们经常在店外排起长队等待面包房开门。楚克迈尔刚要开门请顾客进来，突然发现所有的小蛋糕都不见了！'
+          text: '“啊，糟糕！” 马飞警长大叫了一声。他刚刚不小心把一个叫陆齐的特级通缉犯的照片给撕碎了，一起撕碎的还有其他两个普通刑事案件犯罪嫌疑人的照片。'
         },
         {
           blockId: '3',
@@ -433,7 +288,114 @@ const QuizzesData = [
         {
           blockId: '5',
           blockType: 'normal-text',
-          text: '这一切肯定是在楚克迈尔出去打电话的5分钟内发生的，当时店里只有会计佩拉、店员维尔玛和送货员多纳尔德。吉塔侦探刚好也在排队买小蛋糕，她很快就知道了谁是那个爱吃甜食的人。那么，谁是那个甜食爱好者呢？'
+          text: '幸好马飞警长手头还有一张陆齐的通缉画像。请从图片下方的 A、B、C 三个选项中，选出陆齐的通缉令编号。'
+        }
+      ],
+      questionImage: {
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/zst7dcmj.jpg',
+        height: 1400
+      }
+    },
+    options: {
+      layout: 'row',
+      optionsData: [{
+          optionKey: 'A',
+          optionData: [{
+            blockId: '1',
+            blockType: 'normal-text',
+            text: '479901'
+          }]
+        },
+        {
+          optionKey: 'B',
+          optionData: [{
+            blockId: '1',
+            blockType: 'normal-text',
+            text: '367315'
+          }]
+        },
+        {
+          optionKey: 'C',
+          optionData: [{
+            blockId: '1',
+            blockType: 'normal-text',
+            text: '723927'
+          }]
+        },
+        {
+          optionKey: 'D',
+          optionData: [{
+            blockId: '1',
+            blockType: 'normal-text',
+            text: '367927'
+          }]
+        }
+      ]
+    },
+    answerKey: 'A',
+    solutions: [{
+        solutionTag: '答案',
+        align: 'center',
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: 'A. 479901'
+        }]
+      },
+      {
+        solutionTag: '解析',
+        align: 'center',
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '请注意观察陆齐的嘴型。'
+        }]
+      }
+    ]
+  },
+  {
+    quizId: 4,
+    quizType: 1,
+    title: '甜蜜的诱惑',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
+    timed: true,
+    timeLimit: 120000,
+    question: {
+      questionId: 1,
+      questionTextData: [{
+          blockId: '1',
+          blockType: 'tab'
+        },
+        {
+          blockId: '2',
+          blockType: 'normal-text',
+          text: '网红店 “可可烘焙屋” 的招牌甜品是一款名叫 “克拉赫堡” 的美味小蛋糕。早上十点还没开始营业，门外的顾客就已经排起了长队，等着购买这款限量供应的甜品。'
+        },
+        {
+          blockId: '3',
+          blockType: 'return'
+        },
+        {
+          blockId: '4',
+          blockType: 'tab'
+        },
+        {
+          blockId: '5',
+          blockType: 'normal-text',
+          text: '正当一切就绪、准备开门的时候，店主徐杰接到了一个骚扰电话。等他挂掉电话回到店里，却震惊地发现小蛋糕被人偷吃光了！在这短短的五分钟之内，只有财务经理赵莉、店员孙蓓和送货员周顺在现场。'
+        },
+        {
+          blockId: '6',
+          blockType: 'return'
+        },
+        {
+          blockId: '7',
+          blockType: 'tab'
+        },
+        {
+          blockId: '8',
+          blockType: 'normal-text',
+          text: '有足够的证据表明，偷吃小蛋糕的人此刻还在店里。请从图片下方的 A、B、C 三个选项中，选出这个人是谁。'
         }
       ],
       questionImage: {
@@ -443,60 +405,53 @@ const QuizzesData = [
     },
     options: {
       layout: 'row',
-      optionsData: [
-        {
+      optionsData: [{
           optionKey: 'A',
-          optionData: [
-            {
-              blockId: '1',
-              blockType: 'normal-text',
-              text: '会计佩拉'
-            }
-          ]
+          optionData: [{
+            blockId: '1',
+            blockType: 'normal-text',
+            text: '财务经理赵莉'
+          }]
         },
         {
           optionKey: 'B',
-          optionData: [
-            {
-              blockId: '1',
-              blockType: 'normal-text',
-              text: '店员维尔玛'
-            }
-          ]
+          optionData: [{
+            blockId: '1',
+            blockType: 'normal-text',
+            text: '店员孙蓓'
+          }]
         },
         {
           optionKey: 'C',
-          optionData: [
-            {
-              blockId: '1',
-              blockType: 'normal-text',
-              text: '送货员多纳尔德'
-            }
-          ]
+          optionData: [{
+            blockId: '1',
+            blockType: 'normal-text',
+            text: '送货员周顺'
+          }]
         }
       ]
     },
     answerKey: 'C',
-    solutions: [
-      {
+    solutions: [{
         solutionTag: '答案',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: 'C 送货员多纳尔德'
-          }
-        ]
+        align: 'center',
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: 'C. 送货员周顺'
+        }]
       },
       {
         solutionTag: '解析',
         align: 'left',
-        solutionData: [
-          {
+        solutionData: [{
             blockId: '1',
+            blockType: 'tab'
+          },
+          {
+            blockId: '2',
             blockType: 'normal-text',
-            text: '面粉上的运动鞋印透露了小偷穿的鞋，会计佩拉穿的是皮鞋，店员维尔玛穿的是高跟鞋，只有送货员多纳尔德穿的是轻便的运动鞋。'
+            text: '撒着面粉的地面上印满了运动鞋鞋印。三名嫌疑人之中只有送货员周顺穿的是运动鞋。'
           }
         ]
       }
@@ -504,6 +459,66 @@ const QuizzesData = [
   },
   {
     quizId: 5,
+    quizType: 1,
+    title: '马可·波罗失踪了',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
+    timed: true,
+    timeLimit: 120000,
+    question: {
+      questionId: 1,
+      questionTextData: [{
+          blockId: '1',
+          blockType: 'tab'
+        },
+        {
+          blockId: '2',
+          blockType: 'normal-text',
+          text: '世界公园里的马可·波罗雕像被人凿破偷走了！最有嫌疑的人是门卫李大爷和园艺师孙师傅。请从图片下方的 A、B 两个选项中，选出这个小偷是谁。'
+        }
+      ],
+      questionImage: {
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/vkbgz5f5.jpg',
+        height: 980
+      }
+    },
+    options: {
+      layout: 'row',
+      optionsData: [{
+          optionKey: 'A',
+          optionData: [{
+            blockId: '1',
+            blockType: 'normal-text',
+            text: '门卫李大爷'
+          }]
+        },
+        {
+          optionKey: 'B',
+          optionData: [{
+            blockId: '1',
+            blockType: 'normal-text',
+            text: '园艺师孙师傅'
+          }]
+        }
+      ]
+    },
+    answerKey: 'A',
+    solutions: [{
+      solutionTag: '解析',
+      align: 'left',
+      solutionData: [{
+          blockId: '1',
+          blockType: 'tab'
+        },
+        {
+          blockId: '2',
+          blockType: 'normal-text',
+          text: '地面的碎石堆里有一颗纽扣，门卫李大爷的制服上少了一颗一模一样的纽扣。'
+        }
+      ]
+    }]
+  },
+  {
+    quizId: 6,
     quizType: 2,
     title: '被调包的收藏品',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -511,8 +526,7 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
@@ -532,33 +546,7 @@ const QuizzesData = [
         {
           blockId: '5',
           blockType: 'normal-text',
-          text: '就在米娅放下手提箱、抬头核对火车时刻表的时候，瓦洛悄悄走过去调换了箱子，然后迅速混入人流之中，很快就要消失不见了。'
-        },
-        {
-          blockId: '6',
-          blockType: 'return'
-        },
-        {
-          blockId: '7',
-          blockType: 'tab'
-        },
-        {
-          blockId: '8',
-          blockType: 'normal-text',
-          text: '幸运的是，大名鼎鼎的卡勒侦探碰巧也在候车大厅！他亲眼目睹了瓦洛调换箱子的全过程，而且一直紧盯着他的去向。卡勒侦探马上就要采取行动了！'
-        },
-        {
-          blockId: '9',
-          blockType: 'return'
-        },
-        {
-          blockId: '10',
-          blockType: 'tab'
-        },
-        {
-          blockId: '11',
-          blockType: 'normal-text',
-          text: '你也找到瓦洛了吗？请在下图中指出他的位置。'
+          text: '就在米娅放下手提箱、抬头核对火车时刻表的时候，瓦洛悄悄走过去调换了箱子，然后迅速混入人流之中，很快就要消失不见了。你找到瓦洛了吗？请在下图中指出他的位置。'
         }
       ],
       questionImage: {
@@ -566,43 +554,42 @@ const QuizzesData = [
         height: 980
       }
     },
-    answerArea: { x: 260, y: 90 },
-    solutions: [
-      {
-        solutionTag: '答案',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'tab'
-          },
-          {
-            blockId: '2',
-            blockType: 'normal-text',
-            text: '瓦洛提着外观一模一样的箱子，就站在 “小餐馆” 标识牌右侧的楼梯上。'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    quizId: 6,
-    quizType: 2,
-    title: '诈骗犯奥兰多',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
-    timed: true,
-    timeLimit: 120000,
-    question: {
-      questionId: 1,
-      questionTextData: [
-        {
+    answerArea: {
+      x: 260,
+      y: 90
+    },
+    solutions: [{
+      solutionTag: '答案',
+      align: 'left',
+      solutionData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '在前往机场的大巴上，吉塔侦探紧盯着坐在她前排座位上的诈骗犯奥兰多。在法院下达限制出境令之前，吉塔侦探必须尽可能阻止他坐飞机离境。奥兰多的外貌特征很明显：他蓄着一把大胡子，还抱着一个大行李包。'
+          text: '瓦洛提着外观一模一样的箱子，就站在 “小餐馆” 标识牌右侧的楼梯上。'
+        }
+      ]
+    }]
+  },
+  {
+    quizId: 7,
+    quizType: 2,
+    title: '诈骗犯贾云亭',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
+    timed: true,
+    timeLimit: 120000,
+    question: {
+      questionId: 1,
+      questionTextData: [{
+          blockId: '1',
+          blockType: 'tab'
+        },
+        {
+          blockId: '2',
+          blockType: 'normal-text',
+          text: '在前往机场的大巴上，程岚侦探紧紧地盯着坐在她前排座位上的诈骗犯贾云亭。在法院下达限制出境令之前，必须阻止他坐飞机离境。贾云亭的外貌特征很明显：他留着一把大胡子，还抱着一个大行李包。'
         },
         {
           blockId: '3',
@@ -615,20 +602,7 @@ const QuizzesData = [
         {
           blockId: '5',
           blockType: 'normal-text',
-          text: '在拥挤的机场候机厅里，奥兰多走进了男厕所，然后就消失不见了。这个骗子一定是变装易容了！'
-        },
-        {
-          blockId: '6',
-          blockType: 'return'
-        },
-        {
-          blockId: '7',
-          blockType: 'tab'
-        },
-        {
-          blockId: '8',
-          blockType: 'normal-text',
-          text: '吉塔侦探很着急，她现在很需要你的帮助！请在下面的第二张图中指出奥兰多藏在哪里。'
+          text: '在拥挤的机场候机厅里，贾云亭走进了男厕所，然后就消失不见了。他一定是变装易容了！程岚侦探现在很着急，她很需要你的帮助！请在下面的第二张图中帮她指出贾云亭藏在哪里。'
         }
       ],
       questionImage: {
@@ -636,28 +610,28 @@ const QuizzesData = [
         height: 995
       }
     },
-    answerArea: { x: 10, y: 270 },
-    solutions: [
-      {
+    answerArea: {
+      x: 10,
+      y: 270
+    },
+    solutions: [{
         solutionTag: '答案',
         align: 'left',
-        solutionData: [
-          {
+        solutionData: [{
             blockId: '1',
             blockType: 'tab'
           },
           {
             blockId: '2',
             blockType: 'normal-text',
-            text: '狡猾的奥兰多就藏在报刊亭右侧的角落里。'
+            text: '贾云亭就藏在报刊亭右侧的角落里。'
           }
         ]
       },
       {
         solutionTag: '解析',
         align: 'left',
-        solutionData: [
-          {
+        solutionData: [{
             blockId: '1',
             blockType: 'tab'
           },
@@ -671,7 +645,7 @@ const QuizzesData = [
     ]
   },
   {
-    quizId: 7,
+    quizId: 8,
     quizType: 2,
     title: '保密的新品配方',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -679,15 +653,14 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '著名的食品生产商麦克·阿罗尼公司决定改良其备受好评的面条加工配方，明天就要召开新品发布会了。公司员工波奇刚刚无意间路过市场总监办公室。透过半透明玻璃，他震惊地发现：新品配方居然被交给了竞争对手派来的商业间谍！'
+          text: '著名的食品生产商麦可·阿罗尼公司决定改良其备受好评的面条加工配方，明天就要召开新品发布会了。公司员工波奇刚刚无意间路过市场总监办公室。透过半透明玻璃，他震惊地发现：新品配方居然被交给了竞争对手派来的商业间谍！'
         },
         {
           blockId: '3',
@@ -700,7 +673,7 @@ const QuizzesData = [
         {
           blockId: '5',
           blockType: 'normal-text',
-          text: '那名商业间谍现在已经走到大街上了。波奇决定为公司追回配方，避免无法挽救的商业损失。请在下面的第二张图中帮他指出间谍走到哪里了。'
+          text: '那名商业间谍现在已经走到大街上了。波奇决定为公司追回配方，避免无法挽救的商业损失。请在下面的第二张图中帮他指出间谍到底在哪里。'
         }
       ],
       questionImage: {
@@ -708,42 +681,27 @@ const QuizzesData = [
         height: 1360
       }
     },
-    answerArea: { x: 50, y: 430 },
-    solutions: [
-      {
-        solutionTag: '答案',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'tab'
-          },
-          {
-            blockId: '2',
-            blockType: 'normal-text',
-            text: '那名商业间谍就走在大树的右侧，左手还夹着文件袋呢。'
-          }
-        ]
-      },
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'tab'
-          },
-          {
-            blockId: '2',
-            blockType: 'normal-text',
-            text: '看发型就知道一定是她！'
-          }
-        ]
-      }
-    ]
+    answerArea: {
+      x: 50,
+      y: 430
+    },
+    solutions: [{
+      solutionTag: '答案',
+      align: 'left',
+      solutionData: [{
+          blockId: '1',
+          blockType: 'tab'
+        },
+        {
+          blockId: '2',
+          blockType: 'normal-text',
+          text: '那名商业间谍就走在大树的右侧，胳膊下面还夹着文件袋呢。看发型就知道一定是她！'
+        }
+      ]
+    }]
   },
   {
-    quizId: 8,
+    quizId: 9,
     quizType: 2,
     title: '被偷砍掉的银杏树',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -751,15 +709,14 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '早上 7 点钟，劳普林刚刚结束彻夜狂欢的公司聚会回到自己家里，却震惊地发现：有人趁他昨晚不在家的时候，把他院子里的银杏树砍掉了！劳普林脑海里第一个想到的就是他的邻居阿克塞尔，这个家伙经常抱怨那棵银杏树影响自家院子的采光！'
+          text: '早上七点钟，吴岳刚刚结束彻夜狂欢的公司聚会回到家里，却震惊地发现：昨晚有人趁他不在家的时候，把院子里的银杏树给砍掉了！吴岳脑海里第一个想到的就是他的邻居汪宽！那个家伙经常抱怨银杏树影响了自家院子的采光。'
         },
         {
           blockId: '3',
@@ -772,20 +729,7 @@ const QuizzesData = [
         {
           blockId: '5',
           blockType: 'normal-text',
-          text: '卡勒侦探很快就接到了劳普林的委托，前来拜访阿克塞尔并询问他是否了解情况。没想到阿克塞尔矢口否认，而且一口咬定说：“我昨天去我姐姐家住了，一整晚都不在，刚刚 5 分钟之前才进家门，根本不可能去偷砍什么破银杏树！”'
-        },
-        {
-          blockId: '6',
-          blockType: 'return'
-        },
-        {
-          blockId: '7',
-          blockType: 'tab'
-        },
-        {
-          blockId: '8',
-          blockType: 'normal-text',
-          text: '卡勒侦探现在已经知道阿克塞尔是在说谎了，你呢？请在下图中指出他说谎的证据。'
+          text: '吴岳上门找汪宽理论，却没想到汪宽矢口否认并且一口咬定说：“我昨天去我姐姐家玩了，整个晚上都没回来，刚刚五分钟之前才进家门，根本不可能去偷砍你的银杏树！” 汪宽肯定是在说谎，请在下图中指出他说谎的证据。'
         }
       ],
       questionImage: {
@@ -793,96 +737,21 @@ const QuizzesData = [
         height: 940
       }
     },
-    answerArea: { x: 260, y: 170 },
-    solutions: [
-      {
-        solutionTag: '答案',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'tab'
-          },
-          {
-            blockId: '2',
-            blockType: 'normal-text',
-            text: '1. 阿克塞尔的床铺很乱，说明他昨晚很有可能是在家里睡的。'
-          },
-          {
-            blockId: '3',
-            blockType: 'return'
-          },
-          {
-            blockId: '4',
-            blockType: 'tab'
-          },
-          {
-            blockId: '5',
-            blockType: 'normal-text',
-            text: '2. 桌子上摆着早餐，说明阿克塞尔正准备吃饭，那么他肯定不是 5 分钟之前才进家门的。'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    quizId: 9,
-    quizType: 2,
-    title: '怪盗基佐的藏身处',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
-    timed: true,
-    timeLimit: 120000,
-    question: {
-      questionId: 1,
-      questionTextData: [
-        {
-          blockId: '1',
-          blockType: 'tab'
-        },
-        {
-          blockId: '2',
-          blockType: 'normal-text',
-          text: '怪盗基佐是一名擅长使用魔术手法偷取珠宝的超级盗窃犯。卡勒侦探已经跟踪他很久了，但是始终无法找到他的藏身之处。现在卡勒侦探得到新消息：基佐躲在他的老朋友卡罗位于郊外的家。当卡勒侦探上门拜访卡罗并询问有关基佐的情况时，卡罗摸着自己锃亮的光头，不动声色地否认道：“只有我一个人住在这里，不相信的话你可以进来随意搜查。”事实上，基佐的确和他住在一起，是什么证实了这一点？'
-        }
-      ],
-      questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/2qjhay5k.jpg',
-        height: 990
-      }
+    answerArea: {
+      x: 260,
+      y: 170
     },
-    answerArea: { x: 246, y: 260 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '右侧抽屉柜上的梳子上有头发。既然卡罗一个人住，而且他是光头，那么他就不需要梳子，梳子上也更不可能有头发。'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    quizId: 10,
-    quizType: 2,
-    title: '退出车赛',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
-    timed: true,
-    timeLimit: 120000,
-    question: {
-      questionId: 1,
-      questionTextData: [
-        {
+    solutions: [{
+      solutionTag: '答案',
+      align: 'left',
+      solutionData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '在格兰匹治大赛中，赛车风驰电掣地从赛道上呼啸而过。这项著名的赛事马上就要决出最后的名次。著名车手拉瑟遥遥领先，和其他选手一样，拉瑟的赛车在最后冲刺前必须进维修站给油箱加油。拉瑟采用的是特制的混合汽油F98，他的赛车发动机只能用这种燃料。拉瑟请来老朋友吉塔侦探监视他的维修站，以防有人做手脚。'
+          text: '一、汪宽的床铺很乱，说明他昨晚是在家里睡的。'
         },
         {
           blockId: '3',
@@ -895,47 +764,97 @@ const QuizzesData = [
         {
           blockId: '5',
           blockType: 'normal-text',
-          text: '事实上，吉塔侦探确实发现到了一些情况！她看到了假冒的工作人员想要搞破坏给车手致命打击。那个假冒的工作人员是要做什么手脚呢？'
+          text: '二、桌子上摆着早餐，说明汪宽正准备吃早饭，那么他肯定不是在五分钟之前才进家门的。'
         }
-      ],
-      questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/emzuvmt8.jpg',
-        height: 990
-      }
-    },
-    answerArea: { x: 250, y: 170 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '假冒的工作人员要用水替换F98混合汽油加进赛车的油箱。'
-          }
-        ]
-      }
-    ]
+      ]
+    }]
   },
   {
-    quizId: 11,
+    quizId: 10,
     quizType: 2,
-    title: '胡尔达市长的化妆舞会',
+    title: '怪盗基佐的藏身之处',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '女市长胡尔达在宴会厅举办盛大的化妆舞会，客人们都穿着最稀奇古怪的服装到场。突然一封匿名信和一张男性照片交到了胡尔达市长的手上，信中透露在奇装异服的客人中有一名“抽奖奖金盗窃专家”，他将提前引燃原本在午夜燃放的焰火，造成混乱借机窃取巨额的抽奖奖金。胡尔达市长立即叫来卡勒侦探，要求他找到这个不受欢迎的捣乱者。这应该不太困难，不是吗？'
+          text: '怪盗基佐是一名擅长使用魔术手法偷取珠宝的跨国大盗。国际刑警已经跟踪他很久了，却始终无法找到他藏在哪里！据目击者称，基佐就躲在他在中国的好朋友崔强家里！中国便衣警察以查户口为由，数次登门拜访崔强，得到的都是相同的回答：“我一个人住，家里没有别人。”'
+        },
+        {
+          blockId: '3',
+          blockType: 'return'
+        },
+        {
+          blockId: '4',
+          blockType: 'tab'
+        },
+        {
+          blockId: '5',
+          blockType: 'normal-text',
+          text: '事实上，基佐就藏在崔强家里。请在下图中指出他说谎的证据。'
+        }
+      ],
+      questionImage: {
+        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/2qjhay5k.jpg',
+        height: 990
+      }
+    },
+    answerArea: {
+      x: 246,
+      y: 260
+    },
+    solutions: [{
+      solutionTag: '解析',
+      align: 'left',
+      solutionData: [{
+          blockId: '1',
+          blockType: 'tab'
+        },
+        {
+          blockId: '2',
+          blockType: 'normal-text',
+          text: '如果光头崔强真的是一个人住，那么他根本不需要梳子，梳子上也不可能有掉落的头发。'
+        }
+      ]
+    }]
+  },
+  {
+    quizId: 11,
+    quizType: 2,
+    title: '化妆舞会上的不速之客',
+    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
+    timed: true,
+    timeLimit: 120000,
+    question: {
+      questionId: 1,
+      questionTextData: [{
+          blockId: '1',
+          blockType: 'tab'
+        },
+        {
+          blockId: '2',
+          blockType: 'normal-text',
+          text: '万圣节当晚，在某公司盛大的化妆舞会上，举办者收到了一封匿名信和一张照片。信中透露：照片中的男子不久前刚刚被公司解雇了，他今天也混进了舞会！在接下来的抽奖环节中，这名郁闷的前同事会刻意制造混乱，借此抚慰自己脆弱的 “自尊心”。'
+        },
+        {
+          blockId: '3',
+          blockType: 'return'
+        },
+        {
+          blockId: '4',
+          blockType: 'tab'
+        },
+        {
+          blockId: '5',
+          blockType: 'normal-text',
+          text: '舞会举办者希望尽快把他控制起来，免得大家都不痛快。请在下面的第二张图中指出他藏在哪里。'
         }
       ],
       questionImage: {
@@ -943,20 +862,19 @@ const QuizzesData = [
         height: 1350
       }
     },
-    answerArea: { x: 164, y: 280 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '照片中的盗窃专家左耳戴着耳环。在化妆舞会上他穿着水手服戴着墨镜，站在戴帽子的女士与骑士中间。'
-          }
-        ]
-      }
-    ]
+    answerArea: {
+      x: 164,
+      y: 280
+    },
+    solutions: [{
+      solutionTag: '解析',
+      align: 'left',
+      solutionData: [{
+        blockId: '1',
+        blockType: 'normal-text',
+        text: '闹事者的左耳上戴着耳环。'
+      }]
+    }]
   },
   {
     quizId: 12,
@@ -967,8 +885,7 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
@@ -1009,20 +926,19 @@ const QuizzesData = [
         height: 960
       }
     },
-    answerArea: { x: -10, y: 96 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '陶施拜因先生讲述的故事并不正确，他不可能从店里用脚踢上顾客室的门，因为门是向内打开的。'
-          }
-        ]
-      }
-    ]
+    answerArea: {
+      x: -10,
+      y: 96
+    },
+    solutions: [{
+      solutionTag: '解析',
+      align: 'left',
+      solutionData: [{
+        blockId: '1',
+        blockType: 'normal-text',
+        text: '陶施拜因先生讲述的故事并不正确，他不可能从店里用脚踢上顾客室的门，因为门是向内打开的。'
+      }]
+    }]
   },
   {
     quizId: 13,
@@ -1033,8 +949,7 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
@@ -1075,20 +990,19 @@ const QuizzesData = [
         height: 980
       }
     },
-    answerArea: { x: 144, y: 270 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '莱奥为了能够登台演出而将布鲁诺的铁皮人戏服藏在自己位于楼梯下方的化妆更衣室里。'
-          }
-        ]
-      }
-    ]
+    answerArea: {
+      x: 144,
+      y: 270
+    },
+    solutions: [{
+      solutionTag: '解析',
+      align: 'left',
+      solutionData: [{
+        blockId: '1',
+        blockType: 'normal-text',
+        text: '莱奥为了能够登台演出而将布鲁诺的铁皮人戏服藏在自己位于楼梯下方的化妆更衣室里。'
+      }]
+    }]
   },
   {
     quizId: 14,
@@ -1099,8 +1013,7 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
@@ -1141,76 +1054,22 @@ const QuizzesData = [
         height: 970
       }
     },
-    answerArea: { x: 10, y: 50 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '在游轮顶层夹板的左边，有一个只穿着一只鞋的人，他就是偷渡客。他从救生艇匆忙逃跑时把另一只鞋掉在了救生艇里。'
-          }
-        ]
-      }
-    ]
+    answerArea: {
+      x: 10,
+      y: 50
+    },
+    solutions: [{
+      solutionTag: '解析',
+      align: 'left',
+      solutionData: [{
+        blockId: '1',
+        blockType: 'normal-text',
+        text: '在游轮顶层夹板的左边，有一个只穿着一只鞋的人，他就是偷渡客。他从救生艇匆忙逃跑时把另一只鞋掉在了救生艇里。'
+      }]
+    }]
   },
   {
     quizId: 15,
-    quizType: 2,
-    title: '马可·波罗失踪了',
-    bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
-    timed: true,
-    timeLimit: 120000,
-    question: {
-      questionId: 1,
-      questionTextData: [
-        {
-          blockId: '1',
-          blockType: 'tab'
-        },
-        {
-          blockId: '2',
-          blockType: 'normal-text',
-          text: '米歇尔·德安吉罗是一位著名的艺术家、雕塑家。此时，他几乎无法相信：在宫殿公园中，他最喜欢的雕塑——骄傲地站立在底座上的马可·波罗像——消失了，地上散落着碎石和一把锤子。“哪个庸俗的家伙偷走了我的马可·波罗？”他怒气冲冲地打电话给吉塔侦探。'
-        },
-        {
-          blockId: '3',
-          blockType: 'return'
-        },
-        {
-          blockId: '4',
-          blockType: 'tab'
-        },
-        {
-          blockId: '5',
-          blockType: 'normal-text',
-          text: '看门人把吉塔侦探带到米歇尔面前，他还待在案发现场。在此期间，公园管理员毛罗听到喧哗声也赶了过来，他们在空空如也的底座前遇到。吉塔侦探仔细查看了现场，进行了询问，最后她对米歇尔说：“这两位工作人员中的某个人就是盗窃犯。”那么，是什么暴露了作案人？'
-        }
-      ],
-      questionImage: {
-        url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/q/vkbgz5f5.jpg',
-        height: 980
-      }
-    },
-    answerArea: { x: 160, y: 400 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '地上的碎石中有一颗纽扣，而看门人的制服上少了一颗同样的纽扣，因此看门人就是盗窃犯。'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    quizId: 16,
     quizType: 2,
     title: '音乐家花园陶俑',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -1218,15 +1077,14 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '乌多是花园陶俑博物馆的馆长，当他走过收藏品时，十分惊讶地发现“坐着的小提琴手”陶俑不在原来的位置上，它毫无迹象地消失了！乌多馆长立即报告了这起偷窃案，“肯定是希尔达·齐普弗从中作梗！现在只有卡勒和吉塔侦探能帮忙。”'
+          text: '乌多是花园陶俑博物馆的馆长，当他走过收藏品时，十分惊讶地发现“坐着的小提琴手”陶俑不在原来的位置上，它毫无迹象地消失了！乌多馆长立即报告了这起偷窃案，“肯定是希尔达·齐普弗从中作梗！现在只有福生和吉塔侦探能帮忙。”'
         },
         {
           blockId: '3',
@@ -1239,7 +1097,7 @@ const QuizzesData = [
         {
           blockId: '5',
           blockType: 'normal-text',
-          text: '希尔达住在河边的花园小屋内，她同样十分喜欢花园陶俑，一直向博物馆申请购买“坐着的小提琴手”陶俑，总是遭到婉拒。卡勒和吉塔侦探拜访了希尔达，并仔细查看了她的陶俑乐园。希尔达听到偷窃事件时惊慌失措，一再保证自己和这件事毫无关系。那么，卡勒和吉塔侦探能找到反驳她的证据吗？'
+          text: '希尔达住在河边的花园小屋内，她同样十分喜欢花园陶俑，一直向博物馆申请购买“坐着的小提琴手”陶俑，总是遭到婉拒。福生和吉塔侦探拜访了希尔达，并仔细查看了她的陶俑乐园。希尔达听到偷窃事件时惊慌失措，一再保证自己和这件事毫无关系。那么，福生和吉塔侦探能找到反驳她的证据吗？'
         }
       ],
       questionImage: {
@@ -1247,23 +1105,22 @@ const QuizzesData = [
         height: 980
       }
     },
-    answerArea: { x: 30, y: 360 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '希尔达把偷来的陶俑藏在自己的花园小屋里，就在紧挨门口的地上。'
-          }
-        ]
-      }
-    ]
+    answerArea: {
+      x: 30,
+      y: 360
+    },
+    solutions: [{
+      solutionTag: '解析',
+      align: 'left',
+      solutionData: [{
+        blockId: '1',
+        blockType: 'normal-text',
+        text: '希尔达把偷来的陶俑藏在自己的花园小屋里，就在紧挨门口的地上。'
+      }]
+    }]
   },
   {
-    quizId: 17,
+    quizId: 16,
     quizType: 2,
     title: '突然死亡的玛格丽塔雏菊',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -1271,8 +1128,7 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
@@ -1292,7 +1148,7 @@ const QuizzesData = [
         {
           blockId: '5',
           blockType: 'normal-text',
-          text: '几周以来，罗莎和她的雇员里塔·平克以及阿尔多·施特雷克共同照料这棵罕见的植物。明天，玛格丽塔雏菊将在盛大的植物种植者大会上展出。但是今天晚上，罗莎遭到了致命打击！在花架的最下方，她的玛格丽塔雏菊在黑暗中枯萎了，耷拉着倒了下来，就在蕨类植物和仙人掌之间。罗莎意识到有人要阻止她出席植物种植者大会，于是她马上向卡勒侦探报案！'
+          text: '几周以来，罗莎和她的雇员里塔·平克以及阿尔多·施特雷克共同照料这棵罕见的植物。明天，玛格丽塔雏菊将在盛大的植物种植者大会上展出。但是今天晚上，罗莎遭到了致命打击！在花架的最下方，她的玛格丽塔雏菊在黑暗中枯萎了，耷拉着倒了下来，就在蕨类植物和仙人掌之间。罗莎意识到有人要阻止她出席植物种植者大会，于是她马上向福生侦探报案！'
         },
         {
           blockId: '6',
@@ -1305,7 +1161,7 @@ const QuizzesData = [
         {
           blockId: '8',
           blockType: 'normal-text',
-          text: '只有罗莎的雇员里塔和阿尔多有花园暖房的钥匙，于是卡勒侦探把两个雇员叫到面前询问。这里是他们的陈述：阿尔多说他已经很久没去暖房了。里塔说他昨天一整天都在办公室里度过。但是卡勒侦探凭借敏锐的观察，立即告诉罗莎谁说谎了。'
+          text: '只有罗莎的雇员里塔和阿尔多有花园暖房的钥匙，于是福生侦探把两个雇员叫到面前询问。这里是他们的陈述：阿尔多说他已经很久没去暖房了。里塔说他昨天一整天都在办公室里度过。但是福生侦探凭借敏锐的观察，立即告诉罗莎谁说谎了。'
         }
       ],
       questionImage: {
@@ -1313,23 +1169,22 @@ const QuizzesData = [
         height: 980
       }
     },
-    answerArea: { x: 30, y: 290 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '说谎的是雇员里塔·平克，她的工作服上有许多仙人掌刺，是她在挪走玛格丽塔雏菊后，弯腰放在花架最下层时由于黑暗看不清周围环境而沾到了仙人掌刺。'
-          }
-        ]
-      }
-    ]
+    answerArea: {
+      x: 30,
+      y: 290
+    },
+    solutions: [{
+      solutionTag: '解析',
+      align: 'left',
+      solutionData: [{
+        blockId: '1',
+        blockType: 'normal-text',
+        text: '说谎的是雇员里塔·平克，她的工作服上有许多仙人掌刺，是她在挪走玛格丽塔雏菊后，弯腰放在花架最下层时由于黑暗看不清周围环境而沾到了仙人掌刺。'
+      }]
+    }]
   },
   {
-    quizId: 18,
+    quizId: 17,
     quizType: 2,
     title: '米基·库尔的踪迹',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -1337,15 +1192,14 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '几周以来，卡勒侦探一直在跟踪保险箱撬窃者米基·库尔（Mickey Chur）。在从侦探社回家的路上，他在地铁站西出口和这个嫌疑人擦肩而过，但是一眨眼的时间米基就消失在人群中。卡勒侦探没有放弃搜寻，他跟踪了一个可能是米基的男子，但是卡勒侦探并不能肯定。卡勒侦探继续跟踪，拐进了一片昏暗的工厂区。在一家还有灯光的老锻造工厂里，卡勒侦探发现了一样东西，证明他追踪的是正确的线索，米基的确藏在这里。那么卡勒侦探发现了什么呢？'
+          text: '几周以来，福生侦探一直在跟踪保险箱撬窃者米基·库尔（Mickey Chur）。在从侦探社回家的路上，他在地铁站西出口和这个嫌疑人擦肩而过，但是一眨眼的时间米基就消失在人群中。福生侦探没有放弃搜寻，他跟踪了一个可能是米基的男子，但是福生侦探并不能肯定。福生侦探继续跟踪，拐进了一片昏暗的工厂区。在一家还有灯光的老锻造工厂里，福生侦探发现了一样东西，证明他追踪的是正确的线索，米基的确藏在这里。那么福生侦探发现了什么呢？'
         }
       ],
       questionImage: {
@@ -1353,23 +1207,22 @@ const QuizzesData = [
         height: 1360
       }
     },
-    answerArea: { x: 234, y: 568 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '米基·库尔的工具箱在老锻造工场里，上面还有他的名字的首字母缩写MC，卡勒侦探在地铁站就看到了这个保险箱撬窃者提着工具箱匆匆走过。'
-          }
-        ]
-      }
-    ]
+    answerArea: {
+      x: 234,
+      y: 568
+    },
+    solutions: [{
+      solutionTag: '解析',
+      align: 'left',
+      solutionData: [{
+        blockId: '1',
+        blockType: 'normal-text',
+        text: '米基·库尔的工具箱在老锻造工场里，上面还有他的名字的首字母缩写MC，福生侦探在地铁站就看到了这个保险箱撬窃者提着工具箱匆匆走过。'
+      }]
+    }]
   },
   {
-    quizId: 19,
+    quizId: 18,
     quizType: 2,
     title: '普法芬堡将军失踪记',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -1377,8 +1230,7 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
@@ -1393,23 +1245,22 @@ const QuizzesData = [
         height: 560
       }
     },
-    answerArea: { x: -18, y: 210 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '司机把《普法芬堡将军》藏在汽车后备箱中。'
-          }
-        ]
-      }
-    ]
+    answerArea: {
+      x: -18,
+      y: 210
+    },
+    solutions: [{
+      solutionTag: '解析',
+      align: 'left',
+      solutionData: [{
+        blockId: '1',
+        blockType: 'normal-text',
+        text: '司机把《普法芬堡将军》藏在汽车后备箱中。'
+      }]
+    }]
   },
   {
-    quizId: 20,
+    quizId: 19,
     quizType: 2,
     title: '图弗特尔的最新发明',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -1417,8 +1268,7 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
@@ -1438,7 +1288,7 @@ const QuizzesData = [
         {
           blockId: '5',
           blockType: 'normal-text',
-          text: '不过这个小偷很倒霉——因为图弗特尔也邀请了他的老朋友卡勒侦探。他只要稍稍观察一下，就能知道是谁偷走了分子式。你们也可以吗？'
+          text: '不过这个小偷很倒霉——因为图弗特尔也邀请了他的老朋友福生侦探。他只要稍稍观察一下，就能知道是谁偷走了分子式。你们也可以吗？'
         }
       ],
       questionImage: {
@@ -1446,27 +1296,27 @@ const QuizzesData = [
         height: 980
       }
     },
-    answerArea: { x: 200, y: 170 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'tab'
-          },
-          {
-            blockId: '2',
-            blockType: 'normal-text',
-            text: '图中最右侧的女士趁着黑暗偷走了印有机密分子式的纸片，夹在她胳膊下的文件资料中。'
-          }
-        ]
-      }
-    ]
+    answerArea: {
+      x: 200,
+      y: 170
+    },
+    solutions: [{
+      solutionTag: '解析',
+      align: 'left',
+      solutionData: [{
+          blockId: '1',
+          blockType: 'tab'
+        },
+        {
+          blockId: '2',
+          blockType: 'normal-text',
+          text: '图中最右侧的女士趁着黑暗偷走了印有机密分子式的纸片，夹在她胳膊下的文件资料中。'
+        }
+      ]
+    }]
   },
   {
-    quizId: 21,
+    quizId: 20,
     quizType: 2,
     title: '并非人人都是幸运儿',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -1474,8 +1324,7 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
@@ -1503,23 +1352,22 @@ const QuizzesData = [
         height: 960
       }
     },
-    answerArea: { x: 250, y: 290 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '多莉的推测是正确的。有人把小猪平基藏在单肩包里偷偷带走，这个人和多莉在展示台的同一层。'
-          }
-        ]
-      }
-    ]
+    answerArea: {
+      x: 250,
+      y: 290
+    },
+    solutions: [{
+      solutionTag: '解析',
+      align: 'left',
+      solutionData: [{
+        blockId: '1',
+        blockType: 'normal-text',
+        text: '多莉的推测是正确的。有人把小猪平基藏在单肩包里偷偷带走，这个人和多莉在展示台的同一层。'
+      }]
+    }]
   },
   {
-    quizId: 22,
+    quizId: 21,
     quizType: 2,
     title: '午夜牌局',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -1527,8 +1375,7 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
@@ -1543,23 +1390,22 @@ const QuizzesData = [
         height: 970
       }
     },
-    answerArea: { x: 160, y: 270 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '出老千的人是图中右下角的商人萨姆·莫克。一副扑克牌中只有四张A，牌桌上已经有三张，而他手中却拿着两张同样花色的A。'
-          }
-        ]
-      }
-    ]
+    answerArea: {
+      x: 160,
+      y: 270
+    },
+    solutions: [{
+      solutionTag: '解析',
+      align: 'left',
+      solutionData: [{
+        blockId: '1',
+        blockType: 'normal-text',
+        text: '出老千的人是图中右下角的商人萨姆·莫克。一副扑克牌中只有四张A，牌桌上已经有三张，而他手中却拿着两张同样花色的A。'
+      }]
+    }]
   },
   {
-    quizId: 23,
+    quizId: 22,
     quizType: 2,
     title: '艺术品背后的诡计',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -1567,8 +1413,7 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
@@ -1583,23 +1428,22 @@ const QuizzesData = [
         height: 980
       }
     },
-    answerArea: { x: 196, y: 140 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '版画中的小姑娘背后有一部电话。16世纪还没有发明电话。'
-          }
-        ]
-      }
-    ]
+    answerArea: {
+      x: 196,
+      y: 140
+    },
+    solutions: [{
+      solutionTag: '解析',
+      align: 'left',
+      solutionData: [{
+        blockId: '1',
+        blockType: 'normal-text',
+        text: '版画中的小姑娘背后有一部电话。16世纪还没有发明电话。'
+      }]
+    }]
   },
   {
-    quizId: 24,
+    quizId: 23,
     quizType: 2,
     title: '鞋店中的交接',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -1607,8 +1451,7 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
@@ -1636,23 +1479,22 @@ const QuizzesData = [
         height: 425
       }
     },
-    answerArea: { x: 170, y: 90 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '藏有微型胶卷的单只鞋没有穿鞋带，在图中店员的左耳上方。'
-          }
-        ]
-      }
-    ]
+    answerArea: {
+      x: 170,
+      y: 90
+    },
+    solutions: [{
+      solutionTag: '解析',
+      align: 'left',
+      solutionData: [{
+        blockId: '1',
+        blockType: 'normal-text',
+        text: '藏有微型胶卷的单只鞋没有穿鞋带，在图中店员的左耳上方。'
+      }]
+    }]
   },
   {
-    quizId: 25,
+    quizId: 24,
     quizType: 2,
     title: '舒蒙尔先生不老实',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -1660,15 +1502,14 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '卡勒侦探要飞往纽约探望姑姑，他来到机场的出入境护照检查处排队，正好排在罗尔贝特·舒蒙尔先生身后，舒蒙尔也要去纽约。边检官员检查护照后说：“舒蒙尔先生，你的护照是伪造的。”舒蒙尔强烈抗议。'
+          text: '福生侦探要飞往纽约探望姑姑，他来到机场的出入境护照检查处排队，正好排在罗尔贝特·舒蒙尔先生身后，舒蒙尔也要去纽约。边检官员检查护照后说：“舒蒙尔先生，你的护照是伪造的。”舒蒙尔强烈抗议。'
         },
         {
           blockId: '3',
@@ -1681,7 +1522,7 @@ const QuizzesData = [
         {
           blockId: '5',
           blockType: 'normal-text',
-          text: '卡勒侦探越过舒蒙尔的肩膀观察护照，一下子就笑了，他一眼就看出来这本护照的确是伪造的。为什么？'
+          text: '福生侦探越过舒蒙尔的肩膀观察护照，一下子就笑了，他一眼就看出来这本护照的确是伪造的。为什么？'
         }
       ],
       questionImage: {
@@ -1689,23 +1530,22 @@ const QuizzesData = [
         height: 1000
       }
     },
-    answerArea: { x: 190, y: 420 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '罗尔贝特·舒蒙尔护照上的出生日期是2月30日，但是根本不存在2月30日。'
-          }
-        ]
-      }
-    ]
+    answerArea: {
+      x: 190,
+      y: 420
+    },
+    solutions: [{
+      solutionTag: '解析',
+      align: 'left',
+      solutionData: [{
+        blockId: '1',
+        blockType: 'normal-text',
+        text: '罗尔贝特·舒蒙尔护照上的出生日期是2月30日，但是根本不存在2月30日。'
+      }]
+    }]
   },
   {
-    quizId: 26,
+    quizId: 25,
     quizType: 2,
     title: '仔细观察指印',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -1713,8 +1553,7 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
@@ -1729,23 +1568,22 @@ const QuizzesData = [
         height: 1400
       }
     },
-    answerArea: { x: 148, y: 414 },
-    solutions: [
-      {
-        solutionTag: '答案',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '迈克斯·克维尔'
-          }
-        ]
-      }
-    ]
+    answerArea: {
+      x: 148,
+      y: 414
+    },
+    solutions: [{
+      solutionTag: '答案',
+      align: 'left',
+      solutionData: [{
+        blockId: '1',
+        blockType: 'normal-text',
+        text: '迈克斯·克维尔'
+      }]
+    }]
   },
   {
-    quizId: 27,
+    quizId: 26,
     quizType: 2,
     title: '普福尔茨劳小姐',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -1753,8 +1591,7 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
@@ -1782,23 +1619,22 @@ const QuizzesData = [
         height: 1450
       }
     },
-    answerArea: { x: 184, y: 490 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '吉塔侦探在内拉的楼上发现了一只手套，另一只配套的手套则出现在玛丽·茨维利希的房间内，就在电视机下方的储物架上，因此玛丽肯定偷偷潜入过内拉的房子。'
-          }
-        ]
-      }
-    ]
+    answerArea: {
+      x: 184,
+      y: 490
+    },
+    solutions: [{
+      solutionTag: '解析',
+      align: 'left',
+      solutionData: [{
+        blockId: '1',
+        blockType: 'normal-text',
+        text: '吉塔侦探在内拉的楼上发现了一只手套，另一只配套的手套则出现在玛丽·茨维利希的房间内，就在电视机下方的储物架上，因此玛丽肯定偷偷潜入过内拉的房子。'
+      }]
+    }]
   },
   {
-    quizId: 28,
+    quizId: 27,
     quizType: 1,
     title: '机密文件的“火星移动”',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -1806,8 +1642,7 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
@@ -1902,56 +1737,45 @@ const QuizzesData = [
     },
     options: {
       layout: 'row',
-      optionsData: [
-        {
+      optionsData: [{
           optionKey: 'A',
-          optionData: [
-            {
-              blockId: '1',
-              blockType: 'normal-text',
-              text: '曼弗雷德·施勒茨'
-            }
-          ]
+          optionData: [{
+            blockId: '1',
+            blockType: 'normal-text',
+            text: '曼弗雷德·施勒茨'
+          }]
         },
         {
           optionKey: 'B',
-          optionData: [
-            {
-              blockId: '1',
-              blockType: 'normal-text',
-              text: '维尔马尔·普法夫'
-            }
-          ]
+          optionData: [{
+            blockId: '1',
+            blockType: 'normal-text',
+            text: '维尔马尔·普法夫'
+          }]
         },
         {
           optionKey: 'C',
-          optionData: [
-            {
-              blockId: '1',
-              blockType: 'normal-text',
-              text: '阿瑟·克洛斯'
-            }
-          ]
+          optionData: [{
+            blockId: '1',
+            blockType: 'normal-text',
+            text: '阿瑟·克洛斯'
+          }]
         }
       ]
     },
     answerKey: 'B',
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '维尔马尔·普法夫在说谎。他宣称把眼镜忘在家里了，没有它就没法看清教授的资料。但是显而易见，他不需要眼镜就可以毫无问题地阅读晨报！因此他根本不需要眼镜！'
-          }
-        ]
-      }
-    ]
+    solutions: [{
+      solutionTag: '解析',
+      align: 'left',
+      solutionData: [{
+        blockId: '1',
+        blockType: 'normal-text',
+        text: '维尔马尔·普法夫在说谎。他宣称把眼镜忘在家里了，没有它就没法看清教授的资料。但是显而易见，他不需要眼镜就可以毫无问题地阅读晨报！因此他根本不需要眼镜！'
+      }]
+    }]
   },
   {
-    quizId: 29,
+    quizId: 28,
     quizType: 2,
     title: '感到危险',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -1959,15 +1783,14 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。卡勒侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的走私犯。卡勒侦探并没有这个走私犯的相貌信息，他仅仅知道该走私犯经常会通过这条线路来从事可疑的业务。很快，所有乘客的行李都被放入大客车的行李仓内，当卡勒侦探迅速看了一下行李后发现：之前在停车场上一共有19件行李，然而现在行李仓内仅有18件。那个走私犯一定在最后一刻认出了卡勒侦探，于是悄悄地溜之大吉了。那个人是谁呢？'
+          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。福生侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的走私犯。福生侦探并没有这个走私犯的相貌信息，他仅仅知道该走私犯经常会通过这条线路来从事可疑的业务。很快，所有乘客的行李都被放入大客车的行李仓内，当福生侦探迅速看了一下行李后发现：之前在停车场上一共有19件行李，然而现在行李仓内仅有18件。那个走私犯一定在最后一刻认出了福生侦探，于是悄悄地溜之大吉了。那个人是谁呢？'
         }
       ],
       questionImage: {
@@ -1975,23 +1798,22 @@ const QuizzesData = [
         height: 1385
       }
     },
-    answerArea: { x: 248, y: 430 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '那个人就站在台阶上，在背着背包挥手的年轻人边上，他就是鱼子酱走私者。大客车的行李箱内没有他的箱子，他认出来卡勒侦探并逃之夭夭了。'
-          }
-        ]
-      }
-    ]
+    answerArea: {
+      x: 248,
+      y: 430
+    },
+    solutions: [{
+      solutionTag: '解析',
+      align: 'left',
+      solutionData: [{
+        blockId: '1',
+        blockType: 'normal-text',
+        text: '那个人就站在台阶上，在背着背包挥手的年轻人边上，他就是鱼子酱走私者。大客车的行李箱内没有他的箱子，他认出来福生侦探并逃之夭夭了。'
+      }]
+    }]
   },
   {
-    quizId: 30,
+    quizId: 29,
     quizType: 2,
     title: '通缉追捕',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -1999,15 +1821,14 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '蒂诺·马茨是声名狼藉的婚姻骗子，长久以来，卡勒侦探一直都在想方设法阻止他，可惜都没有成功！他仅知道，蒂诺经常在知名度假胜地作案，总是关注那些渴望婚姻的富有女性。'
+          text: '蒂诺·马茨是声名狼藉的婚姻骗子，长久以来，福生侦探一直都在想方设法阻止他，可惜都没有成功！他仅知道，蒂诺经常在知名度假胜地作案，总是关注那些渴望婚姻的富有女性。'
         },
         {
           blockId: '3',
@@ -2020,7 +1841,7 @@ const QuizzesData = [
         {
           blockId: '5',
           blockType: 'normal-text',
-          text: '终于，骗子蒂诺犯下一个错误：在温特拉肯海滨浴场，他居然想要算计卡勒侦探的阿姨——富有的安东尼娅·洛阿格。安东尼娅怒气冲冲地将这一情况告知了自己的外甥，她详细地描述了骗子的长相：'
+          text: '终于，骗子蒂诺犯下一个错误：在温特拉肯海滨浴场，他居然想要算计福生侦探的阿姨——富有的安东尼娅·洛阿格。安东尼娅怒气冲冲地将这一情况告知了自己的外甥，她详细地描述了骗子的长相：'
         },
         {
           blockId: '6',
@@ -2046,7 +1867,7 @@ const QuizzesData = [
         {
           blockId: '11',
           blockType: 'normal-text',
-          text: '卡勒侦探没有浪费时间，立即前往温特拉肯海滨浴场。他的迅速行动取得了成效，在库尔巴德宾馆的浴场中发现了蒂诺！那么，他们在哪里发现了蒂诺呢？'
+          text: '福生侦探没有浪费时间，立即前往温特拉肯海滨浴场。他的迅速行动取得了成效，在库尔巴德宾馆的浴场中发现了蒂诺！那么，他们在哪里发现了蒂诺呢？'
         }
       ],
       questionImage: {
@@ -2054,23 +1875,22 @@ const QuizzesData = [
         height: 980
       }
     },
-    answerArea: { x: -10, y: 140 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '蒂诺正要从图片上最靠左侧边缘的更衣间内出来。'
-          }
-        ]
-      }
-    ]
+    answerArea: {
+      x: -10,
+      y: 140
+    },
+    solutions: [{
+      solutionTag: '解析',
+      align: 'left',
+      solutionData: [{
+        blockId: '1',
+        blockType: 'normal-text',
+        text: '蒂诺正要从图片上最靠左侧边缘的更衣间内出来。'
+      }]
+    }]
   },
   {
-    quizId: 31,
+    quizId: 30,
     quizType: 2,
     title: '保险柜',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -2078,15 +1898,14 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '金属废料商人扬泽·道恩卡茨完全被搞糊涂了。在院子中间有一只罕见的保险柜，他指着它对卡勒和吉塔侦探说：“今天早上，有一个阴森森的家伙经过这里，把这个大东西留了下来。他说警察肯定对里面的东西感兴趣，里面有洛特法信坦克犯罪集团的信息以及他们的隐藏地点。我认为那个家伙以前也是该犯罪集团的成员。我刚想问他要怎么处理这个保险柜，他就走掉了！”'
+          text: '金属废料商人扬泽·道恩卡茨完全被搞糊涂了。在院子中间有一只罕见的保险柜，他指着它对福生和吉塔侦探说：“今天早上，有一个阴森森的家伙经过这里，把这个大东西留了下来。他说警察肯定对里面的东西感兴趣，里面有洛特法信坦克犯罪集团的信息以及他们的隐藏地点。我认为那个家伙以前也是该犯罪集团的成员。我刚想问他要怎么处理这个保险柜，他就走掉了！”'
         },
         {
           blockId: '3',
@@ -2125,7 +1944,7 @@ const QuizzesData = [
         {
           blockId: '11',
           blockType: 'normal-text',
-          text: '“那我们开始吧，虽然我不是驴，但是我正好带着便携计算器，”吉塔侦探说。她开始旋转操控保险箱的数字锁，需要找到一个4位数密码，转到数字7、3和5时她都听到咔嗒声。“嗯，就是如此，”她说着在便携计算器上按了这3个数字。那么第4个数字是什么呢？卡勒侦探无计可施地看着她，突然他大叫到：“我们真是驴（ESEL），这样我们就知道正确的数字了！”卡勒侦探看到了什么？完整的数字密码是多少？'
+          text: '“那我们开始吧，虽然我不是驴，但是我正好带着便携计算器，”吉塔侦探说。她开始旋转操控保险箱的数字锁，需要找到一个4位数密码，转到数字7、3和5时她都听到咔嗒声。“嗯，就是如此，”她说着在便携计算器上按了这3个数字。那么第4个数字是什么呢？福生侦探无计可施地看着她，突然他大叫到：“我们真是驴（ESEL），这样我们就知道正确的数字了！”福生侦探看到了什么？完整的数字密码是多少？'
         }
       ],
       questionImage: {
@@ -2133,23 +1952,22 @@ const QuizzesData = [
         height: 315
       }
     },
-    answerArea: { x: 216, y: 140 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '当在便携计算器上打出数字7353，并将计算器倒过来看，就出现了单词ESEL（驴），因此正确的秘密数字就是7353。'
-          }
-        ]
-      }
-    ]
+    answerArea: {
+      x: 216,
+      y: 140
+    },
+    solutions: [{
+      solutionTag: '解析',
+      align: 'left',
+      solutionData: [{
+        blockId: '1',
+        blockType: 'normal-text',
+        text: '当在便携计算器上打出数字7353，并将计算器倒过来看，就出现了单词ESEL（驴），因此正确的秘密数字就是7353。'
+      }]
+    }]
   },
   {
-    quizId: 32,
+    quizId: 31,
     quizType: 2,
     title: '谁是真正的佐罗',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -2157,8 +1975,7 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
@@ -2199,23 +2016,22 @@ const QuizzesData = [
         height: 524.5
       }
     },
-    answerArea: { x: 216, y: 140 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '正确的数字是4437925，是默希尔乌茨·阿尔多的电话号码。他还是佐罗，可怕的蛤蟆菌犯罪集团首领。'
-          }
-        ]
-      }
-    ]
+    answerArea: {
+      x: 216,
+      y: 140
+    },
+    solutions: [{
+      solutionTag: '解析',
+      align: 'left',
+      solutionData: [{
+        blockId: '1',
+        blockType: 'normal-text',
+        text: '正确的数字是4437925，是默希尔乌茨·阿尔多的电话号码。他还是佐罗，可怕的蛤蟆菌犯罪集团首领。'
+      }]
+    }]
   },
   {
-    quizId: 33,
+    quizId: 32,
     quizType: 2,
     title: '被雪覆盖的雪茄',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -2223,15 +2039,14 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '一个冬季的早晨，卡勒侦探到迪利·普法伊弗尔的烟草店买一份报纸，看到老板迪利正激动地叫道：“有人偷走了一盒精制‘班达里诺雪茄’，这是我们最贵的牌子！一定是在8点至8点15分之间发生的，因为那段时间里有个供应商来送新货，我在店外收货！”'
+          text: '一个冬季的早晨，福生侦探到迪利·普法伊弗尔的烟草店买一份报纸，看到老板迪利正激动地叫道：“有人偷走了一盒精制‘班达里诺雪茄’，这是我们最贵的牌子！一定是在8点至8点15分之间发生的，因为那段时间里有个供应商来送新货，我在店外收货！”'
         },
         {
           blockId: '3',
@@ -2244,7 +2059,7 @@ const QuizzesData = [
         {
           blockId: '5',
           blockType: 'normal-text',
-          text: '卡勒侦探安慰了迪利，他还询问了在案发时间内出现在店外街道上的四个人：'
+          text: '福生侦探安慰了迪利，他还询问了在案发时间内出现在店外街道上的四个人：'
         },
         {
           blockId: '6',
@@ -2270,7 +2085,7 @@ const QuizzesData = [
         {
           blockId: '11',
           blockType: 'normal-text',
-          text: '奥托·莱克声称他没有进入商店，只是在店外观看了橱窗。'
+          text: '李冰·莱克声称他没有进入商店，只是在店外观看了橱窗。'
         },
         {
           blockId: '12',
@@ -2309,7 +2124,7 @@ const QuizzesData = [
         {
           blockId: '20',
           blockType: 'normal-text',
-          text: '有人说谎了，卡勒侦探已经知道了那个人是谁。出色的观察家同样也能发现，快来试试吧！'
+          text: '有人说谎了，福生侦探已经知道了那个人是谁。出色的观察家同样也能发现，快来试试吧！'
         }
       ],
       questionImage: {
@@ -2317,23 +2132,22 @@ const QuizzesData = [
         height: 630
       }
     },
-    answerArea: { x: 216, y: 140 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '特奥·菲契尔没说真话，他的鞋印和拐杖在雪地里的痕迹清楚地显示，他不是经过，而是走进了迪利的烟草商店。'
-          }
-        ]
-      }
-    ]
+    answerArea: {
+      x: 216,
+      y: 140
+    },
+    solutions: [{
+      solutionTag: '解析',
+      align: 'left',
+      solutionData: [{
+        blockId: '1',
+        blockType: 'normal-text',
+        text: '特奥·菲契尔没说真话，他的鞋印和拐杖在雪地里的痕迹清楚地显示，他不是经过，而是走进了迪利的烟草商店。'
+      }]
+    }]
   },
   {
-    quizId: 34,
+    quizId: 33,
     quizType: 2,
     title: '施魏因斯堡瓷器',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -2341,8 +2155,7 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
@@ -2383,23 +2196,22 @@ const QuizzesData = [
         height: 630
       }
     },
-    answerArea: { x: 216, y: 140 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '如果有人从隧道里逃跑，那隧道口的蜘蛛网一定会被破坏，地上的杂草也会被踩扁。'
-          }
-        ]
-      }
-    ]
+    answerArea: {
+      x: 216,
+      y: 140
+    },
+    solutions: [{
+      solutionTag: '解析',
+      align: 'left',
+      solutionData: [{
+        blockId: '1',
+        blockType: 'normal-text',
+        text: '如果有人从隧道里逃跑，那隧道口的蜘蛛网一定会被破坏，地上的杂草也会被踩扁。'
+      }]
+    }]
   },
   {
-    quizId: 35,
+    quizId: 34,
     quizType: 2,
     title: '裤子纽扣的小把戏',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -2407,15 +2219,14 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '武尔茨格林德林恩正在举办热闹的狂欢节。而卡勒侦探必须查清一起案件：他被叫到克拉肯酒馆，酒馆老板和装扮成12号囚犯的诺勒在巷子里吵架，老板控诉诺勒在酒馆内用裤子纽扣操控自动游戏机，把整个钱箱都掏空了。诺勒反驳说，他从未在克拉肯酒馆里待过。'
+          text: '武尔茨格林德林恩正在举办热闹的狂欢节。而福生侦探必须查清一起案件：他被叫到克拉肯酒馆，酒馆老板和装扮成12号囚犯的诺勒在巷子里吵架，老板控诉诺勒在酒馆内用裤子纽扣操控自动游戏机，把整个钱箱都掏空了。诺勒反驳说，他从未在克拉肯酒馆里待过。'
         },
         {
           blockId: '3',
@@ -2428,7 +2239,7 @@ const QuizzesData = [
         {
           blockId: '5',
           blockType: 'normal-text',
-          text: '诺勒只穿着背心和囚犯裤子，在寒冷的室外开始打喷嚏，酒店老板把他和卡勒侦探带进温暖的小酒馆，闷热的室内空气扑面而来。酒店老板指着自动游戏机说：“诺勒在这里玩了一个小时并把游戏机里的钱掏空了，当我想和他说话的时候，他就跑到外面的巷子里去了。”'
+          text: '诺勒只穿着背心和囚犯裤子，在寒冷的室外开始打喷嚏，酒店老板把他和福生侦探带进温暖的小酒馆，闷热的室内空气扑面而来。酒店老板指着自动游戏机说：“诺勒在这里玩了一个小时并把游戏机里的钱掏空了，当我想和他说话的时候，他就跑到外面的巷子里去了。”'
         },
         {
           blockId: '6',
@@ -2454,7 +2265,7 @@ const QuizzesData = [
         {
           blockId: '5',
           blockType: 'normal-text',
-          text: '卡勒侦探打量了一下克拉肯酒馆，整个案件一目了然，他要求诺勒说出真相。'
+          text: '福生侦探打量了一下克拉肯酒馆，整个案件一目了然，他要求诺勒说出真相。'
         },
         {
           blockId: '6',
@@ -2467,7 +2278,7 @@ const QuizzesData = [
         {
           blockId: '8',
           blockType: 'normal-text',
-          text: '卡勒侦探为什么知道诺勒说谎了？'
+          text: '福生侦探为什么知道诺勒说谎了？'
         }
       ],
       questionImage: {
@@ -2475,23 +2286,22 @@ const QuizzesData = [
         height: 378
       }
     },
-    answerArea: { x: 216, y: 140 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '诺勒宣称，从未在克拉肯小酒馆内待过，这是不对的。他在外面只穿着背心，他的12号囚衣在小酒馆里，就挂在小丑左边的椅背上，在此之前他肯定在小酒馆里待过，把衣服挂在那里。'
-          }
-        ]
-      }
-    ]
+    answerArea: {
+      x: 216,
+      y: 140
+    },
+    solutions: [{
+      solutionTag: '解析',
+      align: 'left',
+      solutionData: [{
+        blockId: '1',
+        blockType: 'normal-text',
+        text: '诺勒宣称，从未在克拉肯小酒馆内待过，这是不对的。他在外面只穿着背心，他的12号囚衣在小酒馆里，就挂在小丑左边的椅背上，在此之前他肯定在小酒馆里待过，把衣服挂在那里。'
+      }]
+    }]
   },
   {
-    quizId: 36,
+    quizId: 35,
     quizType: 2,
     title: '陌生的床',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -2499,8 +2309,7 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
@@ -2554,23 +2363,22 @@ const QuizzesData = [
         height: 420
       }
     },
-    answerArea: { x: 216, y: 140 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '视频录像显示皮罗穿着条形花纹袜子，他的体操鞋放在床头柜上，在图中只有左下角的床垫搬运工穿着同样的鞋子和袜子。吉塔侦探的怀疑完全正确！皮罗·施托茨装扮成床垫搬运工从商店脱身。'
-          }
-        ]
-      }
-    ]
+    answerArea: {
+      x: 216,
+      y: 140
+    },
+    solutions: [{
+      solutionTag: '解析',
+      align: 'left',
+      solutionData: [{
+        blockId: '1',
+        blockType: 'normal-text',
+        text: '视频录像显示皮罗穿着条形花纹袜子，他的体操鞋放在床头柜上，在图中只有左下角的床垫搬运工穿着同样的鞋子和袜子。吉塔侦探的怀疑完全正确！皮罗·施托茨装扮成床垫搬运工从商店脱身。'
+      }]
+    }]
   },
   {
-    quizId: 37,
+    quizId: 36,
     quizType: 2,
     title: '伪造的科勒蒂画像',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -2578,15 +2386,14 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '在艺术博物馆内，一幅价值连城的著名画家卡洛·科勒蒂的自画像被人从画框里偷走了。卡勒侦探推测幕后黑手是画家皮诺•罗森布劳，他专门伪造著名画作，并把他的复制品作为原作真品卖给艺术爱好者，牟取暴利。'
+          text: '在艺术博物馆内，一幅价值连城的著名画家卡洛·科勒蒂的自画像被人从画框里偷走了。福生侦探推测幕后黑手是画家皮诺•罗森布劳，他专门伪造著名画作，并把他的复制品作为原作真品卖给艺术爱好者，牟取暴利。'
         },
         {
           blockId: '3',
@@ -2599,7 +2406,7 @@ const QuizzesData = [
         {
           blockId: '5',
           blockType: 'normal-text',
-          text: '当卡勒侦探来到皮诺的工作室时，他惊讶地发现皮诺已经茫然不知所措，因为他在比较真迹和数量众多的仿制品。第一眼看上去，人们会以为看到了十张一模一样的卡洛·科勒蒂自画像。不过卡勒侦探很快就认识到，皮诺并不是一开始就能成功地画出完美无缺的仿制品，仔细观察就可以看到小小的不同点，其中只有两幅画是完全一样的。卡勒侦探立即把这两幅画包起来带走，因为博物馆馆长可以轻而易举地将原作和真品分辨出来。卡勒侦探必须带走哪两幅画呢？'
+          text: '当福生侦探来到皮诺的工作室时，他惊讶地发现皮诺已经茫然不知所措，因为他在比较真迹和数量众多的仿制品。第一眼看上去，人们会以为看到了十张一模一样的卡洛·科勒蒂自画像。不过福生侦探很快就认识到，皮诺并不是一开始就能成功地画出完美无缺的仿制品，仔细观察就可以看到小小的不同点，其中只有两幅画是完全一样的。福生侦探立即把这两幅画包起来带走，因为博物馆馆长可以轻而易举地将原作和真品分辨出来。福生侦探必须带走哪两幅画呢？'
         }
       ],
       questionImage: {
@@ -2607,23 +2414,22 @@ const QuizzesData = [
         height: 546
       }
     },
-    answerArea: { x: 216, y: 140 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '完全一致的两幅画分别在最上方一行的中间以及倒数第2行的左侧。'
-          }
-        ]
-      }
-    ]
+    answerArea: {
+      x: 216,
+      y: 140
+    },
+    solutions: [{
+      solutionTag: '解析',
+      align: 'left',
+      solutionData: [{
+        blockId: '1',
+        blockType: 'normal-text',
+        text: '完全一致的两幅画分别在最上方一行的中间以及倒数第2行的左侧。'
+      }]
+    }]
   },
   {
-    quizId: 38,
+    quizId: 37,
     quizType: 2,
     title: '盈利的魔术',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -2631,8 +2437,7 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
@@ -2660,23 +2465,22 @@ const QuizzesData = [
         height: 590
       }
     },
-    answerArea: { x: 216, y: 140 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '阿伯拉·卡伯拉在酒吧后面的房间里，那里有烟圈升起。阿伯拉·卡伯拉魔术戏台的宣传张贴画显示他也是一名“艺术吸烟者”。'
-          }
-        ]
-      }
-    ]
+    answerArea: {
+      x: 216,
+      y: 140
+    },
+    solutions: [{
+      solutionTag: '解析',
+      align: 'left',
+      solutionData: [{
+        blockId: '1',
+        blockType: 'normal-text',
+        text: '阿伯拉·卡伯拉在酒吧后面的房间里，那里有烟圈升起。阿伯拉·卡伯拉魔术戏台的宣传张贴画显示他也是一名“艺术吸烟者”。'
+      }]
+    }]
   },
   {
-    quizId: 39,
+    quizId: 38,
     quizType: 2,
     title: '微型路易斯·菲利普座钟',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -2684,15 +2488,14 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '钟表收藏家埃尔玛尔·帕茨克向卡勒和吉塔展示自己微小而精美的收藏品，突然他大叫起来：“路易斯·菲利普不见了！我最珍贵的收藏品就是这台19世纪的微型座钟，尽管它总是走慢10分钟。昨天我还向钟表商人普菲德勒展示了这个座钟，他非常兴奋，要我立即把这台座钟出售给他！”卡勒沉思着皱起眉头，普菲德勒会发现路易斯·菲利普的时间显示错误吗？人们私下传说，他常常做些不正当的事。'
+          text: '钟表收藏家埃尔玛尔·帕茨克向福生和吉塔展示自己微小而精美的收藏品，突然他大叫起来：“路易斯·菲利普不见了！我最珍贵的收藏品就是这台19世纪的微型座钟，尽管它总是走慢10分钟。昨天我还向钟表商人普菲德勒展示了这个座钟，他非常兴奋，要我立即把这台座钟出售给他！”福生沉思着皱起眉头，普菲德勒会发现路易斯·菲利普的时间显示错误吗？人们私下传说，他常常做些不正当的事。'
         },
         {
           blockId: '3',
@@ -2705,7 +2508,7 @@ const QuizzesData = [
         {
           blockId: '5',
           blockType: 'normal-text',
-          text: '卡勒和吉塔侦探承诺调查这件事情，很快他们就来到了普菲德勒的商店，上百个钟表在这个房间里滴答作响。“我们在为我们的叔叔找一只古董钟表。”吉塔侦探说。这样他们就可以安安静静地搜寻路易斯·菲利普座钟，很快两个人互相眨眼示意：看，它就在那里！'
+          text: '福生和吉塔侦探承诺调查这件事情，很快他们就来到了普菲德勒的商店，上百个钟表在这个房间里滴答作响。“我们在为我们的叔叔找一只古董钟表。”吉塔侦探说。这样他们就可以安安静静地搜寻路易斯·菲利普座钟，很快两个人互相眨眼示意：看，它就在那里！'
         },
         {
           blockId: '6',
@@ -2718,7 +2521,7 @@ const QuizzesData = [
         {
           blockId: '8',
           blockType: 'normal-text',
-          text: '这只座钟藏在哪里？卡勒和吉塔怎样发现了它？'
+          text: '这只座钟藏在哪里？福生和吉塔怎样发现了它？'
         }
       ],
       questionImage: {
@@ -2726,23 +2529,22 @@ const QuizzesData = [
         height: 590
       }
     },
-    answerArea: { x: 216, y: 140 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '仔细阅读就会知道微型路易斯·菲利普座钟走慢10分钟。根据普菲得勒钟表店宣传招牌，该商店内的所有钟表均走时准确，他们都显示11点45分，除了路易斯·菲利普座钟，它是唯一显示11点35分的时钟，就在展示柜最下面一层。'
-          }
-        ]
-      }
-    ]
+    answerArea: {
+      x: 216,
+      y: 140
+    },
+    solutions: [{
+      solutionTag: '解析',
+      align: 'left',
+      solutionData: [{
+        blockId: '1',
+        blockType: 'normal-text',
+        text: '仔细阅读就会知道微型路易斯·菲利普座钟走慢10分钟。根据普菲得勒钟表店宣传招牌，该商店内的所有钟表均走时准确，他们都显示11点45分，除了路易斯·菲利普座钟，它是唯一显示11点35分的时钟，就在展示柜最下面一层。'
+      }]
+    }]
   },
   {
-    quizId: 40,
+    quizId: 39,
     quizType: 2,
     title: '碰头地点小香肠酒吧',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -2750,15 +2552,14 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。卡勒侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。卡勒侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，卡勒侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当卡勒侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了卡勒侦探，并看清了卡勒侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
+          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。福生侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。福生侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，福生侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当福生侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了福生侦探，并看清了福生侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
         }
       ],
       questionImage: {
@@ -2766,23 +2567,22 @@ const QuizzesData = [
         height: 420
       }
     },
-    answerArea: { x: 216, y: 140 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '两个人交换了报纸，磁盘肯定藏在米尔佐的报纸《最新消息》中。'
-          }
-        ]
-      }
-    ]
+    answerArea: {
+      x: 216,
+      y: 140
+    },
+    solutions: [{
+      solutionTag: '解析',
+      align: 'left',
+      solutionData: [{
+        blockId: '1',
+        blockType: 'normal-text',
+        text: '两个人交换了报纸，磁盘肯定藏在米尔佐的报纸《最新消息》中。'
+      }]
+    }]
   },
   {
-    quizId: 45,
+    quizId: 40,
     quizType: 2,
     title: '洛策和大提琴',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -2790,15 +2590,14 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。卡勒侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。卡勒侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，卡勒侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当卡勒侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了卡勒侦探，并看清了卡勒侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
+          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。福生侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。福生侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，福生侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当福生侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了福生侦探，并看清了福生侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
         }
       ],
       questionImage: {
@@ -2806,23 +2605,22 @@ const QuizzesData = [
         height: 540
       }
     },
-    answerArea: { x: 216, y: 140 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '如果像洛策宣称的那样，他根本就不知道那里有大提琴，他在黑暗中也会被绊倒。当他去厨房取灯时，他自动绕开了大提琴，说明正是他把琴放在了那里。'
-          }
-        ]
-      }
-    ]
+    answerArea: {
+      x: 216,
+      y: 140
+    },
+    solutions: [{
+      solutionTag: '解析',
+      align: 'left',
+      solutionData: [{
+        blockId: '1',
+        blockType: 'normal-text',
+        text: '如果像洛策宣称的那样，他根本就不知道那里有大提琴，他在黑暗中也会被绊倒。当他去厨房取灯时，他自动绕开了大提琴，说明正是他把琴放在了那里。'
+      }]
+    }]
   },
   {
-    quizId: 46,
+    quizId: 41,
     quizType: 2,
     title: '第3只恐龙蛋',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
@@ -2830,15 +2628,14 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。卡勒侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。卡勒侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，卡勒侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当卡勒侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了卡勒侦探，并看清了卡勒侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
+          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。福生侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。福生侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，福生侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当福生侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了福生侦探，并看清了福生侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
         }
       ],
       questionImage: {
@@ -2846,20 +2643,19 @@ const QuizzesData = [
         height: 900
       }
     },
-    answerArea: { x: 216, y: 140 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '的确是助理珀克偷走了第3只恐龙蛋，但是他太愚蠢了，在翻越恐龙展览处的玻璃挡板时竟然把实验室钥匙掉在那里。那把钥匙在图片右侧边缘，就在吉塔侦探边上。'
-          }
-        ]
-      }
-    ]
+    answerArea: {
+      x: 216,
+      y: 140
+    },
+    solutions: [{
+      solutionTag: '解析',
+      align: 'left',
+      solutionData: [{
+        blockId: '1',
+        blockType: 'normal-text',
+        text: '的确是助理珀克偷走了第3只恐龙蛋，但是他太愚蠢了，在翻越恐龙展览处的玻璃挡板时竟然把实验室钥匙掉在那里。那把钥匙在图片右侧边缘，就在吉塔侦探边上。'
+      }]
+    }]
   },
   {
     quizId: 47,
@@ -2870,15 +2666,14 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。卡勒侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。卡勒侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，卡勒侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当卡勒侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了卡勒侦探，并看清了卡勒侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
+          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。福生侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。福生侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，福生侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当福生侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了福生侦探，并看清了福生侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
         }
       ],
       questionImage: {
@@ -2886,20 +2681,19 @@ const QuizzesData = [
         height: 630
       }
     },
-    answerArea: { x: 216, y: 140 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '这个潜入者是克里莫·卡茨，从他的大眼睛、招风耳和帽子可以认出他，照片中他将帽子拿在手里。事实上他想知道乔什么时候到达，并想偷一块月亮岩石。'
-          }
-        ]
-      }
-    ]
+    answerArea: {
+      x: 216,
+      y: 140
+    },
+    solutions: [{
+      solutionTag: '解析',
+      align: 'left',
+      solutionData: [{
+        blockId: '1',
+        blockType: 'normal-text',
+        text: '这个潜入者是克里莫·卡茨，从他的大眼睛、招风耳和帽子可以认出他，照片中他将帽子拿在手里。事实上他想知道乔什么时候到达，并想偷一块月亮岩石。'
+      }]
+    }]
   },
   {
     quizId: 48,
@@ -2910,15 +2704,14 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。卡勒侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。卡勒侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，卡勒侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当卡勒侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了卡勒侦探，并看清了卡勒侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
+          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。福生侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。福生侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，福生侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当福生侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了福生侦探，并看清了福生侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
         }
       ],
       questionImage: {
@@ -2926,29 +2719,29 @@ const QuizzesData = [
         height: 450
       }
     },
-    answerArea: { x: 216, y: 140 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '这则广告是发给犯罪集团成员的密码召集令，具体内容如下：'
-          },
-          {
-            blockId: '2',
-            blockType: 'return'
-          },
-          {
-            blockId: '3',
-            blockType: 'normal-text',
-            text: '克利普 - 克里普 - 集团重要通知！所有集团成员。本周三晚上 19:30在蓝牛附近的 旅馆碰头。 奥托的最新供货到了！没有到场 的人，必将一无所得。 集团首领'
-          }
-        ]
-      }
-    ]
+    answerArea: {
+      x: 216,
+      y: 140
+    },
+    solutions: [{
+      solutionTag: '解析',
+      align: 'left',
+      solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '这则广告是发给犯罪集团成员的密码召集令，具体内容如下：'
+        },
+        {
+          blockId: '2',
+          blockType: 'return'
+        },
+        {
+          blockId: '3',
+          blockType: 'normal-text',
+          text: '克利普 - 克里普 - 集团重要通知！所有集团成员。本周三晚上 19:30在蓝牛附近的 旅馆碰头。 李冰的最新供货到了！没有到场 的人，必将一无所得。 集团首领'
+        }
+      ]
+    }]
   },
   {
     quizId: 49,
@@ -2959,15 +2752,14 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。卡勒侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。卡勒侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，卡勒侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当卡勒侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了卡勒侦探，并看清了卡勒侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
+          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。福生侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。福生侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，福生侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当福生侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了福生侦探，并看清了福生侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
         }
       ],
       questionImage: {
@@ -2975,20 +2767,19 @@ const QuizzesData = [
         height: 315
       }
     },
-    answerArea: { x: 216, y: 140 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '钥匙I打开1号锁。钥匙Q打开2号锁。钥匙L打开3号锁。钥匙B打开4号锁。'
-          }
-        ]
-      }
-    ]
+    answerArea: {
+      x: 216,
+      y: 140
+    },
+    solutions: [{
+      solutionTag: '解析',
+      align: 'left',
+      solutionData: [{
+        blockId: '1',
+        blockType: 'normal-text',
+        text: '钥匙I打开1号锁。钥匙Q打开2号锁。钥匙L打开3号锁。钥匙B打开4号锁。'
+      }]
+    }]
   },
   {
     quizId: 50,
@@ -2999,15 +2790,14 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。卡勒侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。卡勒侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，卡勒侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当卡勒侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了卡勒侦探，并看清了卡勒侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
+          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。福生侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。福生侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，福生侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当福生侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了福生侦探，并看清了福生侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
         }
       ],
       questionImage: {
@@ -3015,20 +2805,19 @@ const QuizzesData = [
         height: 524.5
       }
     },
-    answerArea: { x: 216, y: 140 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '那个假冒警察在从前向后数第六排，即那位戴着太阳镜的女士对着的那一排，从左向右数第二个警察。'
-          }
-        ]
-      }
-    ]
+    answerArea: {
+      x: 216,
+      y: 140
+    },
+    solutions: [{
+      solutionTag: '解析',
+      align: 'left',
+      solutionData: [{
+        blockId: '1',
+        blockType: 'normal-text',
+        text: '那个假冒警察在从前向后数第六排，即那位戴着太阳镜的女士对着的那一排，从左向右数第二个警察。'
+      }]
+    }]
   },
   {
     quizId: 51,
@@ -3039,15 +2828,14 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。卡勒侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。卡勒侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，卡勒侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当卡勒侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了卡勒侦探，并看清了卡勒侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
+          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。福生侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。福生侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，福生侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当福生侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了福生侦探，并看清了福生侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
         }
       ],
       questionImage: {
@@ -3055,20 +2843,19 @@ const QuizzesData = [
         height: 524.5
       }
     },
-    answerArea: { x: 216, y: 140 },
-    solutions: [
-      {
-        solutionTag: '解析',
-        align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '福尔克尔·德姆里希肯定知道克洛普夫咖啡馆而且一定也去过那里，因为他把那家咖啡馆的火柴带回了家，吉塔侦探看到这包火柴就在插图右下角的小桌子上。'
-          }
-        ]
-      }
-    ]
+    answerArea: {
+      x: 216,
+      y: 140
+    },
+    solutions: [{
+      solutionTag: '解析',
+      align: 'left',
+      solutionData: [{
+        blockId: '1',
+        blockType: 'normal-text',
+        text: '福尔克尔·德姆里希肯定知道克洛普夫咖啡馆而且一定也去过那里，因为他把那家咖啡馆的火柴带回了家，吉塔侦探看到这包火柴就在插图右下角的小桌子上。'
+      }]
+    }]
   },
   {
     quizId: 52,
@@ -3079,15 +2866,14 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。卡勒侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。卡勒侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，卡勒侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当卡勒侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了卡勒侦探，并看清了卡勒侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
+          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。福生侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。福生侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，福生侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当福生侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了福生侦探，并看清了福生侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
         }
       ],
       questionImage: {
@@ -3095,29 +2881,27 @@ const QuizzesData = [
         height: 630
       }
     },
-    answerArea: { x: 216, y: 140 },
-    solutions: [
-      {
+    answerArea: {
+      x: 216,
+      y: 140
+    },
+    solutions: [{
         solutionTag: '答案',
         align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '2 号'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '2 号'
+        }]
       },
       {
         solutionTag: '提示',
         align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '2 号弹孔裂痕挡住了 1 号和 3 号弹孔裂痕的蔓延'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '2 号弹孔裂痕挡住了 1 号和 3 号弹孔裂痕的蔓延'
+        }]
       }
     ]
   },
@@ -3130,15 +2914,14 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。卡勒侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。卡勒侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，卡勒侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当卡勒侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了卡勒侦探，并看清了卡勒侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
+          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。福生侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。福生侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，福生侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当福生侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了福生侦探，并看清了福生侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
         }
       ],
       questionImage: {
@@ -3146,29 +2929,27 @@ const QuizzesData = [
         height: 630
       }
     },
-    answerArea: { x: 216, y: 140 },
-    solutions: [
-      {
+    answerArea: {
+      x: 216,
+      y: 140
+    },
+    solutions: [{
         solutionTag: '答案',
         align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '谋杀'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '谋杀'
+        }]
       },
       {
         solutionTag: '提示',
         align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '从楼梯上摔下应该是面朝下，而不是面朝上'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '从楼梯上摔下应该是面朝下，而不是面朝上'
+        }]
       }
     ]
   },
@@ -3181,15 +2962,14 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。卡勒侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。卡勒侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，卡勒侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当卡勒侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了卡勒侦探，并看清了卡勒侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
+          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。福生侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。福生侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，福生侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当福生侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了福生侦探，并看清了福生侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
         }
       ],
       questionImage: {
@@ -3197,24 +2977,23 @@ const QuizzesData = [
         height: 378
       }
     },
-    answerArea: { x: 216, y: 140 },
-    solutions: [
-      {
+    answerArea: {
+      x: 216,
+      y: 140
+    },
+    solutions: [{
         solutionTag: '答案',
         align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '87 号'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '87 号'
+        }]
       },
       {
         solutionTag: '提示',
         align: 'left',
-        solutionData: [
-          {
+        solutionData: [{
             blockId: '1',
             blockType: 'normal-text',
             text: '请将图片上下翻转，车位编号依次是 86 87 88 89 90 91'
@@ -3244,15 +3023,14 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。卡勒侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。卡勒侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，卡勒侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当卡勒侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了卡勒侦探，并看清了卡勒侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
+          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。福生侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。福生侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，福生侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当福生侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了福生侦探，并看清了福生侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
         }
       ],
       questionImage: {
@@ -3260,24 +3038,23 @@ const QuizzesData = [
         height: 420
       }
     },
-    answerArea: { x: 216, y: 140 },
-    solutions: [
-      {
+    answerArea: {
+      x: 216,
+      y: 140
+    },
+    solutions: [{
         solutionTag: '答案',
         align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '谋杀'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '谋杀'
+        }]
       },
       {
         solutionTag: '解析',
         align: 'left',
-        solutionData: [
-          {
+        solutionData: [{
             blockId: '1',
             blockType: 'normal-text',
             text: '该名死者可能死于谋杀，原因如下：'
@@ -3322,15 +3099,14 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。卡勒侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。卡勒侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，卡勒侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当卡勒侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了卡勒侦探，并看清了卡勒侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
+          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。福生侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。福生侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，福生侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当福生侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了福生侦探，并看清了福生侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
         }
       ],
       questionImage: {
@@ -3338,29 +3114,27 @@ const QuizzesData = [
         height: 546
       }
     },
-    answerArea: { x: 216, y: 140 },
-    solutions: [
-      {
+    answerArea: {
+      x: 216,
+      y: 140
+    },
+    solutions: [{
         solutionTag: '答案',
         align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: 'A'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: 'A'
+        }]
       },
       {
         solutionTag: '解析',
         align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '注意树叶的数量'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '注意树叶的数量'
+        }]
       }
     ]
   },
@@ -3373,15 +3147,14 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。卡勒侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。卡勒侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，卡勒侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当卡勒侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了卡勒侦探，并看清了卡勒侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
+          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。福生侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。福生侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，福生侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当福生侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了福生侦探，并看清了福生侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
         }
       ],
       questionImage: {
@@ -3389,29 +3162,27 @@ const QuizzesData = [
         height: 590
       }
     },
-    answerArea: { x: 216, y: 140 },
-    solutions: [
-      {
+    answerArea: {
+      x: 216,
+      y: 140
+    },
+    solutions: [{
         solutionTag: '答案',
         align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '小园'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '小园'
+        }]
       },
       {
         solutionTag: '解析',
         align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '请根据血迹辨认：杀死我的人名小园'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '请根据血迹辨认：杀死我的人名小园'
+        }]
       }
     ]
   },
@@ -3424,15 +3195,14 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。卡勒侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。卡勒侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，卡勒侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当卡勒侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了卡勒侦探，并看清了卡勒侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
+          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。福生侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。福生侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，福生侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当福生侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了福生侦探，并看清了福生侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
         }
       ],
       questionImage: {
@@ -3440,29 +3210,27 @@ const QuizzesData = [
         height: 420
       }
     },
-    answerArea: { x: 216, y: 140 },
-    solutions: [
-      {
+    answerArea: {
+      x: 216,
+      y: 140
+    },
+    solutions: [{
         solutionTag: '答案',
         align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '2 号'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '2 号'
+        }]
       },
       {
         solutionTag: '解析',
         align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '2 号的危险没有被其他人的目光观察到'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '2 号的危险没有被其他人的目光观察到'
+        }]
       }
     ]
   },
@@ -3475,15 +3243,14 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。卡勒侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。卡勒侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，卡勒侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当卡勒侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了卡勒侦探，并看清了卡勒侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
+          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。福生侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。福生侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，福生侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当福生侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了福生侦探，并看清了福生侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
         }
       ],
       questionImage: {
@@ -3491,29 +3258,27 @@ const QuizzesData = [
         height: 540
       }
     },
-    answerArea: { x: 216, y: 140 },
-    solutions: [
-      {
+    answerArea: {
+      x: 216,
+      y: 140
+    },
+    solutions: [{
         solutionTag: '答案',
         align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '右侧'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '右侧'
+        }]
       },
       {
         solutionTag: '解析',
         align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '请观察闹钟，早上五点钟的太阳尚未升起'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '请观察闹钟，早上五点钟的太阳尚未升起'
+        }]
       }
     ]
   },
@@ -3526,15 +3291,14 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。卡勒侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。卡勒侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，卡勒侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当卡勒侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了卡勒侦探，并看清了卡勒侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
+          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。福生侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。福生侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，福生侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当福生侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了福生侦探，并看清了福生侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
         }
       ],
       questionImage: {
@@ -3542,29 +3306,27 @@ const QuizzesData = [
         height: 900
       }
     },
-    answerArea: { x: 216, y: 140 },
-    solutions: [
-      {
+    answerArea: {
+      x: 216,
+      y: 140
+    },
+    solutions: [{
         solutionTag: '答案',
         align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '三楼'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '三楼'
+        }]
       },
       {
         solutionTag: '解析',
         align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '裸体男子翻窗逃跑时一般不会往上爬或者挂在窗前；另外他的屁股上有伤，可能是三楼窗台上的仙人掌所致'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '裸体男子翻窗逃跑时一般不会往上爬或者挂在窗前；另外他的屁股上有伤，可能是三楼窗台上的仙人掌所致'
+        }]
       }
     ]
   },
@@ -3577,15 +3339,14 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。卡勒侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。卡勒侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，卡勒侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当卡勒侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了卡勒侦探，并看清了卡勒侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
+          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。福生侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。福生侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，福生侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当福生侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了福生侦探，并看清了福生侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
         }
       ],
       questionImage: {
@@ -3593,24 +3354,23 @@ const QuizzesData = [
         height: 630
       }
     },
-    answerArea: { x: 216, y: 140 },
-    solutions: [
-      {
+    answerArea: {
+      x: 216,
+      y: 140
+    },
+    solutions: [{
         solutionTag: '答案',
         align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '仔细观察照片'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '仔细观察照片'
+        }]
       },
       {
         solutionTag: '解析',
         align: 'left',
-        solutionData: [
-          {
+        solutionData: [{
             blockId: '1',
             blockType: 'normal-text',
             text: '在床头柜与床垫之间的缝隙里，可以看到有男人藏在里面'
@@ -3640,15 +3400,14 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。卡勒侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。卡勒侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，卡勒侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当卡勒侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了卡勒侦探，并看清了卡勒侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
+          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。福生侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。福生侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，福生侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当福生侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了福生侦探，并看清了福生侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
         }
       ],
       questionImage: {
@@ -3656,29 +3415,27 @@ const QuizzesData = [
         height: 450
       }
     },
-    answerArea: { x: 216, y: 140 },
-    solutions: [
-      {
+    answerArea: {
+      x: 216,
+      y: 140
+    },
+    solutions: [{
         solutionTag: '答案',
         align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '3 号'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '3 号'
+        }]
       },
       {
         solutionTag: '解析',
         align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '在不被人注意的情况下进入女洗手间行凶，3 号顾客具备更有利的作案条件'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '在不被人注意的情况下进入女洗手间行凶，3 号顾客具备更有利的作案条件'
+        }]
       }
     ]
   },
@@ -3691,15 +3448,14 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。卡勒侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。卡勒侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，卡勒侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当卡勒侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了卡勒侦探，并看清了卡勒侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
+          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。福生侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。福生侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，福生侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当福生侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了福生侦探，并看清了福生侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
         }
       ],
       questionImage: {
@@ -3707,24 +3463,23 @@ const QuizzesData = [
         height: 315
       }
     },
-    answerArea: { x: 216, y: 140 },
-    solutions: [
-      {
+    answerArea: {
+      x: 216,
+      y: 140
+    },
+    solutions: [{
         solutionTag: '答案',
         align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: 'BILL'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: 'BILL'
+        }]
       },
       {
         solutionTag: '解析',
         align: 'left',
-        solutionData: [
-          {
+        solutionData: [{
             blockId: '1',
             blockType: 'normal-text',
             text: '请将图片上下翻转，辨认 BILL IS BOSS HE SELLS OIL 字样'
@@ -3754,15 +3509,14 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '卡勒侦探每周三都会和几个老朋友在楚尔卡茨饭店聚会。他去参加聚会时经常能看到住在饭店附近的发明家施皮罗，施皮罗制造了各种稀奇古怪的机器，但是今天他万分沮丧，因为他的最新发明——宠物牙齿自动清洁机被人恶意破坏了。'
+          text: '福生侦探每周三都会和几个老朋友在楚尔卡茨饭店聚会。他去参加聚会时经常能看到住在饭店附近的发明家施皮罗，施皮罗制造了各种稀奇古怪的机器，但是今天他万分沮丧，因为他的最新发明——宠物牙齿自动清洁机被人恶意破坏了。'
         },
         {
           blockId: '3',
@@ -3775,7 +3529,7 @@ const QuizzesData = [
         {
           blockId: '5',
           blockType: 'normal-text',
-          text: '“肯定是昨天下午我离开时发生的，”施皮罗回忆道，“我觉得我的房东富尔勒就是搞破坏的人，因为我上个月没有付房租，他一只威胁我，如果不尽快付房租就要我好看。”卡勒侦探提出到施皮罗的房间看一下现场，当施皮罗打开房门时，刚好房东富尔勒从走廊经过，卡勒侦探立即向他问起此事。'
+          text: '“肯定是昨天下午我离开时发生的，”施皮罗回忆道，“我觉得我的房东富尔勒就是搞破坏的人，因为我上个月没有付房租，他一只威胁我，如果不尽快付房租就要我好看。”福生侦探提出到施皮罗的房间看一下现场，当施皮罗打开房门时，刚好房东富尔勒从走廊经过，福生侦探立即向他问起此事。'
         },
         {
           blockId: '6',
@@ -3801,7 +3555,7 @@ const QuizzesData = [
         {
           blockId: '11',
           blockType: 'normal-text',
-          text: '卡勒侦探冷笑着说：“不要说谎了，一定是你破坏了施皮罗的机器。”为什么卡勒侦探认为富尔勒说谎了？'
+          text: '福生侦探冷笑着说：“不要说谎了，一定是你破坏了施皮罗的机器。”为什么福生侦探认为富尔勒说谎了？'
         }
       ],
       questionImage: {
@@ -3809,32 +3563,30 @@ const QuizzesData = [
         height: 524.5
       }
     },
-    answerArea: { x: 216, y: 140 },
-    solutions: [
-      {
+    answerArea: {
+      x: 216,
+      y: 140
+    },
+    solutions: [{
         solutionTag: '答案',
         align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'image',
-            image: {
-              url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/quizzes/q6j8pc7e.jpg',
-              height: 285
-            }
+        solutionData: [{
+          blockId: '1',
+          blockType: 'image',
+          image: {
+            url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/quizzes/q6j8pc7e.jpg',
+            height: 285
           }
-        ]
+        }]
       },
       {
         solutionTag: '提示',
         align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '先踩上去的脚印会被后踩上去的脚印覆盖'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '先踩上去的脚印会被后踩上去的脚印覆盖'
+        }]
       }
     ]
   },
@@ -3847,8 +3599,7 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
@@ -3876,29 +3627,27 @@ const QuizzesData = [
         height: 630
       }
     },
-    answerArea: { x: 216, y: 140 },
-    solutions: [
-      {
+    answerArea: {
+      x: 216,
+      y: 140
+    },
+    solutions: [{
         solutionTag: '答案',
         align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '2 号'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '2 号'
+        }]
       },
       {
         solutionTag: '提示',
         align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '2 号弹孔裂痕挡住了 1 号和 3 号弹孔裂痕的蔓延'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '2 号弹孔裂痕挡住了 1 号和 3 号弹孔裂痕的蔓延'
+        }]
       }
     ]
   },
@@ -3911,8 +3660,7 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
@@ -3932,7 +3680,7 @@ const QuizzesData = [
         {
           blockId: '5',
           blockType: 'normal-text',
-          text: '不过，在卡尔洛参与的轮盘赌桌边上刚安装了一台隐形照相机，能自动给参与轮盘赌的人拍照。赌场经理交给卡勒侦探12张照片，都是昨晚曾经参与过轮盘赌的客人，他希望用这些照片来警示其他赌场。你能帮助他们找出照片中的哪几个人是卡尔洛易容的吗？'
+          text: '不过，在卡尔洛参与的轮盘赌桌边上刚安装了一台隐形照相机，能自动给参与轮盘赌的人拍照。赌场经理交给福生侦探12张照片，都是昨晚曾经参与过轮盘赌的客人，他希望用这些照片来警示其他赌场。你能帮助他们找出照片中的哪几个人是卡尔洛易容的吗？'
         }
       ],
       questionImage: {
@@ -3940,29 +3688,27 @@ const QuizzesData = [
         height: 630
       }
     },
-    answerArea: { x: 216, y: 140 },
-    solutions: [
-      {
+    answerArea: {
+      x: 216,
+      y: 140
+    },
+    solutions: [{
         solutionTag: '答案',
         align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '谋杀'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '谋杀'
+        }]
       },
       {
         solutionTag: '提示',
         align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '从楼梯上摔下应该是面朝下，而不是面朝上'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '从楼梯上摔下应该是面朝下，而不是面朝上'
+        }]
       }
     ]
   },
@@ -3975,8 +3721,7 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
@@ -4017,24 +3762,23 @@ const QuizzesData = [
         height: 378
       }
     },
-    answerArea: { x: 216, y: 140 },
-    solutions: [
-      {
+    answerArea: {
+      x: 216,
+      y: 140
+    },
+    solutions: [{
         solutionTag: '答案',
         align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '87 号'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '87 号'
+        }]
       },
       {
         solutionTag: '提示',
         align: 'left',
-        solutionData: [
-          {
+        solutionData: [{
             blockId: '1',
             blockType: 'normal-text',
             text: '请将图片上下翻转，车位编号依次是 86 87 88 89 90 91'
@@ -4064,8 +3808,7 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
@@ -4093,24 +3836,23 @@ const QuizzesData = [
         height: 420
       }
     },
-    answerArea: { x: 216, y: 140 },
-    solutions: [
-      {
+    answerArea: {
+      x: 216,
+      y: 140
+    },
+    solutions: [{
         solutionTag: '答案',
         align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '谋杀'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '谋杀'
+        }]
       },
       {
         solutionTag: '解析',
         align: 'left',
-        solutionData: [
-          {
+        solutionData: [{
             blockId: '1',
             blockType: 'normal-text',
             text: '该名死者可能死于谋杀，原因如下：'
@@ -4155,15 +3897,14 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '刚刚银行遭到了抢劫，三个抢匪闯入银行后迅速得手逃跑。同银行在同一幢大楼办公的卡勒侦探迅速来到案发现场并展开调查。手足无措的银行经理大喊道：“有没有人能提供一些线索，银行将重金感谢！”'
+          text: '刚刚银行遭到了抢劫，三个抢匪闯入银行后迅速得手逃跑。同银行在同一幢大楼办公的福生侦探迅速来到案发现场并展开调查。手足无措的银行经理大喊道：“有没有人能提供一些线索，银行将重金感谢！”'
         },
         {
           blockId: '3',
@@ -4189,7 +3930,7 @@ const QuizzesData = [
         {
           blockId: '8',
           blockType: 'normal-text',
-          text: '银行经理稍微送了口气，毕竟开始有一些线索了。莫特林太太也很高兴可以拿到酬劳。但是在一旁听她叙述的卡勒侦探则让她扫兴了。“您的描述从头到尾都是虚构的，您是为了骗取报酬。”那么，为什么卡勒侦探知道莫特林太太说谎了呢？'
+          text: '银行经理稍微送了口气，毕竟开始有一些线索了。莫特林太太也很高兴可以拿到酬劳。但是在一旁听她叙述的福生侦探则让她扫兴了。“您的描述从头到尾都是虚构的，您是为了骗取报酬。”那么，为什么福生侦探知道莫特林太太说谎了呢？'
         }
       ],
       questionImage: {
@@ -4197,29 +3938,27 @@ const QuizzesData = [
         height: 546
       }
     },
-    answerArea: { x: 216, y: 140 },
-    solutions: [
-      {
+    answerArea: {
+      x: 216,
+      y: 140
+    },
+    solutions: [{
         solutionTag: '答案',
         align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: 'A'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: 'A'
+        }]
       },
       {
         solutionTag: '解析',
         align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '注意树叶的数量'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '注意树叶的数量'
+        }]
       }
     ]
   },
@@ -4232,15 +3971,14 @@ const QuizzesData = [
     timeLimit: 120000,
     question: {
       questionId: 1,
-      questionTextData: [
-        {
+      questionTextData: [{
           blockId: '1',
           blockType: 'tab'
         },
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。卡勒侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。卡勒侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，卡勒侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当卡勒侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了卡勒侦探，并看清了卡勒侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
+          text: '兴高采烈的旅行团成员聚集在珀茨尔堡的大客车停车场上，他们将开始鲁茨克拉维亚10日游。福生侦探作为度假旅客也在其中，事实上，他在追踪一个长期走私鱼子酱的作案人。福生侦探并不认识这名罪犯，他仅仅知道该罪犯习惯通过这条线路来从事可疑的业务，福生侦探希望等他作案时将他当场抓获。很快，所有的行李都被放入大客车的行李厢内，当福生侦探迅速看了一下皮包和箱子后，他发现：在停车场上一共有19件行李，然而现在行李厢内仅有18件。那个作案人一定在最后一刻认出了福生侦探，并看清了福生侦探的意图，于是他悄悄地溜之大吉了。那个人是谁？'
         }
       ],
       questionImage: {
@@ -4248,29 +3986,27 @@ const QuizzesData = [
         height: 420
       }
     },
-    answerArea: { x: 216, y: 140 },
-    solutions: [
-      {
+    answerArea: {
+      x: 216,
+      y: 140
+    },
+    solutions: [{
         solutionTag: '答案',
         align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '2 号'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '2 号'
+        }]
       },
       {
         solutionTag: '解析',
         align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '2 号的危险没有被其他人的目光观察到'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '2 号的危险没有被其他人的目光观察到'
+        }]
       }
     ]
   },
@@ -4288,28 +4024,23 @@ const QuizzesData = [
         height: 540
       }
     },
-    solutions: [
-      {
+    solutions: [{
         solutionTag: '答案',
         align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '右侧'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '右侧'
+        }]
       },
       {
         solutionTag: '解析',
         align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '请观察闹钟，早上五点钟的太阳尚未升起'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '请观察闹钟，早上五点钟的太阳尚未升起'
+        }]
       }
     ]
   },
@@ -4327,28 +4058,23 @@ const QuizzesData = [
         height: 900
       }
     },
-    solutions: [
-      {
+    solutions: [{
         solutionTag: '答案',
         align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '三楼'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '三楼'
+        }]
       },
       {
         solutionTag: '解析',
         align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '裸体男子翻窗逃跑时一般不会往上爬或者挂在窗前；另外他的屁股上有伤，可能是三楼窗台上的仙人掌所致'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '裸体男子翻窗逃跑时一般不会往上爬或者挂在窗前；另外他的屁股上有伤，可能是三楼窗台上的仙人掌所致'
+        }]
       }
     ]
   },
@@ -4366,23 +4092,19 @@ const QuizzesData = [
         height: 630
       }
     },
-    solutions: [
-      {
+    solutions: [{
         solutionTag: '答案',
         align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '仔细观察照片'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '仔细观察照片'
+        }]
       },
       {
         solutionTag: '解析',
         align: 'left',
-        solutionData: [
-          {
+        solutionData: [{
             blockId: '1',
             blockType: 'normal-text',
             text: '在床头柜与床垫之间的缝隙里，可以看到有男人藏在里面'
@@ -4417,28 +4139,23 @@ const QuizzesData = [
         height: 450
       }
     },
-    solutions: [
-      {
+    solutions: [{
         solutionTag: '答案',
         align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '3 号'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '3 号'
+        }]
       },
       {
         solutionTag: '解析',
         align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '在不被人注意的情况下进入女洗手间行凶，3 号顾客具备更有利的作案条件'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '在不被人注意的情况下进入女洗手间行凶，3 号顾客具备更有利的作案条件'
+        }]
       }
     ]
   },
@@ -4456,23 +4173,19 @@ const QuizzesData = [
         height: 315
       }
     },
-    solutions: [
-      {
+    solutions: [{
         solutionTag: '答案',
         align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: 'BILL'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: 'BILL'
+        }]
       },
       {
         solutionTag: '解析',
         align: 'left',
-        solutionData: [
-          {
+        solutionData: [{
             blockId: '1',
             blockType: 'normal-text',
             text: '请将图片上下翻转，辨认 BILL IS BOSS HE SELLS OIL 字样'
@@ -4507,31 +4220,26 @@ const QuizzesData = [
         height: 524.5
       }
     },
-    solutions: [
-      {
+    solutions: [{
         solutionTag: '答案',
         align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'image',
-            image: {
-              url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/quizzes/q6j8pc7e.jpg',
-              height: 285
-            }
+        solutionData: [{
+          blockId: '1',
+          blockType: 'image',
+          image: {
+            url: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/quizzes/q6j8pc7e.jpg',
+            height: 285
           }
-        ]
+        }]
       },
       {
         solutionTag: '提示',
         align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '先踩上去的脚印会被后踩上去的脚印覆盖'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '先踩上去的脚印会被后踩上去的脚印覆盖'
+        }]
       }
     ]
   },
@@ -4549,28 +4257,23 @@ const QuizzesData = [
         height: 630
       }
     },
-    solutions: [
-      {
+    solutions: [{
         solutionTag: '答案',
         align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '2 号'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '2 号'
+        }]
       },
       {
         solutionTag: '提示',
         align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '2 号弹孔裂痕挡住了 1 号和 3 号弹孔裂痕的蔓延'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '2 号弹孔裂痕挡住了 1 号和 3 号弹孔裂痕的蔓延'
+        }]
       }
     ]
   },
@@ -4588,28 +4291,23 @@ const QuizzesData = [
         height: 630
       }
     },
-    solutions: [
-      {
+    solutions: [{
         solutionTag: '答案',
         align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '谋杀'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '谋杀'
+        }]
       },
       {
         solutionTag: '提示',
         align: 'left',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '从楼梯上摔下应该是面朝下，而不是面朝上'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '从楼梯上摔下应该是面朝下，而不是面朝上'
+        }]
       }
     ]
   },
@@ -4627,23 +4325,19 @@ const QuizzesData = [
         height: 378
       }
     },
-    solutions: [
-      {
+    solutions: [{
         solutionTag: '答案',
         align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '87 号'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '87 号'
+        }]
       },
       {
         solutionTag: '提示',
         align: 'left',
-        solutionData: [
-          {
+        solutionData: [{
             blockId: '1',
             blockType: 'normal-text',
             text: '请将图片上下翻转，车位编号依次是 86 87 88 89 90 91'
@@ -4678,23 +4372,19 @@ const QuizzesData = [
         height: 378
       }
     },
-    solutions: [
-      {
+    solutions: [{
         solutionTag: '答案',
         align: 'center',
-        solutionData: [
-          {
-            blockId: '1',
-            blockType: 'normal-text',
-            text: '87 号'
-          }
-        ]
+        solutionData: [{
+          blockId: '1',
+          blockType: 'normal-text',
+          text: '87 号'
+        }]
       },
       {
         solutionTag: '提示',
         align: 'left',
-        solutionData: [
-          {
+        solutionData: [{
             blockId: '1',
             blockType: 'normal-text',
             text: '请将图片上下翻转，车位编号依次是 86 87 88 89 90 91'
