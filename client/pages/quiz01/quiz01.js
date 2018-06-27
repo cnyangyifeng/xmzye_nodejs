@@ -599,6 +599,10 @@ Page({
               actionBarAnimationData: this.actionBarAnimation.export()
             })
           }
+          // 设置导航栏标题
+          wx.setNavigationBarTitle({
+            title: this.data.quiz.title
+          })
           // 隐藏 loading 提示框
           wx.hideLoading()
           // 开始计时

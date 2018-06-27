@@ -26,7 +26,7 @@ button::after {
   justify-content: center;
   align-items: center;
   color: #fff;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .nav-bar {
@@ -35,31 +35,7 @@ button::after {
   display: flex;
   flex-direction: column;
   width: 100vw;
-  background: linear-gradient(rgba(46, 43, 59, 1.0), rgba(46, 43, 59, 0.8));
-}
-
-.quiz-user-info {
-  flex: none;
-  display: flex;
-  align-items: center;
-}
-
-.quiz-user-vip {
-  flex: none;
-  width: 48rpx;
-  height: 48rpx;
-  margin-right: 10rpx;
-}
-
-.quiz-user-nick-name {
-  flex: none;
-  color: #fff;
-  max-width: 240rpx;
-  margin-right: 30rpx;
-  font-size: 18px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  background-color: #2e2b3b;
 }
 
 .quiz-user-asset {
@@ -67,10 +43,6 @@ button::after {
   display: flex;
   align-items: center;
   height: 60rpx;
-  padding: 0 20rpx;
-  border-radius: 40rpx;
-  border: 1px solid #666;
-  background-color: #282828;
 }
 
 .quiz-user-asset-hover {
@@ -78,8 +50,8 @@ button::after {
 }
 
 .quiz-user-asset-icon {
-  width: 36rpx;
-  height: 36rpx;
+  width: 30rpx;
+  height: 30rpx;
 }
 
 .quiz-user-asset-value {
@@ -102,7 +74,7 @@ button::after {
   padding: 0 10rpx;
   background-color: #00ba80;
   color: #fff;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .primary-btn-hover {
@@ -117,7 +89,7 @@ button::after {
   padding: 0 10rpx;
   background-color: #f2f2f2;
   color: #2e2b3b;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .secondary-btn-hover {

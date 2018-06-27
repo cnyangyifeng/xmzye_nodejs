@@ -16,7 +16,7 @@
           <view class="quiz-user-nick-name">{{quizUser.quizUserInfo.nickName}}</view>
           <view class="quiz-user-asset" hover-class="quiz-user-asset-hover">
             <image class="quiz-user-asset-icon" src="/assets/images/key.svg"></image>
-            <view class="quiz-user-asset-value">x {{quizUser.totalKeyCount}}</view>
+            <view class="quiz-user-asset-value">× {{quizUser.totalKeyCount}}</view>
           </view>
         </block>
       </view>
@@ -24,7 +24,7 @@
     <scroll-view class="quiz-tabs" scroll-x scroll-with-animation scroll-into-view="Q{{quizUser.currentQuizTabName}}">
       <view class="quiz-tabs-innner">
         <block wx:for="{{quizGrid}}" wx:key="quizTabName">
-          <view class="quiz-tab {{index===quizUser.currentQuizTabIndex?'active':''}}" hover-class="quiz-tab-hover" id="Q{{item.quizTabName}}" data-quiz-tab-index="{{index}}" bindtap="quizTabTap">{{item.quizTabName}}</view>
+          <view class="quiz-tab {{index===quizUser.currentQuizTabIndex?'active':''}}" id="Q{{item.quizTabName}}" data-quiz-tab-index="{{index}}" bindtap="quizTabTap">{{item.quizTabName}}</view>
         </block>
       </view>
     </scroll-view>

@@ -64,7 +64,6 @@
 .retention-task-value {
   font-size: 24px;
   color: #ffa000;
-  font-weight: 600;
   padding: 0 10rpx;
 }
 

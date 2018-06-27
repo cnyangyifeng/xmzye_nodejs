@@ -6,21 +6,24 @@
 <block wx:else>
   <view class="nav-bar">
     <view class="quiz-user-hd">
-      <view class="quiz-user-info">
+      <view class="quiz-info">
         <view class="quiz-id">第 {{quiz.quizId}} 题</view>
-        <block wx:if="{{quizSolved===1}}">
-          <view class="my-answer-feedback {{myAnswerFeedback===1?'right':'wrong'}}">{{myAnswerFeedback===1?'回答正确':'回答错误'}}</view>
-        </block>
-        <block wx:if="{{quizUser.vip===1}}">
-          <image class="quiz-user-vip" src="/assets/images/vip.svg"></image>
-        </block>
-        <block wx:else>
-          <view class="quiz-user-asset" hover-class="quiz-user-asset-hover">
-            <image class="quiz-user-asset-icon" src="/assets/images/key.svg"></image>
-            <view class="quiz-user-asset-value">x {{quizUser.totalKeyCount}}</view>
-          </view>
-        </block>
+        <view class="stars">
+          <image wx:for="{{quiz.stars}}" wx:key="{{item}}" class="star" src="/assets/images/{{item===1?'star_fill':'star'}}.svg"></image>
+        </view>
+        <view wx:if="{{quizSolved===1}}" class="quiz-status">
+          <image class="quiz-status-image" src="/assets/images/{{myAnswerFeedback===1?'right':'wrong'}}_fill.svg"></image>
+        </view>
       </view>
+      <block wx:if="{{quizUser.vip===1}}">
+        <image class="quiz-user-vip" src="/assets/images/vip.svg"></image>
+      </block>
+      <block wx:else>
+        <view class="quiz-user-asset" hover-class="quiz-user-asset-hover">
+          <image class="quiz-user-asset-icon" src="/assets/images/key.svg"></image>
+          <view class="quiz-user-asset-value">× {{quizUser.totalKeyCount}}</view>
+        </view>
+      </block>
       <view class="quiz-controls">
         <view hidden="{{timeElapsed>=quiz.timeLimit}}" class="quiz-control {{quizUser.muted===0?'playing':''}}" hover-class="quiz-control-hover" bindtap="bgmControlTap">
           <image class="quiz-control-icon" src="/assets/images/{{quizUser.muted===0?'music_note.svg':'music_note_off.svg'}}"></image>
@@ -52,7 +55,6 @@
       </view>
     </block>
     <scroll-view class="quiz" scroll-y scroll-with-animation enable-back-to-top>
-      <view class="quiz-title">{{quiz.title}}</view>
       <view class="question">
         <view class="question-text-data">
           <block wx:for="{{quiz.question.questionTextData}}" wx:key="{{item.blockId}}">

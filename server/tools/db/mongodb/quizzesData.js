@@ -1,6 +1,7 @@
 const QuizzesData = [{
     quizId: 1,
     quizType: 1,
+    stars: [1, 0, 0, 0, 0],
     title: '白色的幽灵',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/f0d3707x.mp3',
     timed: true,
@@ -14,7 +15,7 @@ const QuizzesData = [{
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '李阿姨颤抖着说：“刚刚好像有个白色的幽灵从我家客厅里一闪而过，撞到了门上，然后就消失了。我壮着胆子去客厅里检查，没有找到幽灵，却发现中奖的彩票不见了！”'
+          text: '李阿姨颤抖着说，刚刚有个白色的幽灵从客厅里一闪而过。她壮着胆子去检查，没有找到幽灵却发现中奖的彩票不见了。'
         },
         {
           blockId: '3',
@@ -27,7 +28,7 @@ const QuizzesData = [{
         {
           blockId: '5',
           blockType: 'normal-text',
-          text: '警方怀疑很有可能是李阿姨的邻居为了偷她的彩票故意跑过来装神弄鬼，于是紧急传讯了三名嫌疑人并询问他们刚刚在做什么。章秋太太说：“我在做菜。” 范安先生说：“我刚刚出去买东西了。” 邵武先生说：“我刚洗完澡从浴室里出来。”'
+          text: '警方怀疑这是人为制造的障眼法，于是紧急传讯了三名嫌疑人并询问他们刚刚在干什么。张太太说自己正在做菜。范先生说自己出去买东西了，刚回来。邵先生说自己刚洗完澡从浴室里出来。'
         },
         {
           blockId: '6',
@@ -40,7 +41,7 @@ const QuizzesData = [{
         {
           blockId: '8',
           blockType: 'normal-text',
-          text: '这三个人之中谁在说谎？请从图片下方的 A、B、C 三个选项中，选出正确答案。'
+          text: '这三个人之中谁在说谎？请从图片下方的三个选项中，选出正确答案。'
         }
       ],
       questionImage: {
@@ -55,7 +56,7 @@ const QuizzesData = [{
           optionData: [{
             blockId: '1',
             blockType: 'normal-text',
-            text: '章秋太太'
+            text: '张太太'
           }]
         },
         {
@@ -63,7 +64,7 @@ const QuizzesData = [{
           optionData: [{
             blockId: '1',
             blockType: 'normal-text',
-            text: '范安先生'
+            text: '范先生'
           }]
         },
         {
@@ -71,7 +72,7 @@ const QuizzesData = [{
           optionData: [{
             blockId: '1',
             blockType: 'normal-text',
-            text: '邵武先生'
+            text: '邵先生'
           }]
         }
       ]
@@ -83,7 +84,7 @@ const QuizzesData = [{
         solutionData: [{
           blockId: '1',
           blockType: 'normal-text',
-          text: 'C. 邵武先生'
+          text: 'C. 邵先生'
         }]
       },
       {
@@ -96,20 +97,7 @@ const QuizzesData = [{
           {
             blockId: '2',
             blockType: 'normal-text',
-            text: '邵武先生在说谎。如果他真的刚洗完澡从浴室里出来，那么头发应该是湿的，更不应该在浴袍里面还穿着衬衫、打着领带。'
-          },
-          {
-            blockId: '3',
-            blockType: 'return'
-          },
-          {
-            blockId: '4',
-            blockType: 'tab'
-          },
-          {
-            blockId: '5',
-            blockType: 'normal-text',
-            text: '另外，他的额头上贴着创可贴，应该就是他刚刚撞到门上了。'
+            text: '邵先生在说谎。如果他真的刚洗完澡从浴室里出来，那么头发应该是湿的，更不应该在浴袍里面还穿着衬衫、打着领带。'
           }
         ]
       }
@@ -118,6 +106,7 @@ const QuizzesData = [{
   {
     quizId: 2,
     quizType: 1,
+    stars: [1, 1, 1, 0, 0],
     title: '疯狂的黒女王邮票',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -131,7 +120,7 @@ const QuizzesData = [{
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '陈平先生珍藏多年的黒女王邮票被人偷走了！他认真回忆了一下，确定今天只有三个外人分别来过家里，应该是他们之中的某个人从书房的集邮册里拿走了这枚邮票。'
+          text: '陈平先生珍藏多年的黒女王邮票被人偷走了。他认真回忆了一下，确定今天只有三个外人李冰、杨阳、王萍来过家里。应该是他们之中有人从书房的集邮册里拿走了这枚邮票。'
         },
         {
           blockId: '3',
@@ -144,7 +133,7 @@ const QuizzesData = [{
         {
           blockId: '5',
           blockType: 'normal-text',
-          text: '李冰是一名维修工，他说自己一整天都在厨房修理漏水的水龙头，没有进过其他房间。杨阳是一名保险推销员，他说自己只是来送保险文件的，把文件放到客厅桌子上就离开了。王萍是一名家政服务员，她每周都来家里打扫卫生，但是书房一直都是由陈平先生亲自收拾的，不需要她帮忙。'
+          text: '李冰是一名维修工，他说自己一整天都在厨房里修理水龙头，没有进过其他房间。杨阳是一名保险推销员，他说自己是来送保险文件的，把文件放到客厅桌子上就走了。王萍是一名保洁阿姨，她每周都来家里打扫卫生，但是书房一直都是陈平先生亲自收拾的，不需要她帮忙。'
         },
         {
           blockId: '6',
@@ -157,7 +146,7 @@ const QuizzesData = [{
         {
           blockId: '8',
           blockType: 'normal-text',
-          text: '在陈平先生的书房里有一个重要证物，可以确定这三个人之中到底是谁在说谎。请从图片下方的 A、B、C 三个选项中，选出正确答案。'
+          text: '在陈平先生的书房里有一个重要证物，可以确定这三个人之中到底是谁在说谎。请从图片下方的三个选项中，选出正确答案。'
         }
       ],
       questionImage: {
@@ -262,6 +251,7 @@ const QuizzesData = [{
   {
     quizId: 3,
     quizType: 1,
+    stars: [1, 0, 0, 0, 0],
     title: '照片谜题',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -275,7 +265,7 @@ const QuizzesData = [{
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '“啊，糟糕！” 马飞警长大叫了一声。他刚刚不小心把一个叫陆齐的特级通缉犯的照片给撕碎了，一起撕碎的还有其他两个普通刑事案件犯罪嫌疑人的照片。'
+          text: '马飞警长刚刚不小心把一个叫陆齐的特级通缉犯的照片给撕碎了，一起撕碎的还有其他两个普通刑事案件犯罪嫌疑人的照片。'
         },
         {
           blockId: '3',
@@ -288,7 +278,7 @@ const QuizzesData = [{
         {
           blockId: '5',
           blockType: 'normal-text',
-          text: '幸好马飞警长手头还有一张陆齐的通缉画像。请从图片下方的 A、B、C 三个选项中，选出陆齐的通缉令编号。'
+          text: '幸好他手头还有一张陆齐的通缉画像。请从图片下方的三个选项中，选出陆齐的通缉令编号。'
         }
       ],
       questionImage: {
@@ -356,6 +346,7 @@ const QuizzesData = [{
   {
     quizId: 4,
     quizType: 1,
+    stars: [1, 1, 0, 0, 0],
     title: '甜蜜的诱惑',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -369,7 +360,7 @@ const QuizzesData = [{
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '网红店 “可可烘焙屋” 的招牌甜品是一款名叫 “克拉赫堡” 的美味小蛋糕。早上十点还没开始营业，门外的顾客就已经排起了长队，等着购买这款限量供应的甜品。'
+          text: '网红店可可烘焙屋的招牌甜品是一款名叫克拉赫堡的限量供应小蛋糕。正当店主徐可准备开门营业的时候，他接到了一个骚扰电话。等他挂掉电话回到店里，却发现小蛋糕居然被人偷吃光了。在这短短的五分钟之内，只有财务经理赵莉、店员孙蓓和送货员周顺在现场。'
         },
         {
           blockId: '3',
@@ -382,20 +373,7 @@ const QuizzesData = [{
         {
           blockId: '5',
           blockType: 'normal-text',
-          text: '正当一切就绪、准备开门的时候，店主徐杰接到了一个骚扰电话。等他挂掉电话回到店里，却震惊地发现小蛋糕被人偷吃光了！在这短短的五分钟之内，只有财务经理赵莉、店员孙蓓和送货员周顺在现场。'
-        },
-        {
-          blockId: '6',
-          blockType: 'return'
-        },
-        {
-          blockId: '7',
-          blockType: 'tab'
-        },
-        {
-          blockId: '8',
-          blockType: 'normal-text',
-          text: '有足够的证据表明，偷吃小蛋糕的人此刻还在店里。请从图片下方的 A、B、C 三个选项中，选出这个人是谁。'
+          text: '有足够的证据表明，偷吃小蛋糕的人此刻还在店里。请从图片下方的三个选项中，指出这个人是谁。'
         }
       ],
       questionImage: {
@@ -460,6 +438,7 @@ const QuizzesData = [{
   {
     quizId: 5,
     quizType: 1,
+    stars: [1, 1, 1, 0, 0],
     title: '马可·波罗失踪了',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -473,7 +452,7 @@ const QuizzesData = [{
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '世界公园里的马可·波罗雕像被人凿破偷走了！最有嫌疑的人是门卫李大爷和园艺师孙师傅。请从图片下方的 A、B 两个选项中，选出这个小偷是谁。'
+          text: '世界公园里的马可·波罗雕像被人偷走了！最大的嫌疑对象是门卫李大爷和园艺师孙师傅。请从图片下方的两个选项中，指出这个小偷是谁。'
         }
       ],
       questionImage: {
@@ -520,6 +499,7 @@ const QuizzesData = [{
   {
     quizId: 6,
     quizType: 2,
+    stars: [1, 1, 0, 0, 0],
     title: '被调包的收藏品',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -576,6 +556,7 @@ const QuizzesData = [{
   {
     quizId: 7,
     quizType: 2,
+    stars: [1, 1, 0, 0, 0],
     title: '诈骗犯贾云亭',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -589,7 +570,7 @@ const QuizzesData = [{
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '在前往机场的大巴上，程岚侦探紧紧地盯着坐在她前排座位上的诈骗犯贾云亭。在法院下达限制出境令之前，必须阻止他坐飞机离境。贾云亭的外貌特征很明显：他留着一把大胡子，还抱着一个大行李包。'
+          text: '在前往机场的大巴上，程岚侦探紧紧地盯着坐在她前排座位上的诈骗犯贾云亭。在法院下达限制出境令之前，程岚侦探必须阻止他坐飞机离境。贾云亭的外貌特征很明显：他留着一把大胡子，还抱着一个大行李包。'
         },
         {
           blockId: '3',
@@ -647,6 +628,7 @@ const QuizzesData = [{
   {
     quizId: 8,
     quizType: 2,
+    stars: [1, 1, 0, 0, 0],
     title: '保密的新品配方',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -703,6 +685,7 @@ const QuizzesData = [{
   {
     quizId: 9,
     quizType: 2,
+    stars: [1, 1, 0, 0, 0],
     title: '被偷砍掉的银杏树',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -716,7 +699,7 @@ const QuizzesData = [{
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '早上七点钟，吴岳刚刚结束彻夜狂欢的公司聚会回到家里，却震惊地发现：昨晚有人趁他不在家的时候，把院子里的银杏树给砍掉了！吴岳脑海里第一个想到的就是他的邻居汪宽！那个家伙经常抱怨银杏树影响了自家院子的采光。'
+          text: '早上七点钟，吴岳刚刚结束彻夜狂欢的公司聚会回到家里，却震惊地发现：昨晚有人趁他不在家的时候，把院子里的银杏树给砍掉了！吴岳脑海里第一个想到的就是他的邻居汪宽。那个家伙经常抱怨银杏树影响了自家院子的采光。'
         },
         {
           blockId: '3',
@@ -729,7 +712,7 @@ const QuizzesData = [{
         {
           blockId: '5',
           blockType: 'normal-text',
-          text: '吴岳上门找汪宽理论，却没想到汪宽矢口否认并且一口咬定说：“我昨天去我姐姐家玩了，整个晚上都没回来，刚刚五分钟之前才进家门，根本不可能去偷砍你的银杏树！” 汪宽肯定是在说谎，请在下图中指出他说谎的证据。'
+          text: '吴岳上门找汪宽理论，却没想到汪宽矢口否认并且一口咬定说：“我昨天去亲戚家玩了，整个晚上都没回来，刚刚五分钟之前才进家门，根本不可能去偷砍你的银杏树！” 汪宽肯定是在说谎，请在下图中指出他说谎的证据。'
         }
       ],
       questionImage: {
@@ -772,6 +755,7 @@ const QuizzesData = [{
   {
     quizId: 10,
     quizType: 2,
+    stars: [1, 1, 1, 0, 0],
     title: '怪盗基佐的藏身之处',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
@@ -785,7 +769,7 @@ const QuizzesData = [{
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '怪盗基佐是一名擅长使用魔术手法偷取珠宝的跨国大盗。国际刑警已经跟踪他很久了，却始终无法找到他藏在哪里！据目击者称，基佐就躲在他在中国的好朋友崔强家里！中国便衣警察以查户口为由，数次登门拜访崔强，得到的都是相同的回答：“我一个人住，家里没有别人。”'
+          text: '怪盗基佐是一名擅长使用魔术手法偷取珠宝的跨国大盗。国际刑警已经跟踪他很久了，却始终无法找到他藏在哪里。据目击者称，基佐就躲在他的中国朋友崔强家里。中国便衣警察以查户口为由，数次登门拜访崔强，崔强总是斩钉截铁地说自己是一个人住，家里没有别人。'
         },
         {
           blockId: '3',
@@ -828,7 +812,8 @@ const QuizzesData = [{
   {
     quizId: 11,
     quizType: 2,
-    title: '化妆舞会上的不速之客',
+    stars: [1, 1, 0, 0, 0],
+    title: '盛大的化妆舞会',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
     timeLimit: 120000,
@@ -841,7 +826,7 @@ const QuizzesData = [{
         {
           blockId: '2',
           blockType: 'normal-text',
-          text: '万圣节当晚，在某公司盛大的化妆舞会上，举办者收到了一封匿名信和一张照片。信中透露：照片中的男子不久前刚刚被公司解雇了，他今天也混进了舞会！在接下来的抽奖环节中，这名郁闷的前同事会刻意制造混乱，借此抚慰自己脆弱的 “自尊心”。'
+          text: '万圣节当晚，在某公司的化妆舞会上，举办者收到了一封匿名信和一张照片。信中透露：照片中的男子不久前被公司解雇了，他今天也混进了舞会。在接下来的抽奖环节中，这名郁闷的前同事会刻意制造混乱，借此宣泄自己对公司的不满。'
         },
         {
           blockId: '3',
@@ -854,7 +839,7 @@ const QuizzesData = [{
         {
           blockId: '5',
           blockType: 'normal-text',
-          text: '舞会举办者希望尽快把他控制起来，免得大家都不痛快。请在下面的第二张图中指出他藏在哪里。'
+          text: '舞会举办者希望尽快找到他，避免破坏气氛，搞得大家都不痛快。请在下面的第二张图中指出他藏在哪里。'
         }
       ],
       questionImage: {
@@ -879,6 +864,7 @@ const QuizzesData = [{
   {
     quizId: 12,
     quizType: 2,
+    stars: [1, 1, 1, 0, 0],
     title: '星光蓝宝石',
     bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/l.mp3',
     timed: true,
