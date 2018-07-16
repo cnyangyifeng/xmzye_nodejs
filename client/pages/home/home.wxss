@@ -6,14 +6,14 @@
   flex: 1;
   display: flex;
   align-items: center;
-  height: 120rpx;
+  height: 60px;
 }
 
 .quiz-user-avatar {
   flex: none;
-  width: 100rpx;
-  height: 100rpx;
-  margin: 0 30rpx;
+  width: 40px;
+  height: 40px;
+  margin: 0 10px;
   border-radius: 50%;
   will-change: transform;
 }
@@ -26,17 +26,17 @@
 
 .quiz-user-vip {
   flex: none;
-  width: 48rpx;
-  height: 48rpx;
-  margin-right: 10rpx;
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
 }
 
 .quiz-user-nick-name {
   flex: none;
   color: #fff;
-  max-width: 240rpx;
-  margin-right: 30rpx;
-  font-size: 18px;
+  max-width: 120px;
+  margin-right: 10px;
+  font-size: 16px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -46,7 +46,7 @@
   flex: none;
   display: flex;
   width: 710rpx;
-  margin: 20rpx;
+  margin: 10px 20rpx 10px 20rpx;
 }
 
 .quiz-tabs-innner {
@@ -61,15 +61,15 @@
   flex: none;
   display: inline-block;
   min-width: 80px;
-  height: 80rpx;
-  margin-right: 20rpx;
-  padding: 0 20rpx;
+  height: 40px;
+  margin-right: 10px;
+  padding: 0 10px;
   box-sizing: border-box;
   border: 1px solid #666;
   color: #fff;
-  font-size: 16px;
+  font-size: 14px;
   text-align: center;
-  line-height: 80rpx;
+  line-height: 40px;
 }
 
 .quiz-tab.active {
@@ -109,8 +109,7 @@
   flex-wrap: wrap;
   justify-content: center;
   width: 750rpx;
-  margin-top: 240rpx;
-  padding-bottom: 10rpx;
+  margin-top: 120px;
 }
 
 .quiz-card {
@@ -167,25 +166,28 @@
 
 /****************************************************************************************************/
 
-/* .share-btn */
+/* .rankings-btn */
 
-.share-btn {
+.rankings-btn {
   position: absolute;
   z-index: 1000;
-  right: 40rpx;
-  bottom: 40rpx;
+  right: 20px;
+  bottom: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100rpx;
-  padding: 0 50rpx;
+  height: 50px;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 25px !important;
+  padding-right: 25px !important;
   box-sizing: border-box;
-  border-radius: 50rpx;
+  border-radius: 25px;
   background-color: #00ba80;
   color: #fff;
   font-size: 16px;
 }
 
-.share-btn-hover {
+.rankings-btn-hover {
   background-color: #0c9;
 }

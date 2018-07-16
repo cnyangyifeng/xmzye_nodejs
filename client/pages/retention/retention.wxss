@@ -21,13 +21,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 120rpx;
+  height: 80px;
+  margin-top: 20px;
   color: #fff;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .retention-title:first-of-type {
-  margin-top: 20rpx;
+  margin-top: 0;
 }
 
 .retention-task {
@@ -37,7 +38,7 @@
   align-items: center;
   flex-direction: column;
   width: 640rpx;
-  margin: 0 60rpx 60rpx 60rpx;
+  padding: 20px 0;
   border-radius: 5px;
   background-color: #fff;
 }
@@ -48,7 +49,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 60rpx;
 }
 
 .retention-task-description {
@@ -57,14 +57,14 @@
   justify-content: center;
   align-items: center;
   font-size: 18px;
-  line-height: 30px;
+  line-height: 50px;
   color: #2e2b3b;
 }
 
 .retention-task-value {
-  font-size: 24px;
+  font-size: 22px;
   color: #ffa000;
-  padding: 0 10rpx;
+  padding: 0 5px;
 }
 
 .retention-task-ft {
@@ -73,8 +73,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 40rpx;
-  margin-bottom: 60rpx;
+  margin-top: 10px;
 }
 
 .retention-primary-btn-label {
@@ -82,9 +81,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20rpx;
+  margin-bottom: 10px;
   color: #666;
   font-size: 16px;
+  font-weight: normal;
   line-height: 24px;
   text-align: center;
 }
@@ -95,8 +95,8 @@
   justify-content: center;
   align-items: center;
   width: 360rpx;
-  height: 100rpx;
-  padding: 0 50rpx;
+  height: 50px;
+  padding: 0 25px;
   box-sizing: border-box;
   border-radius: 5px;
   background-color: #00ba80;

@@ -7,4 +7,4 @@ const configs = {
   weapp
 }
 
-module.exports = configs;
+module.exports = configs

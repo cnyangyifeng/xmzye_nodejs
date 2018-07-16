@@ -14,7 +14,7 @@
         </block>
         <block wx:else>
           <view class="quiz-user-nick-name">{{quizUser.quizUserInfo.nickName}}</view>
-          <view class="quiz-user-asset" hover-class="quiz-user-asset-hover">
+          <view class="quiz-user-asset">
             <image class="quiz-user-asset-icon" src="/assets/images/key.svg"></image>
             <view class="quiz-user-asset-value">× {{quizUser.totalKeyCount}}</view>
           </view>
@@ -29,7 +29,7 @@
       </view>
     </scroll-view>
   </view>
-  <button class="share-btn" hover-class="share-btn-hover" open-type="share">邀请好友一起挑战</button>
+  <!-- <button class="rankings-btn" hover-class="rankings-btn-hover" open-type="share">推理世界排行榜</button> -->
   <swiper class="home" current="{{quizUser.currentQuizTabIndex}}" bindchange="quizGridSwiperChange">
     <swiper-item wx:for="{{quizGrid}}" wx:key="quizTabName">
       <scroll-view class="quiz-grid" scroll-y scroll-with-animation enable-back-to-top>

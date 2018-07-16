@@ -85,7 +85,7 @@ function requestWxaCode(accessToken, quizId) {
 
 function generatePoster(quiz) {
   return new Promise((resolve, reject) => {
-    gm(750, 1334, "#282828")
+    gm(750, 1334, "#212121")
       .noProfile()
       .font('/data/release/xmzye/tools/fonts/STHeiti.ttf', 40)
       .fill('#ffffff')

@@ -1001,6 +1001,16 @@ Page({
         // 操作成功
         resolve()
       } else if (quiz.quizType === 2) {
+        // 如果用户没有点击 questionImageMask，则将 myAnswerPoint 置位
+        if (this.data.myAnswerPoint === null) {
+          this.setData({
+            myAnswerPoint: {
+              x: -100,
+              y: 0
+            }
+          })
+          this.cacheMyAnswerPoint()
+        }
         // 请查看 wx.createIntersectionObserver() 的回调方法
         // 操作成功
         resolve()
@@ -1035,6 +1045,10 @@ Page({
           resolve()
         }, 400)
       }).then(() => {
+        // 更新页面数据 quizState
+        this.setData({
+          quizState: QUIZ_STATE_SOLUTIONS
+        })
         // 播放 actionBar 动画 fadeInUp
         this.actionBarAnimation.opacity(1).height(60).step({
           duration: 200,

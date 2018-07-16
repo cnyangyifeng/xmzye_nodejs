@@ -7,19 +7,19 @@
   <view class="nav-bar">
     <view class="quiz-user-hd">
       <view class="quiz-info">
-        <view class="quiz-id">第 {{quiz.quizId}} 题</view>
-        <view class="stars">
-          <image wx:for="{{quiz.stars}}" wx:key="{{item}}" class="star" src="/assets/images/{{item===1?'star_fill':'star'}}.svg"></image>
-        </view>
         <view wx:if="{{quizSolved===1}}" class="quiz-status">
           <image class="quiz-status-image" src="/assets/images/{{myAnswerFeedback===1?'right':'wrong'}}_fill.svg"></image>
+        </view>
+        <view class="quiz-id">No. {{quiz.quizId}}</view>
+        <view class="stars">
+          <image wx:for="{{quiz.stars}}" wx:key="{{item}}" class="star" src="/assets/images/{{item===1?'star_fill':'star'}}.svg"></image>
         </view>
       </view>
       <block wx:if="{{quizUser.vip===1}}">
         <image class="quiz-user-vip" src="/assets/images/vip.svg"></image>
       </block>
       <block wx:else>
-        <view class="quiz-user-asset" hover-class="quiz-user-asset-hover">
+        <view class="quiz-user-asset">
           <image class="quiz-user-asset-icon" src="/assets/images/key.svg"></image>
           <view class="quiz-user-asset-value">× {{quizUser.totalKeyCount}}</view>
         </view>
@@ -75,7 +75,7 @@
                 </view>
                 <view class="question-image-mask-text">破案线索或者问题</view>
               </view>
-              <view hidden="{{!myAnswerPoint}}" class="my-answer-point" style="left:{{myAnswerPoint.x}}px;top:{{myAnswerPoint.y}}px;"></view>
+              <view hidden="{{!myAnswerPoint}}" class="my-answer-point {{quizSolved===1?'solved':''}}" style="left:{{myAnswerPoint.x}}px;top:{{myAnswerPoint.y}}px;"></view>
               <view class="answer-area {{quizSolved===0?'hidden':''}}" style="left:{{quiz.answerArea.x}}px;top:{{quiz.answerArea.y}}px;"></view>
             </view>
           </block>
@@ -126,9 +126,9 @@
             <text class="feedback-value">{{quiz.answerKey}}</text>
           </view>
           <view class="feedback-description">
-            <text>☞ 奖励</text>
+            <text>奖励</text>
             <text class="feedback-value">1</text>
-            <text>把钥匙 ☜</text>
+            <text>把钥匙</text>
           </view>
         </block>
         <block wx:else>
@@ -161,6 +161,7 @@
           </view>
         </block>
       </view>
+      <view class="ad"><ad unit-id="adunit-1d6d611a38fa15fe"></ad></view>
       <view class="quiz-ft">© 2018 一分钟推理</view>
     </scroll-view>
     <view class="action-bar" animation="{{actionBarAnimationData}}">
