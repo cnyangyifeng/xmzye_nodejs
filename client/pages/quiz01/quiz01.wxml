@@ -6,15 +6,25 @@
 <block wx:else>
   <view class="nav-bar">
     <view class="quiz-user-hd">
-      <view class="quiz-info">
-        <view wx:if="{{quizSolved===1}}" class="quiz-status">
-          <image class="quiz-status-image" src="/assets/images/{{myAnswerFeedback===1?'right':'wrong'}}_fill.svg"></image>
+      <block wx:if="{{quizSolved===1}}">
+        <view class="quiz-info {{myAnswerFeedback===1?'right':'wrong'}}">
+          <view wx:if="{{quizSolved===1}}" class="quiz-status">
+            <image class="quiz-status-image" src="/assets/images/{{myAnswerFeedback===1?'right':'wrong'}}_fill.svg"></image>
+          </view>
+          <view class="quiz-id">No. {{quiz.quizId}}</view>
+          <view class="stars">
+            <image wx:for="{{quiz.stars}}" wx:key="{{item}}" class="star" src="/assets/images/{{item===1?'star_fill':'star'}}.svg"></image>
+          </view>
         </view>
-        <view class="quiz-id">No. {{quiz.quizId}}</view>
-        <view class="stars">
-          <image wx:for="{{quiz.stars}}" wx:key="{{item}}" class="star" src="/assets/images/{{item===1?'star_fill':'star'}}.svg"></image>
+      </block>
+      <block wx:else>
+        <view class="quiz-info">
+          <view class="quiz-id">No. {{quiz.quizId}}</view>
+          <view class="stars">
+            <image wx:for="{{quiz.stars}}" wx:key="{{item}}" class="star" src="/assets/images/{{item===1?'star_fill':'star'}}.svg"></image>
+          </view>
         </view>
-      </view>
+      </block>
       <block wx:if="{{quizUser.vip===1}}">
         <image class="quiz-user-vip" src="/assets/images/vip.svg"></image>
       </block>
@@ -67,7 +77,7 @@
           <block wx:if="{{quiz.quizType===2}}">
             <view id="questionImageMask" class="question-image-mask" style="height:{{quiz.question.questionImage.height/2}}px;" bindtap="questionImageMaskTap">
               <view hidden="{{myAnswerPoint}}" class="question-image-mask-title">
-                <view class="question-image-mask-text">点击这里，解锁图片</view>
+                <view class="question-image-mask-text">点击屏幕，解锁图片</view>
                 <view class="question-image-mask-text">
                   <text>然后用</text>
                   <image class="my-answer-point-icon" src="/assets/images/my_answer_point.svg"></image>
@@ -161,7 +171,9 @@
           </view>
         </block>
       </view>
-      <view class="ad"><ad unit-id="adunit-1d6d611a38fa15fe"></ad></view>
+      <view class="ad">
+        <ad unit-id="adunit-1d6d611a38fa15fe"></ad>
+      </view>
       <view class="quiz-ft">© 2018 一分钟推理</view>
     </scroll-view>
     <view class="action-bar" animation="{{actionBarAnimationData}}">

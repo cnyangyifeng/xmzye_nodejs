@@ -34,6 +34,14 @@
   background-color: #212121;
 }
 
+.quiz-info.right {
+  border: 1px solid #00ba80;
+}
+
+.quiz-info.wrong {
+  border: 1px solid #f06292;
+}
+
 .quiz-status {
   flex: none;
   display: flex;
@@ -445,6 +453,12 @@
   text-align: center;
 }
 
+.ad {
+  flex: none;
+  height: 120px;
+  margin: 40rpx;
+}
+
 /*= .quiz-ft =*/
 
 .quiz-ft {
@@ -454,12 +468,6 @@
   padding: 60rpx 0 200rpx 0;
   color: #666;
   font-size: 16px;
-}
-
-.ad {
-  flex: none;
-  margin: 40rpx;
-  height: 120px;
 }
 
 /****************************************************************************************************/

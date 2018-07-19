@@ -57,6 +57,7 @@ Page({
      * quiz = {
      *   quizId: 1,
      *   quizType: 1/2,
+     *   stars: [1, 0, 0, 0, 0],
      *   title: '莫尔夫人和离奇的鬼怪',
      *   bgmUrl: 'https://xmzye-1256505289.cos.ap-guangzhou.myqcloud.com/system_data/audios/scarsong.mp3',
      *   timed: true,
@@ -428,10 +429,8 @@ Page({
     console.debug(`点击 myAnswerForm, formId: `, formId)
     // 终止计时
     this.stopCountingDown()
-    // 同步 quizUser
-    this.syncQuizUser(formId)
     // 提交答案
-    this.submitMyAnswer()
+    this.submitMyAnswer(formId)
   },
 
   /**
@@ -931,7 +930,7 @@ Page({
    * 提交答案
    */
 
-  submitMyAnswer() {
+  submitMyAnswer(formId) {
     // 播放 actionBar 动画 fadeOutDown
     this.actionBarAnimation.opacity(0).height(0).step({
       duration: 200,
@@ -953,8 +952,9 @@ Page({
             quizUser: quizUser
           })
         QuizUser.set(quizUser)
-        this.syncQuizUser()
       }
+      // 同步 quizUser
+      this.syncQuizUser(formId)
       // 播放 solutions 音效
       this.playSolutions()
       // 显示 feedbackModal
@@ -1104,7 +1104,10 @@ Page({
           quizUser: this.data.quizUser,
           quizUserForm: {
             quizUserId: this.data.quizUser.quizUserId,
-            nickName: this.data.quizUser.nickName,
+            nickName: this.data.quizUser.quizUserInfo.nickName,
+            avatarUrl: this.data.quizUser.quizUserInfo.avatarUrl,
+            quizId: this.data.quiz.quizId,
+            myAnswerFeedback: this.data.myAnswerFeedback,
             formId: formId,
             submitTime: dateUtils.formatTime(new Date())
           }

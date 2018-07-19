@@ -28,8 +28,7 @@ async function getQuizUser(ctx, next) {
         totalKeyCount: 1,
         muted: 0,
         currentQuizTabIndex: 0,
-        currentQuizTabName: '1-40',
-        maxAvailableQuizId: 1,
+        currentQuizTabName: '看图推理',
         createTime: createTime,
         lastVisitTime: lastVisitTime
       }

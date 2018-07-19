@@ -12,7 +12,9 @@ async function remind() {
   console.log(`xmzye reminder starts.`)
   const cli = await MongoClient.connect(configs.mongodb.url)
   const collection = await cli.db('xmzye').collection('quizUserForms')
-  const quizUserForms = await collection.find({}).sort({ submitTime: -1 }).toArray()
+  const quizUserForms = await collection.find({}).sort({
+    submitTime: -1
+  }).toArray()
   for (let i = 0; i < quizUserForms.length; i++) {
     await remindQuizUser(quizUserForms[i])
   }

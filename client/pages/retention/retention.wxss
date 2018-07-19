@@ -10,6 +10,15 @@
   background-color: #2e2b3b;
 }
 
+.retention-ft {
+  flex: none;
+  display: flex;
+  justify-content: center;
+  padding: 120rpx 0 200rpx 0;
+  color: #666;
+  font-size: 16px;
+}
+
 .retention-title-icon {
   width: 24px;
   height: 24px;

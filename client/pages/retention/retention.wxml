@@ -6,7 +6,7 @@
   <view class="retention-task">
     <view class="retention-task-bd">
       <view class="retention-task-description">
-        <text>赞助</text>
+        <text>只需</text>
         <view class="retention-task-value">9.9</view>
         <text>元，解锁全部题目</text>
       </view>
@@ -16,7 +16,7 @@
         <view class="retention-primary-btn-label">
           <text>联系客服并回复数字 1</text>
         </view>
-        <button class="retention-primary-btn" hover-class="retention-primary-btn-hover" open-type="contact">联系客服</button>
+        <button class="retention-primary-btn" hover-class="retention-primary-btn-hover" open-type="contact">全部解锁</button>
       </block>
       <block wx:else>
         <view class="retention-primary-btn-label">
@@ -28,21 +28,22 @@
   </view>
   <view class="retention-title">
     <image class="retention-title-icon" src="/assets/images/r2.svg"></image>
-    <text>组队挑战</text>
+    <text>一起挑战</text>
   </view>
   <view class="retention-task">
     <view class="retention-task-bd">
       <view class="retention-task-description">
-        <text>分享到群，获得</text>
+        <text>立即分享，获得</text>
         <view class="retention-task-value">1</view>
-        <text>次复活机会</text>
+        <text>把解题钥匙</text>
       </view>
     </view>
     <view class="retention-task-ft">
       <view class="retention-primary-btn-label">
-        <text>看看谁是你的华生医生</text>
+        <text>每邀请一人，得一把钥匙</text>
       </view>
       <button class="retention-primary-btn" hover-class="retention-primary-btn-hover" open-type="share">邀请好友</button>
     </view>
   </view>
+  <view class="retention-ft">© 2018 一分钟推理</view>
 </view>

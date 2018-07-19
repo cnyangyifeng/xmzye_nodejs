@@ -1,7 +1,9 @@
 const configs = require('../config')
 const moment = require('moment')
 const MongoClient = require('mongodb').MongoClient
-const { tunnel } = require('../qcloud')
+const {
+  tunnel
+} = require('../qcloud')
 const TunnelEvent = require('../services/tunnelEvent')
 
 /* ================================================================================ */
@@ -12,7 +14,9 @@ const TunnelEvent = require('../services/tunnelEvent')
  */
 
 function onConnect(tunnelId) {
-  console.debug(`[onConnect] =>`, { tunnelId })
+  console.debug(`[onConnect] =>`, {
+    tunnelId
+  })
 }
 
 /**
@@ -22,7 +26,9 @@ function onConnect(tunnelId) {
  */
 
 function onClose(tunnelId) {
-  console.debug(`[onClose] =>`, { tunnelId })
+  console.debug(`[onClose] =>`, {
+    tunnelId
+  })
   tunnel.closeTunnel(tunnelId)
 }
 
@@ -32,7 +38,11 @@ function onClose(tunnelId) {
  */
 
 async function onMessage(tunnelId, messageType, messageContent) {
-  console.debug(`[onMessage] =>`, { tunnelId, messageType, messageContent })
+  console.debug(`[onMessage] =>`, {
+    tunnelId,
+    messageType,
+    messageContent
+  })
   switch (messageType) {
     case TunnelEvent.REF_QUIZ_USER_REQ:
       break
@@ -44,41 +54,54 @@ async function onMessage(tunnelId, messageType, messageContent) {
         const db = cli.db('xmzye')
         console.debug(`quizUser: `, quizUser)
         if (quizUser) {
-          await db.collection('quizUsers').updateOne(
-            { quizUserId: quizUser.quizUserId },
-            {
-              $set:
-              {
-                quizUserId: quizUser.quizUserId,
-                referrerId: quizUser.referrerId,
-                quizUserInfo: quizUser.quizUserInfo,
-                vip: quizUser.vip,
-                totalKeyCount: quizUser.totalKeyCount,
-                muted: quizUser.muted,
-                currentQuizTabIndex: quizUser.currentQuizTabIndex,
-                currentQuizTabName: quizUser.currentQuizTabName,
-                createTime: quizUser.createTime,
-                lastVisitTime: moment().format('YYYY-MM-DD HH:mm:ss')
-              }
-            },
-            { upsert: true }
-          )
+          await db.collection('quizUsers').updateOne({
+            quizUserId: quizUser.quizUserId
+          }, {
+            $set: {
+              quizUserId: quizUser.quizUserId,
+              referrerId: quizUser.referrerId,
+              quizUserInfo: quizUser.quizUserInfo,
+              vip: quizUser.vip,
+              totalKeyCount: quizUser.totalKeyCount,
+              muted: quizUser.muted,
+              currentQuizTabIndex: quizUser.currentQuizTabIndex,
+              currentQuizTabName: quizUser.currentQuizTabName,
+              createTime: quizUser.createTime,
+              lastVisitTime: moment().format('YYYY-MM-DD HH:mm:ss')
+            }
+          }, {
+            upsert: true
+          })
         }
         console.debug(`quizUserForm: `, quizUserForm)
         if (quizUserForm) {
-          await db.collection('quizUserForms').updateOne(
-            { quizUserId: quizUserForm.quizUserId },
-            {
-              $set:
-              {
-                quizUserId: quizUserForm.quizUserId,
-                nickName: quizUserForm.nickName,
-                formId: quizUserForm.formId,
-                submitTime: quizUserForm.submitTime
-              }
-            },
-            { upsert: true }
-          )
+          await db.collection('quizUserAnswers').updateOne({
+            quizUserId: quizUserForm.quizUserId,
+            quizId: quizUserForm.quizId,
+          }, {
+            $set: {
+              quizUserId: quizUserForm.quizUserId,
+              nickName: quizUserForm.nickName,
+              avatarUrl: quizUserForm.avatarUrl,
+              quizId: quizUserForm.quizId,
+              myAnswerFeedback: quizUserForm.myAnswerFeedback,
+              submitTime: quizUserForm.submitTime
+            }
+          }, {
+            upsert: true
+          })
+          await db.collection('quizUserForms').updateOne({
+            quizUserId: quizUserForm.quizUserId
+          }, {
+            $set: {
+              quizUserId: quizUserForm.quizUserId,
+              nickName: quizUserForm.nickName,
+              formId: quizUserForm.formId,
+              submitTime: quizUserForm.submitTime
+            }
+          }, {
+            upsert: true
+          })
         }
         cli.close()
         tunnel.broadcast([tunnelId], TunnelEvent.SYNC_QUIZ_USER_RES, {
